@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<array>
+	<dict>
+		<key>Class Name</key>
+		<string>AKStartPaneController</string>
+		<key>Nib Name</key>
+		<string>AKStartPane</string>
+		<key>Pane Title</key>
+		<string>Step 1 of 6</string>
+                <key>List Title</key>
+		<string>Introduction</string>
+	</dict>
+        <dict>
+		<key>Class Name</key>
+		<string>AKAnonymousPaneController</string>
+		<key>Nib Name</key>
+		<string>AKAnonymousPane</string>
+		<key>Pane Title</key>
+		<string>Step 2 of 6</string>
+                <key>List Title</key>
+		<string>Anonymous Access</string>
+	</dict>
+         <dict>
+		<key>Class Name</key>
+		<string>AKVUPaneController</string>
+		<key>Nib Name</key>
+		<string>AKVUPane</string>
+		<key>Pane Title</key>
+		<string>Step 3 of 6</string>
+                <key>List Title</key>
+		<string>Virtual Users</string>
+	</dict>
+         <dict>
+		<key>Class Name</key>
+		<string>AKLogPaneController</string>
+		<key>Nib Name</key>
+		<string>AKLogPane</string>
+		<key>Pane Title</key>
+		<string>Step 4 of 6</string>
+                <key>List Title</key>
+		<string>Server Logging</string>
+	</dict>
+         <dict>
+		<key>Class Name</key>
+		<string>AKSystemPaneController</string>
+		<key>Nib Name</key>
+		<string>AKSystemPane</string>
+		<key>Pane Title</key>
+		<string>Step 5 of 6</string>
+                <key>List Title</key>
+		<string>System Settings</string>
+	</dict>
+	<dict>
+		<key>Class Name</key>
+		<string>AKStopPaneController</string>
+		<key>Nib Name</key>
+		<string>AKStopPane</string>
+		<key>Pane Title</key>
+		<string>Step 6 of 6</string>
+                <key>List Title</key>
+		<string>Conclusion</string>
+	</dict>
+</array>
+</plist>

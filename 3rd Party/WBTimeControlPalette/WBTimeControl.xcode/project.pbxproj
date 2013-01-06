@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		0259C573FE90428111CA0C5A = {
+			buildSettings = {
+			};
+			buildStyles = (
+				2E58F360FFB2326E11CA0CBA,
+				2E58F361FFB2326E11CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 0259C574FE90428111CA0C5A;
+			projectDirPath = "";
+			targets = (
+				8D1AC9600486D14A00FE50C9,
+			);
+		};
+		0259C574FE90428111CA0C5A = {
+			children = (
+				32DBCF9E0370C38000C91783,
+				32DBCF9F0370C38200C91783,
+				0259C582FE90428111CA0C5A,
+				1ED78706FE9D4A0611CA0C5A,
+				2E58F364FFB232C311CA0CBA,
+			);
+			isa = PBXGroup;
+			name = WBTimeControl;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C577FE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = WBTimeControlInspector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C578FE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = WBTimeControlPalette.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C57BFE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = WBTimeControlInspector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C57CFE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = WBTimeControlPalette.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C57EFE90428111CA0C5A = {
+			children = (
+				0259C57FFE90428111CA0C5A,
+			);
+			isa = PBXVariantGroup;
+			name = WBTimeControlInspector.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C57FFE90428111CA0C5A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/WBTimeControlInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C580FE90428111CA0C5A = {
+			children = (
+				0259C581FE90428111CA0C5A,
+			);
+			isa = PBXVariantGroup;
+			name = WBTimeControlPalette.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C581FE90428111CA0C5A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/WBTimeControlPalette.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C582FE90428111CA0C5A = {
+			children = (
+				8D1AC9730486D14A00FE50C9,
+				8D1AC97F0486D23B00FE50C9,
+				0259C57EFE90428111CA0C5A,
+				0259C580FE90428111CA0C5A,
+				0259C583FE90428111CA0C5A,
+				FADD2F9B07CC2EF8002F29A0,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C583FE90428111CA0C5A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.xml;
+			path = palette.table;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//020
+//021
+//022
+//023
+//024
+//1E0
+//1E1
+//1E2
+//1E3
+//1E4
+		1ED78706FE9D4A0611CA0C5A = {
+			children = (
+				8D1AC9740486D14A00FE50C9,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//1E0
+//1E1
+//1E2
+//1E3
+//1E4
+//2E0
+//2E1
+//2E2
+//2E3
+//2E4
+		2E58F360FFB2326E11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		2E58F361FFB2326E11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		2E58F362FFB2327711CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = InterfaceBuilder.framework;
+			path = /System/Library/Frameworks/InterfaceBuilder.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2E58F364FFB232C311CA0CBA = {
+			children = (
+				2E58F362FFB2327711CA0CBA,
+				DD92D38A0106425D02CA0E72,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//2E0
+//2E1
+//2E2
+//2E3
+//2E4
+//320
+//321
+//322
+//323
+//324
+		32DBCF980370C29C00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = WBTimeControl_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		32DBCF9E0370C38000C91783 = {
+			children = (
+				FA1D44E907CBF8A500394DB2,
+				FA1D44E807CBF8A500394DB2,
+				0259C57BFE90428111CA0C5A,
+				0259C577FE90428111CA0C5A,
+				0259C57CFE90428111CA0C5A,
+				0259C578FE90428111CA0C5A,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		32DBCF9F0370C38200C91783 = {
+			children = (
+				32DBCF980370C29C00C91783,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1AC9600486D14A00FE50C9 = {
+			buildPhases = (
+				8D1AC9660486D14A00FE50C9,
+				8D1AC96A0486D14A00FE50C9,
+				8D1AC96E0486D14A00FE50C9,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WBTimeControl_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Developer/Palettes";
+				OTHER_LDFLAGS = "-bundle";
+				PRODUCT_NAME = WBTimeControl;
+				WRAPPER_EXTENSION = palette;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = WBTimeControl;
+			productInstallPath = "$(HOME)/Developer/Palettes";
+			productName = WBTimeControl;
+			productReference = 8D1AC9740486D14A00FE50C9;
+			productType = "com.apple.product-type.bundle";
+		};
+		8D1AC9660486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				FADD2F9C07CC2EF8002F29A0,
+				8D1AC9670486D14A00FE50C9,
+				8D1AC9680486D14A00FE50C9,
+				8D1AC9690486D14A00FE50C9,
+				8D1AC9800486D23B00FE50C9,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC9670486D14A00FE50C9 = {
+			fileRef = 0259C57EFE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9680486D14A00FE50C9 = {
+			fileRef = 0259C580FE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9690486D14A00FE50C9 = {
+			fileRef = 0259C583FE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC96A0486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC96C0486D14A00FE50C9,
+				8D1AC96D0486D14A00FE50C9,
+				FA1D44EA07CBF8A500394DB2,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC96C0486D14A00FE50C9 = {
+			fileRef = 0259C577FE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D1AC96D0486D14A00FE50C9 = {
+			fileRef = 0259C578FE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D1AC96E0486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC96F0486D14A00FE50C9,
+				8D1AC9700486D14A00FE50C9,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC96F0486D14A00FE50C9 = {
+			fileRef = 2E58F362FFB2327711CA0CBA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9700486D14A00FE50C9 = {
+			fileRef = DD92D38A0106425D02CA0E72;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9730486D14A00FE50C9 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC9740486D14A00FE50C9 = {
+			explicitFileType = wrapper.cfbundle;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = WBTimeControl.palette;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8D1AC97B0486D23100FE50C9 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC97F0486D23B00FE50C9 = {
+			children = (
+				8D1AC97B0486D23100FE50C9,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC9800486D23B00FE50C9 = {
+			fileRef = 8D1AC97F0486D23B00FE50C9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//DD0
+//DD1
+//DD2
+//DD3
+//DD4
+		DD92D38A0106425D02CA0E72 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//DD0
+//DD1
+//DD2
+//DD3
+//DD4
+//FA0
+//FA1
+//FA2
+//FA3
+//FA4
+		FA1D44E807CBF8A500394DB2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = WBTimeControl.m;
+			path = ../WBTimeControlClass/WBTimeControl.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		FA1D44E907CBF8A500394DB2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = WBTimeControl.h;
+			path = ../WBTimeControlClass/WBTimeControl.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		FA1D44EA07CBF8A500394DB2 = {
+			fileRef = FA1D44E807CBF8A500394DB2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		FADD2F9B07CC2EF8002F29A0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.tiff;
+			path = WBTCIcon.tif;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		FADD2F9C07CC2EF8002F29A0 = {
+			fileRef = FADD2F9B07CC2EF8002F29A0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 0259C573FE90428111CA0C5A;
+}

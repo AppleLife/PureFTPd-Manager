@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {handleStepperClick = id; }; 
+            CLASS = WBTimeControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; stepper = NSStepper; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            CLASS = WBTimeControlPalette; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {control = WBTimeControl; }; 
+            SUPERCLASS = IBPalette; 
+        }
+    ); 
+    IBVersion = 1; 
+}

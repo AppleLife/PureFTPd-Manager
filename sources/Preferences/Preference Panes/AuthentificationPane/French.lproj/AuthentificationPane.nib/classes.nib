@@ -1,0 +1,62 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addAuthMethod = id; 
+                authMethodSelected = id; 
+                chooseFile = id; 
+                closeAddSheet = id; 
+                didModify = id; 
+                editType = id; 
+                removeAuthMethod = id; 
+                showAddSheet = id; 
+            }; 
+            CLASS = AuthentificationPane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                authFileField = NSTextField; 
+                authMethodTable = NSTableView; 
+                authTypePopUp = NSButton; 
+                authWindow = NSWindow; 
+                cancelButton = NSButton; 
+                createHomeSwitch = NSButton; 
+                editButton = NSButton; 
+                mySQLSheet = NSWindow; 
+                removeAuthButton = NSButton; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {cancel = id; save = id; useDefaultID = id; }; 
+            CLASS = MySQLCC; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cryptSwitch = NSButton; 
+                defaultIDSwitch = NSButton; 
+                groupPopUp = NSPopUpButton; 
+                saveButton = NSButton; 
+                sqlDatabase = NSTextField; 
+                sqlHost = NSTextField; 
+                sqlPassword = NSSecureTextField; 
+                sqlPort = NSTextField; 
+                sqlTransactionSwitch = NSButton; 
+                sqlUsername = NSTextField; 
+                userPopUp = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

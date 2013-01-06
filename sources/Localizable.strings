@@ -1,0 +1,78 @@
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* Title of alert when there is a connection error during update process. */
+"Connection error" = "Connection error";
+
+/* Continue */
+"Continue" = "Continue";
+
+/* Delete */
+"Delete" = "Delete";
+
+/* localized string */
+"Delete Button" = "Delete Button";
+
+/* Do you want to start the Setup Assistant now ? */
+"Do you want to start the Setup Assistant now ?" = "Do you want to start the Setup Assistant now ?";
+
+/* New */
+"New" = "New";
+
+/* localized string */
+"New Button" = "New Button";
+
+/* OK */
+"OK" = "OK";
+
+/* localized string */
+"Preferences" = "Preferences";
+
+/* localized string */
+"PureFTPd Manager - Server Logs" = "PureFTPd Manager - Server Logs";
+
+/* localized string */
+"PureFTPd Manager - Server Status" = "PureFTPd Manager - Server Status";
+
+/* localized string */
+"PureFTPd Manager - User Manager" = "PureFTPd Manager - User Manager";
+
+/* localized string */
+"PureFTPd Manager - Virtual Hosts" = "PureFTPd Manager - Virtual Hosts";
+
+/* Title of alert when a the user's software is up to date. */
+"PureFTPd Manager is up-to-date" = "PureFTPd Manager is up-to-date";
+
+/* localized string */
+"Refresh" = "Refresh";
+
+/* Save */
+"Save" = "Save";
+
+/* localized string */
+"Server Logs" = "Server Logs";
+
+/* localized string */
+"Server Status" = "Server Status";
+
+/* localized string */
+"Start Server" = "Start Server";
+
+/* localized string */
+"Stop Server" = "Stop Server";
+
+/* Alert text when an error occur during upgrade. */
+"Unable to connect to the upgrade server.\nPlease check your internet link status and try again." = "Unable to connect to the upgrade server.\nPlease check your internet link status and try again.";
+
+/* localized string */
+"User Manager" = "User Manager";
+
+/* localized string */
+"Virtual Hosts" = "Virtual Hosts";
+
+/* Alert text when the user's software is up to date. */
+"You have the latest version of PureFTPd Manager." = "You have the latest version of PureFTPd Manager.";
+
+/* You must quit PureFTPd Manager to continue. Are you sure you wan to do this ? */
+"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?" = "You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?";
+

@@ -1,0 +1,6 @@
+( pureftpd.ServerPane,
+  pureftpd.FTPLogPane,
+  pureftpd.AuthentificationPane,
+  pureftpd.AnonymousPane,
+  pureftpd.SystemPane,
+  pureftpd.PermissionPane )

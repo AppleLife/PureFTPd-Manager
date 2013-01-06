@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {toggleOthers = id; }; 
+            CLASS = AKLogPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                logSwitch = NSButton; 
+                prioritySwitch = NSButton; 
+                "relativeRootView_" = NSView; 
+                updateSwitch = NSButton; 
+            }; 
+            SUPERCLASS = AKPaneController; 
+        }, 
+        {CLASS = AKPaneController; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

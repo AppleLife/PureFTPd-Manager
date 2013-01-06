@@ -1,0 +1,215 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {changeTotalSize = id; }; 
+            CLASS = GraphController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                graphMonthPop = NSPopUpButton; 
+                graphView = SM2DGraphView; 
+                graphYearPop = NSPopUpButton; 
+                totalUnits = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancelThread = id; clearLog = id; printServerLog = id; refreshAction = id; }; 
+            CLASS = LogManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fileField = NSTextField; 
+                ftpTable = NSTableView; 
+                graphMonthPop = NSPopUpButton; 
+                graphYearPop = NSPopUpButton; 
+                ipField = NSTextField; 
+                logTab = NSTabView; 
+                logTable = NSTableView; 
+                progressField = NSTextField; 
+                progressWheel = NSProgressIndicator; 
+                serverLogTV = NSTextView; 
+                userSplitview = NSSplitView; 
+                usersTable = NSTableView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = NSXOutlineView; LANGUAGE = ObjC; SUPERCLASS = NSOutlineView; }, 
+        {
+            CLASS = NSXTimeControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; stepper = NSStepper; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {
+                checkForNewVersion = id; 
+                chooseDir = id; 
+                gotoPayPal = id; 
+                gotoPayPalWithAmount = id; 
+                launchAssistant = id; 
+                pdfHelp = id; 
+                selectAddAction = id; 
+                selectDeleteAction = id; 
+                selectSaveAction = id; 
+                showTab = id; 
+                splashAction = id; 
+                upgradeNow = id; 
+            }; 
+            CLASS = PureController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                changeLog = NSTextView; 
+                chooseVHostDirButton = NSButton; 
+                creditsTextView = NSTextView; 
+                donationPanel = NSPanel; 
+                donationPopUp = NSPopUpButton; 
+                mainTabView = NSTabView; 
+                updatePanel = NSWindow; 
+                versionNumber = NSTextField; 
+                vhostDirField = NSTextField; 
+                vhostIPField = NSTextField; 
+                vhostNICPopUp = NSPopUpButton; 
+                vhostNameField = NSTextField; 
+                vhostTable = NSTableView; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {removeManager = id; showUninstaller = id; }; 
+            CLASS = RemoveController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                continueButton = NSButton; 
+                infoField = NSTextField; 
+                keepPreferences = NSButton; 
+                keepPureDB = NSButton; 
+                keepSSL = NSButton; 
+                progressWheel = NSProgressIndicator; 
+                tabView = NSTabView; 
+                textView = NSTextView; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                closeAllSessions = id; 
+                closeSession = id; 
+                controlServer = id; 
+                toggleAutoUpdate = id; 
+            }; 
+            CLASS = StatusController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                autoUpdateSwitch = NSButton; 
+                closeAllSessionsBtn = NSButton; 
+                closeOneSessionBtn = NSButton; 
+                controlServerBtn = NSButton; 
+                fileField = NSTextField; 
+                localHostField = NSTextField; 
+                localPortField = NSTextField; 
+                pidField = NSTextField; 
+                progress = NSProgressIndicator; 
+                resumeField = NSTextField; 
+                serverStatusField = NSTextField; 
+                sessionInfoField = NSTextField; 
+                sizeField = NSTextField; 
+                statusWV = WebView; 
+                "tc_bandwidth" = NSTableColumn; 
+                totalBWUsageField = NSTextField; 
+                userDetailTable = NSTableView; 
+                userTab = NSTabView; 
+                userTable = NSTableView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                adjustAccessToFolder = id; 
+                chooseDir = id; 
+                chrootAccess = id; 
+                removeBanner = id; 
+                removeVFolder = id; 
+                resetPassword = id; 
+                setAccessToFolder = id; 
+                setGroupID = id; 
+                setTimeValue = id; 
+                setUserID = id; 
+                toggleTimeRestrictions = id; 
+                userIPFilter = id; 
+            }; 
+            CLASS = UserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                accessPopUp = NSPopUpButton; 
+                allowClientField = NSTextField; 
+                allowClientRemoveButton = NSButton; 
+                allowClientTable = NSTableView; 
+                bannerTextView = NSTextView; 
+                chooseUserDirButton = NSButton; 
+                chrootSwitch = NSButton; 
+                denyClientField = NSTextField; 
+                denyClientRemoveButton = NSButton; 
+                denyClientTable = NSTableView; 
+                downBwField = NSTextField; 
+                downRatioField = NSTextField; 
+                fileQuotaField = NSTextField; 
+                fullNameField = NSTextField; 
+                groupPopUp = NSPopUpButton; 
+                homeDirField = NSTextField; 
+                loginField = NSTextField; 
+                maxSessionsField = NSTextField; 
+                navView = NSView; 
+                passwordField = NSSecureTextField; 
+                removeBannerBtn = NSButton; 
+                resetPwdButton = NSButton; 
+                sizeQuotaField = NSTextField; 
+                timeAccessField = NSTextField; 
+                timeAccessSwitch = NSButton; 
+                timeBeginControl = WBTimeControl; 
+                timeEndControl = WBTimeControl; 
+                upBwField = NSTextField; 
+                upRatioField = NSTextField; 
+                userDBPopUp = NSPopUpButton; 
+                userPopUp = NSPopUpButton; 
+                userTabView = NSTabView; 
+                userTable = NSTableView; 
+                vfolderAccessButton = NSButton; 
+                vfolderRemoveButton = NSButton; 
+                vfolderResultPanel = NSPanel; 
+                vfolderResultTextView = NSTextView; 
+                vfolderTable = NSTableView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkGID = id; checkUID = id; chooseDir = id; goClicked = id; }; 
+            CLASS = wizardController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                anonGroupPopUp = NSPopUpButton; 
+                anonHomeField = NSTextField; 
+                anonSkipSwitch = NSButton; 
+                anonUIDField = NSTextField; 
+                finalTextView = NSTextView; 
+                nextTabButton = NSButton; 
+                prevTabButton = NSButton; 
+                radioMatrix = NSMatrix; 
+                rdvField = NSTextField; 
+                rdvSwitch = NSButton; 
+                startupSwitch = NSButton; 
+                tabView = NSTabView; 
+                vhostBaseDirField = NSTextField; 
+                vuserBaseDirField = NSTextField; 
+                vuserGIDField = NSTextField; 
+                vuserGroupField = NSTextField; 
+                vuserLoginField = NSTextField; 
+                vuserUIDField = NSTextField; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

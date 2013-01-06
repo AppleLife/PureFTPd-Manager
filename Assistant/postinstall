@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# PureFTP Manager Post Install script
+
+# What does it do ?
+# It prepares your system for pure-ftpd. This script will 
+# create the necessary user accounts and groups so pure-ftpd
+# can be run efficiently.
+# 
+# Anonymous access
+# In order to activate anonymous access, a ftp account must be present
+# on your system.
+# Informations :
+
+
+niutil -create / /users/ftp
+niutil -createprop / /users/ftp expire 0
+niutil -createprop / /users/ftp realname "Anonymous FTP user"
+niutil -createprop / /users/ftp name ftp
+niutil -createprop / /users/ftp passwd '*'
+niutil -createprop / /users/ftp change 0
+niutil -createprop / /users/ftp home /Users/ftp/anonymous
+niutil -createprop / /users/ftp uid 499 # hope it is not taken already
+niutil -createprop / /users/ftp gid 99 # unknown
+niutil -createprop / /users/ftp /dev/null
+
+# Create anonymous home dir
+mkdir -p /Users/ftp/anonymous
+# set up rights
+chown ftp.unknown /Users/ftp/anonymous
+chmod 744 /Users/ftp/anonymous
+
+echo "Anonymous user set up"
+echo "Account name: ftp"
+echo "UID : 499"
+echo "GID : 99 (unknown)"
+echo "shell : /dev/null"
+echo "Home : /Users/ftp/anonymous"
+
+# Let's assign a system account for our Virtual users
+niutil -create / /users/ftpvirtual
+niutil -createprop / /users/ftpvirtual expire 0
+niutil -createprop / /users/ftpvirtual realname "Virtual users account"
+niutil -createprop / /users/ftpvirtual name ftpvirtual
+niutil -createprop / /users/ftpvirtual passwd '*'
+niutil -createprop / /users/ftpvirtual change 0
+niutil -createprop / /users/ftpvirtual home /dev/null
+niutil -createprop / /users/ftpvirtual uid 82
+niutil -createprop / /users/ftpvirtual gid 82
+niutil -createprop / /users/ftpvirtual shell /etc/pure-ftpd
+
+echo "System account for Virtual users created !"
+echo "Account name: ftpvirtual"
+echo "UID : 82"
+echo "GID : 82 (ftpgroup)"
+echo "shell : /dev/null"
+echo "Home : /etc/pure-ftpd"
+
+
+# Finally we create our system group for our virtual users
+
+niutil -create / /groups/ftpgroup
+niutil -createprop / /groups/ftpgroup passwd '*'
+niutil -createprop / /groups/ftpgroup gid 82
+niutil -createprop / /groups/ftpgroup users ftpvirtual
+
+echo "FTP group for virtual user created !"
+echo "Name : ftpgroup"
+echo "GID : 82"
+echo "Members : ftpvirtual"
+
+# Now we just need to create a few default folders
+mkdir -p /Users/ftp/VirtualUsers
+chmod 744 /Users/ftp/VirtualUsers
+chown ftpvirtual.ftpgroup /Users/ftp/VirtualUsers
+
+mkdir -p /Users/ftp/VirtualHosts
+
+# Entry for the startup item
+echo "PUREFTPD=-NO-" >> /etc/hostconfig

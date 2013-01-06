@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AtStartup</key>
+	<true/>
+	<key>FtpGroup</key>
+	<string>nobody</string>
+	<key>FtpHome</key>
+	<string>/User/ftp/anonymous</string>
+	<key>FtpSkip</key>
+	<integer>0</integer>
+	<key>FtpUID</key>
+	<integer>499</integer>
+	<key>LogNiceToggle</key>
+	<true/>
+	<key>LogToggle</key>
+	<true/>
+	<key>LogUpdate</key>
+	<false/>
+	<key>VHHome</key>
+	<string>/Users/ftp/VirtualHosts</string>
+	<key>VUGID</key>
+	<integer>82</integer>
+	<key>VUGroupName</key>
+	<string>ftpgroup</string>
+	<key>VUHome</key>
+	<string>/Users/ftp/VirtualUsers</string>
+	<key>VULogin</key>
+	<string>ftpvirtual</string>
+	<key>VUUID</key>
+	<integer>82</integer>
+	<key>VUSkip</key>
+	<integer>0</integer>
+	<key>Zeroconf</key>
+	<true/>
+</dict>
+</plist>

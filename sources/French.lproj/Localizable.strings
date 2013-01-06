@@ -1,0 +1,98 @@
+"You have the latest version of PureFTPd Manager." = "Vous utilisez la dernière version de PureFTPd";
+"Delete Button" = "Effacer";
+"January" = "Janvier";
+"Save" = "Sauver";
+"You can't to create a new user !" = "Vous ne pouvez pas créer de nouvel utilisateur !";
+"Don't Save" = "Ne pas enregistrer";
+"New User" = "Nouvel Utilisateur";
+"No logging facility activated" = "Les journaux ne sont pas activés";
+"Stop Server" = "Arrêter le serveur";
+"Uninstall process completed" = "Désinstallation complète.";
+"August" = "Août";
+"New" = "Nouveau";
+"%@ already exists on your system, please specify another username." = "L'utilsateur %@ est déjà présent sur votre système. Veuillez choisir un autre nom.";
+"September" = "Septembre";
+"Server Logs" = "Journaux";
+"Incomplete User Information" = "Données utilisateur incomplètes";
+"February" = "Février";
+"pure-ftpd is running ..." = "pure-ftpd est démarré";
+"
+PureFTPd Manager has been removed from your system." = "
+PureFTPd Manager has been removed from your system.";
+"User Manager" = "Utilisateurs";
+"Close" = "Fermer";
+"New VHost" = "Nouveau VHost";
+"Continue" = "Continuer";
+"File: %@ removed." = "Fichier : %@ effacé";
+"PureFTPd Manager - User Manager" = "PureFTPd Manager - Gestionnaire d'utilisateurs";
+"Connection error" = "Erreur lors de la connexion";
+"July" = "Juillet";
+"Revert" = "Retourner";
+"pure-ftpd is not running !" = "pure-ftpd est arrêté !";
+"You need to enable logging on this server.
+Do you want to configure it now?" = "L'enregistrement de journaux doit êrte activé.
+Souhaitez-vous l'activer maintenant ?";
+"Mac OS X default FTP server has been restored
+" = "Le serveur FTP par défaut de Mac OS X a été réstauré.";
+"Start Server" = "Démarrer le serveur";
+"PureFTPd Manager - Server Logs" = "PureFTPd Manager - Journaux";
+"Refresh" = "Actualiser";
+"Uninstalling PureFTPd Manager..." = "Desinstallation de PureFTPd Manager en cours...";
+"December" = "Décembre";
+"Virtual Hosts" = "Hôtes Virtuels";
+"Would you like to apply these changes to PureFTPd ?" = "Souhaitez-vous appliquer ces changements à PureFTPd ?";
+"A new user account needs a login, a password and a home directory to be set before it can be saved.
+Please complete this user informations." = "Un compte utilisateur a besoin d'un nom; d'un mot de passe et d'un répertoire de base avant de pouvoir être sauver. 
+Merci de compléter ces informations.";
+"PureFTPd informations removed from your host configuration file." = "PureFTPd informations removed from your host configuration file.";
+"All Year" = "Année complète";
+"Preferences" = "Préférences";
+"Delete" = "Effacer";
+"PureFTPd General Informations" = "Informations générales sur PureFTPd";
+"PureFTPd Manager - Server Status" = "PureFTPd Manager - Statut du serveur";
+"Updating Users Statistics..." = "Mise a jour des statistiques...";
+"Virtual Hosts have been modified" = "La base d'hôtes virtuels à été modifiée";
+"Virtual Users have been modified" = "La base d'utilisateurs virtuels à été modifiée";
+"A new account creation is already in progress. Please complete it before adding another account." = "Une création d'utilisateur est déja en cours. Merci de l'achever avant d'en démarrer une nouvelle.";
+"April" = "Avril";
+"Duplicated Account !" = "Ce compte existe déja !";
+"New Button" = "Nouveau";
+"June" = "Juin";
+"OK" = "OK";
+"October" = "Octobre";
+"Yes" = "Oui";
+"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?" = "Cette action requiert l'arrêt de PureFTPd Manager. Etes-vous sûr de vouloir continuer ?";
+"Disabled" = "Inactive";
+"Do you want to start the Setup Assistant now ?" = "Souhaitez-vous exécuter l'Assitant de Configuration ? ";
+"November" = "Novembre";
+"PureFTPd Manager - Virtual Hosts" = "PureFTPd Manager - Hôtes virtuels";
+"Server Status" = "Statut";
+"PureFTPd Manager is up-to-date" = "PureFTPd Manager est à jour";
+"May" = "Mai";
+"Cancel" = "Annuler";
+"No" = "Non";
+"Enabled" = "Activée";
+"Stop" = "Arrêter";
+"Start" = "Démarrer	";
+"March" = "Mars";
+"Unable to connect to the upgrade server.
+Please check your internet link status and try again." = "Connexion au serveur de mise à jour impossible.
+Vérifiez votre lien Internet et veuillez réessayer.";
+"Connection error to MySQL" = "Erreur lors de la connexion à MySQL";
+"Please check that your MySQL server is running" = "Vérifiez que votre serveur MySQL est démarré.";
+
+"Authentication error" = "Erreur d'authentification";
+"You need to re-authenticate yourself to continue." = "Veuillez vous authentifier a nouveau pour continuer.";
+"Authenticate" = "S'authentifier";
+"Quit" = "Quitter";
+
+"permissions set to" = ": Les droits ont été modifiés - ";
+"Permissions did not need to be modified" = "Aucune modification nécessaire.";
+
+"You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time."=
+"Vous êtes sur le point de modifier le dossier %@ et de définir ses permissions afin qu'il soit disponible en mode %@ à votre utilisateur virtuel. Souhaitez-vous également modifier les permissions des fichiers et sous-dossiers présents dans ce dossier ?\n Cette action peut prendre du temps.";
+"read only"="lecture seule";
+"write only (Dropbox)"="Ecriture Seule (Boite de Dépot)";
+"read/write"="Lecture/Ecriture";
+"no access"="-inaccessible-";
+

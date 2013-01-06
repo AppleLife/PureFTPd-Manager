@@ -1,0 +1,218 @@
+/* -username- already exists on your system, please specify another username. */
+"%@ already exists on your system, please specify another username." = "%@ already exists on your system, please specify another username.";
+
+/* PureFTPd informations removed from your host configuration file. */
+"\nPureFTPd informations removed from your host configuration file." = "\nPureFTPd informations removed from your host configuration file.";
+
+/* PureFTPd Manager has been removed from your system. */
+"\nPureFTPd Manager has been removed from your system." = "\nPureFTPd Manager has been removed from your system.";
+
+/* A new account creation is already in progress. Please complete it before adding another account. */
+"A new account creation is already in progress. Please complete it before adding another account." = "A new account creation is already in progress. Please complete it before adding another account.";
+
+/* localized string */
+"A new user account needs a login, a password and a home directory to be set before it can be saved.\nPlease complete this user informations." = "A new user account needs a login, a password and a home directory to be set before it can be saved.\nPlease complete this user informations.";
+
+/* All Year */
+"All Year" = "All Year";
+
+/* month of April */
+"April" = "April";
+
+/* month of August */
+"August" = "August";
+
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* Close uninstaller */
+"Close" = "Close";
+
+/* Title of alert when there is a connection error during update process. */
+"Connection error" = "Connection error";
+
+/* Continue */
+"Continue" = "Continue";
+
+/* month of December */
+"December" = "December";
+
+/* Delete */
+"Delete" = "Delete";
+
+/* localized string */
+"Delete Button" = "Delete Button";
+
+/* Disabled */
+"Disabled" = "Disabled";
+
+/* Do you want to start the Setup Assistant now ? */
+"Do you want to start the Setup Assistant now ?" = "Do you want to start the Setup Assistant now ?";
+
+/* Don't Save */
+"Don't Save" = "Don't Save";
+
+/* Duplicated Account ! */
+"Duplicated Account !" = "Duplicated Account !";
+
+/* Enabled */
+"Enabled" = "Enabled";
+
+/* month of February */
+"February" = "February";
+
+/* File:/path/to/file removed. */
+"File: %@ removed." = "File: %@ removed.";
+
+/* localized string */
+"Incomplete User Information" = "Incomplete User Information";
+
+/* month of january */
+"January" = "January";
+
+/* month of July */
+"July" = "July";
+
+/* month of June */
+"June" = "June";
+
+/* Mac OS X default ftp server has been restored */
+"Mac OS X default FTP server has been restored\n" = "Mac OS X default FTP server has been restored\n";
+
+/* month of March */
+"March" = "March";
+
+/* month of May */
+"May" = "May";
+
+/* New */
+"New" = "New";
+
+/* localized string */
+"New Button" = "New Button";
+
+/* New User */
+"New User" = "New User";
+
+/* New VHost */
+"New VHost" = "New VHost";
+
+/* localized string */
+"No" = "No";
+
+/* No logging facility activated */
+"No logging facility activated" = "No logging facility activated";
+
+/* month of November */
+"November" = "November";
+
+/* month of November */
+"October" = "October";
+
+/* OK */
+"OK" = "OK";
+
+/* localized string */
+"Preferences" = "Preferences";
+
+/* pure-ftpd is not running ! */
+"pure-ftpd is not running !" = "pure-ftpd is not running !";
+
+/* pure-ftpd is running ... */
+"pure-ftpd is running ..." = "pure-ftpd is running ...";
+
+/* localized string */
+"PureFTPd Manager - Server Logs" = "PureFTPd Manager - Server Logs";
+
+/* localized string */
+"PureFTPd Manager - Server Status" = "PureFTPd Manager - Server Status";
+
+/* localized string */
+"PureFTPd Manager - User Manager" = "PureFTPd Manager - User Manager";
+
+/* localized string */
+"PureFTPd Manager - Virtual Hosts" = "PureFTPd Manager - Virtual Hosts";
+
+/* Title of alert when a the user's software is up to date. */
+"PureFTPd Manager is up-to-date" = "PureFTPd Manager is up-to-date";
+
+/* localized string */
+"PureFTPd\nGeneral Informations" = "PureFTPd\nGeneral Informations";
+
+/* localized string */
+"Refresh" = "Refresh";
+
+/* Revert */
+"Revert" = "Revert";
+
+/* Save */
+"Save" = "Save";
+
+/* month of September */
+"September" = "September";
+
+/* localized string */
+"Server Logs" = "Server Logs";
+
+/* localized string */
+"Server Status" = "Server Status";
+
+/* Start */
+"Start" = "Start";
+
+/* localized string */
+"Start Server" = "Start Server";
+
+/* Stop */
+"Stop" = "Stop";
+
+/* localized string */
+"Stop Server" = "Stop Server";
+
+/* Alert text when an error occur during upgrade. */
+"Unable to connect to the upgrade server.\nPlease check your internet link status and try again." = "Unable to connect to the upgrade server.\nPlease check your internet link status and try again.";
+
+/* PureFTPd Manager has been removed from your system. */
+"Uninstall process completed" = "Uninstall process completed";
+
+/* Uninstalling PureFTPd Manager... */
+"Uninstalling PureFTPd Manager..." = "Uninstalling PureFTPd Manager...";
+
+/* Updating users statistics */
+"Updating Users Statistics..." = "Updating Users Statistics...";
+
+/* localized string */
+"User Manager" = "User Manager";
+
+/* localized string */
+"Virtual Hosts" = "Virtual Hosts";
+
+/* localized string */
+"Virtual Hosts have been modified" = "Virtual Hosts have been modified";
+
+/* Virtual Users have been modified */
+"Virtual Users have been modified" = "Virtual Users have been modified";
+
+/* localized string */
+"Would you like to apply these changes to PureFTPd ?" = "Would you like to apply these changes to PureFTPd ?";
+
+/* localized string */
+"Yes" = "Yes";
+
+/* You can't to create a new user ! */
+"You can't to create a new user !" = "You can't to create a new user !";
+
+/* Alert text when the user's software is up to date. */
+"You have the latest version of PureFTPd Manager." = "You have the latest version of PureFTPd Manager.";
+
+/* You must quit PureFTPd Manager to continue. Are you sure you wan to do this ? */
+"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?" = "You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?";
+
+/* localized string */
+"You need to enable logging on this server.\nDo you want to configure it now?" = "You need to enable logging on this server.\nDo you want to configure it now?";
+
+"You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time."="You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time.";
+"read only"="read only";
+"write only (Dropbox)"="write only (Dropbox)";
+"read/write"="read/write";
+"no access"="no access";

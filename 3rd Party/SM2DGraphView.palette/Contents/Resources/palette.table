@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Name</key> <string>SM2DGraphView</string>
+
+	<key>Title</key> <string>SM2DGraphView</string>
+
+		<!-- a subclass of IBPalette -->
+	<key>Class</key> <string>SM2DGraphViewPalette</string>
+
+		<!-- a nib file name -->
+	<key>NibFile</key> <string>SM2DGraphViewPalette</string>
+
+		<!-- a tiff file name for icon used for palette -->
+	<key>Icon</key> <string>SM2DGraphView</string>
+
+		<!-- Tool Tips string for the palette icon -->
+	<key>ToolTips</key> <string>Line and bar graphs and pie charts</string>
+
+		<!-- a list of class names exported from palette to IB -->
+	<key>ExportClasses</key>
+	<array>
+		<string>SM2DGraphView</string>
+		<string>SMPieChartView</string>
+	</array>
+
+		<!-- Could have ExportImages key: a list of images names exported from palette to IB -->
+
+		<!-- Could have ExportSounds key: a list of images names exported from palette to IB -->
+
+</dict>
+</plist>

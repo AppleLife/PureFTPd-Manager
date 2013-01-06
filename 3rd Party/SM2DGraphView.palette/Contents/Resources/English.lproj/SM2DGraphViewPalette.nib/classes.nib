@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {refreshDisplay = id; }; 
+            CLASS = SM2DGraphView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dataSource = id; delegate = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = SM2DGraphViewPalette; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_sm_leftChart" = SMPieChartView; 
+                "_sm_leftGraph" = SM2DGraphView; 
+                "_sm_rightChart" = SMPieChartView; 
+                "_sm_rightGraph" = SM2DGraphView; 
+            }; 
+            SUPERCLASS = IBPalette; 
+        }, 
+        {
+            ACTIONS = {refreshDisplay = id; }; 
+            CLASS = SMPieChartView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dataSource = id; delegate = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

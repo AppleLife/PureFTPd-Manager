@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {checkUID = id; chooseDir = id; }; 
+            CLASS = AKAnonymousPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                anonGroupPopUp = NSPopUpButton; 
+                anonHomeField = NSTextField; 
+                anonSkipSwitch = NSButton; 
+                anonUIDField = NSTextField; 
+                "relativeRootView_" = NSView; 
+            }; 
+            SUPERCLASS = AKPaneController; 
+        }, 
+        {CLASS = AKPaneController; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

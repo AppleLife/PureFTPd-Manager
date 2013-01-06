@@ -1,0 +1,44 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                didModify = id; 
+                reloadBrowserData = id; 
+                removeBanner = id; 
+                removeVFolder = id; 
+            }; 
+            CLASS = AnonymousPane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                anonCreateDirSwitch = NSButton; 
+                anonDownBWField = NSTextField; 
+                anonDownRatioField = NSTextField; 
+                anonNoAccessSwitch = NSButton; 
+                anonNoDownSwitch = NSButton; 
+                anonNoUpSwitch = NSButton; 
+                anonUpBWField = NSTextField; 
+                anonUpRatioField = NSTextField; 
+                bannerTxtView = NSTextView; 
+                fileBrowser = NSBrowser; 
+                maxLoadField = NSTextField; 
+                removeBannerBtn = NSButton; 
+                vfolderRemoveButton = NSButton; 
+                vfolderTable = NSTableView; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

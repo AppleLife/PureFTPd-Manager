@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>ProcessEngine Name</key>
+	<string>ManagerProcessEngine</string>
+        <key>Assistant Logo Name</key>
+	<string>AppIcons</string>
+        <key>Privileges Needed</key>
+	<string>NO</string>
+</dict>
+</plist>

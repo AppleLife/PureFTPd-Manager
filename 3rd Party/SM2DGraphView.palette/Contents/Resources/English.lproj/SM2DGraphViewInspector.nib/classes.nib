@@ -1,0 +1,31 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = SM2DGraphViewInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                _sm_RightYAxis_Label = NSTextField; 
+                _sm_RightYAxis_MajorTicks = NSTextField; 
+                _sm_RightYAxis_MinorTicks = NSTextField; 
+                _sm_RightYAxis_TickPosition = NSMatrix; 
+                _sm_XAxis_DrawsLineAtZero = NSButton; 
+                _sm_XAxis_Label = NSTextField; 
+                _sm_XAxis_MajorTicks = NSTextField; 
+                _sm_XAxis_MinorTicks = NSTextField; 
+                _sm_XAxis_TickPosition = NSMatrix; 
+                _sm_YAxis_DrawsLineAtZero = NSButton; 
+                _sm_YAxis_Label = NSTextField; 
+                _sm_YAxis_MajorTicks = NSTextField; 
+                _sm_YAxis_MinorTicks = NSTextField; 
+                _sm_YAxis_TickPosition = NSMatrix; 
+                _sm_backgroundColor = NSColorWell; 
+                _sm_gridColor = NSColorWell; 
+                _sm_showGrid = NSButton; 
+                _sm_tag = NSTextField; 
+            }; 
+            SUPERCLASS = IBInspector; 
+        }
+    ); 
+    IBVersion = 1; 
+}

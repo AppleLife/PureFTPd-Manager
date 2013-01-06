@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {didModify = id; }; 
+            CLASS = ServerPane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fxpPopUpButton = NSPopUpButton; 
+                maxSessionsField = NSTextField; 
+                maxUsersField = NSTextField; 
+                passiveRangeFromField = NSTextField; 
+                passiveRangeToField = NSTextField; 
+                portField = NSTextField; 
+                timeoutField = NSTextField; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }
+    ); 
+    IBVersion = 1; 
+}

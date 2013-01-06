@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = SMPieChartViewInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_sm_backgroundColor" = NSColorWell; 
+                "_sm_borderColor" = NSColorWell; 
+                "_sm_explodeDistance" = NSTextField; 
+                "_sm_labelPosition" = NSPopUpButton; 
+                "_sm_tag" = NSTextField; 
+                "_sm_title" = NSTextField; 
+                "_sm_titlePosition" = NSMatrix; 
+            }; 
+            SUPERCLASS = IBInspector; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,16 @@
+(
+	{
+		identifier = personal; 
+		panes = (
+			WiFax.GeneralPrefPane
+		); 
+	}, 
+	{
+		identifier = system; 
+		panes = (
+			WiFax.ModemPrefPane,
+			WiFax.FlowControlPrefPane,
+			WiFax.LogPrefPane
+                        ); 
+	}
+)

@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {CLASS = AKPaneController; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {checkGID = id; checkUID = id; }; 
+            CLASS = AKVUPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                infoPanel = NSPanel; 
+                "relativeRootView_" = NSView; 
+                vuserGIDField = NSTextField; 
+                vuserGroupField = NSTextField; 
+                vuserLoginField = NSTextField; 
+                vuserSkipSwitch = NSButton; 
+                vuserUIDField = NSTextField; 
+            }; 
+            SUPERCLASS = AKPaneController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

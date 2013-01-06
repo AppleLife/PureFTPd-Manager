@@ -1,0 +1,21 @@
+{
+    IBClasses = (
+        {CLASS = AKPaneController; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {chooseDir = id; }; 
+            CLASS = AKSystemPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                pamSwitch = NSButton; 
+                rdvSwitch = NSButton; 
+                "relativeRootView_" = NSView; 
+                startupSwitch = NSButton; 
+                vhostBaseDirField = NSTextField; 
+                vuserBaseDirField = NSTextField; 
+            }; 
+            SUPERCLASS = AKPaneController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {removeManager = id; showUninstaller = id; }; 
+            CLASS = RemoveController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                continueButton = NSButton; 
+                infoField = NSTextField; 
+                keepPreferences = NSButton; 
+                keepPureDB = NSButton; 
+                keepSSL = NSButton; 
+                progressWheel = NSProgressIndicator; 
+                tabView = NSTabView; 
+                textView = NSTextView; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

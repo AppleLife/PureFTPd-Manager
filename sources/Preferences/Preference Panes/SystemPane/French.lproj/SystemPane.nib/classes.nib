@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {chooseDir = id; didModify = id; toggleStartup = id; }; 
+            CLASS = SystemPane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                managerUpdateSwitch = NSButton; 
+                rdvField = NSTextField; 
+                rdvSwitch = NSButton; 
+                serverModePopUp = NSPopUpButton; 
+                startupSwitch = NSButton; 
+                userBaseDirField = NSTextField; 
+                vhostBaseDirField = NSTextField; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }
+    ); 
+    IBVersion = 1; 
+}

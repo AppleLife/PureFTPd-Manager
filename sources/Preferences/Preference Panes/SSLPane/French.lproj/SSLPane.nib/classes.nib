@@ -1,0 +1,62 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                closeView = id; 
+                didModify = id; 
+                importCert = id; 
+                removeCert = id; 
+                showTLS = id; 
+                startCert = id; 
+                viewCert = id; 
+            }; 
+            CLASS = SSLPane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                certTextView = NSTextView; 
+                certWindow = NSWindow; 
+                createBtn = NSButton; 
+                newCertWindow = NSWindow; 
+                removeBtn = NSButton; 
+                sslField = NSTextField; 
+                tlsPopUp = NSPopUpButton; 
+                viewBtn = NSButton; 
+                viewCertWindow = NSWindow; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }, 
+        {
+            ACTIONS = {closeWindow = id; generateCert = id; }; 
+            CLASS = SSLWrapper; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aWindow = NSWindow; 
+                bitsPopup = NSPopUpButton; 
+                country = NSFormCell; 
+                day = NSFormCell; 
+                email = NSFormCell; 
+                generateBtn = NSButton; 
+                locality = NSFormCell; 
+                name = NSFormCell; 
+                organization = NSFormCell; 
+                state = NSFormCell; 
+                unit = NSFormCell; 
+                wheel = NSProgressIndicator; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

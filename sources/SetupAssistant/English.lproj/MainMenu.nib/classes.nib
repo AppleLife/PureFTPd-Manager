@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = AKBox; LANGUAGE = ObjC; SUPERCLASS = NSBox; }, 
+        {CLASS = AKListView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {finishSetUp = id; nextSlide = id; previousSlide = id; }; 
+            CLASS = AKMainController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "IBbox_" = id; 
+                "IBlist_" = id; 
+                "IBlogo_" = id; 
+                "IBnextSlide_" = id; 
+                "IBpaneTitle_" = id; 
+                "IBpreviousSlide_" = id; 
+                "IBwindow_" = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            CLASS = AKPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mainController_ = id; relativeRootView_ = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {configure = id; }; 
+            CLASS = AKStopPaneController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {IBmessage_ = id; }; 
+            SUPERCLASS = AKPaneController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

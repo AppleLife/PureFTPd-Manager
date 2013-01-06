@@ -1,0 +1,26 @@
+(
+	{
+		identifier = Server; 
+		panes = (
+			pureftpd.ServerPane,
+                        pureftpd.ServerOptionsPane,
+			pureftpd.FTPLogPane
+                );
+        },
+        {        
+                identifier = User; 
+		panes = (
+                        pureftpd.AuthentificationPane,
+                        pureftpd.AnonymousPane,
+			pureftpd.SSLPane
+		); 
+        },
+        {        
+                identifier = System; 
+		panes = (
+                        pureftpd.SystemPane,
+			pureftpd.DirAliasesPane,
+                        pureftpd.PermissionPane
+		); 
+	}
+)
