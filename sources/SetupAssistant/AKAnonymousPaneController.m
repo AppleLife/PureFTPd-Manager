@@ -60,7 +60,7 @@
     else if (![inEngine uniqUser:@"ftp"] && ([inEngine checkUID:[anonUIDField intValue] forUser:@"ftp"]))
     {
         NSRunAlertPanel(NSLocalizedString(@"Anonymous account already present.",@"Login screen name exists"),
-                        NSLocalizedString(@"Anonymous account setup will be skipped",@"Anonymous account setup will be skipped"),
+                        NSLocalizedString(@"The specified settings match an existing user on your computer (maybe it was already set up). It will be used to enable anonymous user access to you ftp server.",@"Anonymous account setup will be skipped"),
                         NSLocalizedString(@"OK",@"OK"),
                         @"",nil);
         
@@ -92,6 +92,8 @@
 - (IBAction)chooseDir:(id)sender
 {
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];

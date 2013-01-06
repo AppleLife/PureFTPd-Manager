@@ -138,4 +138,6 @@
 
 - (NSString *)activeUser;
 
+- (void)registerHelp;
+
 @end

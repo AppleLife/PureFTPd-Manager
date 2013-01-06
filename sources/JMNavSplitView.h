@@ -15,7 +15,7 @@
 @interface JMNavSplitView : NSView {
     NSBrowserView *fileBrowserView;
     JMSidebarView *sidebarView;
-    NSNavSplitView *splitview;
+    NSSplitView *splitview;
 }
 
 - (NSBrowser *)fileBrowser;

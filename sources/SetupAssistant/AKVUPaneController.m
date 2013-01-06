@@ -60,7 +60,10 @@
            ([inEngine checkGID:[vuserGIDField intValue] forGroup:[vuserGroupField stringValue]])  ) 
       {
           int ret = 0;
-          ret = NSRunInformationalAlertPanel(NSLocalizedString(@"System accounts for virtual users match.", @"System accounts for virtual users match."), NSLocalizedString(@"You may skip this step or reconfigure it, specifying new names and id numbers.", @"You may skip this step or reconfigure it, specifying new names and id numbers."), NSLocalizedString(@"Skip", @"Skip"), NSLocalizedString(@"Configure", @"Configure"), nil);
+          ret = NSRunInformationalAlertPanel(NSLocalizedString(@"System accounts for virtual users match.", @"System accounts for virtual users match."), 
+		  NSLocalizedString(@"The specified settings match an existing user and group on your computer (maybe they were already set up). You may safely continue or reconfigure the values, specifying different names and id numbers.", 
+		  @"You may skip this step or reconfigure it, specifying new names and id numbers."), 
+		  NSLocalizedString(@"Continue", @"Continue"), NSLocalizedString(@"Reconfigure", @"Reconfigure"), nil);
           
           switch (ret){
               case NSAlertDefaultReturn:
@@ -80,7 +83,7 @@
           }
       }
       NSRunAlertPanel(NSLocalizedString(@"Virtual User system misconfigured.",@"Virtual User system misconfigured."),
-                      NSLocalizedString(@"One or more of your settings is already defined and doesn't match with your system setup.",@"One or more of your settings is already defined and doesn't match with your system setup."),
+                      NSLocalizedString(@"One or more of your settings is already defined and doesn't match your system setup. Please adjust your settings.",@"One or more of your settings is already defined and doesn't match with your system setup."),
                       NSLocalizedString(@"OK",@"OK"),
                       @"",nil);
       return NO;

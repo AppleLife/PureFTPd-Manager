@@ -1,0 +1,69 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+    <pre>
+
+
+   ------------------------ MACOS X SPECIFIC NOTES ------------------------
+
+
+  To get Pure-FTPd authenticate against system users on MacOS X (at least
+since version 10.3) you need to use PAM.
+       
+$ ./configure --with-pam &lt;your other favorite options like --with-everything&gt;
+$ make install-strip
+
+  Create a /etc/xinetd.d/ftp file similar to this one:
+ 
+service ftp
+{
+  disable = no
+  socket_type = stream
+  wait = no
+  user = root
+  server = /usr/local/sbin/pure-ftpd
+  server_args = -A -E -lpam
+  groups = yes
+  flags = REUSE
+}
+ 
+  Create a /etc/pam.d/pure-ftpd file:
+ 
+# pure-ftpd: auth account password session
+auth required pam_nologin.so
+auth sufficient pam_securityserver.so
+auth sufficient pam_unix.so
+auth required pam_deny.so
+account required pam_permit.so
+password required pam_deny.so
+session required pam_uwtmp.so
+ 
+  Restart xinetd:
+ 
+$ kill -HUP $(cat /var/run/xinetd.pid)
+ 
+
+  To take advantage of Bonjour, please add --with-bonjour to ./configure
+switches and give the server a Bonjour service name with the -v (--bonjour=)
+switch.
+
+    -Frank DENIS "Jedi/Sector One" &lt;j@pureftpd.org&gt;.
+
+    </pre>
+    
+    </body>
+</html>

@@ -216,3 +216,17 @@
 "write only (Dropbox)"="write only (Dropbox)";
 "read/write"="read/write";
 "no access"="no access";
+
+/* Your virtual user home directory (/home/dir) and its parent directory (/home) belong to the same system user.\n To fix the parent folder ownership to root, click Fix & Continue.*/
+
+"Your virtual user home directory (%@) and its parent directory (%@) belong to the same system user.\n To fix the parent folder ownership to root:wheel, click Fix & Continue."="Your virtual user home directory (%@) and its parent directory (%@) belong to the same system user.\n To fix the parent folder ownership to root:wheel, click Fix & Continue." ;
+
+/* Fix & Continue*/
+"Fix & Continue"="Fix & Continue";
+
+/* Cancel */
+"Cancel"="Cancel";
+
+"PureFTPd Preferences have been modified"="PureFTPd Preferences have been modified";
+
+"Would you like to restart PureFTPd daemon now?" = "Would you like to restart PureFTPd daemon now?";

@@ -1,0 +1,63 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+    <pre>
+
+*** IF YOU ARE RUNNING A RECENT LINUX KERNEL (2.4.3ac14, 2.4.4 and ***
+*** later) FOR FIREWALL/MASQUERADING , YOU DON'T NEED TO READ THIS ***
+*** DOCUMENT. ALSO, BSD SYSTEMS RUNNING IPFILTER AREN'T CONCERNED. ***
+
+
+  Linux kernel 2.4 has a nice built-in NAT/firewalling code called
+Netfilter. This new code supports connection tracking ('stateful firewall')
+and is easily extensible.
+
+  But the FTP protocol itself has always been a nightmare for firewalls
+designers. Because the protocol isn't complex, but... well... strange! So
+that it requires a special handler (especially for the 'passive mode') .
+
+  Linux kernel earlier than 2.4.4 (or 2.4.3ac14) have a partial support of
+the FTP protocol. 
+
+  If you are trying to firewall or masquerade a Pure-FTPd server, passive
+connections won't work with some modern clients like lftp. Commands like
+'ls' will freeze your client and finally close the connection.
+
+  This is *NOT* a bug in Pure-FTPd, but a problem in Netfilter. Old versions
+of Netfilter only know a very limited subset of the FTP protocol. They don't
+know about EPSV and EPRT commands, implemented in modern FTP clients and
+servers. These commands superscede PASV and PORT and are IPv6 capable.
+
+  Pure-FTPd is not the only server that doesn't work with older Netfilter
+code. *ALL* recent BSD servers (current OpenBSD, FreeBSD, NetBSD) are also
+affected. Of course you have to use a EPSV/EPRT aware client to trigger the
+bug. SuSE Linux comes with NetBSD 'ftp' client that supports these commands.
+
+  Also, old linux kernels have a serious security flaw in their FTP
+connection tracking code. Basically, an external user can open any filtered
+port if the FTP connection tracking code is enabled.
+
+  So, if you are using Linux firewalls/masquerading boxes, please upgrade
+their kernel as soon as possible, to the latest 2.4 release. Even 2.4.4
+kernels are rather old and they also have known bugs and vulnerabilities.
+  It's why upgrading is definitely something to do. And EPSV/EPRT will work.
+
+    -Frank DENIS "Jedi/Sector One" &lt;j@pureftpd.org&gt;.
+    </pre>
+    
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../manager.html" class="bread">PureFTPd Manager</a> > User Manager</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3><IMG SRC="../../gfx/users.png" valign=middle border=0 hspace=13>PureFTPd Manager - User Manager</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    Virtual users is a simple mechanism to store a list of users, with their
+    password, name, uid, directory, etc. It's just like Netinfo database. But 
+    it's not. It's a different file, only for FTP.
+    <br><br>
+    It means that you can easily create FTP-only accounts without messing up
+    your system accounts.
+    <br>
+    Additionnaly, virtual users files can store individual quotas, ratios,
+    bandwidth, etc. System accounts can't do this.
+    <br>
+    Thousands of virtual users can share the same system user, as long as they
+    all have their own home directory and are restricted to it.<br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>1. User Manager - General Settings</b></font>
+    <br><br>
+    <div align=center>
+    <img src="../../img/umgeneral.png" WIDTH="480" alt="PureFTPd Manager - Virtual Users">
+    </div>
+    <br><br>
+    <ul>
+    1. You friend or customer full name.<br><br>
+    2. The login used by your friend or customer to authenticate to your server.<br>
+    3. A password for this user. Click the <i>Reset Password</i> to change it.<br>
+    4. User's home directory: where your user is located on your disk upon sucessful authentication.<br>
+    2, 3, and 4 are <b>mandatory informations.</b> 
+    <br><br>
+    5. A switch to restrict a user to it's home directory. It is generally a good thing for security to tick it. That way, when a new user logs in it will be brought to the home directory you specified above and will not be able to access any parent folder nor browse any other part of your hard drive.<br>
+    If a user's of yours requires access to other part of your system, read the <i>Virtual Folders</i> information below.<br><br>
+    6. Apply time restriction to specify a user can log in only at a particular time of the day.<br><br>
+    7. User and Group defines to which real system account a virtual user i mapped to. Defaults settings are the one you set in PureFTPd Manager <a href=../assistant.html>Setup Assistant</a> and should be fine in most case.<br>Be extremely carefull when changing these settings and and not restricting a user to its home directory or if you are using virtual folders. You may grant permissions to a virtual user to modify or delete files outside its home directory.<br><br>
+    8. In this pop up, you will find the different bases you can use to store virtual users. Pure-ftpd currently supports PureDB, LDAP, MySQL and PostgreSQL to store its virtual users. PureFTPd Manager lets you create virtual user using PureDB or MySQL only. To use PostgreSQL or LDAP as a virtual users directory, you need to configure it manually. Please see the <a href=../../adv/man.html>man pages</a> for more information.<br><b>Most user only need PureDB.</b><br>
+    </ul>
+    </font>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>2. Virtual Folders</b>
+    <br><br>
+    Virtual folders provide shortcuts to a user outside its home directory. In most scenarii, your users will be restricted to their home directories. This features lets you specify for a particular user a set of location it can access additionaly.  
+    <br><br>
+    <div align=center>
+    <img src="../../img/umvfolders.png" WIDTH="480" alt="PureFTPd Manager - Virtual Users">
+    </div>
+    <br><br>
+    <ul>
+    1. Your hard drive.<br>
+    2. List of user's virtual folders.<br>
+    3. Permissions a user has inside the virtual folders.<br>Default settings is most likely going to be <i>Read Only</i> in most cases, that way a user can access more information but is not allowed to modify it.<br>Another scenario would be to specify <i>Write Only</i> in order to create a dropbox like the one located in your <i>Public</i> folder.<br> This pop-up modifies permissions granted to Others on the destination folder. Please be extremely careful when using it as you may potencially open your system to the rest of the world in read write mode in a single click !
+    </ul>
+    </font>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>3. File Transfer Settings</b>
+    <br><br>
+    As we said before, Virtual Users are cooler than system users because we can set more restrictions on them very easily. The following sccreenshot details the different restriction you can set to a user.
+    <br><br>
+    <div align=center>
+    <img src="../../img/umtransfer.png" WIDTH="480" alt="PureFTPd Manager - Virtual Users">
+    </div>
+    <br><br>
+    <ul>
+    1. Allows a maximum of 5 simultaneous connections.<br>
+    2. Set transfer ratio so that a user must upload 1 file...<br>
+    3. ... in order to be allowed to download 10.<br>
+    4. Adjust the bandwidth usage to suits your criteria. Here's the upload speed limit is set to 50KB/s...<br>
+    5. ... and the download speed limit as well.<br>
+    6. Apply quotas to your user: marie cannot store more than 42000 files on my server... <br>
+    7. ... for a total size that cannot exceed 1.5GB<br>
+    </ul>
+    </font>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>4. Banner and IP rules</b>
+    <br><br>
+    <div align=center>
+    <img src="../../img/umother.png" WIDTH="480" alt="PureFTPd Manager - Virtual Users">
+    </div>
+    <br><br>
+    <ul>
+    1. Set a customized welcome message per user.<br>
+    2. Allow connection only for IPs listed in the table.<br>
+    3. Deny connection from all IPs listed in the table.<br>
+    </ul>
+    </font>
+    <br><br>
+    <h3>Read more ...</h3><br>
+    <table border=0 width=480 align=center>
+    <tr>
+    <td width=160 align=center>
+    <a href="status.html"><IMG SRC="../../gfx/status.png" valign=middle border=0></a>
+    <a href="status.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Server Status</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="logs.html"><IMG SRC="../../gfx/logging.png" valign=middle border=0></a>
+    <a href="logs.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Server Logs</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="vhosts.html"><IMG SRC="../../gfx/vhosts.png" valign=middle border=0></a>
+    <a href="vhosts.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Virtual Hosts</font></a>
+    </td>
+    </tr>
+    
+    </table>
+    <br><br>
+    
+    </td></tr>
+    </table>
+    </body>
+</html>

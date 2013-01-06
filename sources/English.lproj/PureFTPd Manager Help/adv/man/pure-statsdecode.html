@@ -1,0 +1,65 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+    <H2>NAME</H2><PRE>
+    pure-statsdecode - Show human-readable dates from a "stats" logfile.     
+
+</PRE>
+    <H2>SYNTAX</H2><PRE>
+       pure-statsdecode <I>filename</I>
+       pure-statsdecode <I>-</I>
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       This  program  decodes Pure-FTPd's "stats" log files and converts time-
+       stamps into human-readable dates.
+
+
+
+</PRE>
+<H2>OPTIONS</H2><PRE>
+       <B>-</B>      means to read the standard input.
+
+       <B>filename</B>
+              is a log file produced with pure-ftpd -O  ftpstats:/path/to/log-
+              file
+
+
+</PRE>
+<H2>EXAMPLES</H2><PRE>
+       To run this program the standard way type:
+
+       pure-statsdecode /var/log/pureftpd.log &gt; /tmp/pureftpd.humanlog
+
+       Alternativly you can run it as:
+
+       cat   /var/log/pureftpd.log  |  pure-statsdecode  -  |  gzip  --best  &gt;
+       /tmp/pureftpd.humanlog.gz
+
+
+
+</PRE>
+<H2>AUTHORS</H2><PRE>
+       Frank DENIS &lt;j@pureftpd.org&gt;
+
+
+
+</PRE>
+
+    </body>
+</html>

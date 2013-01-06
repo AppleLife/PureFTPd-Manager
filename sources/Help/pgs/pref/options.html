@@ -1,0 +1,55 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../preferences.html" class="bread">Preferences</a> > Options</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager - Options</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br><br>
+    <div align=center>
+    <MAP NAME="preferences">
+    <AREA SHAPE="rect" COORDS="5,24,63,79" HREF="../preferences.html">
+    <AREA SHAPE="default" COORDS="0,0,553,308" NOHREF></MAP>
+    <img src="../../img/pref/2.png" alt="PureFTPd Manager Preferences" USEMAP="#preferences" BORDER="0">
+    <br><br>
+    </div>
+     <ul>
+     1. If checked, don't resolve host names and only show IP addresses (faster)<br><br>
+     2. Force ACTIVE mode.<br>If your FTP server is behind a NAT box that doesn't support 
+     applicative FTP proxying, or if you use port redirection without a transparent FTP proxy, use this. 
+     Well... the previous sentence isn't very clear. Okay: if your network looks like this:
+     <pre>(FTP server)-------(NAT/masquerading gateway/router)------(Internet)</pre>
+    and if you want people coming from the internet to have access to your FTP server, please 
+    try without this option first. If Netscape clients can connect without any problem, your NAT gateway
+    rulez. If Netscape doesn't display directory listings, your NAT gateway sucks.<br><br>
+     3. Force the specified IP address in reply to a PASV/EPSV/SPSV command. If the server is behind a
+     masquerading (NAT) box that doesn't properly handle stateful FTP masquerading, put the ip address of that
+     box here. If you have a dynamic IP address, you can put the public host name of your gateway, that will be
+     resolved every time a new client will connect.<br><br>
+     4. Don't allow uploads if the partition is more than &lt;percentage&gt;% full. <br>
+        For instance, "95" will ensure your disks will never get filled more than 95% by FTP. No need for the
+        "percent" sign after the
+        number.<br><br>
+     5. Enable bandwidth limitation.<br>
+     6. Other arguments you want to pass to the server (see the <a href=../../adv/man.html>Manual Pages</a>)<br>
+     </ul>
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

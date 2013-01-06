@@ -1,0 +1,88 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+     <H2>NAME</H2><PRE>
+        pure-ftpwho - Report current FTP sessions.
+
+
+</PRE>
+   <H2>SYNTAX</H2><PRE>
+       pure-ftpwho [<I>-c</I>] [<I>-h</I>] [<I>-H</I>] [<I>-n</I>] [<I>-p</I>] [<I>-s</I>] [<I>-v</I>] [<I>-w</I>] [<I>-W</I>] [<I>-x</I>]
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       pure-ftpwho  shows  current Pure-FTPd client sessions.  Only the system
+       administrator may run this.  Output can be text  (default),  HTML,  XML
+       data  and  parser-optimized.   The  server  has  to  be  compiled  with
+       <B>--with-ftpwho</B> to support this command.
+
+
+</PRE>
+<H2>OPTIONS</H2><PRE>
+       <B>-c</B>     the program is called via a web server (CGI interface) .  Output
+              is  a  full HTML page with the initial content-type header. This
+              option is  automatically  enabled  if  an  environment  variable
+              called  GATEWAY_INTERFACE  is  found. This is the default if you
+              can the program from a CGI-enabled web  server  (Apache,  Roxen,
+              Caudium, WN, ...) .
+
+       <B>-h</B>     Output help information and exit.
+
+       <B>-H</B>     Don't resolve host names, and only show IP addresses (faster).
+
+       <B>-n</B>     A synonym for -H.
+
+       <B>-p</B>     Output Apple / GNUStep plist data.
+
+       <B>-s</B>     Output  only one line per client, with only numeric data, delim-
+              ited by a | character.  It's not very human-readable,  but  it's
+              designed for easy parsing by shell scripts (cut/sed) .
+
+       <B>-v</B>     Output  an  ASCII  table (just like the default mode), with more
+              info.  The verbose output includes the local IP, the local port,
+              the  total  size  of  transfered files and the current number of
+              transfered bytes.
+
+       <B>-w</B>     Output a complete HTML page (web mode).
+
+       <B>-W</B>     Output an HTML page with no header and no  footer.  This  is  an
+              embedded  mode,  suitable  for inline calls from CGI, SSI or PHP
+              scripts.
+
+       <B>-x</B>     Output well-formed XML data for post-processing.
+
+
+
+</PRE>
+<H2>FILES</H2><PRE>
+       <B>/var/run/pure-ftpd/</B> Scoreboard directory. Should always owned  by  root
+       and on a lockable filesystem.
+
+
+
+</PRE>
+<H2>ENVIRONMENT VARIABLES</H2><PRE>
+       <B>GATEWAY_INTERFACE</B>
+              If found, automatically run in CGI mode and output HTML data.
+
+Pure-FTPd team                      1.0.18                      <B>pure-ftpwho(8)</B>
+</PRE>
+
+    
+    </body>
+</html>

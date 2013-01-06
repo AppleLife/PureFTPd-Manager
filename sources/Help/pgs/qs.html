@@ -1,0 +1,96 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> Quickstart</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager Quickstart</h3>
+    <br>
+    <h3>1. Install PureFTPd Manager</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    Before you start PureFTPd Manager installation process, make sure Mac OS X default FTP server is not running. You can check this in the Sharing preference pane of your System Preferences.
+    
+    <br><br>
+    <div align=center>
+    <img src="../img/syspref.png" WIDTH="450" alt="Mac OS X Sharing Preference Panes with FTP Access Off.">
+    </div>
+    <br><br>
+    
+    Mount PureFTPd Manager Disk Image on your computer and click <i>PureFTPd Manager.mpkg</i> and complete the installation process.<br><br>
+    <font size=1>If the version of your Mac OS is older then 10.3 (ie: you are using Mac OS 10.2.8), please <i>Customize</i> your installation in order to install <i>pureftpd-jaguar.pkg</i>. If you are using Mac OS 10.3 or above, you do not need to customize the installation process.</font><br><br>
+    Once the installation process has been completed, you can start <i>PureFTPd Manager</i> from your Applications folder.<br>
+    </font>
+    <h3>2. Running PureFTPd Manager for the first time</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    PureFTPd Manager needs system administrator privileges in order to execute properly. When prompted, please authenticate with an administrator username and password.<br><br>
+    <div align=center>
+    <img src="../img/auth.png" WIDTH="350" alt="Mac OS X Authentication Prompt.">
+    </div>
+    <br><br> 
+    If this is the first time you start PureFTPd Manager on your computer, <i>PureFTPd Manager Setup Assistant</i> will help you defining the default system settings required to run pureftpd on your Mac.<br>
+    <b>Default settings</b> suggested by this assistant should be fine for most of you. So if you want to keep it simple, just click continue and go through all configuration step until the end.<br><br>
+    <div align=center>
+    <img src="../img/assistant/6end.png" WIDTH="480" alt="Last screen of PureFTPd Setup Assistant.">
+    </div>
+    <br><br>
+    Everything set up by this assistant can be modified later on by running the assistant again or through PureFTPd Manager Preferences.<br> 
+    To learn more about PureFTPd Manager Setup Assistant, click <a href="assistant.html">here</a>.<br>
+    </font>
+    </div>
+    <h3>3. Welcome to PureFTPd Manager</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    When PureFTPd Manager starts, it displays your FTP server status. To start your server, click the <i>Start</i> button at the bottom right of this window.<br><br>
+    <div align=center>
+    <img src="../img/status1.png" WIDTH="480" alt="PureFTPd Manager - Server Status">
+    </div>
+    <br><br>
+    Your FTP server is now running. Other people can access your FTP server at ftp://your_server_ip using <a href="pref/anon.html">anonymous</a> login, a user account on your machine, or using a FTP <a href="feat/vusers.html">virtual user</a> account.<br>
+    On the screenshot above, have a look at the connected users. <i>ftp</i> always refers to an anonymous connection, <i>jms</i> is a Mac OS X real Mac OS X user account (one you use to log into Mac OS X), and <i>flo</i> is a FTP virtual user account (a special account, only for FTP).
+    <br>
+    </font>
+    <h3>4. Add FTP-only user accounts</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    Right now, your FTP server is set up so that only a person that currently have a valid username and password on your computer can login to your system (except for anonymous connections). The next thing you probably want to do is create FTP-only user accounts in order to enable and control access to your files using dedicated user accounts.<br><br>
+    Go to the <i>User Manager</i> and click on the <i>New</i> button in the toolbar.<br><br>
+    <div align=center>
+    <img src="../img/umgeneral.png" WIDTH="480" alt="PureFTPd Manager - User Manager">
+    </div>
+    <br><br>
+    A <i>New User</i> will be added to the virtual users list and automatically selected. Specify a <i>login</i>, a <i>password</i>, and a <i>home directory</i> for this one. In the above example, I used <i>marie</i> as login, and <i>/Users/ftp/VirtualUsers/marie</i> for her home directory.<br>
+    Notice the <i>Restrict user access to his home directory</i> checkbox. When selected, a user logged into your server won't be able to browse your entire server's hard drive. You can always extend a user's access to specific parts of your computer using <i>Virtual Folders</i>. Please read the  <a href="feat/vusers.html">virtual users</a> help pages to learn more about that.<br><br>
+    The <i>User and Group</i> option lets you map a virtual user to a particular system user and group. You won't have to change this except for advanced setup. If unsure, always select the user and group created by <i>PureFTPd Manager Setup Assistant</i>: <b>ftpvirtual</b> and <b>ftpgroup</b>.
+    <br>
+    </font>
+    <br><br>
+    <h3>Your server is ready</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    You are now ready to serve files to the world. Your FTP server allows connection to your system for standards Mac OS X users, anonymous users and a special set of FTP-only virtual users.<br><br>
+    
+    <div align=right>
+    <i>Happy FTPin'</i>.
+    </div>
+    <br>
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

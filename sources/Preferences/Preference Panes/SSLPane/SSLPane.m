@@ -93,7 +93,7 @@
     NSNumber *update = [[NSNumber alloc] initWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
     
-    NSLog(@"Saving PureFTPD preferences - SSL Pane");
+    //NSLog(@"Saving PureFTPD preferences - SSL Pane");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
 
     [preferences release];
@@ -138,20 +138,14 @@
 - (IBAction)importCert:(id)sender
 {
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:NO];
     [oPanel setCanChooseFiles:YES];
     [oPanel setResolvesAliases:NO];
     NSString *activeUser = nil;
-    activeUser = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPActiveUser];
     
-    if (activeUser != nil) {
-        if ([activeUser isEqualToString:@""])
-	{
-            activeUser = @"root";
-	}
-    }
-    [oPanel beginSheetForDirectory:NSHomeDirectoryForUser(activeUser) file:nil types:nil 
+    [oPanel beginSheetForDirectory:@"/" file:nil types:nil 
 		    modalForWindow:certWindow
 		     modalDelegate: self
 		    didEndSelector: @selector(importDidEnd:returnCode:contextInfo:)

@@ -1,0 +1,119 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+   <H2>NAME</H2><PRE>
+    pure-uploadscript  - Automatically run an external program after a suc-
+       cessful upload.     
+
+</PRE>
+    <H2>SYNTAX</H2><PRE>
+       pure-uploadscript [<I>-p</I> &lt;<I>/path/to/pidfile</I>&gt;] [<I>-B</I>] [<I>-g</I> &lt;<I>gid</I>&gt;] [<I>-h</I>] <I>-r</I> &lt;<I>pro-</I>
+       <I>gram</I> <I>to</I> <I>run</I>&gt; [<I>-u</I> &lt;<I>uid</I>&gt;]
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       If  Pure-FTPd  is  compiled with <B>--with-uploadscript</B> (default in binary
+       distributions), and if the <B>-o</B> (or  <B>--uploadscript</B>)  is  passed  to  the
+       server,  a named pipe called <B>/var/run/pure-ftpd.upload.pipe</B> is created.
+       You    will    also     notice     an     important     file     called
+       <B>/var/run/pure-ftpd.upload.lock</B>, used for locking.
+       After a successful upload, the file name is written to the pipe.
+       <B>pure-uploadscript</B>  reads  this pipe to automatically run any program or
+       script to process the newly uploaded file.
+
+
+</PRE>
+<H2>OPTIONS</H2><PRE>
+       <B>-B</B>     Daemonize the process and fork it in background.
+
+       <B>-g</B> &lt;<I>gid</I>&gt;
+              Switch the group ID to &lt;<I>gid</I>&gt;.
+
+       <B>-h</B> or <B>--help</B>
+              Display available options.
+
+       <B>-r</B> &lt;<I>program</I> <I>to</I> <I>run</I>&gt;
+              Tell what program/script to run. It has to be <I>an</I> <I>absolute</I>  <I>file-</I>
+              <I>name</I>, the <B>PATH</B> environment variable is ignored.  The first argu-
+              ment of that program will be the  <I>unquoted</I>  name  of  the  newly
+              uploaded  file.   Environment variables aren't cleared. So don't
+              put sensitive data in them before calling  pure-uploadscript  if
+              you switch uid.
+
+       <B>-u</B> &lt;<I>uid</I>&gt;
+              Switch the user ID to &lt;<I>uid</I>&gt;.
+
+
+</PRE>
+<H2>ENVIRONMENT</H2><PRE>
+       When  the  upload script is run, the name of the newly uploaded file is
+       the first argument passed to the  script  (referenced  as  $1  by  most
+       shells)  .  Some  environment  variables are also filled by useful info
+       about  the  file.   <B>UPLOAD_SIZE</B>  The  size  of  the  file,  in   bytes.
+       <B>UPLOAD_PERMS</B>  The  permissions,  as  an  octal integer.  <B>UPLOAD_UID</B> The
+       numerical UID of the owner.  <B>UPLOAD_GID</B> The numerical GID of the owner.
+       <B>UPLOAD_USER</B>  The  login  of the owner.  <B>UPLOAD_GROUP</B> The group name the
+       files belongs to.  <B>UPLOAD_VUSER</B> The full user name, or the virtual user
+       name (127 chars max) .
+
+
+</PRE>
+<H2>FILES</H2><PRE>
+       <I>/var/run/pure-ftpd.upload.pipe</I>           <I>/var/run/pure-ftpd.upload.lock</I>
+       <I>/var/run/pure-uploadscript.pid</I>
+
+
+</PRE>
+<H2>SECURITY</H2><PRE>
+       <B>pure-ftpd</B> and <B>pure-uploadscript</B> are trying to limit  security  implica-
+       pipe.
+
+       -  Only  regular  files are processed, control characters are rejected,
+       and a header+footer avoid partial file names.
+
+       - Two external programs/scripts can't run at the same time. Uploads are
+       always processed sequentially, in chronological order. This is to avoid
+       denial-of-services  by  issuing  a lot of simultaneous STOR commands in
+       order to launch a fork bomb on the server. For this reason,  your  pro-
+       grams  shouldn't  take  a long time to complete (but they can run them-
+       selves in background) .
+
+
+       <B>EXAMPLES</B>
+
+       A sample script could be :
+
+       #! /bin/sh
+       echo  "$1  uploaded"  |  /usr/bin/mutt  -s  "New  upload : $1" \ ftpad-
+       min@dom.ai.n
+
+       Never forget to quote (<B>"variable"</B>) all  variables  in  all  your  shell
+       scripts to avoid security flaws.
+
+
+
+</PRE>
+<H2>AUTHORS</H2><PRE>
+       Frank DENIS &lt;j@pureftpd.org&gt;
+
+
+
+</PRE>
+
+    </body>
+</html>

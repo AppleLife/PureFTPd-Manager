@@ -1,0 +1,56 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../preferences.html" class="bread">Preferences</a> > Anonymous</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager - Anonymous</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br><br>
+    <div align=center>
+    <MAP NAME="preferences">
+    <AREA SHAPE="rect" COORDS="5,24,63,79" HREF="../preferences.html">
+    <AREA SHAPE="default" COORDS="0,0,553,235" NOHREF></MAP>
+    <img src="../../img/pref/5gen.png" alt="PureFTPd Manager Preferences" USEMAP="#preferences" BORDER="0">
+    <br><br>
+    </div>
+     <b>General Options</b><br>
+     <ul>
+     1. Only allow authenticated users. Anonymous logins are prohibited.<br><br>
+     2. Disallow upload for anonymous users, whatever directory permissions
+are. This option is especially useful for virtual hosting, to avoid your
+users creating warez sites in their account.<br><br>
+     3. Allow anonymous users to create directories<br><br>
+     4. Don't allow anonymous users to download files owned by "ftp" (generally, files uploaded by other anonymous users). So that uploads have to be validated by a system administrator (chown to another user) before being available for download.<br><br>
+     5. Don't allow anonymous download if the load is above &lt;cpu
+load&gt; . A very efficient way to prevent overloading your server. Upload is
+still allowed, though.<br><br>
+     6. Enable ratios for anonymous users.<br><br>
+     7. Enable speed limit for anonymous users. <br><br>
+     8. Use this to change the base directory of your anonymous connection.<br>
+     An <i>incoming</i> folder will be automatically created in this directory to enable anonymous upload to your FTP server.<br>If you create virtual folders for anonymous users, you will have to create them again.<br><br>
+     </ul>
+     <br>
+     <b>Virtual Folders and Banner</b><br>
+     As for virtual users, you can specify virtual folders for anonymous users.
+     Please see the <a href=../feat/vusers.html>User Manager</a> to read more on this topic.<br>
+     You can also set a specific banner to welcome anonymous users to your server.
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

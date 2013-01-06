@@ -341,7 +341,7 @@
 -(BOOL)xinetdStatus
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:@"/etc/xinetd.d/ftp"]){
-        NSLog(@"Can't locate xinetd ftp file");
+        //NSLog(@"Can't locate xinetd ftp file");
         return NO;
     }
     NSString *xinetdFile = [NSString stringWithContentsOfFile:@"/etc/xinetd.d/ftp"];
@@ -351,7 +351,7 @@
     NSArray *onOff = [NSArray arrayWithArray:[[lines objectAtIndex:2] componentsSeparatedByString:@"="]];
     if ((onOff == nil) || ([onOff count] == 1))
     {
-        NSLog(@"Can't parse xinetd ftp file");
+        //NSLog(@"Can't parse xinetd ftp file");
         return NO;
     }
     
@@ -380,7 +380,7 @@
 
 -(BOOL)launchdStatus
 {
-	NSPipe *stdOut = [NSPipe pipe];
+	/*NSPipe *stdOut = [NSPipe pipe];
 	NSFileHandle *handle;
 	
 	NSTask *launchctl = [[NSTask alloc] init];
@@ -403,7 +403,15 @@
 		isRunning = YES;
 	}
 	
+	[string release];
 	[launchctl release];
+	*/
+	
+	BOOL isRunning = NO;
+	
+	NSDictionary *launchdconfig = [NSDictionary dictionaryWithContentsOfFile:@"/System/Library/LaunchDaemons/ftp.plist"];
+	if ([launchdconfig objectForKey:@"Disabled"] == nil || [[launchdconfig objectForKey:@"Disabled"] boolValue] == NO)
+		isRunning = YES;
 	
 	return isRunning;
 }
@@ -456,6 +464,7 @@
 			NSMutableDictionary *launchDaemon = [NSMutableDictionary dictionaryWithContentsOfFile:@"/System/Library/LaunchDaemons/ftp.plist"];
 			[launchDaemon removeObjectForKey:@"Disabled"];
 			[launchDaemon setObject:@"org.pureftpd.macosx" forKey:@"Label"];
+			[args insertObject:PureFTPDCMD atIndex:0];
 			[launchDaemon setObject:PureFTPDCMD forKey:@"Program"];
 			[launchDaemon setObject:args forKey:@"ProgramArguments"];
 			[launchDaemon writeToFile:@"/System/Library/LaunchDaemons/ftp.plist" atomically:YES];
@@ -513,10 +522,13 @@
             [ifconfig release]; // alias created
         }
     }
+	
+	
     
 	[serverPreferences writeToFile:PureFTPPreferenceFile atomically:NO];
-    
-    [args release];
+    //[serverPreferences release];
+    [vhosts release];
+	[args release];
 }
 
 -(int) getXinetdPid 

@@ -73,6 +73,13 @@
 	NSString *quotasize = [NSString stringWithString:[userInfo objectAtIndex:12]];
 	
         login = [[NSString alloc] initWithString:[userInfo objectAtIndex:0]];
+		if ([[NSString stringWithFormat:@"%c", [login characterAtIndex:0]] isEqualToString:@"#"]){
+			[login release];
+			login = [[NSString alloc] initWithString:[[userInfo objectAtIndex:0] substringFromIndex:1]];
+			activated=NO;
+		} else {
+			activated=YES;
+		}
         pwd = [[NSString alloc] initWithString:[userInfo objectAtIndex:1]];
         uid = [[NSString alloc] initWithString:[userInfo objectAtIndex:2]];
         gid = [[NSString alloc] initWithString:[userInfo objectAtIndex:3]];
@@ -239,7 +246,7 @@ nax:
     NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:@"/etc/pure-ftpd/pure-ftpd.plist"];
     if ([[prefs objectForKey:OSVersion] intValue] >= 0x1030)
     {
-        // User is using Mac OS X 10.3.0
+        // User is using Mac OS X 10.3.0
         /* Blowfish */
         
         char salt[] = "$2a$07$0000000000000000000000";        
@@ -560,6 +567,15 @@ nax:
 -(void) setPwdModified:(BOOL)flag
 {
     pwdModified=flag;
+}
+
+- (BOOL)isActivated
+{
+	return activated;
+}
+- (void)setIsActivated:(BOOL)flag
+{
+	activated=flag;
 }
 
 @end

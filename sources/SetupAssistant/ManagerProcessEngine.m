@@ -355,7 +355,7 @@
 	} else { // 10.4
 		NSTask *pureFTPd = [[NSTask alloc] init]; //stop any active ftp
 		[pureFTPd setLaunchPath:@"/bin/launchctl"];
-		[pureFTPd setArguments:[NSArray arrayWithObjects:@"unload", @"-w" @"/System/Library/LaunchDaemons/ftp.plist",nil]];
+		[pureFTPd setArguments:[NSArray arrayWithObjects:@"unload", @"-w", @"/System/Library/LaunchDaemons/ftp.plist",nil]];
 		[pureFTPd launch];
 		[pureFTPd release];
 		
@@ -710,12 +710,12 @@
     else
     {
 		//if (MacVersion < 0x1040){
-			anonScript = [anonScript stringByAppendingFormat:@"niutil -create / /users/ftp \n niutil -createprop / /users/ftp expire 0 \n niutil -createprop / /users/ftp realname \"Anonymous FTP user\" \n niutil -createprop / /users/ftp name ftp \n niutil -createprop / /users/ftp passwd '*' \n niutil -createprop / /users/ftp change 0 \n niutil -createprop / /users/ftp home %@ \n niutil -createprop / /users/ftp uid %@ \n niutil -createprop / /users/ftp gid %@ \n niutil -createprop / /users/ftp shell /dev/null \n\n" , 
+			anonScript = [anonScript stringByAppendingFormat:@"niutil -create / /users/ftp \n niutil -createprop / /users/ftp expire 0 \n niutil -createprop / /users/ftp realname \"Anonymous FTP user\" \n niutil -createprop / /users/ftp name ftp \n niutil -createprop / /users/ftp passwd '*' \n niutil -createprop / /users/ftp change 0 \n niutil -createprop / /users/ftp home \"%@\" \n niutil -createprop / /users/ftp uid %@ \n niutil -createprop / /users/ftp gid %@ \n niutil -createprop / /users/ftp shell /dev/null \n\n" , 
 				[wizardOptions objectForKey:ANONHOME], [wizardOptions objectForKey:ANONUID], [wizardOptions objectForKey:ANONGROUP]];
         /*} else {
 			//[self createAnonymousUser];
 		}*/
-        anonScript = [anonScript stringByAppendingFormat:@"mkdir -p %@\n chmod 755 %@ \n chown root:wheel %@\n chmod 555 %@\n chown ftp:%@ %@\n mkdir %@\n chmod 755 %@\n chown ftp:%@ %@", 
+        anonScript = [anonScript stringByAppendingFormat:@"mkdir -p \"%@\"\n chmod 755 \"%@\" \n chown root:wheel \"%@\"\n chmod 555 \"%@\"\n chown ftp:%@ \"%@\"\n mkdir \"%@\"\n chmod 755 \"%@\"\n chown ftp:%@ \"%@\"", 
             [wizardOptions objectForKey:ANONHOME], 
             [[wizardOptions objectForKey:ANONHOME] stringByDeletingLastPathComponent],
             [[wizardOptions objectForKey:ANONHOME] stringByDeletingLastPathComponent],
@@ -738,10 +738,13 @@
     {
 		//if (MacVersion < 0x1040){
 			NSString *userRef = [NSString stringWithFormat:@"/users/%@", [wizardOptions objectForKey:VULOGIN]];
-			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@\n niutil -createprop / %@ expire 0 \n niutil -createprop / %@ realname \"Virtual users account\" \n niutil -createprop / %@ name %@ \n niutil -createprop / %@ passwd '*' \n niutil -createprop / %@ change 0 \n niutil -createprop / %@ home /dev/null \n niutil -createprop / %@ uid %d \n niutil -createprop / %@ gid %d \n niutil -createprop / %@ shell /etc/pure-ftpd\n", userRef, userRef, userRef, userRef, [wizardOptions objectForKey:VULOGIN], userRef, userRef, userRef, userRef, [[wizardOptions objectForKey:VUUID] intValue], userRef, [[wizardOptions objectForKey:VUGID] intValue], userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@\n niutil -createprop / %@ expire 0 \n niutil -createprop / %@ realname \"Virtual users account\" \n niutil -createprop / %@ name %@ \n niutil -createprop / %@ passwd '*' \n niutil -createprop / %@ change 0 \n niutil -createprop / \"%@\" home /dev/null \n niutil -createprop / %@ uid %d \n niutil -createprop / %@ gid %d \n niutil -createprop / %@ shell /etc/pure-ftpd\n", 
+					userRef, userRef, userRef, userRef, [wizardOptions objectForKey:VULOGIN], userRef, userRef, userRef, userRef, [[wizardOptions objectForKey:VUUID] intValue], userRef, [[wizardOptions objectForKey:VUGID] intValue], userRef];
     
 			NSString *groupRef = [NSString stringWithFormat:@"/groups/%@", [wizardOptions objectForKey:VUGROUP]];
-			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@ \n niutil -createprop / %@ passwd '*'\n niutil -createprop / %@ gid %d\n niutil -createprop / %@ users %@", groupRef, groupRef, groupRef, [[wizardOptions objectForKey:VUGID] intValue], groupRef, [wizardOptions objectForKey:VULOGIN]];
+			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@ \n niutil -createprop / %@ passwd '*'\n niutil -createprop / %@ gid %d\n niutil -createprop / %@ users %@", 
+					groupRef, groupRef, groupRef, 
+					[[wizardOptions objectForKey:VUGID] intValue], groupRef, [wizardOptions objectForKey:VULOGIN]];
     
 			shellScript = [shellScript stringByAppendingString:vusersScript];
 		/*} else {
@@ -751,7 +754,7 @@
        
     }
 	
-	 mkdirScript = [mkdirScript stringByAppendingFormat:@"mkdir -p %@\n chown %@:%@ %@\n chmod 555 %@\n mkdir -p %@", 
+	 mkdirScript = [mkdirScript stringByAppendingFormat:@"mkdir -p \"%@\"\n chown %@:%@ \"%@\"\n chmod 555 %@\n mkdir -p \"%@\"", 
             [wizardOptions objectForKey:VUHOME], 
             [wizardOptions objectForKey:VULOGIN], 
             [wizardOptions objectForKey:VUGROUP], 

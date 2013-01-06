@@ -4,7 +4,7 @@
 #import <PreferencePanes/NSPreferencePane.h>
 #import <Foundation/Foundation.h>
 
-
+@class PureController;
 
 @interface DirAliasesPane : NSPreferencePane
 {

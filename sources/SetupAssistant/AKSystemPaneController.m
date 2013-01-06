@@ -42,6 +42,8 @@
 - (IBAction)chooseDir:(id)sender
 {
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];

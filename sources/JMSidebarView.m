@@ -16,6 +16,23 @@
 #include <pwd.h>
 #include <unistd.h>
 
+#import "NSNavView.h"
+#import "NSNavSidebarView.h"
+#import "NSNavSidebarScrollView.h"
+#import "NSNavNode.h"
+#import "NSNavFBENode.h"
+#import "NSNavBrowserCell.h"
+
+#import "PureController.h"
+
+@interface NSOpenPanel (ApplePrivate)
+- (NSNavView *)_navView;
+@end
+
+@interface NSNavNode (ApplePrivate_103)
+- (NSNavFBENode *)originalNode;
+@end
+
 
 @implementation JMSidebarView
 
@@ -24,7 +41,12 @@
     if (self) {
         // Initialization code here.
         NSString *activeUser = nil;
-        activeUser = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPActiveUser];
+         if([[NSFileManager defaultManager] fileExistsAtPath:@"/tmp/PureFTPdManagerUser"])
+		{
+			activeUser = [NSString stringWithContentsOfFile:@"/tmp/PureFTPdManagerUser"];
+		}  else {
+			activeUser = [[PureController getInstance] activeUser];
+		}
         
         if (activeUser != nil) {
             if (![activeUser isEqualToString:@""])
@@ -34,11 +56,12 @@
                 if ((userInfo = getpwnam(login)) != NULL)
                 {
                     seteuid(userInfo->pw_uid);
+					
                 }
             }
         }
-        
-	NSOpenPanel *oPanel = [[NSOpenPanel openPanel] retain];
+		
+		NSOpenPanel *oPanel = [[NSOpenPanel openPanel] retain];
         navView = [[oPanel _navView] retain];
         sidebarScroll = [[[[[[[[navView subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0];
         sidebar = [[[[[[[[[[[[navView subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0];
@@ -51,10 +74,18 @@
 			[[item titleCell] setEnabled:NO];
 		}*/
 		
-        seteuid(0);
 		
-        [oPanel release];
+		
+        seteuid(0);
+		setuid(0);
+        
+		[oPanel release];
+		[sidebarScroll setFocusRingType:NSFocusRingTypeNone];
+		[sidebar setFocusRingType:NSFocusRingTypeNone];
         [self addSubview:sidebarScroll];
+		[self setPostsFrameChangedNotifications:YES];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(frameDidChange:) name:NSViewFrameDidChangeNotification object:nil];
     }
     return self;
 }
@@ -62,6 +93,7 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSViewFrameDidChangeNotification object:self];
     [navView release];
     [super dealloc];
 }
@@ -70,18 +102,22 @@
 {
     NSRect viewBounds = [self bounds];
     [sidebarScroll setFrame:viewBounds];
-    //[sidebarScroll setFrameSize:NSMakeSize(viewBounds.size.width , viewBounds.size.height)];
-    [sidebarScroll display];
-    [sidebar _adjustWidthsToFit];
+	[sidebarScroll setFocusRingType:NSFocusRingTypeNone];
+	[sidebar setFocusRingType:NSFocusRingTypeNone];
+	//[sidebarScroll setFrameSize:NSMakeSize(viewBounds.size.width , viewBounds.size.height)];
+    //[sidebarScroll display];
+    //[sidebar _adjustWidthsToFit];
 }    
 
 - (void)drawRect:(NSRect)rect {
     // Drawing code here.
     NSRect viewBounds = [self bounds];
-     [sidebarScroll setFrame:viewBounds];
+	[sidebarScroll setFrame:viewBounds];
+	[sidebarScroll setFocusRingType:NSFocusRingTypeNone];
+	[sidebar setFocusRingType:NSFocusRingTypeNone];
     //[sidebarScroll setFrameSize:NSMakeSize(viewBounds.size.width , viewBounds.size.height)];
-    [sidebarScroll display];
-    [sidebar _adjustWidthsToFit];
+    //[sidebarScroll display];
+    //[sidebar _adjustWidthsToFit];
 }
 
 - (void)mouseUp:(NSEvent *)theEvent
@@ -106,6 +142,11 @@
 -(NSNavSidebarView *) sidebar
 {
     return sidebar;
+}
+
+- (void)frameDidChange:(NSNotification *)notif
+{
+	[[self window] makeFirstResponder:nil];
 }
 
 @end

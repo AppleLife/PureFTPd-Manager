@@ -1,0 +1,92 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+     <H2>NAME</H2><PRE>
+        pure-mrtginfo - provide an MRTG-graphable user count for ftpd.
+
+
+</PRE>
+  <H2>SYNOPSIS</H2><PRE>
+       <B>pure-mrtginfo</B> <B>[server</B> <B>port]</B>
+
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       <B>Pure-Mrtginfo</B>  counts  the  number  of  clients  currently connected to
+       <B>ftpd(8)</B> and output the format in a format graphable by MRTG.
+
+
+
+</PRE>
+<H2>OPTIONS</H2><PRE>
+       <B>server</B> <B>port</B> : defaults to 21.
+
+
+
+</PRE>
+<H2>FILES</H2><PRE>
+       <I>/proc/net/tcp</I>
+              is used to count the connectiont to port 21.
+
+       <I>/proc/sys/kernel/hostname</I>
+              is used to get the fully qualified hostname.
+
+       <I>/proc/uptime</I>
+              is used to get the uptime.
+
+
+
+</PRE>
+<H2>MRTG</H2><PRE>
+       MRTG is a really nice package for graphing router  traffic.   Mrtg  can
+       also graph other information is available via SNMP or by running a pro-
+       gram such as <B>pure-mrtginfo</B>.  The author of  this  program  uses  it  to
+       graph CPU load, /var usage etc., and naturally the number of users con-
+       nected to his FTP servers.  See
+       http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
+       for more information about MRTG.
+
+
+
+</PRE>
+<H2>BUGS</H2><PRE>
+       This program only works on GNU/Linux systems yet.
+
+
+
+</PRE>
+<H2>HOME PAGE</H2><PRE>
+       http://www.pureftpd.org/
+
+
+
+</PRE>
+<H2>AUTHOR AND LICENSE</H2><PRE>
+       Written by Arnt Gulbrandsen &lt;agulbra@troll.no&gt; and copyright  1995-2002
+       Troll  Tech AS, Waldemar Thranes gate 98B, N-0175 Oslo, Norway, fax +47
+       22806380.
+
+       Pure-FTPd (C)opyleft 2001-2006 by Frank DENIS &lt;j@pureftpd.org&gt; and  the
+       Pure-FTPd team.
+
+       Use,  modification and distribution is allowed without limitation, war-
+</PRE>
+ 
+    
+    </body>
+</html>

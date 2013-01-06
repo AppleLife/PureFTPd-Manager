@@ -1,0 +1,75 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../manager.html" class="bread">PureFTPd Manager</a> > Virtual Hosts</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3><IMG SRC="../../gfx/vhosts.png" valign=middle border=0 hspace=13>PureFTPd Manager - Virtual Hosts</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    <b>This is an advanced feature most users don't need in order to run a basic FTP server.</b>
+    <br><br>
+    This module works as is but it could be much better designed. I'll improve it in one of the next release of PureFTPd Manager.
+    <br><br>
+    Using Virtual servers is a convenient way of hosting several FTP sites on the same
+    computer. Let's say, you got two customers. The former owns the 'c9x.org'
+    domain name, while the latter owns the 'rtchat.com' domain name. Both are
+    hosted on the same computer, but they don't want to share the same files.
+    ftp://ftp.c9x.org/ should show different content than ftp://ftp.rtchat.com/.
+    <br><br>
+    The FTP protocol doesn't allow name-based selection. So, if you want to host
+    x different virtual FTP servers on the same host and keep the standard port,
+    you need x different IP addresses. Yes, Sir. Or use HTTP.<br>
+    </font>
+    <br><br>
+    <div align=center>
+    <img src="../../img/vhosts.png" WIDTH="480" alt="PureFTPd Manager - Virtual Hosts">
+    </div>
+    <br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <ul>
+     1. Name you identify your virtual host with. It can be anything you want, although something like <i>ftp.rtchat.com</i> is suggested<br>
+    2. The <i>IP Address</i> field lets you specify the IP address alias you want to assign to your virtual host. It is usually the public IP address remote user will use to connect to your server.<br>
+    3. The Network Interface Card you assign the previous to. <br>
+    4. A base Root directory for your virtual FTP server.
+    </ul>
+    </font>
+    <br>
+    <h3>Read more ...</h3>
+    <table border=0 width=480 align=center>
+    <tr>
+    <td width=160 align=center>
+    <a href="status.html"><IMG SRC="../../gfx/status.png" valign=middle border=0></a>
+    <a href="status.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Server Status</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="logs.html"><IMG SRC="../../gfx/logging.png" valign=middle border=0></a>
+    <a href="logs.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Server Logs</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="vusers.html"><IMG SRC="../../gfx/users.png" valign=middle border=0></a>
+    <a href="vusers.html"><font size="2" face="Lucida Grande,Arial,sans-serif">User Manager</font></a>
+    </td>
+    </tr>
+    
+    </table>
+    <br><br>
+    
+    </td></tr>
+    </table>
+    </body>
+</html>

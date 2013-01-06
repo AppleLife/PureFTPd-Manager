@@ -1,0 +1,49 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../preferences.html" class="bread">Preferences</a> > Directory Aliases</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager - Directory Aliases</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br><br>
+    Directory aliases provides "shortcuts" for the "cd" command. For instance,
+    if you define an alias called "pictures" for "/usr/misc/pictures", when an
+    user will type "cd pictures" and if no real "pictures" directory exists, he
+    will be automatically redirected to "/usr/misc/pictures". Unlike symbolic
+    links, "cd pictures" will work from any directory. Tildes are *not*     
+    expanded.<br><br>
+    An user can get the list of available aliases with the following command:
+    <pre>SITE ALIAS</pre>
+    <br>
+    <div align=center>
+    <MAP NAME="preferences">
+    <AREA SHAPE="rect" COORDS="5,24,63,79" HREF="../preferences.html">
+    <AREA SHAPE="default" COORDS="0,0,553,419" NOHREF></MAP>
+    <img src="../../img/pref/8.png" alt="PureFTPd Manager Preferences" USEMAP="#preferences" BORDER="0">
+    <br><br>
+    </div>
+     <ul>
+     1. List of aliases configured on your FTP server.<br>
+     2. Button to add a new alias.<br>
+     3. Button to remove an alias.
+     </ul>
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

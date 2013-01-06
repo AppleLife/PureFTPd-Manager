@@ -83,6 +83,11 @@ static VHostManager *theVHostManager = nil;
 
 -(void)deleteHost
 {
+	if (NSRunCriticalAlertPanel(NSLocalizedString(@"You are about to delete a Virtual Host.", @"You are about to delete a Virtual Host."),
+		NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+		NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+		return;
+	
     modified = TRUE;
     NSFileManager *fm = [NSFileManager defaultManager];
     int index = [[pureController vhostTable] selectedRow];
@@ -221,7 +226,7 @@ static VHostManager *theVHostManager = nil;
         NSMutableArray *ifargs = [NSMutableArray arrayWithObjects:[vhostInfo objectForKey:@"vhost.nic"], 
                                                                   @"alias", [vhostInfo objectForKey:@"vhost.ip"],
                                                                   nil ]; 
-        NSLog(@"%@", [ifargs description]);
+        //NSLog(@"%@", [ifargs description]);
         NSTask *ifconfig =[[NSTask alloc] init];
         [ifconfig setLaunchPath:@"/sbin/ifconfig"];	
         [ifconfig setArguments:ifargs];

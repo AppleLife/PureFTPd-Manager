@@ -28,6 +28,8 @@
         [fileBrowser setAllowsEmptySelection:YES];
         [fileBrowser setTitled:NO];
         [fileBrowser setHasHorizontalScroller:YES];
+		
+        [fileBrowser setFocusRingType:NSFocusRingTypeNone];
         [fileBrowser setEnabled:NO];
         
         // Make the browser user our custom browser cell.
@@ -73,12 +75,13 @@
     NSRect viewBounds = [self bounds];
     [fileBrowser setFrameSize:NSMakeSize(viewBounds.size.width , viewBounds.size.height)];
     [fileBrowser display];
+	
 }   
 
 
 - (void)drawRect:(NSRect)rect {
     // Drawing code here.
-  //  [self display];
+	//[self display];
 }
 
 -(NSBrowser *) fileBrowser

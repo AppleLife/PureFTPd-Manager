@@ -112,7 +112,7 @@
     NSNumber *update = [[NSNumber alloc] initWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
     
-    NSLog(@"Saving PureFTPD  Directory Aliases");
+    //NSLog(@"Saving PureFTPD  Directory Aliases");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
     [update release];
     [preferences release];
@@ -162,20 +162,22 @@
 {
     int result;
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];
     [oPanel setResolvesAliases:NO];
     NSString *activeUser = nil;
-    activeUser = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPActiveUser];
+   
+	NSString *path = [folderField stringValue];
+	BOOL isDir = YES;
+	if (![[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir]
+		|| !isDir)
+		path=@"/";
+		
     
-    if (activeUser != nil) {
-        if ([activeUser isEqualToString:@""])
-	{
-            activeUser = @"root";
-	}
-    }
-    result = [oPanel runModalForDirectory:NSHomeDirectoryForUser(activeUser) file:nil types:nil];
+    result = [oPanel runModalForDirectory:path file:nil types:nil];
     if (result == NSOKButton)
         [folderField setStringValue:[[oPanel filenames] objectAtIndex:0]];
     

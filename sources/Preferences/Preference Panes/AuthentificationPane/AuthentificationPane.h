@@ -2,7 +2,7 @@
 #import <PreferencePanes/NSPreferencePane.h>
 #import <Foundation/Foundation.h>
 
-
+@class PureController;
 
 enum {None = 0, MySQL = 1};
 

@@ -1,0 +1,92 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> Setup Assistant</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>Setup Assistant</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    When you launch PureFTPd Manager for the first time, it prompts you for your administrative password because its Setup Assistant will change some directories and needs the password to carry out those operations. After you log in, the Setup Assistant appears. As you work through the Setup Assistant, if you have specific knowledge of Unix user and group permissions, you might modify some of these settings. 
+    <br>However, the defaults are quite good, and you should stick with them if you don't know what you are doing. Also, you can skip any step by checking the Skip checkbox (most likely only in cases where you previsouly setup  a system on your computer). <br><br>
+    The following steps help you work through the Setup Assistant:
+    </font>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>1. Setup Assistant summary</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/1.png" WIDTH="480">
+    </div>
+    <br><br>
+    The first screen presents an overview of the assistant's functions.
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>2. Anonymous account setup</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/2.png" WIDTH="480">
+    </div>
+    <br><br>
+     This step lets you choose settings for anonymous FTP. Pure-FTPd can isolate anonymous and regular users to special folders; this is called chroot (for "change root" in Unix parlance), and is often a huge hassle to set up. <br>
+     With PureFTPd Manager, though, it's easy. If you want to turn on anonymous FTP, just click Continue. If you won't need anonymous access, I suggest you create the ftp account now anyway and disable it using the <a href=pref/anon.html>Anonymous</a> preference pane.<br>
+     You can check Skip Anonymous Account Setup and click Continue if you previously create this account. 
+     <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>3. Virtual Users setup</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/3.png" WIDTH="480">
+    </div>
+    <br><br>
+    Virtual users is a simple mechanism to store a list of users, with their
+    password, name, uid, directory, etc. It's just like Netinfo database. But 
+    it's not. It's a different file, only for FTP. In other words, it lets you
+    separate your Mac OS X users from FTP-only users.<br>
+    This part help you define which user and group on your machine will be mapped to your virtual user by default upon new user's creation.
+    <br>
+     You can check Skip Virtual Users system registration and click Continue if you previously create these accounts. 
+     <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>4. Server logging setup</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/4.png" WIDTH="480">
+    </div>
+    <br><br>
+    Tracking statistics and balancing Pure-FTPd's needs against the rest of your system are both useful options, so I recommend that you leave those checkboxes selected and click Continue.
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>5. System settings setup</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/5.png" WIDTH="480">
+    </div>
+    <br><br>
+    In most cases, you want Pure-FTPd to launch every time the system launches. If you need to launch it manually just when an FTP need arises, uncheck Automatically Launch PureFTPd at System Startup.
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>6. Conclusion</b>
+    <br><br>
+    <div align=center>
+    <img src="../img/assistant/6end.png" WIDTH="480">
+    </div>
+    <br><br>
+    The final screen shows a summary of your choices. Click Configure to implement them and launch PureFTPd Manager.
+    <br><br>
+    You can run through this assistant again at any time from the Server Status tab of PureFTPd Manager by clicking Easy Setup Assistant or from the application's main menu by clicking on the <i>Launch Setup Assistant</i> menu item.
+    
+    <br><br>
+    
+    </td></tr>
+    </table>
+    </body>
+</html>

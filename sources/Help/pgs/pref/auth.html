@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../preferences.html" class="bread">Preferences</a> > Authentication</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager - Authentication</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br><br>
+    <div align=center>
+    <MAP NAME="preferences">
+    <AREA SHAPE="rect" COORDS="5,24,63,79" HREF="../preferences.html">
+    <AREA SHAPE="default" COORDS="0,0,553,252" NOHREF></MAP>
+    <img src="../../img/pref/4.png" alt="PureFTPd Manager Preferences" USEMAP="#preferences" BORDER="0">
+    <br><br>
+    </div>
+    <ul>
+    1. This table lists the authentication method used by pure-ftpd to verify a user ccredential.<br><br>
+    2. Add authentication methods.<br>Pure-FTPd supports multiple methods of authentication : Unix (Mac OS 10.2 only), PAM (Mac OS 10.3 and above), PureDB (virtual users), LDAP directories, MySQL databases, Postgres databases, external authentication handlers (with pure-authd - not configurable through PureFTPd Manager at this time).<br><br>
+    3. If the home directory of a user doesn't exist, automatically create
+it. <br>The newly created home directory belongs to the user and permissions are
+set according to the current directory mask. Only the home directory can be
+created (so /Users/marie/./pub/ won't work, but /Users/marie will). <br>
+To avoid local attacks, the parent directory should never belong to an untrusted
+user. Also note that you must trust whoever manages the users databases,
+because with that feature, he'll be able to create/chown directories anywhere
+on the server's filesystem.<br>
+    </ul>
+    <br>
+    <b>Disable Mac OS X Users</b><br>
+    Mac OS X users have access to Pure-FTPd with their existing user names and passwords via a system called pam, which is used for authentication. You can disable access for all OS X users, not just a subset, through PureFTPd Manager. Here are the steps:<br>
+    <ul>
+    1. Open the Authentication pane in PureFTPd Manager's preferences.<br>
+    2. Select the line whose type is PAM.<br>
+    3. Click Remove.<br>
+    4. Close the Preferences window / restart your FTP server.<br> 
+    </ul>
+    <br>
+    <b>MySQL support</b><br>
+    Click the <i>Add</i> button and select MySQL from the window sheet that appear. You will get to this screen :<br>
+    <div align=center>
+    <img src="../../img/pref/4mysql.png" alt="PureFTPd Manager Mysql Support" BORDER="0">
+    <br><br>
+    </div>
+    <ul>
+    1, 2, 3 and 4 configure the access to the database server your want to store your virtual users into.<br>
+    5. Name of the database storing your virtual users.<br>
+    6. Whether or not to use default system uid and gid to map the user to.<br><br>
+    7. Database option : If you upgraded your tables to transaction-enabled tables, you can
+    configure Pure-FTPd to take advantage of transactions. That way, you can be sure that
+    all info parsed by the server is complete even if you're updating it at the
+    same time.<br>
+    Don't enable transactions on tables that still are in ISAM or MyISAM formats.
+    Transactions are only working with newer backends (Gemini, InnoDB,
+    BerkeleyDB...) and in recent MySQL versions.
+    </ul>
+    <br>Click on save to save your settings. An new item is available in the <a href=../feat/vusers.html>User Manager</a> <i>From</i> (8.) pop-up and you can directly create new users stored in your database from PureFTPd Manager.
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

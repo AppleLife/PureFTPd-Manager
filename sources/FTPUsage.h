@@ -48,7 +48,7 @@ typedef struct FTPWhoEntry_ {
     volatile off_t restartat;
     volatile off_t download_total_size;
     volatile off_t download_current_size;    
-    char account[32U + 1U];
+    char account[127U + 1U];
     char filename[1024];
 } FTPWhoEntry;
 

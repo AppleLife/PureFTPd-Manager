@@ -8,7 +8,7 @@
 #define TLS2 NSLocalizedString(@"Clients can connect either the traditional way or through an SSL/TLS layer.", @"SSL Mixed mode comment")
 #define TLS3 NSLocalizedString(@"Cleartext sessions are refused and only SSL/TLS compatible clients are accepted.", @"SSL/TLS clients only")
 
-
+@class PureController;
 
 @interface SSLPane : NSPreferencePane
 {

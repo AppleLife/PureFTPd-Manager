@@ -2,6 +2,7 @@
     IBClasses = (
         {
             ACTIONS = {
+                chooseDir = id; 
                 didModify = id; 
                 reloadBrowserData = id; 
                 removeBanner = id; 
@@ -20,6 +21,7 @@
                 anonUpRatioField = NSTextField; 
                 bannerTxtView = NSTextView; 
                 fileBrowser = NSBrowser; 
+                homeDirField = NSTextField; 
                 maxLoadField = NSTextField; 
                 removeBannerBtn = NSButton; 
                 vfolderRemoveButton = NSButton; 

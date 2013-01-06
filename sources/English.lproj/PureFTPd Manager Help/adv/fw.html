@@ -1,0 +1,99 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> Firewall configuration</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>Firewall configuration</h3>
+    <br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <b>1. My firewall is on the same computer as my FTP server</b><br>
+    <br>
+    This is the most simple case when your computer is directly connected to the Internet and running a firewall software. In this section, I will explain you how to configure Mac OS X firewall in order to accept FTP traffic.<br>
+    I also assume that your FTP server is running using Mac OS X Superserver (see <a href=../pgs/pref/mac.html>Mac OS X</a> preference pane in PureFTPd Manager's preferences).
+    
+    <br><br>
+    <div align=center>
+    <img src="../img/fwx.png" WIDTH="450" alt="Mac OS X Sharing Preference Pane - Firewall Tab.">
+    </div>
+    <br><br>
+    When the FTP service is running, the FTP access rule of your firewall will be enabled automatically. This is enough to accept connection and transfer files in active mode.<br>
+    In order to enable passive mode for file transfers, you need to create a new rule on your firewall.<br><br>
+    Click the <i>New...</i> button and specify something like this :
+    <br><br>
+    <div align=center>
+    <img src="../img/fwxp.png" WIDTH="350">
+    </div>
+    <br><br>
+    The important stuff here is the port range you set for passive file transfers. You can specify a larger port range is you want.<br> Write down the port range you chose for passive FTP and go back to PureFTPd Manager Preferences.<br><br>
+    Open the <i>Settings</i> pane and specify the same port range in the <i>Passive port range</i> box.
+    <br><br>
+    <div align=center>
+    <img src="../img/fwpm.png" WIDTH="350">
+    </div>
+    <br><br>
+    Restart your FTP server and you're done.
+    <br><br>
+    <b>2. My FTP server is running on a dedicated machine behind a router / firewall</b><br><br>
+    This is a slightly more complicated scenario, but the logic is more or less the same.
+    Let's assume we are in the following network topology:
+    <br>
+    <div align=center>
+    <img src="../img/fwtopo.png">
+    </div>
+    Here's what you need to do:
+    <ul>
+    1. Open port 20 and 21 on your firewall<br>
+    2. Open a port range on your firewall for passive FTP (42000-42010)
+    3. On your firewall, activate NAT and redirect traffic on ports 20, 21, and 42000 to 42010 to your FTP server IP address (192.168.1.2) on the same ports.<br>
+    4. Specify the port range in the <i>Passive port range</i> box of PureFTPd Manager Settings preference pane.
+    </ul>
+    <br><br>
+    <b>Airport Base Station setup</b>
+    <br>
+    If you are using an Airport Base Station, you can do it like this (I have too lazy to go up to 42010 so I stopped before) :<br><br>
+     <div align=center>
+    <img src="../img/fwabs.png" width=400>
+    </div>
+    <br>
+    <br><br>
+    <b>Linux Netfilter setup</b>
+    <br>
+    If your firewall is a linux box with Netfilter capabilities, you can use can at the following lines to your firewall startup script.<br>
+    <pre>
+#FTP Standard port
+iptables -A PREROUTING -t nat -p tcp -i eth0 --dport 21 -j DNAT --to 192.168.1.2:21 
+iptables -A FORWARD -p tcp -i eth0 --dport 21 -o eth1 -j ACCEPT
+
+#FTP Data port
+iptables -A PREROUTING -t nat -p tcp -i eth0 --dport 20 -j DNAT --to 192.168.1.2:20 
+iptables -A FORWARD -p tcp -d 192.168.1.2 --dport 20 -o eth1 -j ACCEPT
+
+#FTP Passive port range
+YOUR_FTP_SERVER=192.168.1.2
+PASV_PORTS="42000 42001 42002 42003 42004 42005 42006 42007 42008 42009 42010"
+for pt in $PASV_PORTS; do
+  /sbin/iptables -t nat -A PREROUTING -i eth0 -p tcp --dport $pt \ 
+  -j DNAT --to-destination $YOUR_FTP_SERVER:$pt
+  /sbin/iptables -A FORWARD -d $YOUR_FTP_SERVER -p tcp --dport $pt -j ACCEPT
+done
+    </pre>
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

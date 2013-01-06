@@ -93,6 +93,7 @@
     if (re == NULL)
     {
         printf("PCRE compilation failed at offset %d: %s\n", erroffset, error);
+		[loginfoArray release];
         return;
     }
                       
@@ -117,18 +118,25 @@
                                 
     if (rc < 0)
     {
-        switch(rc)
+        /*switch(rc)
         {
             case PCRE_ERROR_NOMATCH:
                 //fprintf(stderr,"No match\n"); 
                 break;
-            /*
+            
             Handle other special cases if you like
-            */
+            
             default: 
                 //fprintf(stderr,"Matching error %d\n", rc); 
                 break;
-        }
+        }*/
+		
+		[loginfoArray release];
+		
+		if (re != NULL)
+			free(re);
+		
+		
         return;
     }
                                 
@@ -147,7 +155,6 @@
     if (rc == 0)
     {
         rc = OVECCOUNT/3;
-        printf("ovector only has room for %d captured substrings\n", rc - 1);
     }
                                      
     /* Show substrings stored in the output vector by number. Obviously, in a real
@@ -156,16 +163,22 @@
                                     
     for (i = 0; i < rc; i++)
     {
-        char *substring_start = subject + ovector[2*i];
+        char *substring_start = (char *) (subject + ovector[2*i]);
         int substring_length = ovector[2*i+1] - ovector[2*i];
         substring = [NSString stringWithFormat:@"%.*s",substring_length, substring_start];
         [loginfoArray insertObject:substring atIndex:i];
         
-       // printf("%.*s\n",substring_length, substring_start);
     }
+	
+	
     
-    [completeArray addObject:[loginfoArray copy]];
-    [loginfoArray removeAllObjects];
+    [completeArray addObject:[NSArray arrayWithArray:loginfoArray]];
+	
+	[loginfoArray release];
+	
+	if (re != NULL)
+		free(re);
+	
 }
 
 @end

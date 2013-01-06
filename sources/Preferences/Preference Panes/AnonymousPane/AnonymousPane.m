@@ -100,6 +100,13 @@
     [maxLoadField setStringValue:[pureFTPPreferences objectForKey:PureFTPMaxLoad]];
     
     [self loadBanner];
+	
+	struct passwd *userInfo = NULL;
+	if ((userInfo = getpwnam("ftp")) != NULL)
+	{
+		[homeDirField setStringValue:[NSString stringWithCString:userInfo->pw_dir]];
+	}
+	homeDirSet = NO;
 }
 
 -(void) savePreferences{
@@ -142,7 +149,7 @@
     NSNumber *update = [[NSNumber alloc] initWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
     
-    NSLog(@"Saving PureFTPD preferences - Anonymous Pane");
+    //NSLog(@"Saving PureFTPD preferences - Anonymous Pane");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
     [preferences release];
     modified = NO;
@@ -153,7 +160,46 @@
 // TextFields
 - (void)controlTextDidChange:(NSNotification *)aNotification
 {
-    modified = YES;
+    if ([[aNotification object] isEqualTo:homeDirField] && !homeDirSet)
+	{
+		NSString *newHome=[homeDirField stringValue];
+		
+		NSTask *del = [[NSTask alloc] init];
+		[del setLaunchPath:@"/usr/bin/niutil"];
+		[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
+		[del launch];
+		[del waitUntilExit];
+		[del release];
+		
+		NSTask *add = [[NSTask alloc] init];
+		[add setLaunchPath:@"/usr/bin/niutil"];
+		[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
+		[add launch];
+		
+		[add release];
+		
+		// change dir to root:wheel
+		NSDictionary *p_dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"root", NSFileOwnerAccountName, @"wheel",NSFileGroupOwnerAccountName, nil];
+							
+		NSFileManager *_fm = [NSFileManager defaultManager];
+		[_fm changeFileAttributes:p_dict atPath:newHome];
+		
+		// create incoming directory
+		NSString *inc=[newHome stringByAppendingPathComponent:@"incoming"];
+		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"ftp", NSFileOwnerAccountName, @"unknown", NSFileGroupOwnerAccountName, 
+							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+		BOOL isDir = YES;
+		if ([_fm fileExistsAtPath:inc isDirectory:&isDir] && isDir)
+			[_fm changeFileAttributes:dict atPath:inc];
+		else	
+			[_fm createDirectoryAtPath:inc attributes:dict];
+		
+		homeDirSet = YES;
+	} else {
+		modified = YES;
+	}
 }
 
 - (IBAction)didModify:(id)sender
@@ -171,6 +217,8 @@
     } else {
         [removeBannerBtn setEnabled:NO];
     }
+	
+	
 }
 
 - (void) saveBanner 
@@ -426,6 +474,77 @@
     
 }
 
+
+- (IBAction)chooseDir:(id)sender
+{
+    NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
+    [oPanel setAllowsMultipleSelection:NO];
+	[oPanel setCanChooseDirectories:YES];
+    [oPanel setCanChooseFiles:NO];
+    [oPanel setResolvesAliases:NO];
+	
+	NSString *path = [homeDirField stringValue];
+	
+	BOOL isDir = YES;
+	if (![[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir]
+		|| !isDir)
+		path=@"/"; 
+		
+	[oPanel beginSheetForDirectory:path file:nil types:nil
+					modalForWindow:[NSApp mainWindow]
+                       modalDelegate: self
+                       didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
+                       contextInfo: nil];
+    homeDirSet = NO;
+}
+
+- (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)returnCode contextInfo:(void *) contextInfo
+{
+    [NSApp stopModal];
+    if (returnCode == NSOKButton)
+    {        
+        NSString *newHome=[[sheet filenames] objectAtIndex:0];
+		homeDirSet = YES;
+		[homeDirField setStringValue:newHome];
+		
+		NSTask *del = [[NSTask alloc] init];
+		[del setLaunchPath:@"/usr/bin/niutil"];
+		[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
+		[del launch];
+		[del waitUntilExit];
+		[del release];
+		
+		NSTask *add = [[NSTask alloc] init];
+		[add setLaunchPath:@"/usr/bin/niutil"];
+		[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
+		[add launch];
+		
+		[add release];
+		
+		// change dir to root:wheel
+		NSDictionary *p_dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"root", NSFileOwnerAccountName, @"wheel",NSFileGroupOwnerAccountName, nil];
+							
+		NSFileManager *_fm = [NSFileManager defaultManager];
+		[_fm changeFileAttributes:p_dict atPath:newHome];
+		
+		// create incoming directory
+		NSString *inc=[newHome stringByAppendingPathComponent:@"incoming"];
+		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"ftp", NSFileOwnerAccountName, @"unknown", NSFileGroupOwnerAccountName, 
+							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+		BOOL isDir = YES;
+		if ([_fm fileExistsAtPath:inc isDirectory:&isDir] && isDir)
+			[_fm changeFileAttributes:dict atPath:inc];
+		else	
+			[_fm createDirectoryAtPath:inc attributes:dict];
+		
+    }   
+        
+
+}
 
 @end
 

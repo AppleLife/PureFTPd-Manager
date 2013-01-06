@@ -3,7 +3,7 @@
 		identifier = Server; 
 		panes = (
 			pureftpd.ServerPane,
-                        pureftpd.ServerOptionsPane,
+			pureftpd.ServerOptionsPane,
 			pureftpd.FTPLogPane
                 );
         },
@@ -19,7 +19,7 @@
                 identifier = System; 
 		panes = (
                         pureftpd.SystemPane,
-			pureftpd.DirAliasesPane,
+						pureftpd.DirAliasesPane,
                         pureftpd.PermissionPane
 		); 
 	}

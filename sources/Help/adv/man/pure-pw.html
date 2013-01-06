@@ -1,0 +1,89 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+     <H2>NAME</H2><PRE>
+        pure-pw - Manage virtual users files for Pure-FTPd.
+
+</PRE>
+   <H2>SYNTAX</H2><PRE>
+       pure-pw useradd login [-f passwd_file] [-F puredb_file] -u uid [-g gid]
+                       -D/-d home_directory [-c gecos]
+                       [-t download_bandwidth] [-T upload_bandwidth]
+                       [-n max number_of_files] [-N max_Mbytes]
+                       [-q upload_ratio] [-Q download_ratio]
+                       [-r &lt;allow  client  host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]  [-R
+       &lt;deny client host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]
+                       [-i  &lt;allow  local  host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]  [-I
+       &lt;deny local host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]
+                       [-y &lt;max number of concurrent sessions&gt;]
+                       [-z &lt;hhmm&gt;-&lt;hhmm&gt;] [-m]
+       pure-pw usermod login [-f passwd_file] [-F puredb_file]  [-u  uid]  [-g
+       gid]
+                       -D/-d home_directory -[c gecos]
+                       [-t download_bandwidth] [-T upload_bandwidth]
+                       [-n max_number_of_files] [-N max_Mbytes]
+                       [-q upload_ratio] [-Q download_ratio]
+                       [-r  &lt;allow  client  host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...] [-R
+       &lt;deny client host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]
+                       [-i  &lt;allow  local  host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]  [-I
+       &lt;deny local host&gt;/&lt;mask&gt;[,&lt;ip&gt;/&lt;mask&gt;]...]
+                       [-y &lt;max number of concurrent sessions&gt;]
+                       [-z &lt;hhmm&gt;-&lt;hhmm&gt;] [-m]
+       pure-pw userdel login [-f passwd_file] [-F puredb_file] [-m]
+       pure-pw passwd  login [-f passwd_file] [-F puredb_file] [-m]
+       pure-pw show    login [-f passwd_file] [-m]
+       pure-pw   mkdb      [&lt;puredb_database_file&gt;   [-f   passwd_file]]   [-F
+       puredb_file]
+       pure-pw list    [-f passwd_file]
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       Virtual users is a simple mechanism to store  a  list  of  users,  with
+       their  password, name, uid, directory, etc. It's just like /etc/passwd.
+       But it's not /etc/passwd. It's a different file, only for FTP.
+       It means that you can easily create FTP-only accounts  without  messing
+       your system accounts.
+       Additionnaly,  virtual users files can store individual quotas, ratios,
+       bandwidth, etc. System accounts can't do this.
+       Thousands of virtual users can share the same system user, as  long  as
+       they all are chrooted, and they have their own home directory.
+
+
+</PRE>
+<H2>FILES</H2><PRE>
+       <I>/etc/pureftpd.passwd</I>
+       <I>/etc/pureftpd.pdb</I>
+
+
+</PRE>
+<H2>ENVIRONMENT VARIABLES</H2><PRE>
+       <I>PURE</I><B>_</B><I>PASSWDFILE</I>  If this variable is defined, this is the default value
+       for the text password file. Without this variable, /etc/pureftpd.passwd
+       is assumed.
+       <I>PURE</I><B>_</B><I>DBFILE</I>  If this variable is defined, this is the default value for
+       the PureDB password file. Without this variable,  /etc/pureftpd.pdb  is
+       <B>RFC</B> <B>959</B>, <B>RFC</B> <B>2228</B>, <B>RFC</B> <B>2389</B> and <B>RFC</B> <B>2428</B>.
+
+
+
+Pure-FTPd team                      1.0.21                          <B>pure-pw(8)</B>
+</PRE>
+
+    
+    </body>
+</html>

@@ -20,6 +20,11 @@
 
 #import "PureController.h"
 
+
+#import <Security/Security.h>
+#import "AuthForAllImpl.h"
+#import "AuthForAllImplCompat.h"
+
 PureController* thePureController = nil;
 
 @implementation PureController
@@ -111,32 +116,14 @@ PureController* thePureController = nil;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Drop the SUID bit before exiting the application
-    /*NSFileManager *manager = [NSFileManager defaultManager];
-    NSString *executable = [[NSBundle mainBundle] executablePath];
-    NSDictionary *attr;
-    NSMutableDictionary *newattr;
-    
-    
-    // OK, we are root here, so check if we need to repair the file's attributes (owner & setuid)
-    if (executable)
-    {   // if we somehow fail to update file's attribute, don't care as on next launch, we'll ask for authorization again.
-        attr = [manager fileAttributesAtPath:executable traverseLink:YES];
-        if (attr)
-        {
-            if ( ([attr filePosixPermissions] & S_ISUID) )
-            {
-                newattr = [NSMutableDictionary dictionary];
-                if (newattr)
-                {
-                    // Change permissions, including dropping the infamous setuid bit.
-                    [newattr setObject:[NSNumber numberWithUnsignedInt:0755] forKey:NSFilePosixPermissions];
-                    // Apply the changes. The NSFileManager takes care of all subtleties (change owner before setting S_ISUID etc)
-                    [manager changeFileAttributes:newattr atPath:executable];
-                }
-            }
-        }
-    }*/
+	[window saveFrameUsingName:@"pureftpdmainWindow"];
+	NSRect frame = [window frame];
+	NSString *frameinfo = [NSString stringWithFormat:@"%f:%f:%f:%f", 
+					frame.origin.x, frame.origin.y, frame.size.width, frame.size.height];
+	//NSLog(info);
+	NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
+    [prefs setObject:frameinfo forKey:@"windowsize"];
+    [prefs writeToFile:PureFTPPreferenceFile atomically:YES]; 
 }
 
 -(void) awakeFromNib
@@ -144,16 +131,21 @@ PureController* thePureController = nil;
     [NSApp setDelegate:self];
     // Switch to front
     [NSApp activateIgnoringOtherApps:YES];
+	
+	
     thePureController = self;
      prefWinWasVisible = NO;
     fm = [NSFileManager defaultManager];
-    if([fm fileExistsAtPath:@"/tmp/mLauncher-user"])
+    if([fm fileExistsAtPath:@"/tmp/PureFTPdManagerUser"])
     {
-        activeUser = [[NSString alloc] initWithContentsOfFile:@"/tmp/mLauncher-user"];
-        [fm removeFileAtPath:@"/tmp/mLauncher-user" handler:nil];
-    } else {
-        activeUser = @"";
-    }
+		activeUser = [[NSString alloc] initWithContentsOfFile:@"/tmp/PureFTPdManagerUser"];
+        [fm removeFileAtPath:@"/tmp/PureFTPdManagerUser" handler:nil];
+    } 
+	
+	
+	// refresh the auth before it times out -- standard timeout is 300, we refresh the auth every 4 minutes.
+	//[NSTimer scheduledTimerWithTimeInterval:240 target:self selector:@selector(refreshAuthorization)  userInfo:nil repeats:YES];
+	
     
 	SInt32 MacVersion; // remove wrongly placed /etc/xinetd.d/ftp file on 10.4 systems
     Gestalt(gestaltSystemVersion, &MacVersion);
@@ -161,12 +153,6 @@ PureController* thePureController = nil;
 		[fm removeFileAtPath:@"/etc/xinetd.d/ftp" handler:nil];
 	}
 	
-    NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
-    [prefs setObject:activeUser forKey:PureFTPActiveUser];
-    [prefs writeToFile:PureFTPPreferenceFile atomically:YES];
-   
-    
-    
     [self loadPreferences]; 
     
 	
@@ -203,16 +189,81 @@ PureController* thePureController = nil;
     if([vhostTable numberOfRows] >=1)
         [self getHostInfoFor:[[vhostManager vhosts] objectAtIndex:0]];
     
+	NSString *windowsize = nil;
+	
+	 if ((windowsize = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:@"windowsize"]) !=nil)
+	 {
+		NSArray *frameinfo=[windowsize componentsSeparatedByString:@":"];
+		if ([frameinfo count] == 4)
+		{
+			float x= [[frameinfo objectAtIndex:0] floatValue];
+			float y= [[frameinfo objectAtIndex:1] floatValue];
+			float w = [[frameinfo objectAtIndex:2] floatValue];
+			float h = [[frameinfo objectAtIndex:3] floatValue];
+			
+			
+			NSScreen *screen =  [NSScreen mainScreen];
+			NSRect visible = [screen visibleFrame];
+			float sx = visible.origin.x;
+			float sy = visible.origin.y;
+			float sw= visible.size.width;
+			float sh= visible.size.height;
+			
+			if ((x > sw) || (x <sx))
+			{
+				x = (sw-w)/2;
+			}
+			
+			if ((y > sh) || (y <sy))
+			{
+				y = (sh-h)/2;
+			}
+						
+			NSRect frame = NSMakeRect(x,y,w,h);
+			[window setFrame:frame display:NO];
+		}
+	 } 
+	
+	
+	[self registerHelp];
+	
     [[NSApp mainWindow] makeKeyAndOrderFront:nil];
     showSplash=YES;
     
+}
+
+- (void)registerHelp
+{
+	CFBundleRef myApplicationBundle;
+    CFURLRef myBundleURL;
+    FSRef myBundleRef;
+    OSStatus err = noErr;
+ 
+    myApplicationBundle = NULL;
+    myBundleURL = NULL;
+ 
+    myApplicationBundle = CFBundleGetMainBundle();// 1
+    if (myApplicationBundle == NULL) {err = fnfErr; return;}
+ 
+    myBundleURL = CFBundleCopyBundleURL(myApplicationBundle);// 2
+    if (myBundleURL == NULL) {err = fnfErr; return;}
+ 
+    if (!CFURLGetFSRef(myBundleURL, &myBundleRef)) err = fnfErr;// 3
+ 
+    if (err == noErr) err = AHRegisterHelpBook(&myBundleRef);// 4
+    return ;
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)aNotification{
     
     if ([[aNotification object] isEqualTo:window] && showSplash)
     {
-        if ([[[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:@"ShowSplashWin"] intValue] == 1)
+		NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
+		NSString *currentVersionNumber = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"];
+		NSString *prefVersion = [pref objectForKey:PureFTPPreferencesVersion];
+		
+        if (([[pref objectForKey:@"ShowSplashWin"] intValue] == 1) || 
+			(prefVersion == nil) || (![currentVersionNumber isEqualToString:prefVersion]))
         {
             NSRect windowFrame = [window frame];
             NSRect donationRect = [donationPanel frame];
@@ -220,9 +271,13 @@ PureController* thePureController = nil;
             [donationPanel setFrameOrigin:NSMakePoint(windowFrame.origin.x+(windowFrame.size.width-donationRect.size.width)/2,windowFrame.origin.y+(windowFrame.size.height-donationRect.size.height)/2)];
             
             [donationPanel makeKeyAndOrderFront:nil];
+			[pref setObject:currentVersionNumber forKey:PureFTPPreferencesVersion];
+			[pref writeToFile:PureFTPPreferenceFile atomically:YES];
         }
     }
+	
     showSplash = NO;
+	
 }
 
 
@@ -239,8 +294,7 @@ PureController* thePureController = nil;
 
 -(void) loadPreferences
 {
-    NSString *currentVersionNumber = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"];
-	
+   
 	
 	NSDictionary *prefs=nil;
     prefs = [NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
@@ -248,7 +302,7 @@ PureController* thePureController = nil;
 	prefVersion = [prefs objectForKey:PureFTPPreferencesVersion];
 			
     if ( (prefs == nil) || (![[prefs objectForKey:@"wizardCompleted"] isEqualToString:@"Done"]) ||
-		 (prefVersion == nil) || (![currentVersionNumber isEqualToString:prefVersion]) )
+		 (prefVersion == nil) /*|| (![currentVersionNumber isEqualToString:prefVersion])*/ )
     {
         [self launchAssistant:nil];
     } 
@@ -286,9 +340,11 @@ PureController* thePureController = nil;
         prefWinWasVisible = NO;
     }
     [window setAlphaValue:1.0];*/
+	
     //[window makeKeyAndOrderFront:nil];
     
 }
+
 
 - (void)applicationDidResignActive:(NSNotification *)aNotification
 {
@@ -297,13 +353,7 @@ PureController* thePureController = nil;
 
 - (BOOL)windowShouldClose:(id)sender
 {
-    /*if ([sender isEqualTo:window])
-    {
-        [self makeTranslucent];
-        
-    }*/
     [NSApp hide:nil];
-   
     return NO;
 }
 
@@ -344,7 +394,7 @@ PureController* thePureController = nil;
 	item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.status"];
 	[item setPaletteLabel:NSLocalizedString(@"Server Status",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Server Status",@"localized string")];
-	[item setToolTip:NSLocalizedString(@"Server Status",@"localized string")];
+	[item setToolTip:NSLocalizedString(@"View Server Status",@"localized string")];
         [item setImage: [NSImage imageNamed: @"status"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
@@ -354,7 +404,7 @@ PureController* thePureController = nil;
 	item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.logging"];
 	[item setPaletteLabel:NSLocalizedString(@"Server Logs",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Server Logs",@"localized string")];
-	[item setToolTip:NSLocalizedString(@"Server Logs",@"localized string")];
+	[item setToolTip:NSLocalizedString(@"View Server Logs",@"localized string")];
         [item setImage: [NSImage imageNamed: @"logging"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
@@ -364,7 +414,7 @@ PureController* thePureController = nil;
 	item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.users"];
 	[item setPaletteLabel:NSLocalizedString(@"User Manager",@"localized string")];
 	[item setLabel:NSLocalizedString(@"User Manager",@"localized string")];
-	[item setToolTip:NSLocalizedString(@"User Manager",@"localized string")];
+	[item setToolTip:NSLocalizedString(@"Go to User Manager",@"localized string")];
         [item setImage: [NSImage imageNamed: @"users"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
@@ -374,8 +424,8 @@ PureController* thePureController = nil;
 	item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.hosts"];
 	[item setPaletteLabel:NSLocalizedString(@"Virtual Hosts",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Virtual Hosts",@"localized string")];
-	[item setToolTip:NSLocalizedString(@"Virtual Hosts",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"vhosts"]];
+	[item setToolTip:NSLocalizedString(@"Go to Virtual Hosts",@"localized string")];
+	[item setImage: [NSImage imageNamed: @"vhosts"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.hosts"];
@@ -384,7 +434,7 @@ PureController* thePureController = nil;
         item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.preferences"];
 	[item setPaletteLabel:NSLocalizedString(@"Preferences",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Preferences",@"localized string")];
-	[item setToolTip:NSLocalizedString(@"Preferences",@"localized string")];
+	[item setToolTip:NSLocalizedString(@"Open Preferences",@"localized string")];
         [item setImage: [NSImage imageNamed: @"preferences"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
@@ -478,38 +528,65 @@ PureController* thePureController = nil;
     NSTabViewItem *tab;
     tab = [mainTabView selectedTabViewItem];
     
-    if ([key isEqualToString:@"pureftpd.new"] && ([[tab identifier] hasSuffix:@"status"] || [[tab identifier] hasSuffix:@"logging"]))
-        return NO;
+    if ([key isEqualToString:@"pureftpd.new"]){ 
+		if ([[tab identifier] hasSuffix:@"status"] || [[tab identifier] hasSuffix:@"logging"]){
+			[item setToolTip:@""];
+			return NO;
+		} else if ([[tab identifier] hasSuffix:@"users"]){
+			[item setToolTip:NSLocalizedString(@"Create a new Virtual User",@"Create a new Virtual User")];
+		} else if ([[tab identifier] hasSuffix:@"hosts"]){
+			[item setToolTip:NSLocalizedString(@"Create a new Virtual Host",@"Create a new Virtual Host")];
+		}
+	}
         
     if ([key isEqualToString:@"pureftpd.save"]) {
-        if([[tab identifier] hasSuffix:@"status"] || [[tab identifier] hasSuffix:@"logging"])
-            return NO;
-        else if ([[tab identifier] hasSuffix:@"users"] ){
+        if([[tab identifier] hasSuffix:@"status"] || [[tab identifier] hasSuffix:@"logging"]){
+            [item setToolTip:@""];
+			return NO;
+        }else if ([[tab identifier] hasSuffix:@"users"] ){
+			[item setToolTip:NSLocalizedString(@"Save Virtual User", @"Save Virtual User")];
+			
             if([[userController currentUser] hasBeenEdited])
                 return YES;
             else
                 return NO;
         }
-        else if ([[tab identifier] hasSuffix:@"hosts"] && ![vhostManager areVhostsModified])
-            return NO;
+        else if ([[tab identifier] hasSuffix:@"hosts"]) {
+			[item setToolTip:NSLocalizedString(@"Save Virtual Host", @"Save Virtual Host")];
+			if (![vhostManager areVhostsModified])
+				return NO;
+		}
     }
     
     if ([key isEqualToString:@"pureftpd.delete"]){
         if ([[tab identifier] hasSuffix:@"status"]){
+			[item setToolTip:@""];
             return NO;
-        } else if(([[tab identifier] hasSuffix:@"logging"]) && ([[logManager usersTable] selectedRow] == -1)) {
-            return NO;
-        } else if ([[tab identifier] hasSuffix:@"users"] && ([[userController userTable] selectedRow] == -1)) {
-            return NO;
-        } else if ([[tab identifier] hasSuffix:@"hosts"] && ([[vhostManager vhosts] count] < 1)){
-            return NO;
+        } else if([[tab identifier] hasSuffix:@"logging"]) {
+			[item setToolTip:NSLocalizedString(@"Delete Log History", @"Delete Log History")];
+			if ([[logManager usersTable] selectedRow] == -1)
+				return NO;
+        } else if ([[tab identifier] hasSuffix:@"users"]){
+			[item setToolTip:NSLocalizedString(@"Delete Virtual User", @"Delete Virtual User")];
+			if ([[userController userTable] selectedRow] == -1)
+				return NO;
+        } else if ([[tab identifier] hasSuffix:@"hosts"]){ 
+			[item setToolTip:NSLocalizedString(@"Delete Virtual Host", @"Delete Virtual Host")];
+			if ([[vhostManager vhosts] count] < 1)
+				return NO;
         }
     }
     
-    if ([key isEqualToString:@"pureftpd.refresh"] && 
-        ([[tab identifier] hasSuffix:@"users"] || [[tab identifier] hasSuffix:@"hosts"]))
-        return NO;
-    
+    if ([key isEqualToString:@"pureftpd.refresh"]){ 
+        if ([[tab identifier] hasSuffix:@"users"] || [[tab identifier] hasSuffix:@"hosts"]) {
+			[item setToolTip:@""];
+			return NO;
+		} else if ([[tab identifier] hasSuffix:@"status"]){
+			[item setToolTip:NSLocalizedString(@"Refresh Status", @"Refresh Status")];
+		} else if ([[tab identifier] hasSuffix:@"logging"]){
+			[item setToolTip:NSLocalizedString(@"Refresh Logs", @"Refresh Logs")];
+		}
+    }
     return YES;
 }
 
@@ -557,7 +634,7 @@ PureController* thePureController = nil;
         if ([sender isEqualToString:@"asktoconfirm"])
         {
             ret = NSRunAlertPanel(NSLocalizedString(@"Do you want to start the Setup Assistant now ?",@"Do you want to start the Setup Assistant now ?"), 
-                                  NSLocalizedString(@"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?",@"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?"), NSLocalizedString(@"Cancel",@"Cancel"),
+                                  NSLocalizedString(@"You must quit PureFTPd Manager to continue. Are you sure you want to do this ?",@"You must quit PureFTPd Manager to continue. Are you sure you want to do this ?"), NSLocalizedString(@"Cancel",@"Cancel"),
                                   NSLocalizedString(@"Continue",@"Continue"), nil);
             if (ret==NSAlertDefaultReturn)
                 return;
@@ -576,7 +653,11 @@ PureController* thePureController = nil;
 
 -(IBAction) pdfHelp:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openFile:[[NSBundle mainBundle] pathForResource:@"Help" ofType:@"pdf"]];
+	NSString *locBookName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleHelpBookName"];
+	
+	NSString *path=[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:locBookName];
+	[[NSWorkspace sharedWorkspace] openFile:path];
+	
 }
 
 -(IBAction) gotoPayPalWithAmount:(id)sender
@@ -651,7 +732,7 @@ PureController* thePureController = nil;
                           NSLocalizedString(@"Unable to connect to the upgrade server.\nPlease check your internet link status and try again.",
                                             @"Alert text when an error occur during upgrade."));
         } else {
-            NSLog(@"PureFTPd Manager AutoUpdate : Unable to connect to the upgrade server.");
+            //NSLog(@"PureFTPd Manager AutoUpdate : Unable to connect to the upgrade server.");
         }
         [pool release];
         //[NSThread exit];
@@ -672,24 +753,27 @@ PureController* thePureController = nil;
                        NSLocalizedString(@"You have the latest version of PureFTPd Manager.",
                                          @"Alert text when the user's software is up to date."));
         } else {
-            NSLog(@"PureFTPd Manager AutoUpdate : You have the latest version of PureFTPd Manager.");
+            //NSLog(@"PureFTPd Manager AutoUpdate : You have the latest version of PureFTPd Manager.");
         }
     }
     else
     {
 //        [changeLog replaceCharactersInRange:NSMakeRange(0, 0) withString:@""];
         [changeLog setString:@""];
-        NSData *fileData = [[NSData alloc] initWithContentsOfURL:changeLogURL];
+        NSData *fileData = [NSData dataWithContentsOfURL:changeLogURL];
         if (fileData != nil)
             [changeLog replaceCharactersInRange:NSMakeRange(0, 0) withRTF:fileData];
         
         [updatePanel makeKeyAndOrderFront:nil];
         [versionNumber setStringValue:latestVersionNumber];
     }
+	
     [pool release];
     //[NSThread exit];
     
 }
+
+
 
 -(IBAction) upgradeNow:(id)sender 
 {
@@ -788,6 +872,8 @@ PureController* thePureController = nil;
 {
     
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];
@@ -929,5 +1015,33 @@ PureController* thePureController = nil;
 {
 	return activeUser;
 }
+
+
+/*- (void)refreshAuthorization
+{
+	OSStatus        err;
+    UInt32          response;
+	err = Gestalt(gestaltSystemVersion, (SInt32 *) &response);
+	NSString *infoMsg = NSLocalizedString(@"Next message in your Console originating from com.apple.SecurityServer is safe.", 
+	@"Next message in your Console originating from com.apple.SecurityServer is safe.");
+    
+	NSLog(infoMsg);
+	
+    if ( (err == noErr) && (response >= 0x01030) ) {
+        err = SetupAuthorization();
+		if (err != noErr)
+		{
+			NSLog(@"SetupAuthorization: %d", err);
+		}
+        err = AcquireRight(kRightName);
+		if (err != noErr)
+		{
+			NSLog(@"AcquireRight: %d", err);
+		}
+	} else if (err == noErr){
+        err = CompatSetupAuthorization();
+        err = CompatAcquireRight(CompatkRightName);
+    }
+}*/
 
 @end

@@ -1,0 +1,94 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../manager.html" class="bread">PureFTPd Manager</a> > Server Status</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3><IMG SRC="../../gfx/status.png" valign=middle border=0 hspace=13>PureFTPd Manager - Server Status</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    PureFTPd Manager's server status gives you informations on your server activity in real time. It enables you to quickly start and stop your server and displays informations on users currently connected to your computer. You can use it to monitor transfers and terminate users' connections if needed.<br> Have a  look at the screenshots to learn more from the informations you can get from this module.<br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>1. Server Status - Standard View</b></font>
+    <br><br>
+    <div align=center>
+    <img src="../../img/status1note.png" WIDTH="480" alt="PureFTPd Manager - Server Status">
+    </div>
+    <br><br>
+    <ul>
+    1. The <i>Connected Users</i> table lists all users connected to your system.<br>
+    2. To update your server status automatically, be sure to check this box. If unchecked, you would need to manually refresh your status using the <i>Refresh</i> button located at the top right of this window.<br>
+    3. "To be or not to be" running pure-ftpd ...<br>
+    4. Display the number of simultanious users connected to your system.<br>
+    5. Display the total bandwidth usage.<br>
+    6. Display your server's public IP address. You can pass this on to your friends so they can access your files. If your FTP box cannot connect to the Internet, no address is displayed.<br>
+    7. Start / Stop your FTP server.<br>
+    </ul>
+    </font>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif"><b>2. Server Status - Control Users' Connections</b></font>
+    <br><br><font size="2" face="Lucida Grande,Arial,sans-serif">
+    Using the Server Status module, you can easily review your user traffic and control connections to your server and either close a particular or all user's sessions at your convenience.<br> The next screenshot should help you understand the various informations displayed when a user is selected in the <i>Connected Users</i> table.</font>
+    <br><br>
+    <div align=center>
+    <img src="../../img/status2.png" WIDTH="480" alt="PureFTPd Manager - Server Status">
+    </div>
+    <br><br>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <ul>
+     1. A <i>Close user session</i> button is enabled when a user is selected. It lets you terminated all active user's sessions immeditately but doesn't remove the partial downloaded files from the user's personal computer nor the partial uploaded files from your computer.<br><br>
+    2. Selecting a user from the <i>Connected Users</i> table will display additional informations regarding its presence on your server. For now let's focus on the table. It is composed of 5 columns and consolidate the sessions a user opened to your computer.<br>
+    <ul>
+    <li><i>Status</i> display the session's status. It can be <i>Idle</i>, if a user is not performing any operation, <i>Downloading</i>, if a user's downloading files from your server, or <i>Uploading</i> if user's uploading files to your computer.</li>
+    <li><i>Host</i> is the remote computer address your user's connecting from. It will be display as an IP address or as a fully qualified domain name depending on your Prefernces. See your <a href=../pref/options.html>server options</a>' preference pane for more.</li>
+    <li><i>Bandwidth</i> display the current bandwidth used by a session.</li>
+    <li><i>The % column</i> represent the percentage of achievement of a session. It is very useful to know how much of a file has been downloaded or uploaded.</li>
+    <li><i>Ti</i> ... The last column represents for how much <i>Time</i> a session has been opened.</li>
+    </ul>
+    3. The <i>Process Identificator</i> field gives you the PID of the forked ftp server handling a session. For serious geeks only.<br>
+    4. A <i>Close selected session</i> button is enabled when you select a session from the sessions' table. It lets you close a particular user's session at your convenience, sending a SIGTERM to the child process.<br>
+    5. When a user is actually transfering something, it displays which file is involved.<br>
+    6. Displays the amount of bytes transfered.<br>
+    7. Tells you if a session was resumed or not.<br>
+    8. Displays the local port a session was started on.<br>
+    9. Displays the host address a session was started on.
+    </ul>
+    </font>
+    <br><br>
+    <h3>Read more ...</h3>
+    <table border=0 width=480 align=center>
+    <tr>
+    <td width=160 align=center>
+    <a href="logs.html"><IMG SRC="../../gfx/logging.png" valign=middle border=0></a>
+    <a href="logs.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Server Logs</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="vusers.html"><IMG SRC="../../gfx/users.png" valign=middle border=0></a>
+    <a href="vusers.html"><font size="2" face="Lucida Grande,Arial,sans-serif">User Manager</font></a>
+    </td>
+    <td width=160 align=center>
+    <a href="vhosts.html"><IMG SRC="../../gfx/vhosts.png" valign=middle border=0></a>
+    <a href="vhosts.html"><font size="2" face="Lucida Grande,Arial,sans-serif">Virtual Hosts</font></a>
+    </td>
+    </tr>
+    
+    </table>
+    <br><br>
+    
+    </td></tr>
+    </table>
+    </body>
+</html>

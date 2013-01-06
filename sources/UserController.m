@@ -662,7 +662,10 @@ UserController* theUserController = nil;
 }
 
 - (IBAction)chooseDir:(id)sender
-{ NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+{ 
+	NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];
@@ -699,9 +702,16 @@ UserController* theUserController = nil;
     [passwordField setEnabled:YES];
 }
 
+- (IBAction)toggleAccountStatus:(id)sender
+{
+	[currentUser setIsActivated:[sender state]];
+	[currentUser setHasBeenEdited:YES];
+}
+
 - (IBAction)setGroupID:(id)sender
 {
     [currentUser setGid:[NSString stringWithFormat:@"%d", [[groupPopUp selectedItem] tag]]];
+    
     [currentUser setHasBeenEdited:YES];
 }
 
@@ -854,6 +864,8 @@ UserController* theUserController = nil;
     [fullNameField setEnabled:NO];
     [loginField setEnabled:NO];
     [passwordField setEnabled:NO];
+	[activationSwitch setEnabled:NO];
+	[activationSwitch setState:1];
     [resetPwdButton setEnabled:NO];
     [homeDirField setEnabled:NO];
     [chooseUserDirButton setEnabled:NO];
@@ -904,13 +916,16 @@ UserController* theUserController = nil;
         [timeAccessSwitch setEnabled:YES];
         [maxSessionsField setEnabled:YES];
         [denyClientField setEnabled:YES];
-        [allowClientField setEnabled:YES];;
+        [allowClientField setEnabled:YES];
+		[activationSwitch setEnabled:YES];
     } else {
         [fullNameField setEnabled:NO];
         [timeAccessSwitch setEnabled:NO];
         [maxSessionsField setEnabled:NO];
         [denyClientField setEnabled:NO];
         [allowClientField setEnabled:NO];
+		[activationSwitch setEnabled:NO];
+		[activationSwitch setState:1];
     }
     
     [resetPwdButton setEnabled:YES];
@@ -1014,6 +1029,13 @@ UserController* theUserController = nil;
         [loginField setEnabled:YES];
         [passwordField setEnabled:YES];
     }
+	
+	if ([user isActivated])
+	{
+		[activationSwitch setState:NSOnState];
+	} else {
+		[activationSwitch setState:NSOffState];
+	}
     
     [fullNameField setStringValue:[user gecos]];
     [loginField setStringValue:[user login]];
@@ -1137,18 +1159,45 @@ UserController* theUserController = nil;
 - (void)deleteUser
 {
     int selectedRow = [userTable selectedRow];
-    
+    NSString *msg = NSLocalizedString(@"You are about to delete user: %@.", @"You are about to delete user: %@.");
+			
     if (currentUserManager == PureDB){
         if ([currentUser isNewUser]){
-            [[pureUM usersDictionary] removeObjectForKey:NSLocalizedString(@"New User", @"New User")];
+			NSString *username = NSLocalizedString(@"New User", @"New User") ;
+			NSString *title = [NSString stringWithFormat:msg, username];
+			if (NSRunCriticalAlertPanel(title,
+							NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+							NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+				return;
+				
+            [[pureUM usersDictionary] removeObjectForKey:username];
         } else {
+			NSString *username = [currentUser login] ;
+			NSString *title = [NSString stringWithFormat:msg, username];
+			if (NSRunCriticalAlertPanel(title,
+							NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+							NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+				return;
             [[pureUM usersDictionary] removeObjectForKey:[currentUser login]];
             [pureUM writePasswdFile];
         }
     } else if (currentUserManager == MySQL){
         if ([currentUser isNewUser]){
+			NSString *username = NSLocalizedString(@"New User", @"New User") ;
+			NSString *title = [NSString stringWithFormat:msg, username];
+			if (NSRunCriticalAlertPanel(title,
+							NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+							NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+				return;
+				
             [[mySQLUM usersDictionary] removeObjectForKey:NSLocalizedString(@"New User", @"New User")];
         } else {
+			NSString *username = [currentUser login] ;
+			NSString *title = [NSString stringWithFormat:msg, username];
+			if (NSRunCriticalAlertPanel(title,
+							NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+							NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+				return;
             [mySQLUM deleteUser:currentUser];
         }
     }
@@ -1171,12 +1220,72 @@ UserController* theUserController = nil;
 {
     //int selectedRow = [userTable selectedRow];
     NSString *login = [currentUser login];
+	NSString *home = nil;//[currentUser home];
+	
+	if([[[currentUser home] lastPathComponent] isEqualToString:@"."])
+    {
+        home = [[currentUser home] stringByDeletingLastPathComponent];
+    }
+    else
+    {
+        NSString *lastComponent=[[currentUser home] lastPathComponent];
+        NSString *path = [[currentUser home] stringByDeletingLastPathComponent];
+        
+        home = [path stringByAppendingFormat:@"/%@", lastComponent];
+    }
+	
+	BOOL isDir = NO;
+	
+	if ([[NSFileManager defaultManager] fileExistsAtPath:home isDirectory:&isDir] && isDir )
+	{
+		int uid=[[userPopUp selectedItem] tag];
+		int gid=[[groupPopUp selectedItem] tag];
+		
+		NSString *uname=[userPopUp titleOfSelectedItem];
+		NSString *gname=[groupPopUp titleOfSelectedItem];
+		
+		
+		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							 uname, NSFileOwnerAccountName,
+							gname, NSFileGroupOwnerAccountName, nil];
+		
+		NSNumber *p_uid=[[[NSFileManager defaultManager] fileAttributesAtPath:[home stringByDeletingLastPathComponent]
+																traverseLink:YES]
+									objectForKey:NSFileOwnerAccountID];
+		
+		NSDictionary *p_dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"root", NSFileOwnerAccountName, @"wheel",NSFileGroupOwnerAccountName, nil];
+		
+		
+		//NSLog(@"%@, %d", [home stringByDeletingLastPathComponent], [p_uid intValue]);
+		
+		if (uid == [p_uid intValue])
+		{
+			NSString *msg=[NSString stringWithFormat:NSLocalizedString(@"Your virtual user home directory (%@) and its parent directory (%@) belong to the same system user.\n To fix the parent folder ownership to root:wheel, click Fix & Continue.", @"Your virtual user home directory (/home/dir) and its parent directory (/home) belong to the same system user.\n To fix the parent folder ownership to root:wheel, click Fix & Continue."), 
+							home, [home stringByDeletingLastPathComponent]];
+			int ret = NSRunAlertPanel(NSLocalizedString(@"File access warning", @"File access warning"),
+								msg,
+								NSLocalizedString(@"Fix & Continue", @"Fix & Continue"),
+								NSLocalizedString(@"Cancel", @"Cancel"),
+								NSLocalizedString(@"Continue", @"Continue"));
+			if (ret == NSAlertAlternateReturn) {
+				return;
+			} else if (ret == NSAlertDefaultReturn){
+				[[NSFileManager defaultManager] changeFileAttributes:p_dict atPath:[home stringByDeletingLastPathComponent]];
+			}
+			
+		}
+		[[NSFileManager defaultManager] changeFileAttributes:dict atPath:home];
+	}
+	
     if (currentUserManager == PureDB){
         [pureUM writePasswdFile];
     } else if (currentUserManager == MySQL){
         [mySQLUM saveUser:currentUser];
     }
     
+
+	
     [self synchronizeUserDB];
     //[userTable selectRow:selectedRow byExtendingSelection:NO];
      [self selectRowWithName:login];
@@ -1492,7 +1601,7 @@ selectNow:
     if ([tableView isEqualTo: userTable])
     {
 	if (row ==-1)
-	    NSLog(@"-1");
+	    //NSLog(@"-1");
 	if ([userTable selectedRow] !=-1)
 	    user = [myUsers objectAtIndex:[tableView selectedRow]];
             
@@ -1561,6 +1670,8 @@ selectNow:
     }
     
 }
+
+
 
 
 @end

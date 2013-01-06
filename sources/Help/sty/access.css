@@ -1,0 +1,21 @@
+	/* APD Jag/Panther access 1.0b */
+	/* Modified for Quicktime 2/3/05 */
+p	         { font-size: 9pt; font-family: "Lucida Grande", Arial, "Sans Serif"; text-decoration: none }
+a          {
+	font-family: "Lucida Grande", Arial, "Sans Serif";
+	text-decoration: none
+	}
+
+
+	
+a:hover    {
+	font-family: "Lucida Grande", Arial, "Sans Serif";
+	text-decoration: underline
+	}
+h1   {
+	font-size: 20pt;
+	font-family: "Lucida Grande", Arial, "Sans Serif";
+	margin-bottom: -10px
+	}
+h3                                  { font-size: 12pt; font-family: "Lucida Grande", Arial, "Sans Serif"; margin-bottom: 0 }
+h4 { font-size: 9pt; font-weight: normal; margin: 0 12px 0 0 }

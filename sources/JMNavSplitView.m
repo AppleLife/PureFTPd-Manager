@@ -17,7 +17,7 @@
     if (self) {
         fileBrowserView = [[NSBrowserView alloc] initWithFrame:frame];
         
-        splitview = [[NSNavSplitView alloc] initWithFrame:frame];
+        splitview = [[NSSplitView alloc] initWithFrame:frame];
         [splitview setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
         sidebarView = [[JMSidebarView alloc] initWithFrame:NSMakeRect(0,0,130,231)];
         
@@ -28,7 +28,7 @@
         
         [self addSubview:splitview];
         [self setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
-        
+        [sidebarView setFocusRingType:NSFocusRingTypeNone];
     }
     return self;
 }
@@ -51,6 +51,7 @@
     NSRect viewBounds = [self bounds];
     [splitview setFrameSize:NSMakeSize(viewBounds.size.width , viewBounds.size.height)];
     [splitview display];
+	//[sidebarView setFocusRingType:NSFocusRingTypeNone];
 }   
 
 - (NSBrowser *)fileBrowser

@@ -18,8 +18,10 @@
     IBOutlet NSTextField *maxLoadField;
     IBOutlet NSButton *removeBannerBtn;
     IBOutlet NSTextView *bannerTxtView;
+	IBOutlet NSTextField *homeDirField;
     
     NSString *homeDirectory;
+	BOOL homeDirSet;
     NSFileManager *fm;
     NSMutableDictionary *pureFTPPreferences;
     BOOL modified;
@@ -41,5 +43,7 @@
 - (IBAction)reloadBrowserData:(id)sender;
 - (IBAction)removeVFolder:(id)sender;
 - (void)refreshVFolderList;
+
+- (IBAction)chooseDir:(id)sender;
 
 @end

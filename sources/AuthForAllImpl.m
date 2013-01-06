@@ -68,20 +68,17 @@ $Log$
 static AuthorizationRef gAuthorization = NULL;
     // Our connection to Authorization Services.
 
-
-
-const char kRightName[] = "org.pureftpd.macosx";
-    
+//const char kRightName[] = "org.pureftpd.macosx";
+const char kRightName[] = "system.privilege.admin";
 
 extern OSStatus ExecuteWithPrivileges(const char * path, const char* language)
 // This routine executes a binary with privileges
 {
     OSStatus err;
     char *args[] = {"-AppleLanguages", (char *)language, NULL}; 
-    static const AuthorizationFlags  kFlags =  kAuthorizationFlagDefaults;  
+    static const AuthorizationFlags  kFlags =  kAuthorizationFlagDefaults;
+	
     err = AuthorizationExecuteWithPrivileges(gAuthorization, path, kFlags, args, NULL);
-    
-       
     
     AuthorizationFree(gAuthorization,kAuthorizationFlagDestroyRights);
 
@@ -158,22 +155,6 @@ static OSStatus AuthorizationRightSetWithWorkaround(
 
     originalRetainCount = CFGetRetainCount(clientBundle);
     CFRetain(clientBundle);
-
-    /*
-     CFMutableDictionaryRef rightMutableDict;
-     rightMutableDict = CFDictionaryCreateMutableCopy(NULL, 0, rightDict);
-     CFDictionaryRemoveValue(rightMutableDict, "timeout");
-     
-     CFRelease(rightMutableDict);
-     */
-	 
-	 
-	/*NSArray *keys = [NSArray arrayWithObjects:[NSString stringWithUTF8String:"rule"], [NSString stringWithUTF8String:"timeout"], nil];
-	NSArray *rules = [NSArray arrayWithObjects:[NSString stringWithUTF8String:"org.pureftpd.macosx"], [NSString stringWithUTF8String:kAuthorizationRuleAuthenticateAsAdmin], nil];
-	NSArray *vals = [NSArray arrayWithObjects:rules, [NSNumber numberWithInt:0], nil];
-	NSDictionary *dict = [NSDictionary dictionaryWithObjects:vals forKeys:keys];
-  
-*/
 	
     err = AuthorizationRightSet(
         authRef, 
@@ -236,7 +217,7 @@ static OSStatus SetupRight(
             authRef,                // authRef
             rightName,              // rightName
             rightRule,        // rightDefinition
-            rightPrompt,            // descriptionKey
+            NULL,            // descriptionKey
             NULL,                   // bundle, NULL indicates main bundle
             NULL                    // localeTableName, 
         );                          // NULL indicates "Localizable.strings"
@@ -268,17 +249,17 @@ extern OSStatus SetupAuthorization(void)
     // Connect to Authorization Services.
 
     err = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &gAuthorization);
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], @"allow-root", 
+	/*NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], @"allow-root", 
 																	@"user", @"class",
 																	@"admin", @"group", 
 																	[NSNumber numberWithBool:NO], @"shared",
-																	[NSNumber numberWithInt:0], @"timeout", nil];
+																	[NSNumber numberWithInt:0], @"timeout", nil];*/
 
     if (err == noErr) {
         err = SetupRight(
             gAuthorization, 
             kRightName, 
-			dict,
+			CFSTR(kAuthorizationRuleAuthenticateAsAdmin),
             CFSTR("")
         );
     }

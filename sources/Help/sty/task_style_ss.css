@@ -1,0 +1,258 @@
+/*APD CSS Single Source Task Style 2.0e 	*/
+/* <html><head><meta name="robots" content="noindex"></head></html> */
+body { 
+	margin: 2px 12px 12px 
+	}
+
+h1, h2, h3      { 
+	font-size: 11pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	margin-bottom: 0 
+	}
+
+h2, h3          {
+	margin-top: 14px;
+	margin-bottom: -2px
+	}
+
+h4             { 
+	font-size: 10pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	margin-bottom: -6px 
+	}
+
+h5              { 
+	font-size: 9pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	font-style: normal; 
+	background-color: #e6edff; 
+	margin-bottom: -6px; 
+	margin-left: -2px; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	padding-left: 2px 
+	}
+
+h5 i 			 { 
+	font-style: normal 
+	}
+
+p	      { 
+	font-size: 9pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	line-height: 12pt; 
+	text-decoration: none 
+	}
+
+ol           { 
+	background-color: #e6edff; 
+	font-size: 9pt; 
+	line-height: 12pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	list-style-position: outside; 
+	padding-top: 8px; 
+	padding-right: 15px; 
+	padding-bottom: 8px; 
+	border: solid 1px #bfbfbf 
+	}
+
+ol li     {
+	margin-top: 6px;
+	margin-left: -6px
+	}
+	
+ol ol li     {
+	margin-top: 6px;
+	margin-left: -19px;
+	}
+
+ol ol          { 
+	border-style: none; 
+	padding-top: 0px; 
+	padding-bottom: 0px 
+	}
+
+ol p       {
+	margin-top: 6px;
+	margin-bottom: 6px
+	}
+
+ul       {
+	font-size: 9pt;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	line-height: 12pt;
+	list-style-type: square;
+	list-style-position: outside;
+	margin-left: -22px
+	}
+
+ul li       { 
+	list-style-type: square; 
+	margin-top: 6px; 
+	margin-bottom: 6px; 
+	margin-left: 0px 
+	}
+
+ul p        { 
+	margin-top: 6px; 
+	margin-bottom: 6px 
+	}
+
+	/* For formatting code examples */
+dt {
+	font-size: 9pt;
+	line-height: 12pt;
+	font-family: "Courier New", Courier, Monaco;
+	padding-right: 60px
+	}
+	
+dl {
+	margin-top: 6px;
+	margin-bottom: 6px
+	}
+
+a         { 
+	color: blue; 
+	font-size: 9pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	line-height: 12pt; 
+	text-decoration: none 
+	}
+
+a:hover   { 
+	text-decoration: underline 
+	}
+
+td   { 
+	font-size: 9pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	line-height: 12pt; 
+	text-decoration: none; 
+	background-color: #fff; 
+	vertical-align: top; 
+	border-style: solid; 
+	border-width: 1px; 
+	border-color: white white #e6edff 
+	}
+
+th   { 
+	font-size: 9pt; 
+	font-family: "Lucida Grande", Arial, sans-serif; 
+	font-weight: bold; 
+	line-height: 12pt; 
+	text-decoration: none; 
+	background-color: #e6edff; 
+	text-align: left; 
+	vertical-align: top; 
+	border-top: 1px solid #e6edff; 
+	border-right: 1px solid #e6edff; 
+	border-left: 1px solid #e6edff 
+	}
+
+	/* Hides the hr's */
+hr {
+	border: 0; 
+	height: 0px; 
+	}
+
+#caticon	      {
+	float: left;
+	margin-top: 4px;
+	margin-right: 5px
+	}
+	
+#pagetitle {
+	margin-top: -5px;
+	margin-bottom: -1px;
+	margin-left: 40px;
+	width: 88%;
+	border: solid 1px #fff
+	}
+	
+table   { 
+	text-align: left; 
+	margin-top: 20px; 
+	width: 100%; 
+	border: solid 1px #e6edff; 
+	border-bottom: 0px 
+	}
+
+#banner { 
+	background-color: #f2f2f2; 
+	background-repeat: no-repeat; 
+	padding: -2px 6px 0; 
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 18px; 
+	float: left; 
+	border: solid 1px #bfbfbf 
+	}
+
+
+#ServerAdminHelp { 
+	position: absolute; 
+	top: 2px; 
+	left: 10px 
+	}
+
+#index { 
+	position: absolute; 
+	top: 2px; 
+	left: 85% 
+	}
+
+#mainbox { 
+	margin-top: 36px; 
+	padding-right: 6px 
+	}
+
+.bread { 
+	color: #00f; 
+	font-size: 8pt; 
+	margin: -9px 0 -6px 
+	}
+
+.leftborder { 
+	color: #00f; 
+	font-size: 8pt; 
+	margin: -9px 0 -6px; 
+	padding-top: 2px; 
+	padding-bottom: 3px; 
+	padding-left: 8px; 
+	border-left: 1px solid #bfbfbf 
+	}
+
+.summarytext { 
+	margin-top: -10px;
+	}
+
+	/* Hides icon table's border */
+.icontable { 
+	margin-top: -6px; 
+	margin-bottom: -10px; 
+	padding: 6px; 
+	border-style: none; 
+	outline-style: none 
+	}
+
+.iconhead { 
+	margin-top: 0px; 
+	margin-bottom: 12px 
+	}
+
+	/* For formatting table inside a numbered list */
+ol table tr td { 
+	border-left: 0px; 
+	border-right: 0px; 
+	border-top: 0px; 
+	border-width: 1px; 
+	border-color: #bfbfbf 
+	}
+
+ol table { 
+	border-width: 1px; 
+	border-bottom: 0px; 
+	border-color: #bfbfbf 
+	}

@@ -82,7 +82,7 @@
 	NSNumber *update = [[NSNumber alloc] initWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
     
-    NSLog(@"Saving PureFTPD preferences - Permissions Pane");
+    //NSLog(@"Saving PureFTPD preferences - Permissions Pane");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
 
     [preferences release];

@@ -167,7 +167,7 @@
     NS_ENDHANDLER
     if([newData length] == 0)
         return NO;
-    newString = [[NSString allocWithZone:[self zone]] initWithData:newData encoding:NSISOLatin1StringEncoding];
+    newString = [[NSString allocWithZone:[self zone]] initWithData:newData encoding:NSUTF8StringEncoding];
     [buffer appendString:newString];
     [newString release];
     return YES;

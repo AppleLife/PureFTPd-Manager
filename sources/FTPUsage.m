@@ -18,7 +18,7 @@
  */
 
 #import "FTPUsage.h"
-
+#import "defines.h"
 
 int mmap_fd = -1;
 //static signed char dont_resolve_ip;
@@ -26,7 +26,7 @@ static struct flock lock;
 
 void ftpwho_unlock(void) 
 {
-    lock.l_type = F_UNLCK;
+	lock.l_type = F_UNLCK;
     while (fcntl(mmap_fd, F_SETLK, &lock) < 0) {
         if (errno != EINTR) {
             return;
@@ -76,7 +76,6 @@ static inline int checkproc(const pid_t proc)
 
 -(void) update 
 {
-    
     [self clearUsersDB];
     DIR *dir;
     struct dirent *entry;
@@ -86,7 +85,10 @@ static inline int checkproc(const pid_t proc)
     int delete_file;
     const char *state;
     time_t now;
+    int fodder;
     
+	int dont_resolve_ip = [[[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPResolvName] intValue];
+	
     now = time(NULL);
     if (chdir(SCOREBOARD_PATH) != 0 ||
         (dir = opendir(".")) == NULL) {
@@ -95,7 +97,8 @@ static inline int checkproc(const pid_t proc)
                 "Or wait until a client connects, so that it gets\n"
                 "automatically created. This message doesn't mean that your\n"
                 "server didn't start properly. It probably just means that\n"
-                "you are running it with ftpwho for the first time.\n"); */
+                "you are running it with ftpwho for the first time.\n");*/
+		
         return;
     }
 
@@ -114,12 +117,13 @@ static inline int checkproc(const pid_t proc)
             goto nextone;
         }
         if ((mmap_fd = open(entry->d_name, O_RDWR | O_NOFOLLOW)) == -1) {
-            goto nextone;
+			goto nextone;
         }
+		
         if (fstat(mmap_fd, &st) != 0 || !S_ISREG(st.st_mode) ||
             (st.st_mode & 0600) != 0600 || 
             st.st_size != (off_t) sizeof (FTPWhoEntry) ||
-	    /*To check*/
+	    //To check
 	    st.st_uid != geteuid()) {
             goto nextone;
         }
@@ -132,7 +136,7 @@ static inline int checkproc(const pid_t proc)
             goto nextone;
         }
         if (checkproc(scanned_entry->pid) == 0) {
-            /* still in the scoreboard, but no more process */
+            // still in the scoreboard, but no more process
             delete_file++;
             goto nextone;
         }        
@@ -144,17 +148,17 @@ static inline int checkproc(const pid_t proc)
             char hbuf[NI_MAXHOST];
 	    
             switch (scanned_entry->state) {
-		case FTPWHO_STATE_IDLE :
-		    state = "Idle";
-		    break;
-		case FTPWHO_STATE_DOWNLOAD :
-		    state = " Downloading ";
-		    break;
-		case FTPWHO_STATE_UPLOAD :
-		    state = " Uploading ";
-		    break;
-		default :
-		    state = "Error!";
+				case FTPWHO_STATE_IDLE :
+					state = "Idle";
+					break;
+				case FTPWHO_STATE_DOWNLOAD :
+		    		state = " Downloading ";
+		    		break;
+				case FTPWHO_STATE_UPLOAD :
+		    		state = " Uploading ";
+		    		break;
+				default :
+		    		state = "Error!";
             }
             if (scanned_entry->date < now) {
                 since = (unsigned long) (now - scanned_entry->date);
@@ -174,12 +178,12 @@ static inline int checkproc(const pid_t proc)
                      ((struct sockaddr *) &scanned_entry->addr,
                       STORAGE_LEN(scanned_entry->addr),
                       hbuf, sizeof hbuf, NULL, (size_t) 0U,
-		      NI_NUMERICHOST)) == 0) {
-		    //dont_resolve_ip != 0 ? NI_NUMERICHOST : 0)) == 0) {
+		      		  //NI_NUMERICHOST)) == 0) {
+					  dont_resolve_ip != 0 ? NI_NUMERICHOST : 0)) == 0) {
                     break;
-                }
+				}
 		
-		goto nextone;
+				goto nextone;
             }
             for (;;) {
                 int eai;
@@ -189,14 +193,15 @@ static inline int checkproc(const pid_t proc)
                       STORAGE_LEN(scanned_entry->addr),
                       local_hbuf, sizeof local_hbuf,
                       local_port, sizeof local_port,
-		      (NI_NUMERICHOST | NI_NUMERICSERV) )) == 0) {
-                      /*dont_resolve_ip != 0 ? (NI_NUMERICHOST | NI_NUMERICSERV) :
-                      NI_NUMERICSERV)) == 0) {*/
+					  //(NI_NUMERICHOST | NI_NUMERICSERV) )) == 0) {
+                      dont_resolve_ip != 0 ? (NI_NUMERICHOST | NI_NUMERICSERV) :
+                      NI_NUMERICSERV)) == 0) {
                     break;
                 }
-		goto nextone;
+				goto nextone;
             }
-	    
+		
+		
 	    [self fillDictionaryFor:[NSString stringWithCString: scanned_entry->account]
 			 PID: scanned_entry->pid
 		       since: since
@@ -227,8 +232,14 @@ nextone:
         if (delete_file != 0) {
             unlink(entry->d_name);
         }
-    }
     
+    }
+	
+	closedir(dir);
+	/*if (dir != NULL)
+		free(dir);*/
+		
+	
 }
 
 

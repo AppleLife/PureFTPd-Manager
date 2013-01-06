@@ -4,6 +4,7 @@
 #import <PreferencePanes/NSPreferencePane.h>
 #import <Foundation/Foundation.h>
 #import "defines.h"
+#import "WBTimeControl.h"
 
 @class PureController;
 
@@ -16,10 +17,20 @@
     IBOutlet NSButton *updateSwitch;
     IBOutlet NSButton *shareSwitch;
     
-    NSString *lastLogFile;
+	IBOutlet NSButton *convertSwitch;
+	IBOutlet NSButton *browseDirButton;
+	IBOutlet NSButton *detailOutputSwitch;
+	IBOutlet NSButton *previewButton;
+	IBOutlet NSPopUpButton *daysPopUp;
+	IBOutlet NSPopUpButton *statFormatPopUp;
+	IBOutlet NSTextField *saveToField;
+	
+	IBOutlet WBTimeControl *time;
     
     NSMutableDictionary *pureFTPPreferences;
     BOOL modified;
+	int initialLogFormat;
+	NSString *initialLogLocation;
 }
 
 -(void)loadPreferences;
@@ -27,4 +38,10 @@
 
 - (IBAction)chooseFile:(id)sender;
 - (IBAction)didModify:(id)sender;
+
+- (IBAction)chooseDir:(id)sender;
+- (IBAction)preview:(id)sender;
+- (IBAction)toggleConvertion:(id)sender;
+
+- (void)updateCronEntry;
 @end

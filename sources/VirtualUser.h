@@ -43,6 +43,8 @@
     BOOL isNewUser;
     BOOL hasBeenEdited;
     BOOL pwdModified;
+	
+	BOOL activated;
 }
 
 +(id) userWithInfo:(NSMutableArray *)userInfo;
@@ -122,6 +124,8 @@
 -(BOOL) pwdModified;
 -(void) setPwdModified:(BOOL)flag;
 
+- (BOOL)isActivated;
+- (void)setIsActivated:(BOOL)flag;
 
 
 @end

@@ -57,7 +57,7 @@
 
 @implementation FSBrowserCell
 
-+ (NSImage*)branchImage {
+/*+ (NSImage*)branchImage {
     // Override the default branch image (we don't want the arrow).
     return nil;
 }
@@ -65,7 +65,7 @@
 + (NSImage*)highlightedBranchImage {
     // Override the default branch image (we don't want the arrow).
     return nil;
-}
+}*/
 
 - (void)dealloc {
     [iconImage release];
@@ -126,22 +126,27 @@
         else imageFrame.origin.y += ceil((textFrame.size.height - imageFrame.size.height) / 2);
 
 	// Depending on the current state, set the color we will highlight with.
-        if ([self isHighlighted]) {
+        if ([self isHighlighted] || [self state] == 1) {
 	    // use highlightColorInView instead of [NSColor selectedControlColor] since NSBrowserCell slightly dims all cells except those in the right most column.
 	    // The return value from highlightColorInView will return the appropriate one for you. 
-	    [[self highlightColorInView: controlView] set];
+			[[self highlightColorInView: controlView] set];
         } else {
-	    [[NSColor controlBackgroundColor] set];
+			[[NSColor controlBackgroundColor] set];
+		//[[self highlightColorInView: controlView] set];
 	}
+	
 
 	// Draw the highligh, bu only the portion that won't be caught by the call to [super drawInteriorWithFrame:...] below.  No need to draw parts 2 times!
 	highlightRect = NSMakeRect(NSMinX(cellFrame), NSMinY(cellFrame), NSWidth(cellFrame) - NSWidth(textFrame), NSHeight(cellFrame));
 	NSRectFill(highlightRect);
 	
 	// Blit the image.
-        [iconImage compositeToPoint:imageFrame.origin operation:NSCompositeSourceOver];
+	[iconImage compositeToPoint:imageFrame.origin operation:NSCompositeSourceOver];
+	//[iconImage compositeToPoint:imageFrame.origin operation:NSCompositeDestinationOver];
+	
     
-	// Have NSBrowser kindly draw the text part, since it knows how to do that for us, no need to re-invent what it knows how to do.
+	// Have NSBrowser kindly draw the text part, since it knows how to do that for us, 
+	// no need to re-invent what it knows how to do.
 	[super drawInteriorWithFrame:textFrame inView:controlView];
     } else {
 	// Atleast draw something if we couldn't find an icon.  You may want to do something more intelligent.

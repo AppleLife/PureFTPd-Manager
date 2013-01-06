@@ -1,4 +1,7 @@
 "NSHumanReadableCopyright" = "Publié sous license GPL";
-"CFBundleGetInfoString" = "1.5";
+"CFBundleGetInfoString" = "1.6";
 "CFBundleName" = "PureFTPd Manager";
 "CFBundleShortVersionString" = "PureFTPd Manager";
+"CFBundleHelpBookName" = "PureFTPd Manager Help";
+"CFBundleHelpBookFolder" = "PureFTPd Manager Help";
+"CFBundleIdentifier" = "org.pureftpd.macosx";

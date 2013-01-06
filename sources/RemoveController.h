@@ -9,6 +9,7 @@
     IBOutlet NSButton *keepPreferences;
     IBOutlet NSButton *keepPureDB;
     IBOutlet NSButton *keepSSL;
+	IBOutlet NSButton *keepAnon;
     IBOutlet NSProgressIndicator *progressWheel;
     IBOutlet NSTabView *tabView;
     IBOutlet NSTextView *textView;
@@ -21,5 +22,7 @@
 - (IBAction)removeManager:(id)sender;
 - (void)appendString:(NSString *)string toText:(NSTextView *)tv;
 - (NSArray *)prepareUninstall;
+
+- (void)sighupCron;
 
 @end

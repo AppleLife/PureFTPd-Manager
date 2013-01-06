@@ -26,10 +26,10 @@
 int main(int argc, const char *argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    OSStatus        err;
-    UInt32          response;
+    
     [NSApplication sharedApplication];
-	
+	OSStatus        err;
+    UInt32          response;
 	
     err = Gestalt(gestaltSystemVersion, (SInt32 *) &response);
     

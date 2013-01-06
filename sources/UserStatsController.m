@@ -29,8 +29,8 @@
     if (self)
     {
         
-        if((userStatsDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PureFTPStatsFile]) == nil);
-        userStatsDict = [[NSMutableDictionary alloc] init];
+        /*if((userStatsDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PureFTPStatsFile]) == nil)
+			userStatsDict = [[NSMutableDictionary alloc] init];*/
             
         statsParser=[[NSXLogParser alloc] initWithInfoCapacity:13];
     }
@@ -40,7 +40,11 @@
 
 -(void) dealloc
 {
-    [userStatsDict release];
+    if (userStatsDict != nil)
+	{
+		[userStatsDict release];
+	}
+	
     [statsParser release];
     [super dealloc];
 }
@@ -63,11 +67,23 @@
     NSMutableArray *subjectsArray = [[NSMutableArray alloc] initWithArray:
             [fileContents componentsSeparatedByString:@"\n"]];
     
+	[fileContents release];
+	
     if([subjectsArray count] <= 0)
+	{	
+		
+		[subjectsArray release];
         return;
-    
-    [userStatsDict setDictionary:[NSDictionary dictionaryWithContentsOfFile:PureFTPStatsFile]];
-    //NSLog (@"%@", [userStatsDict description]);
+    }
+	
+	if (userStatsDict != nil)
+	{
+		[userStatsDict removeAllObjects];
+		[userStatsDict release];
+	}
+	
+    if ((userStatsDict = [[NSMutableDictionary alloc] initWithContentsOfFile:PureFTPStatsFile]) == nil)
+		userStatsDict = [[NSMutableDictionary alloc] init];
     
     NSNumber *wasLast = nil;
     lastLine = [[NSNumber alloc] initWithUnsignedInt:[subjectsArray count]];
@@ -91,7 +107,11 @@
             [subjectsArray removeObjectsInRange:NSMakeRange(0,[wasLast unsignedIntValue]-1)];
         }
         
-        else return;
+        else {
+			[subjectsArray release];
+			[lastLine release];
+			return;
+		}
         
     }
     else 
@@ -117,8 +137,9 @@
     }
     
     [self orderUserStatsDict];
-    [fileContents release];
+    
     [subjectsArray release];
+	
 }
 
 -(void) orderCLFStats
@@ -135,7 +156,7 @@
     
     NSMutableArray *oldUserArray=nil;
     int month = 0;
-    while(subArray = [logEnum nextObject]) {
+    while((subArray = [logEnum nextObject]) != nil) {
         ysize = nil;
         msize=  nil;
         dsize = nil;
@@ -165,7 +186,8 @@
             month=11;
         else if ([monthString isEqualToString:@"Dec"])
             month=12;
-        NSString *theDate = [NSString stringWithFormat:@"%@-%02d-%@ %@:%@:%@ %@",
+        /*
+			NSString *theDate = [NSString stringWithFormat:@"%@-%02d-%@ %@:%@:%@ %@",
             [subArray objectAtIndex:5],
             month,
             [subArray objectAtIndex:3],
@@ -173,14 +195,50 @@
             [subArray objectAtIndex:7],
             [subArray objectAtIndex:8],
             [subArray objectAtIndex:9]];
-        
-        NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithString:theDate] autorelease];
-        
-        
+        */
+		//NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithString:theDate] autorelease];
+		 
+		int y = [[subArray objectAtIndex:5] intValue];
+		int m = month;
+		int d = [[subArray objectAtIndex:3] intValue];
+		int hour = [[subArray objectAtIndex:6] intValue];
+		int minute = [[subArray objectAtIndex:7] intValue];
+		int second = [[subArray objectAtIndex:8] intValue];
+		NSTimeZone *tz = [NSTimeZone localTimeZone];
+		 
+       
+        NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithYear:y month:m day:d 
+																		hour:hour minute:minute second:second 
+																	timeZone:tz] autorelease];
+		
+        NSString *filename = nil;
+		NSURL *url = [NSURL URLWithString:[subArray objectAtIndex:11]];
+		if (url == nil)
+		{
+			if ([filename respondsToSelector:@selector(stringWithCString:encoding:)])
+			{
+				filename = [NSString stringWithCString:[[subArray objectAtIndex:11] cString] encoding:NSUTF8StringEncoding];
+			} else {
+				filename = [NSString stringWithUTF8String:[[subArray objectAtIndex:11] cString]];
+			}
+		} else {
+			if ([url path] !=nil){
+				filename = [NSString stringWithString:[url path]];
+			} else { 
+				//filename=[NSString stringWithCString:[[subArray objectAtIndex:11] cString] encoding:NSUTF8StringEncoding];
+				if ([filename respondsToSelector:@selector(stringWithCString:encoding:)])
+				{
+					filename = [NSString stringWithCString:[[subArray objectAtIndex:11] cString] encoding:NSUTF8StringEncoding];
+				} else {
+					filename = [NSString stringWithUTF8String:[[subArray objectAtIndex:11] cString]];
+				}
+			}
+			
+		}
         NSArray *transferDescription = [[NSArray alloc] initWithObjects:
             [subArray objectAtIndex:1],
-            [subArray objectAtIndex:10],
-            [subArray objectAtIndex:11],
+			[subArray objectAtIndex:10],
+            filename,
             [subArray objectAtIndex:12],
             transferDate,
             nil];
@@ -189,8 +247,10 @@
         
         NSMutableDictionary *newTransfer = [[NSMutableDictionary alloc] initWithObjects:transferDescription
                                                                                 forKeys:transferKeys];
-        
-        
+		
+        [transferDescription release];
+		[transferKeys release];
+		
         NSMutableDictionary *totalsDict = nil;
         NSMutableDictionary *yearDict = nil;
         NSMutableDictionary *monthDict = nil;
@@ -207,79 +267,124 @@
             yearDict =  [[NSMutableDictionary alloc] init];
             monthDict = [[NSMutableDictionary alloc] init];
             // Total per Day
-            [monthDict setObject:[subArray objectAtIndex:12] 
+            // Total per Day
+			// [subArray objectAtIndex:4] PUT | GET
+			NSMutableDictionary *transfers = [[NSMutableDictionary alloc] init];
+			[transfers setObject:[subArray objectAtIndex:12] forKey:[subArray objectAtIndex:10]];
+			
+            [monthDict setObject:transfers
                           forKey:day];
             // Monthly Total
-            [monthDict setObject:[subArray objectAtIndex:12] forKey:@"monthTotal"];
+            [monthDict setObject:transfers forKey:@"monthTotal"];
             
             [yearDict setObject:monthDict forKey:month];
             // Year Total
-            [yearDict setObject:[subArray objectAtIndex:12] 
+            [yearDict setObject:transfers 
                          forKey:@"yearTotal"];
             
             [totalsDict setObject:yearDict forKey:year];
-            NSArray *userArray = [[NSArray alloc] initWithObjects: totalsDict, newTransfer, nil];
+			
+            NSArray *userArray = [NSArray arrayWithObjects: totalsDict, newTransfer, nil];
             
             [userStatsDict setObject:userArray forKey:[subArray objectAtIndex:2]];
             [yearDict release];
             [monthDict release];
             [totalsDict release];
-            [userArray release];
+            [transfers release];
         }
         else
         {
             NSMutableArray *userArray = [[NSMutableArray alloc] init];
-            
+            NSString *transferType = [subArray objectAtIndex:10]; // PUT | GET
             double totalToAdd = [[subArray objectAtIndex:12] doubleValue];
             totalsDict = [[NSMutableDictionary alloc] init];
           
             yearDict = [NSMutableDictionary dictionaryWithDictionary:[[oldUserArray objectAtIndex:0] objectForKey:year]];
+			if (yearDict == nil)
+				yearDict= [NSMutableDictionary dictionary];
+				
             monthDict = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:month]];
-            ysize = [yearDict objectForKey:@"yearTotal"];
+			if (monthDict == nil){
+				monthDict= [NSMutableDictionary dictionary];
+				[yearDict setObject:monthDict forKey:month];
+			}
+			
+			
+			NSMutableDictionary *yearDetail = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
+			if (yearDetail == nil) {
+				yearDetail= [NSMutableDictionary dictionary];
+				[yearDict setObject:yearDetail forKey:@"yearTotal"];
+			}
+			NSMutableDictionary *monthDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:@"monthTotal"]];
+			if (monthDetail == nil){
+				monthDetail= [NSMutableDictionary dictionary];
+				[monthDict setObject:monthDetail forKey:@"monthTotal"];
+			}
+			
+			NSMutableDictionary *dayDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:day]];
+			if (dayDetail == nil){
+				dayDetail= [NSMutableDictionary dictionary];
+				[monthDict setObject:dayDetail forKey:day];
+			}
+
+            ysize = [yearDetail objectForKey:transferType];
            
-            if (ysize == NULL)
+            if (ysize == nil) // no record for this type of transfer.
             {
-                // Happy New Year ! (New Month new day)
-                [yearDict setObject:[subArray objectAtIndex:12] 
-                             forKey:@"yearTotal"];
-                [monthDict setObject:[subArray objectAtIndex:12]
-                              forKey:@"monthTotal"];
-                [monthDict setObject:[subArray objectAtIndex:12]
-                              forKey:day];
+				[yearDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+				[monthDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+				[dayDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+				
+				[monthDict setObject:dayDetail forKey:day];
+				// Monthly Total
+				[monthDict setObject:monthDetail forKey:@"monthTotal"];
+            
+				[yearDict setObject:monthDict forKey:month];
+				// Year Total
+				[yearDict setObject:yearDetail forKey:@"yearTotal"];
             }
             else 
             {
                 // Update year total
-                [yearDict setObject:[NSString stringWithFormat:@"%f", [ysize doubleValue] + totalToAdd]
+				// get year transfer dictionary
+				//NSMutableDictionary *yearTransfers = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
+				
+				[yearDetail setObject:[NSString stringWithFormat:@"%f", [ysize doubleValue] + totalToAdd] 
+							  forKey:transferType];
+                [yearDict setObject:yearDetail
                              forKey:@"yearTotal"];
                 
                 
-                msize = [monthDict objectForKey:@"monthTotal"];
+                msize = [monthDetail objectForKey:transferType];
                 if (msize==NULL)
                 {
-                    // New month! ... and new day
-                    [monthDict setObject:[subArray objectAtIndex:12] 
-                                  forKey:@"monthTotal"];
-                    [monthDict setObject:[subArray objectAtIndex:12] 
-                                  forKey:day];
-                }
+					[monthDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+					[dayDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+					
+                    [monthDict setObject:monthDetail forKey:@"monthTotal"];
+                    [monthDict setObject:dayDetail forKey:day];
+				}
                 else 
                 {
-                    dsize = [monthDict objectForKey:day];
+                    dsize = [[monthDict objectForKey:day] objectForKey:transferType];
                     
                     if (dsize == NULL)
                     {
                         // New Day 
-                        [monthDict setObject:[subArray objectAtIndex:12] forKey:day];
+                        [dayDetail setObject:[subArray objectAtIndex:12] forKey:transferType];
+                        [monthDict setObject:dayDetail forKey:day];
                     }
                     else
                     {
-                        [monthDict setObject:[NSString stringWithFormat:@"%f", [dsize doubleValue] + totalToAdd]
-                                      forKey:day];
+						[dayDetail setObject:[NSString stringWithFormat:@"%f", [dsize doubleValue] + totalToAdd] 
+							             forKey:transferType];
+							  
+                        [monthDict setObject:dayDetail forKey:day];
                     }
                     
-                    [monthDict setObject:[NSString stringWithFormat:@"%f", [msize doubleValue] + totalToAdd]
-                                  forKey:@"monthTotal"];
+					[monthDetail setObject:[NSString stringWithFormat:@"%f", [msize doubleValue] + totalToAdd] 
+							  forKey:transferType];
+                    [monthDict setObject:monthDetail forKey:@"monthTotal"];
                 }        
                 
             }
@@ -287,6 +392,7 @@
             [yearDict setObject:monthDict forKey:month];
             
             [totalsDict setObject:yearDict forKey:year];
+			
             //NSLog(year);
             //NSLog([oldUserArray description]);            
             //NSLog([totalsDict description]);
@@ -302,7 +408,7 @@
             [userArray release];
         }
         
-        [transferDescription release];
+        [newTransfer release];
     }
     
     
@@ -334,18 +440,62 @@
         msize=  nil;
         dsize = nil;
         
-        NSString *theDate = [NSString stringWithFormat:@"%@ %@ +0000",
+        /* NSString *theDate = [NSString stringWithFormat:@"%@ %@ +0000",
             [subArray objectAtIndex:1],
             [subArray objectAtIndex:2]];
+		*/
        // NSLog(@"%@", theDate);
-        NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithString:theDate] autorelease];
+		int y = [[[subArray objectAtIndex:1] substringWithRange:NSMakeRange(0,4)] intValue];
+		int m = [[[subArray objectAtIndex:1] substringWithRange:NSMakeRange(5,2)] intValue];
+		int d = [[[subArray objectAtIndex:1] substringWithRange:NSMakeRange(8,2)] intValue];
+		int hour = [[[subArray objectAtIndex:2] substringWithRange:NSMakeRange(0,2)] intValue];
+		int minute = [[[subArray objectAtIndex:2] substringWithRange:NSMakeRange(3,2)] intValue];
+		int second = [[[subArray objectAtIndex:2] substringWithRange:NSMakeRange(6,2)] intValue];
+		NSTimeZone *tz = [NSTimeZone timeZoneWithName:@"GMT"];
+		 
+        //NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithString:theDate] autorelease];
+        NSCalendarDate *transferDate = [[[NSCalendarDate alloc] initWithYear:y month:m day:d 
+																		hour:hour minute:minute second:second 
+																	timeZone:tz] autorelease];
         
         NSString *sizeinBytes = [NSString stringWithFormat:@"%f", [[subArray objectAtIndex:7] doubleValue]];
         
+		
+	    NSString *filename = nil;
+		NSURL *url = [NSURL URLWithString:[subArray objectAtIndex:5]];
+		if (url == nil)
+		{
+			if ([filename respondsToSelector:@selector(stringWithCString:encoding:)])
+			{
+				filename = [NSString stringWithCString:[[subArray objectAtIndex:5] cString] encoding:NSUTF8StringEncoding];
+			} else {
+				filename = [NSString stringWithUTF8String:[[subArray objectAtIndex:5] cString]];
+			}
+			
+		} else {
+			if ([url path] !=nil) {
+				filename = [NSString stringWithString:[url path]];
+			} else {
+				if ([filename respondsToSelector:@selector(stringWithCString:encoding:)])
+				{
+					filename = [NSString stringWithCString:[[subArray objectAtIndex:5] cString] encoding:NSUTF8StringEncoding];
+				} else {
+					filename = [NSString stringWithUTF8String:[[subArray objectAtIndex:5] cString]];
+				}
+				//filename=[NSString stringWithCString:[[subArray objectAtIndex:5] cString] encoding:NSUTF8StringEncoding];
+			}
+		}
+		
+		NSString *transferType = [subArray objectAtIndex:4]; // PUT | GET
+		if ([transferType isEqualToString:@"created"])
+			transferType=@"PUT";
+		else if  ([transferType isEqualToString:@"sent"])
+			transferType=@"GET";
+				
         NSArray *transferDescription = [[NSArray alloc] initWithObjects:
             [subArray objectAtIndex:3],
-            [subArray objectAtIndex:4],
-            [subArray objectAtIndex:5],
+            transferType,
+            filename,
             sizeinBytes,
             transferDate,
             nil];
@@ -355,6 +505,8 @@
         NSMutableDictionary *newTransfer = [[NSMutableDictionary alloc] initWithObjects:transferDescription
                                                                                 forKeys:transferKeys];
         
+		[transferDescription release];
+		[transferKeys release];
         
         NSMutableDictionary *totalsDict = nil;
         NSMutableDictionary *yearDict = nil;
@@ -368,29 +520,37 @@
         {
             // User not found, add it to userStatsDict
             // His first totals ...
+            // User not found, add it to userStatsDict
+            // His first totals ...
             totalsDict = [[NSMutableDictionary alloc] init];
             yearDict =  [[NSMutableDictionary alloc] init];
             monthDict = [[NSMutableDictionary alloc] init];
             // Total per Day
-            [monthDict setObject:sizeinBytes
+            // Total per Day
+			// [subArray objectAtIndex:4] PUT | GET
+			
+			NSMutableDictionary *transfers = [[NSMutableDictionary alloc] init];
+			[transfers setObject:sizeinBytes forKey:transferType];
+			
+            [monthDict setObject:transfers
                           forKey:day];
             // Monthly Total
-            [monthDict setObject:sizeinBytes forKey:@"monthTotal"];
+            [monthDict setObject:transfers forKey:@"monthTotal"];
             
             [yearDict setObject:monthDict forKey:month];
             // Year Total
-            [yearDict setObject:sizeinBytes 
+            [yearDict setObject:transfers 
                          forKey:@"yearTotal"];
             
             [totalsDict setObject:yearDict forKey:year];
-            
-            NSArray *userArray = [[NSArray alloc] initWithObjects: totalsDict, newTransfer, nil];
+			
+            NSArray *userArray = [NSArray arrayWithObjects: totalsDict, newTransfer, nil];
             
             [userStatsDict setObject:userArray forKey:[subArray objectAtIndex:6]];
             [yearDict release];
             [monthDict release];
             [totalsDict release];
-            [userArray release];
+            [transfers release];
         }
         else
         {
@@ -399,53 +559,91 @@
             double totalToAdd = [sizeinBytes doubleValue];
             totalsDict = [[NSMutableDictionary alloc] init];
             yearDict = [NSMutableDictionary dictionaryWithDictionary:[[oldUserArray objectAtIndex:0] objectForKey:year]];
+			if (yearDict == nil)
+				yearDict= [NSMutableDictionary dictionary];
+				
             monthDict = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:month]];
-            
-            ysize = [yearDict objectForKey:@"yearTotal"];
-            if (ysize ==  NULL)
+			if (monthDict == nil){
+				monthDict= [NSMutableDictionary dictionary];
+				[yearDict setObject:monthDict forKey:month];
+			}
+			
+			
+			NSMutableDictionary *yearDetail = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
+			if (yearDetail == nil) {
+				yearDetail= [NSMutableDictionary dictionary];
+				[yearDict setObject:yearDetail forKey:@"yearTotal"];
+			}
+			NSMutableDictionary *monthDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:@"monthTotal"]];
+			if (monthDetail == nil){
+				monthDetail= [NSMutableDictionary dictionary];
+				[monthDict setObject:monthDetail forKey:@"monthTotal"];
+			}
+			
+			NSMutableDictionary *dayDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:day]];
+			if (dayDetail == nil){
+				dayDetail= [NSMutableDictionary dictionary];
+				[monthDict setObject:dayDetail forKey:day];
+			}
+
+            ysize = [yearDetail objectForKey:transferType];
+           
+            if (ysize == nil) // no record for this type of transfer.
             {
-                // Happy New Year ! (New Month new day)
-                [yearDict setObject:sizeinBytes 
-                             forKey:@"yearTotal"];
-                [monthDict setObject:sizeinBytes
-                              forKey:@"monthTotal"];
-                [monthDict setObject:sizeinBytes
-                              forKey:day];
+				[yearDetail setObject:sizeinBytes forKey:transferType];
+				[monthDetail setObject:sizeinBytes forKey:transferType];
+				[dayDetail setObject:sizeinBytes forKey:transferType];
+				
+				[monthDict setObject:dayDetail forKey:day];
+				// Monthly Total
+				[monthDict setObject:monthDetail forKey:@"monthTotal"];
+            
+				[yearDict setObject:monthDict forKey:month];
+				// Year Total
+				[yearDict setObject:yearDetail forKey:@"yearTotal"];
             }
             else 
             {
                 // Update year total
-                [yearDict setObject:[NSString stringWithFormat:@"%f", [ysize doubleValue] + totalToAdd]
+				// get year transfer dictionary
+				//NSMutableDictionary *yearTransfers = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
+				
+				[yearDetail setObject:[NSString stringWithFormat:@"%f", [ysize doubleValue] + totalToAdd] 
+							  forKey:transferType];
+                [yearDict setObject:yearDetail
                              forKey:@"yearTotal"];
                 
                 
-                msize = [monthDict objectForKey:@"monthTotal"];
-                if (msize == NULL)
+                msize = [monthDetail objectForKey:transferType];
+                if (msize==NULL)
                 {
-                    // New month! ... and new day
-                    [monthDict setObject:sizeinBytes 
-                                  forKey:@"monthTotal"];
-                    [monthDict setObject:sizeinBytes
-                                  forKey:day];
-                }
+					[monthDetail setObject:sizeinBytes forKey:transferType];
+					[dayDetail setObject:sizeinBytes forKey:transferType];
+					
+                    [monthDict setObject:monthDetail forKey:@"monthTotal"];
+                    [monthDict setObject:dayDetail forKey:day];
+				}
                 else 
                 {
-                    dsize = [monthDict objectForKey:day];
+                    dsize = [[monthDict objectForKey:day] objectForKey:transferType];
                     
                     if (dsize == NULL)
                     {
                         // New Day 
-                        [monthDict setObject:sizeinBytes
-                                      forKey:day];
+                        [dayDetail setObject:sizeinBytes forKey:transferType];
+                        [monthDict setObject:dayDetail forKey:day];
                     }
                     else
                     {
-                        [monthDict setObject:[NSString stringWithFormat:@"%f", [dsize doubleValue] + totalToAdd]
-                                      forKey:day];
+						[dayDetail setObject:[NSString stringWithFormat:@"%f", [dsize doubleValue] + totalToAdd] 
+							             forKey:transferType];
+							  
+                        [monthDict setObject:dayDetail forKey:day];
                     }
                     
-                    [monthDict setObject:[NSString stringWithFormat:@"%f", [msize doubleValue] + totalToAdd]
-                                  forKey:@"monthTotal"];
+					[monthDetail setObject:[NSString stringWithFormat:@"%f", [msize doubleValue] + totalToAdd] 
+							  forKey:transferType];
+                    [monthDict setObject:monthDetail forKey:@"monthTotal"];
                 }        
                 
             }
@@ -462,7 +660,8 @@
             [totalsDict release];   
             [userArray release];
         }
-        [transferDescription release];
+		
+        [newTransfer release];
     }
     
     [userStatsDict writeToFile:PureFTPStatsFile atomically:YES];

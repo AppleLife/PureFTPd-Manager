@@ -119,7 +119,7 @@
     NSFileManager *fm =[NSFileManager defaultManager];
     NSDictionary *fattrs = [fm fileAttributesAtPath:aPath traverseLink:YES];
     if (!fattrs) {
-        NSLog(@"Path is incorrect!");
+        //NSLog(@"Path is incorrect!");
         return NO;
     }
     
@@ -144,7 +144,7 @@
     
     NSDictionary *fattrs = [fm fileAttributesAtPath:path traverseLink:YES];
     if (!fattrs) {
-        NSLog(@"Path is incorrect!");
+        //NSLog(@"Path is incorrect!");
         return NO;
     }
     
@@ -303,7 +303,7 @@
     
     NSDictionary *fattrs = [fm fileAttributesAtPath:path traverseLink:YES];
     if (!fattrs) {
-        NSLog(@"Path is incorrect!");
+        //NSLog(@"Path is incorrect!");
         return NO;
     }
     

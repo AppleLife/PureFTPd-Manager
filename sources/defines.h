@@ -32,6 +32,7 @@
 /* Commands */
 #define PureFTPWho @"/usr/local/sbin/pure-ftpwho"
 #define PureFTPDCMD @"/usr/local/sbin/pure-ftpd"
+#define PureStatsCMD @"/usr/local/bin/purestats"
 
 /* Preferences */
 /* General */
@@ -50,6 +51,7 @@
 #define PureFTPUserSpeedLimit @"PureFTPUserSpeedLimit"
 #define PureFTPTLSBehaviour @"PureFTPTLSBehaviour"
 #define PureFTPAutoUpdateStatus @"PureFTPAutoUpdateStatus"
+
 /*LOG and stats */
 #define PureFTPLogOnOff @"PureFTPLogOnOff"
 #define PureFTPLogAutoUpdate @"PureFTPLogAutoUpdate"
@@ -59,6 +61,13 @@
 #define CLF_PATTERN @"([^ ]+) - ([^ ]+) \\[(.{2})/(.{3})/(.{4}):(.{2}):(.{2}):(.{2}) (.{5})\\] \"(.{3}) (.+)\" .{3} (.+)"
 #define W3C_PATTERN @"([^ ]+) ([^ ]+) ([^ ]+) .{2}([^ ]+) (.+) 226 ([^ ]+) ([^ ]+)"
 #define LASTLINE @"LastLineLimit"
+#define PureFTPStatsConvertState @"PureFTPStatsConvertState"
+#define PureFTPStatsConvertFormat @"PureFTPStatsConvertFormat"
+#define PureFTPStatsConvertShowDetail @"PureFTPStatsConvertShowDetail"
+#define PureFTPStatsConvertDays @"PureFTPStatsConvertDays"
+#define PureFTPStatsConvertTime @"PureFTPStatsConvertTime"
+#define PureFTPStatsConvertLocation @"PureFTPStatsConvertLocation"
+
 //#define STATS_PATTERN @""
 // #define LOG_PATTERN
 
@@ -117,6 +126,3 @@
 #define PureFTPPreferencesVersion @"PureFTPPreferencesVersion"
 #define UPDATE @"1"
 #define ENDUPDATE @"0"
-
-
-#define PureFTPActiveUser @"PureFTPActiveUser"

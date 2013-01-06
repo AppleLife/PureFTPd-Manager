@@ -113,7 +113,7 @@ static GraphController *theGraphController = nil;
 
 - (unsigned int)numberOfLinesInTwoDGraphView:(SM2DGraphView *)inGraphView
 {
-    return 1;
+    return 2;
 }
 
 - (NSArray *)twoDGraphView:(SM2DGraphView *)inGraphView dataForLineIndex:(unsigned int)inLineIndex
@@ -122,7 +122,8 @@ static GraphController *theGraphController = nil;
     
     int monthTag = [[graphMonthPop selectedItem] tag];
     NSDictionary *yearTraffic = [NSDictionary dictionaryWithDictionary:[userTraffic objectForKey:[NSString stringWithFormat:@"%d", [[graphYearPop selectedItem] tag]]]];
-    
+    float xInset=0;
+					
     if (monthTag != 0)
     {
         [inGraphView setNumberOfTickMarks:31 forAxis:kSM2DGraph_Axis_X];
@@ -132,9 +133,11 @@ static GraphController *theGraphController = nil;
         NSEnumerator *trafficEnum = [monthKeys objectEnumerator];
         NSString *aKey;
         double traffic = 0;
-    
+		NSString *transferType = @"PUT";
         if ( inLineIndex == 0 )
         {
+			transferType=@"GET";
+		}
             result = [NSMutableArray array];
             while ((aKey = [trafficEnum nextObject]))
             {   
@@ -143,30 +146,36 @@ static GraphController *theGraphController = nil;
                     switch ([[totalUnits selectedItem] tag])
                     {
                         case 0:
-                            traffic = [[monthTraffic objectForKey:aKey] doubleValue] / goctet;
+                            traffic = [[[monthTraffic objectForKey:aKey] objectForKey:transferType] doubleValue] / goctet;
                             traffic/= 1024;
                             if (traffic > 3)
                                 traffic = 3;
                             break;
                         case 1:
-                             traffic = [[monthTraffic objectForKey:aKey] doubleValue] / goctet;
+                             traffic = [[[monthTraffic objectForKey:aKey] objectForKey:transferType] doubleValue] / goctet;
                             if (traffic > 20)
                                 traffic = 20;
                             break;
                         case 2:
-                             traffic = [[monthTraffic objectForKey:aKey] doubleValue] / moctet;
+                             traffic = [[[monthTraffic objectForKey:aKey] objectForKey:transferType] doubleValue] / moctet;
                             if (traffic > 1000)
                                 traffic = 1000;
                             break;
                     }   
                     
-                    
-                    NSString *infoString = [NSString stringWithFormat:@"{%@,%f}", aKey, traffic];
+                    if (inLineIndex==1)
+					{
+						xInset=0.1;
+					}   else if (inLineIndex==0)
+					{
+						xInset=-0.1;
+					}
+                    NSString *infoString = [NSString stringWithFormat:@"{%d,%f}", [aKey intValue], traffic];
                     //NSLog(@"%@", [infoString description]);
                     [result addObject:infoString];
                 }
             }
-        }
+        //}
     }
     
     // Show Annual traffic
@@ -179,8 +188,12 @@ static GraphController *theGraphController = nil;
         NSString *aKey;
         double traffic=0;
         
+		NSString *transferType = @"PUT";
         if ( inLineIndex == 0 )
         {
+			transferType=@"GET";
+		}
+		
            result = [NSMutableArray array];
             while (aKey = [trafficEnum nextObject])
             {   
@@ -189,28 +202,35 @@ static GraphController *theGraphController = nil;
                     switch ([[totalUnits selectedItem] tag])
                     {
                         case 0:
-                            traffic = [[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] doubleValue] / goctet;
+                            traffic = [[[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] objectForKey:transferType] doubleValue] / goctet;
                             traffic/= 1024;
                             if (traffic > 3)
                                 traffic = 3;
                             break;
                         case 1:
-                            traffic = [[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] doubleValue] / goctet;
+                            traffic = [[[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] objectForKey:transferType] doubleValue] / goctet;
                             if (traffic > 20)
                                 traffic = 20;
                             break;
                         case 2:
-                            traffic = [[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] doubleValue] / moctet;
+                            traffic = [[[[yearTraffic objectForKey:aKey] objectForKey:@"monthTotal"] objectForKey:transferType] doubleValue] / moctet;
                             if (traffic > 1000)
                                 traffic = 1000;
                             break;
-                    }   
-                    NSString *infoString = [NSString stringWithFormat:@"{%@,%f}", aKey, traffic];
+                    }
+					if (inLineIndex==1)
+					{
+						xInset=0.05;
+					}   else if (inLineIndex==0)
+					{
+						xInset=-0.05;
+					}
+                    NSString *infoString = [NSString stringWithFormat:@"{%d,%f}", [aKey intValue], traffic];
                     [result addObject:infoString];
                 }
             }
             //NSLog(@"result array : %@", [result description]);
-        }
+        
     }
     
        
@@ -264,14 +284,20 @@ static GraphController *theGraphController = nil;
 {
     NSDictionary	*result = nil;
     
-    if ( inGraphView == graphView && inLineIndex == 0 )
+    if ( inGraphView == graphView && inLineIndex == 0 ) // GET
     {
         // Make this a blackbar graph.
         result = [ NSDictionary dictionaryWithObjectsAndKeys:
             [ NSNumber numberWithBool:YES ], SM2DGraphBarStyleAttributeName,
-            [ NSColor blueColor ], NSForegroundColorAttributeName,
+            [ NSColor redColor ], NSForegroundColorAttributeName,
             nil ];
-    }
+    } else if ( inGraphView == graphView && inLineIndex == 1 ) // PUT
+	{
+		result = [ NSDictionary dictionaryWithObjectsAndKeys:
+			[ NSNumber numberWithBool:YES ], SM2DGraphBarStyleAttributeName,
+            [ NSColor blueColor], NSForegroundColorAttributeName,
+            nil ];
+	}
         
     return result;
 }
@@ -328,7 +354,10 @@ static GraphController *theGraphController = nil;
     //        NSLog( @"We're done drawing the sine/cosine line number %d.", inLineIndex );
 }
 
-
+- (void)twoDGraphView:(SM2DGraphView *)inGraphView willDisplayBarIndex:(unsigned int)inBarIndex forLineIndex:(unsigned int)inLineIndex withAttributes:(NSMutableDictionary *)attr;
+{
+	
+}
 
 - (IBAction)changeTotalSize:(id)sender
 {

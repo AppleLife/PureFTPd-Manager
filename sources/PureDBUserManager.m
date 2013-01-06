@@ -190,15 +190,22 @@ static void strip_lf(char *str)
                     userBWUL = [NSString stringWithString:@""];
                 if ([[user quota_size] intValue] != 0){
                     userQS = [NSNumber numberWithDouble:[[user quota_size] doubleValue] * 1048576];
-                    NSLog(@"%@", userQS );
+                    //NSLog(@"%@", userQS );
                 }
                     
                 else{
                     userQS = [NSString stringWithString:@""];}
 		
-		
+				NSString *login=nil;
+				if ([user isActivated])
+				{
+					login = [user login];
+				} else {
+					login = [NSString stringWithFormat:@"#%@",[user login]]; 
+				}
+				
                 passwdData = [passwdData stringByAppendingFormat:@"%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@:%@\n", 
-                    [user login], [user pwd], [user uid], [user gid], [user gecos], [user home], 
+                    login, [user pwd], [user uid], [user gid], [user gecos], [user home], 
                     userBWUL, userBWDL, /* Converted to KB */
                     [user ul_ratio], [user dl_ratio], [user per_user_max],
                     [user quota_files], userQS, /* Converted to MB */
@@ -213,7 +220,7 @@ static void strip_lf(char *str)
     [self setUsersDictionary:newDictionary];
     [newDictionary release];
     
-    NSLog(@"Saving PureDB Virtual Users...");
+    //NSLog(@"Saving PureDB Virtual Users...");
     [passwdData writeToFile:PW_FILE atomically:YES];
     
     dbfile = [PDB_FILE cString];
@@ -333,11 +340,11 @@ err:
 {
     if(usersDictionary)
         [usersDictionary release];
-    usersDictionary = [[NSMutableDictionary alloc] initWithDictionary:[newUsersDictionary copy]];
+    usersDictionary = [[NSMutableDictionary alloc] initWithDictionary:newUsersDictionary];
    
     if(compareUsersDictionary)
         [compareUsersDictionary release];
-    compareUsersDictionary = [[NSDictionary alloc] initWithDictionary:[newUsersDictionary copy]];
+    compareUsersDictionary = [[NSDictionary alloc] initWithDictionary:newUsersDictionary];
 
 }
 

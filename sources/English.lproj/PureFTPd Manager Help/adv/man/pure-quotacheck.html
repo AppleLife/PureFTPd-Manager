@@ -1,0 +1,89 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<font size="1" face="Lucida Grande,Arial,sans-serif"></font>
+        </div>
+    </div>
+     <br>
+    <H2>NAME</H2><PRE>
+     pure-quotacheck - Update virtual quota files for Pure-FTPd.
+
+
+</PRE>
+    <H2>SYNTAX</H2><PRE>
+       pure-quotacheck <I>-u</I> <I>username/gid</I> <I>-d</I> <I>home</I> <I>directory</I> [<I>-g</I> <I>group/gid</I>]
+
+
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       pure-quotacheck create a <B>.ftpquota</B> file in the specified directory.
+       This  file  contains the current file and size of the directory, and it
+       is used by Pure-FTPd when virtual quotas are enabled.
+       It's recommended to periodically run pure-quotacheck for every user, in
+       crontabs.
+
+
+</PRE>
+<H2>OPTIONS</H2><PRE>
+       <B>-d</B> &lt;<I>directory</I>&gt;
+              Scans the specified &lt;<I>directory</I>&gt;.
+
+       <B>-g</B> &lt;<I>group</I> <I>or</I> <I>gid</I>&gt;
+              Sets  the  group files will be scanned as. This is optional : if
+              an user name is  passed  to  <B>-u&lt;/fR&gt;,</B>  <B>group</B>  <B>are</B>  <B>automatically</B>
+              <B>retrieved.</B>
+
+       <B>-u</B> &lt;<I>user</I> <I>or</I> <I>uid</I>&gt;
+              Set  the  user name files will be scanned as. This is mandatory,
+              and it can't be "root".
+
+       <B>-h</B>     Output usage information and exit.
+
+
+</PRE>
+<H2>FILES</H2><PRE>
+       <I>.ftpquota</I>
+
+
+</PRE>
+<H2>EXAMPLES</H2><PRE>
+       To run this program the standard way type:
+
+       pure-quotacheck -u john -d /home/john
+
+
+</PRE>
+<H2>AUTHORS</H2><PRE>
+       Frank DENIS &lt;j@pureftpd.org&gt;
+
+
+</PRE>
+<H2>SECURITY</H2><PRE>
+       pure-quotacheck switches real and effective uids/gids as soon as possi-
+       ble. Root privileges are never given back.
+       pure-quotacheck  refuses to scan directories with uid = 0 (root) or gid
+       = 0 (wheel/root) .
+       pure-quotacheck performs a chroot() call  to  the  home  directory.  It
+       never traverses parent directories.
+       pure-quotacheck only scans real files (no socket, no pipe, etc) .
+       pure-quotacheck  enforces read access on directories to prevent against
+       people doing chmod 0 before a quota scan.
+       pure-quotacheck enforces write access on the home directory to properly
+       write the .ftpquota file.
+       pure-quotacheck never scans the same inode/device pair twice.
+
+
+
+</PRE>
+    </body>
+</html>

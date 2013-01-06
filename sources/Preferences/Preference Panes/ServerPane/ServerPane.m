@@ -35,9 +35,17 @@
 	{
 		[portField setEnabled:FALSE];
 		[portField setStringValue:@"21"];
+		/*[portField setToolTip:NSLocalizedString(
+			@"Your FTP server currently runs using Mac OS X Superserver.\n\
+In order to use another port, you need to run pure-ftpd in standalone mode.\n\
+To do this, go to PureFTPd Manager's \"Mac OS X\" preference pane and choose \"Use Standalone mode\".",
+			@"Your FTP server currently runs using Mac OS X Superserver.\n\
+In order to use another port, you need to run pure-ftpd in standalone mode.\n\
+To do this, go to PureFTPd Manager's \"Mac OS X\" preference pane and choose \"Use Standalone mode\".")];*/
 	} else {
 		[portField setEnabled:TRUE];
 		[portField setStringValue:[pureFTPPreferences objectForKey:PureFTPPort]];
+		[portField setToolTip:nil];
 	}
     // Passive range
     if (!([[pureFTPPreferences objectForKey:PureFTPPassiveRange] isEqualToString:@""]))
@@ -47,6 +55,8 @@
         [passiveRangeToField setStringValue:[range objectAtIndex:1]];
     }
     
+	
+	
     [maxUsersField setStringValue:[pureFTPPreferences objectForKey:PureFTPMaxUsers]];
     [timeoutField setStringValue:[pureFTPPreferences objectForKey:PureFTPTimeout]];
     [maxSessionsField setStringValue:[pureFTPPreferences objectForKey:PureFTPMaxSessions]];
@@ -103,7 +113,7 @@
     NSNumber *update = [[NSNumber alloc] initWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
     
-    NSLog(@"Saving PureFTPD preferences - Server Settings Pane");
+    //NSLog(@"Saving PureFTPD preferences - Server Settings Pane");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
     
     [fxp release];

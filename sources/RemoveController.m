@@ -18,6 +18,18 @@
  */
 
 #import "RemoveController.h"
+#import "defines.h"
+
+#include <sys/types.h>
+#include <pwd.h>
+#include <grp.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <kvm.h>
+#include <sys/param.h>
+#include <sys/sysctl.h>
+#include <unistd.h>
+
 RemoveController * theRC = nil;
 @implementation RemoveController
 
@@ -33,7 +45,8 @@ RemoveController * theRC = nil;
 {
     // TODO: Mutex Begin
     if (theRC == nil) {
-        theRC = [[RemoveController alloc] init];
+        theRC = [[[RemoveController alloc] init] autorelease];
+		[theRC awakeFromNib];
     }
     // TODO: Mutex End
     return theRC;
@@ -50,6 +63,31 @@ RemoveController * theRC = nil;
     if (quitNow)
         [NSApp terminate:nil];
     
+	
+	if (NSRunCriticalAlertPanel(NSLocalizedString(@"Remove PureFTPd Manager", @"Remove PureFTPd Manager"),
+						NSLocalizedString(
+						@"This will uninstall PureFTPd Manager and its components from your system.\nAre you sure you want to do this ?"
+						,@"This will uninstall PureFTPd Manager and its components from your system.\nAre you sure you want to do this ?"),
+						NSLocalizedString(@"Yes", @"Yes"),NSLocalizedString(@"No", @"No"),nil) != NSOKButton)
+						return;
+	
+	NSString *ftpuser = nil;
+	NSString *ftpgroup = nil;
+	
+	NSDictionary *pref=[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
+	
+	struct passwd *userInfo = NULL;
+    if ((userInfo = getpwuid([[pref objectForKey:@"PureFTPVirtualUID"] intValue])) != NULL)
+	{
+		ftpuser = [NSString stringWithFormat:@"%s", userInfo->pw_name];
+	}
+	
+	struct group *groupInfo;
+	if ((groupInfo = getgrgid([[pref objectForKey:@"PureFTPVirtualGID"] intValue])) != NULL )
+	{
+		ftpgroup = [NSString stringWithFormat:@"%s", groupInfo->gr_name];
+	}
+
 	
     // Restore original FTP server
     SInt32 MacVersion;
@@ -90,7 +128,7 @@ RemoveController * theRC = nil;
     NSString *newConfig = nil;
     NSRange pRange = [hostConfig rangeOfString:@"PUREFTPD"];
     
-    if (!(pRange.length==0)) // Can't find entry in /etc/hostconfig; we add it
+    if (pRange.length != 0) 
     {
         NSRange lineRange = [hostConfig lineRangeForRange:pRange];
         NSString *before = [NSString stringWithString:[hostConfig substringToIndex:lineRange.location]];
@@ -99,10 +137,58 @@ RemoveController * theRC = nil;
         newConfig = [NSString stringWithFormat:@"%@\r\n%@", before, after];
     }
     
+	// remove crontab enty
+	NSString *crontab = [NSString stringWithString:@"/etc/crontab"];
+	NSString *cronContents = [NSString stringWithContentsOfFile:crontab];
+	
+	pRange = [cronContents rangeOfString:PureStatsCMD];
+	if (pRange.length != 0)
+	{
+		// found
+		NSRange lineRange = [cronContents lineRangeForRange:pRange];
+        NSString *before = [NSString stringWithString:[cronContents substringToIndex:lineRange.location]];
+        NSString *after = [NSString stringWithString:[cronContents substringFromIndex:NSMaxRange(lineRange)]];
+        
+        cronContents = [NSString stringWithFormat:@"%@%@", before, after];
+	}
+	
+	// relaunch cron
+	[self sighupCron];
+	
     [newConfig writeToFile:@"/etc/hostconfig" atomically:YES];
     [self appendString:NSLocalizedString(@"\nPureFTPd informations removed from your host configuration file.",@"PureFTPd informations removed from your host configuration file.") toText:textView];
     
     
+	NSMutableString *shellScript = [[NSMutableString alloc] initWithString:@"#!/bin/sh\n"];
+	if (ftpuser !=nil && ([ftpuser length] >=1) && (![ftpuser isEqualToString:@" "]))
+	{
+		[shellScript appendFormat:@"niutil -destroy / /users/%@\n", ftpuser];
+	}
+	
+	if (ftpgroup != nil&& ([ftpgroup length] >=1) && (![ftpgroup isEqualToString:@" "]))
+	{
+		[shellScript appendFormat:@"niutil -destroy / /groups/%@\n", ftpgroup];
+	}
+	
+	if (![keepAnon state])
+	{
+		[shellScript appendString:@"niutil -destroy / /users/ftp\n"];
+	}
+	if (MacVersion >= 0x1040)
+	{
+		[shellScript appendString:@"/usr/sbin/lookupd -flushcache\n"];
+	}
+	
+	[shellScript writeToFile:@"/tmp/removeusers.sh" atomically:YES];
+    NSTask *setup = [[NSTask alloc] init];
+    [setup setArguments:[NSMutableArray arrayWithObjects:@"/tmp/removeusers.sh", nil]];
+    [setup setLaunchPath:@"/bin/sh"];
+    [setup launch];
+	[setup waitUntilExit];
+    [setup release];
+	
+	[fm removeFileAtPath:@"/tmp/removeusers.sh" handler:nil];
+	
     [continueButton setEnabled:YES];
     [progressWheel stopAnimation:nil];
     [infoField setStringValue:NSLocalizedString(@"Uninstall process completed", @"PureFTPd Manager has been removed from your system.")];
@@ -121,6 +207,7 @@ RemoveController * theRC = nil;
     [filesToRemove addObject:@"/private/etc/pure-ftpd/pureftpd-mysql.conf"];
     [filesToRemove addObject:@"/Library/StartupItems/PureFTPD"];
     [filesToRemove addObject:@"/usr/local/bin/PureFTPOSX"];
+	[filesToRemove addObject:@"/usr/local/bin/purestats"];
     
     if (![keepPreferences state] && ![keepPureDB state] && ![keepSSL state]){
         [filesToRemove addObject:@"/private/etc/pure-ftpd"];
@@ -175,6 +262,52 @@ RemoveController * theRC = nil;
     if ([[tv window] isVisible]) {
         [tv scrollRangeToVisible:END_RANGE];
     }
+}
+
+- (void)sighupCron
+{
+	 UInt32          response;
+
+    OSStatus err = Gestalt(gestaltSystemVersion, (SInt32 *) &response);
+    
+    if (response >= 0x01040) {
+		// launchd
+		NSTask *unload = [[NSTask alloc] init];
+		[unload setLaunchPath:@"/bin/launchctl"];
+		[unload setArguments:[NSArray arrayWithObjects:@"unload", @"-w", @"/System/Library/LaunchDaemons/com.vix.cron.plist", nil]];
+		[unload launch];
+		[unload waitUntilExit];
+		[unload release];
+		NSTask *load = [[NSTask alloc] init];
+		[load setLaunchPath:@"/bin/launchctl"];
+		[load setArguments:[NSArray arrayWithObjects:@"load", @"-w", @"/System/Library/LaunchDaemons/com.vix.cron.plist", nil]];
+		[load launch];
+		[load release];
+	} else {
+		kvm_t *kd;
+		char errbuf[256];
+		struct kinfo_proc *kp;
+		int i, nentries;
+		char* cmd;
+		pid_t pid;
+		int result = -1;
+    
+    
+		kd = kvm_openfiles(0, 0, 0, O_RDONLY, errbuf);
+		for (i = 0; i < nentries; i++) {
+			cmd = kp[i].kp_proc.p_comm;
+			pid = kp[i].kp_proc.p_pid;
+			if (!strcmp("cron", cmd)) {
+				result = pid;
+			}	
+		}
+		kvm_close(kd);
+		
+		if (result != -1)
+		{
+			kill(result, SIGHUP);
+		}
+	}
 }
 
 

@@ -1,15 +1,29 @@
 {
     IBClasses = (
         {
-            ACTIONS = {chooseFile = id; didModify = id; }; 
+            ACTIONS = {
+                chooseDir = id; 
+                chooseFile = id; 
+                didModify = id; 
+                preview = id; 
+                toggleConvertion = id; 
+            }; 
             CLASS = FTPLogPane; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 browseButton = NSButton; 
+                browseDirButton = NSButton; 
+                convertSwitch = NSButton; 
+                daysPopUp = NSPopUpButton; 
+                detailOutputSwitch = NSButton; 
                 formatPopUp = NSPopUpButton; 
                 locationField = NSTextField; 
                 logSwitch = NSButton; 
+                previewButton = NSButton; 
+                saveToField = NSTextField; 
                 shareSwitch = NSButton; 
+                statFormatPopUp = NSPopUpButton; 
+                time = WBTimeControl; 
                 updateSwitch = NSButton; 
             }; 
             SUPERCLASS = NSPreferencePane; 

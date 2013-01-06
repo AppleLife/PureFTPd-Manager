@@ -49,10 +49,29 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 
 @implementation MVPreferencesController
 
-+ (MVPreferencesController *) sharedInstance {
-    return ( sharedInstance ? sharedInstance : [[[self alloc] init] autorelease] );
++ (MVPreferencesController *) sharedInstance
+{
+	return ( sharedInstance ? sharedInstance : [[[self alloc] init] autorelease] );
 }
 
++ (MVPreferencesController *) sharedInstanceWithParent:(id)parent {
+	if (sharedInstance){
+		return sharedInstance;
+	}
+	else {
+		sharedInstance = [[[self alloc] init] autorelease];
+		[sharedInstance setParent:parent];
+	}
+	
+	return sharedInstance;
+    //return ( sharedInstance ? sharedInstance : [[[self alloc] init] autorelease] );
+}
+
+
+- (void)setParent:(id)p
+{
+	parent = p;
+}
 
 - (id) init {
 	if( ( self = [super init] ) ) {
@@ -75,9 +94,9 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector( _doUnselect: ) name:NSPreferencePaneDoUnselectNotification object:nil];
                 
-                // Default User Dictionaries. We create them here the first time.
-                theDefaults = [NSUserDefaults standardUserDefaults];
-                mainsrv=[[PureFTPD alloc] init];
+		// Default User Dictionaries. We create them here the first time.
+		theDefaults = [NSUserDefaults standardUserDefaults];
+        mainsrv=[[PureFTPD alloc] init];
 
                 
         }
@@ -141,7 +160,7 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 	if( [[window contentView] isEqual:mainView] ) return;
 	if( currentPaneIdentifier && [[loadedPanes objectForKey:currentPaneIdentifier] shouldUnselect] != NSUnselectNow ) {
 		/* more to handle later */
-		NSLog( @"can't unselect current" );
+		//NSLog( @"can't unselect current" );
 		closeWhenPaneIsReady = NO;
 		[pendingPane autorelease];
 		pendingPane = [@"" retain];
@@ -170,7 +189,7 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 		NSView *prefView = nil;
 		if( currentPaneIdentifier && [[loadedPanes objectForKey:currentPaneIdentifier] shouldUnselect] != NSUnselectNow ) {
 			/* more to handle later */
-			NSLog( @"can't unselect current" );
+			//NSLog( @"can't unselect current" );
 			closeWhenPaneIsReady = NO;
 			[pendingPane autorelease];
 			pendingPane = [identifier retain];
@@ -347,7 +366,7 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
     }
     
     if( currentPaneIdentifier && [[loadedPanes objectForKey:currentPaneIdentifier] shouldUnselect] != NSUnselectNow ) {
-        NSLog( @"can't unselect current" );
+        //NSLog( @"can't unselect current" );
         closeWhenPaneIsReady = YES;
         return NO;
     }   

@@ -20,21 +20,58 @@
 
 
 #import <Cocoa/Cocoa.h>
+#import <Security/Security.h>
+#include <unistd.h>
+
 //#import "AuthForAllImpl.h"
 //#import "AuthForAllImplCompat.h"
-
 //#include <assert.h>
-#include <Carbon/Carbon.h>
-#include <Security/Security.h>
+//#include <Carbon/Carbon.h>
+//#include <sys/stat.h>
+//#include <fcntl.h>
+//#include <sys/types.h>
+//#include <sys/param.h>
+//#include <stdio.h>
 
-#include <CoreFoundation/CoreFoundation.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/param.h>
-#include <stdio.h>
 
+
+void CheckPermissions(void)
+{
+	NSFileManager *manager = [NSFileManager defaultManager];
+	NSString *executable = [[NSBundle mainBundle] executablePath];
+	const char *path = [manager fileSystemRepresentationWithPath:executable];
+	NSDictionary *attr;
+	NSMutableDictionary *newattr;
+	AuthorizationRef auth;
+	OSStatus err;
+	
+
+	// try to switch to root user.
+	seteuid(0);
+	
+	if (geteuid() != 0)
+		{
+		// Must be relaunched as root, then this instance must be quit
+		// launch as root
+		if (path)
+		{
+			err = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagInteractionAllowed, &auth);
+			if (err == errAuthorizationSuccess)
+				err = AuthorizationExecuteWithPrivileges(auth, path, kAuthorizationFlagDefaults, NULL, NULL);
+		}
+		
+		exit(0);
+	}
+	
+	NSString *username = NSUserName();
+	[username writeToFile:@"/tmp/PureFTPdManagerUser" atomically:YES];
+	
+	setuid(0);
+	// Switch to front
+	[NSApp activateIgnoringOtherApps:YES];
+}
+
+/*
 static bool pathForTool(CFStringRef toolName, char path[MAXPATHLEN])
 {
     CFBundleRef bundle;
@@ -60,10 +97,15 @@ static bool pathForTool(CFStringRef toolName, char path[MAXPATHLEN])
     CFRelease(toolURL);
     return !access(path, X_OK);
 }
+*/
 
 int main(int argc, const char *argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	
+	CheckPermissions();
+	return NSApplicationMain(argc , (const char **)argv);
+	/*
     char path[MAXPATHLEN], launcher[MAXPATHLEN];
     
     if (!pathForTool(CFSTR("../MacOS/Launcher"), launcher))
@@ -79,9 +121,9 @@ int main(int argc, const char *argv[])
         return -1;
     }
     
-    uid_t aUID = geteuid();
+	
     
-    
+	uid_t aUID = geteuid();
     if (aUID !=0) {
         NSTask *task = [[NSTask alloc] init];
         NSArray *languages = [NSArray arrayWithObjects:@"en", @"fr", nil];
@@ -94,10 +136,11 @@ int main(int argc, const char *argv[])
         [pool release];
         return 0;
     } else {
-        
         setuid(0);
         return NSApplicationMain(argc , (const char **)argv);
-    }
+    }*/
+	
+	
     
     [pool release];
     return 0;

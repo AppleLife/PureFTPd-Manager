@@ -1,0 +1,69 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>PureFTPd Manager Help</title>
+		<meta name="robots" content="anchors">
+		<link href="../../sty/task_tbl_style.css" rel="stylesheet" media="all">
+		<meta name="robots" content="anchors">
+	</head>
+
+	<body>
+    <div id="banner">
+        <div id="ServerAdminHelp">
+		<a href="../../index.html" class="bread">PureFTPd Manager Help</a> <font size="1" face="Lucida Grande,Arial,sans-serif">> <a href="../preferences.html" class="bread">Preferences</a> > SSL/TLS Sessions</font>
+        </div>
+    </div>
+ 
+    <div id="mainbox">
+    <table border=0 width=640 align=center>
+    <tr><td>
+    <h3>PureFTPd Manager - SSL/TLS Sessions</h3>
+    <font size="2" face="Lucida Grande,Arial,sans-serif">
+    <br>
+    Easily create (or import) an SSL/TLS certificate, which is required for a form of encrypted and secured FTP called FTP-SSL/TLS.
+    <br><br>
+    <div align=center>
+    <MAP NAME="preferences">
+    <AREA SHAPE="rect" COORDS="5,24,63,79" HREF="../preferences.html">
+    <AREA SHAPE="default" COORDS="0,0,553,306" NOHREF></MAP>
+    <img src="../../img/pref/6.png" alt="PureFTPd Manager Preferences" USEMAP="#preferences" BORDER="0">
+    <br><br>
+    </div>
+     <ul>
+     1. Create or import a SSL certificate.<br>
+     2. Set your TLS Options : Disabled / Mixed mode (for both SSL/TLS enabled and standard FTP clients) / TLS Only (no clear login session will occur but  
+     </ul>
+     <br>
+     <b>Create a new certificate</b><br><br>
+     Once you clicked the <i>Create a certificate</i> button, a new window will appear.
+     <br><br>
+    <div align=center>
+    <img src="../../img/pref/6sslcreate.png" WIDTH=400 BORDER="0">
+    </div>
+    <br><br>
+    
+     <ul>
+     1. If (and only if) you are importing an existing certificate, one that you created using your own software or a certification authority (CA) such as VeriSign, click Import a Certificate. After selecting the certificate file, you're done and you can skip the rest of these steps.<br><br>
+     2. To create a certificate that isn't validated by anyone else, but is perfectly fine for personal use or use with colleagues, click <i>Go Self-Signed!</i> <br>
+     </ul>
+     <br>
+     After clicking the Go Self-Signed! Button, fill out the dialog that appears, entering values in every field. These values aren't cross-checked by anyone but you--you can enter "nonsense" into every field but the two-letter ones and it will still work. But I recommend that you include useful details. When I create a certificate like this, I change the Certificate Validity (in Days) field from 30 to 300, because I don't want to create a new one each month. You can also increase the number of bits in the certificate; this decreases the chance of the certificate being broken, as unlikely as that now seems.
+      <br><br>
+    <div align=center>
+    <img src="../../img/pref/6sslss.png" WIDTH=400 BORDER="0">
+    </div>
+    <br><br>
+    <ul>
+    3. Click Generate My Certificate. On slower machines, it might take a moment before the certificate is finished and you're returned to the preference pane.<br><br>
+    4. From the TLS Sessions menu, leave Disabled selected, if you don't want to allow SSL/TLS sessions; otherwise, choose Mixed Mode to allow clients that support FTP-SSL/TLS to use it, or choose TLS Only in order to restrict access to just those clients with TLS support. That last option might be useful only for very specific projects in which security is paramount.<br>
+    </ul>
+    <br>
+    <b>Clients supporting SSL/TLS on Mac OS X</b><br>
+    I recommend <a href="http://www.cyberduck.ch">Cyberduck</a> because I use it and I like it. There are a bunch out there supporting SSL/TLS. Please read <a href=../../adv/readme.html>README.TLS</a> for more. 
+    
+    </font>
+    </td></tr>
+    </table>
+    </body>
+</html>

@@ -18,12 +18,15 @@ extern NSString *MVPreferencesWindowNotification;
 	NSString *currentPaneIdentifier, *pendingPane;
 	BOOL closeWhenDoneWithSheet, closeWhenPaneIsReady;
         
-        PureFTPD *mainsrv;
+	PureFTPD *mainsrv;
         
-        id theDefaults;
-        NSMutableDictionary *generalPrefsDict, *argumentsDict, *pureFTPPreferences; 
+	id theDefaults;
+	NSMutableDictionary *generalPrefsDict, *argumentsDict, *pureFTPPreferences; 
+	id parent;
 }
 + (MVPreferencesController *) sharedInstance;
++ (MVPreferencesController *) sharedInstanceWithParent:(id)parent;
+- (void)setParent:(id)p;
 - (NSWindow *) window;
 - (void) showAll:(id) sender;
 - (void) showPreferences:(id) sender;

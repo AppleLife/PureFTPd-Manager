@@ -96,7 +96,7 @@
     NSNumber *update = [NSNumber numberWithInt:1];
     [preferences setObject:update forKey:PureFTPPrefsUpdated];
      
-    NSLog(@"Saving PureFTPD Preferences - Mac OS X ");
+    //NSLog(@"Saving PureFTPD Preferences - Mac OS X ");
     [preferences writeToFile:PureFTPPreferenceFile atomically:YES];
     
     modified = NO;
@@ -256,21 +256,25 @@
 {
     
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+	if ([oPanel respondsToSelector:@selector(setCanCreateDirectories:)])
+		[oPanel setCanCreateDirectories:YES];
     [oPanel setAllowsMultipleSelection:NO];
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];
     [oPanel setResolvesAliases:NO];
-    NSString *activeUser = nil;
-    activeUser = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPActiveUser];
-    
-    if (activeUser != nil) {
-        if ([activeUser isEqualToString:@""])
-	{
-		activeUser = @"root";
-	}
-    }
-    [oPanel beginSheetForDirectory:NSHomeDirectoryForUser(activeUser) file:nil types:nil 
-                       modalForWindow:[NSApp mainWindow]
+	
+	NSString *path = nil;
+	if ([sender tag])
+		path=[vhostBaseDirField stringValue];
+	else 
+		path = [userBaseDirField stringValue];
+	BOOL isDir = YES;
+	if (![[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir]
+		|| !isDir)
+		path=@"/"; 
+		
+	[oPanel beginSheetForDirectory:path file:nil types:nil
+					modalForWindow:[NSApp mainWindow]
                        modalDelegate: self
                        didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
                        contextInfo: (void *)[sender tag]];

@@ -72,6 +72,8 @@ enum DBType {PureDB = 1, MySQL = 2};
     NSMutableArray *userVFolderList;
     IBOutlet NSPopUpButton *accessPopUp;
     
+	IBOutlet NSButton *activationSwitch;
+	
     SInt32 MacVersion;
     
 }
@@ -119,6 +121,7 @@ enum DBType {PureDB = 1, MySQL = 2};
 - (void)appendString:(NSString *)string toText:(NSTextView *)tv;
 - (void)setBrowserPath:(NSString *)aPath;
 
+- (IBAction)toggleAccountStatus:(id)sender; 
 
 
 @end

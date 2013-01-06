@@ -164,13 +164,14 @@ static LogManager *theLogManager = nil;
             
             if([[col identifier] isEqualToString:@"tc_type"])
             {
-                if ([transferT isEqualToString:@"PUT"] || [transferT isEqualToString:@"created"])
-                {
-                    return [NSImage imageNamed: @"upload"];
-                }
-                else if ([transferT isEqualToString:@"GET"] || [transferT isEqualToString:@"sent"])
+				// don't pay attention to the images' names here ...
+                if ([transferT isEqualToString:@"PUT"]) // || [transferT isEqualToString:@"created"])
                 {
                     return [NSImage imageNamed: @"download"];
+                }
+                else if ([transferT isEqualToString:@"GET"]) // || [transferT isEqualToString:@"sent"])
+                {
+                    return [NSImage imageNamed: @"upload"];
                 }
                 else
                     return nil;
@@ -230,10 +231,9 @@ static LogManager *theLogManager = nil;
 
 
 
+/*
 - (void)tableViewSelectionIsChanging:(NSNotification *)aNotification
 {
-    //NSLog(@"SelectionIsChanging");
-    
     if ([[aNotification object] isEqualTo:usersTable])    
     {
         [fileField setStringValue:@""];
@@ -246,6 +246,7 @@ static LogManager *theLogManager = nil;
      
     
 }
+*/
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
@@ -253,6 +254,12 @@ static LogManager *theLogManager = nil;
     if ([[aNotification object] isEqualTo:usersTable])    
     {
         [ftpTable deselectAll:nil];
+		[fileField setStringValue:@""];
+        [ipField setStringValue:@""];
+        [ftpTable reloadData];
+        if ([usersTable selectedRow] != -1){
+            [self refreshMenu];
+        }
     }
 }
 
@@ -311,6 +318,7 @@ static LogManager *theLogManager = nil;
         while((message = [reader nextMessage]) != nil)
 	{
             unsigned int location = [textStorage length];
+			
             [textStorage replaceCharactersInRange:NSMakeRange(location, 0) withString:message];
             
 	}
@@ -492,8 +500,8 @@ static LogManager *theLogManager = nil;
 -(void) loggingAlert
 {
     NSBeginAlertSheet(NSLocalizedString(@"No logging facility activated",@"No logging facility activated"), 
-                      NSLocalizedString(@"Yes",@"localized string"), 
-                      NSLocalizedString(@"No",@"localized string"), NULL,
+                      NSLocalizedString(@"Yes",@"Yes"), 
+                      NSLocalizedString(@"No",@"No"), NULL,
                       [NSApp mainWindow], self, @selector(sheetDidEnd:returnCode:contextInfo:), 
                       NULL, NULL, 
                       NSLocalizedString(@"You need to enable logging on this server.\nDo you want to configure it now?",@"localized string"),
@@ -510,10 +518,9 @@ static LogManager *theLogManager = nil;
     {   
         // open the preferences pane
         [[MVPreferencesController sharedInstance] showPreferences:self];
+		[[MVPreferencesController sharedInstance] selectPreferencePaneByIdentifier:@"pureftpd.FTPLogPane"];
     }
-   
-
-    
+       
     [NSApp stopModal];
     
 }
@@ -723,26 +730,25 @@ static LogManager *theLogManager = nil;
 {
     
     // index for usersTable
-    int index;
-    
-    if ((index = [usersTable selectedRow]) != -1)
+    int index=[usersTable selectedRow];
+	
+	if (index != -1)
     {
-        NSMutableArray *usersArray = [[NSMutableArray alloc] initWithArray:[usersDictionary allKeys]];
-        [usersArray removeObject:LASTLINE];
-        //NSLog(@"%d, %@",index, [usersArray objectAtIndex:index]);
-        [usersDictionary removeObjectForKey:[usersArray objectAtIndex:index]];
+        //NSLog(@"%d, %@",index, [[sortedArray objectAtIndex:index] objectForKey:@"account"]);
+		NSString *username = [[sortedArray objectAtIndex:index] objectForKey:@"account"];
+		NSString *msg = NSLocalizedString(@"You are about to delete log history for %@.", @"You are about to delete log history for %@.");
+		NSString *title = [NSString stringWithFormat:msg, username];
+		if (NSRunCriticalAlertPanel(title,
+							NSLocalizedString(@"Are you sure you want to continue ?",@"Are you sure you want to continue ?"),
+							NSLocalizedString(@"Yes",@"Yes"),NSLocalizedString(@"No",@"No"),nil) != NSOKButton)
+			return;
+		
+        [usersDictionary removeObjectForKey:username];
         [usersDictionary writeToFile:PureFTPStatsFile atomically:YES];
-        [usersArray release];
+       
         [self reloadTables:nil];
     }
    
 }
-
-
-
-
-
-
-
 
 @end

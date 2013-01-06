@@ -82,6 +82,7 @@
             OUTLETS = {
                 continueButton = NSButton; 
                 infoField = NSTextField; 
+                keepAnon = NSButton; 
                 keepPreferences = NSButton; 
                 keepPureDB = NSButton; 
                 keepSSL = NSButton; 
@@ -107,6 +108,7 @@
                 closeOneSessionBtn = NSButton; 
                 controlServerBtn = NSButton; 
                 fileField = NSTextField; 
+                ipField = NSTextField; 
                 localHostField = NSTextField; 
                 localPortField = NSTextField; 
                 pidField = NSTextField; 
@@ -117,7 +119,8 @@
                 sizeField = NSTextField; 
                 statusWV = WebView; 
                 "tc_bandwidth" = NSTableColumn; 
-                totalBWUsageField = NSTextField; 
+                totalDLBWUsageField = NSTextField; 
+                totalUPBWUsageField = NSTextField; 
                 userDetailTable = NSTableView; 
                 userTab = NSTabView; 
                 userTable = NSTableView; 
@@ -136,6 +139,7 @@
                 setGroupID = id; 
                 setTimeValue = id; 
                 setUserID = id; 
+                toggleAccountStatus = id; 
                 toggleTimeRestrictions = id; 
                 userIPFilter = id; 
             }; 
@@ -143,6 +147,7 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 accessPopUp = NSPopUpButton; 
+                activationSwitch = NSButton; 
                 allowClientField = NSTextField; 
                 allowClientRemoveButton = NSButton; 
                 allowClientTable = NSTableView; 

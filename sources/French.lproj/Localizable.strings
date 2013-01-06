@@ -1,98 +1,319 @@
-"You have the latest version of PureFTPd Manager." = "Vous utilisez la dernière version de PureFTPd";
-"Delete Button" = "Effacer";
-"January" = "Janvier";
-"Save" = "Sauver";
-"You can't to create a new user !" = "Vous ne pouvez pas créer de nouvel utilisateur !";
-"Don't Save" = "Ne pas enregistrer";
-"New User" = "Nouvel Utilisateur";
-"No logging facility activated" = "Les journaux ne sont pas activés";
-"Stop Server" = "Arrêter le serveur";
-"Uninstall process completed" = "Désinstallation complète.";
-"August" = "Août";
-"New" = "Nouveau";
-"%@ already exists on your system, please specify another username." = "L'utilsateur %@ est déjà présent sur votre système. Veuillez choisir un autre nom.";
-"September" = "Septembre";
-"Server Logs" = "Journaux";
-"Incomplete User Information" = "Données utilisateur incomplètes";
-"February" = "Février";
-"pure-ftpd is running ..." = "pure-ftpd est démarré";
-"
-PureFTPd Manager has been removed from your system." = "
-PureFTPd Manager has been removed from your system.";
-"User Manager" = "Utilisateurs";
-"Close" = "Fermer";
-"New VHost" = "Nouveau VHost";
-"Continue" = "Continuer";
-"File: %@ removed." = "Fichier : %@ effacé";
-"PureFTPd Manager - User Manager" = "PureFTPd Manager - Gestionnaire d'utilisateurs";
-"Connection error" = "Erreur lors de la connexion";
-"July" = "Juillet";
-"Revert" = "Retourner";
-"pure-ftpd is not running !" = "pure-ftpd est arrêté !";
-"You need to enable logging on this server.
-Do you want to configure it now?" = "L'enregistrement de journaux doit êrte activé.
-Souhaitez-vous l'activer maintenant ?";
-"Mac OS X default FTP server has been restored
-" = "Le serveur FTP par défaut de Mac OS X a été réstauré.";
-"Start Server" = "Démarrer le serveur";
-"PureFTPd Manager - Server Logs" = "PureFTPd Manager - Journaux";
-"Refresh" = "Actualiser";
-"Uninstalling PureFTPd Manager..." = "Desinstallation de PureFTPd Manager en cours...";
-"December" = "Décembre";
-"Virtual Hosts" = "Hôtes Virtuels";
-"Would you like to apply these changes to PureFTPd ?" = "Souhaitez-vous appliquer ces changements à PureFTPd ?";
-"A new user account needs a login, a password and a home directory to be set before it can be saved.
-Please complete this user informations." = "Un compte utilisateur a besoin d'un nom; d'un mot de passe et d'un répertoire de base avant de pouvoir être sauver. 
-Merci de compléter ces informations.";
-"PureFTPd informations removed from your host configuration file." = "PureFTPd informations removed from your host configuration file.";
-"All Year" = "Année complète";
-"Preferences" = "Préférences";
-"Delete" = "Effacer";
-"PureFTPd General Informations" = "Informations générales sur PureFTPd";
-"PureFTPd Manager - Server Status" = "PureFTPd Manager - Statut du serveur";
-"Updating Users Statistics..." = "Mise a jour des statistiques...";
-"Virtual Hosts have been modified" = "La base d'hôtes virtuels à été modifiée";
-"Virtual Users have been modified" = "La base d'utilisateurs virtuels à été modifiée";
-"A new account creation is already in progress. Please complete it before adding another account." = "Une création d'utilisateur est déja en cours. Merci de l'achever avant d'en démarrer une nouvelle.";
+/* -username- already exists on your system, please specify another username. */
+"%@ already exists on your system, please specify another username." = "L'utilsateur %@ est d√©j√† pr√©sent sur votre syst√®me. Veuillez choisir un autre nom.";
+
+/* PureFTPd informations removed from your host configuration file. */
+"\nPureFTPd informations removed from your host configuration file." = "\nLes donn√©es relatives √† PureFTPd ont √©t√© supprim√©es de votre fichier /etc/host.";
+
+/* PureFTPd Manager has been removed from your system. */
+"\nPureFTPd Manager has been removed from your system." = "\nPureFTPd Manager a √©t√© d√©sinstall√© de votre ordinateur.";
+
+/* A new account creation is already in progress. Please complete it before adding another account. */
+"Une cr√©ation d'utilisateur est d√©j√† en cours. Merci de l'achever avant d'en d√©marrer une nouvelle.";
+
+/* localized string */
+"A new user account needs a login, a password and a home directory to be set before it can be saved.\nPlease complete this user informations." = "Un compte utilisateur a besoin d'un nom, d'un mot de passe et d'un r√©pertoire de base avant de pouvoir √™tre enregistrer..\nMerci de compl√©ter ces informations.";
+
+/* All Year */
+"All Year" = "Ann√©e compl√®te";
+
+/* month of April */
 "April" = "Avril";
-"Duplicated Account !" = "Ce compte existe déja !";
-"New Button" = "Nouveau";
-"June" = "Juin";
-"OK" = "OK";
-"October" = "Octobre";
-"Yes" = "Oui";
-"You must quit PureFTPd Manager to continue. Are you sure you wan to do this ?" = "Cette action requiert l'arrêt de PureFTPd Manager. Etes-vous sûr de vouloir continuer ?";
-"Disabled" = "Inactive";
-"Do you want to start the Setup Assistant now ?" = "Souhaitez-vous exécuter l'Assitant de Configuration ? ";
-"November" = "Novembre";
-"PureFTPd Manager - Virtual Hosts" = "PureFTPd Manager - Hôtes virtuels";
-"Server Status" = "Statut";
-"PureFTPd Manager is up-to-date" = "PureFTPd Manager est à jour";
-"May" = "Mai";
+
+/* Are you sure you want to continue ? */
+"Are you sure you want to continue ?" = "Etes-vous s√ªr de vouloir continuer ?";
+
+/* month of August */
+"August" = "Ao√ªt";
+
+/* Cancel */
 "Cancel" = "Annuler";
-"No" = "Non";
-"Enabled" = "Activée";
-"Stop" = "Arrêter";
-"Start" = "Démarrer	";
+
+/* Close uninstaller */
+"Close" = "Fermer";
+
+/* Title of alert when there is a connection error during update process. */
+"Connection error" = "Erreur lors de la connexion";
+
+/* Connection error to MySQL */
+"Connection error to MySQL" = "Erreur lors de la connexion √† MySQL";
+
+/* Continue */
+"Continue" = "Continuer";
+
+/* Create a new Virtual Host */
+"Create a new Virtual Host" = "Cr√©er un nouvel h√¥te virtuel";
+
+/* Create a new Virtual User */
+"Create a new Virtual User" = "Cr√©er un nouvel utilisateur virtuel";
+
+/* month of December */
+"December" = "D√©cembre";
+
+/* Delete */
+"Delete" = "Supprimer";
+
+/* localized string */
+"Delete Button" = "Bouton Supprimer";
+
+/* Delete Log History */
+"Delete Log History" = "Supprimer l'historique des journaux utilisateur";
+
+/* Delete Virtual Host */
+"Delete Virtual Host" = "Supprimer l'h√¥te virtuel";
+
+/* Delete Virtual User */
+"Delete Virtual User" = "Supprimer l'utilisateur virtuel";
+
+/* Disabled */
+"Disabled" = "Inactive";
+
+/* Do you want to start the Setup Assistant now ? */
+"Do you want to start the Setup Assistant now ?" = "Souhaitez-vous ex√©cuter l'Assitant de Configuration ?";
+
+/* Don't Save */
+"Don't Save" = "Ne pas enregistrer";
+
+/* Duplicated Account ! */
+"Duplicated Account !" = "Ce compte existe d√©j√† !";
+
+/* Enabled */
+"Enabled" = "Activ√©e";
+
+/* month of February */
+"February" = "F√©vrier";
+
+/* File:/path/to/file removed. */
+"File: %@ removed." = "Fichier : %@ effac√©";
+
+/* Filesystem permissions modification */
+"Filesystem permissions modification" = "Modification des permissions du syst√®me de fichiers ";
+
+/* localized string */
+"Go to User Manager" = "Aller au Gestionnaire d'Utilisateurs";
+
+/* localized string */
+"Go to Virtual Hosts" = "Aller au H√¥tes Virtuels";
+
+/* localized string */
+"Incomplete User Information" = "Donn√©es utilisateur incompl√®tes";
+
+/* month of january */
+"January" = "Janvier";
+
+/* month of July */
+"July" = "Juillet";
+
+/* month of June */
+"June" = "Juin";
+
+/* Mac OS X default ftp server has been restored */
+"Mac OS X default FTP server has been restored\n" = "Le serveur FTP par d√©faut de Mac OS X a √©t√© r√©staur√©.\n";
+
+/* month of March */
 "March" = "Mars";
-"Unable to connect to the upgrade server.
-Please check your internet link status and try again." = "Connexion au serveur de mise à jour impossible.
-Vérifiez votre lien Internet et veuillez réessayer.";
-"Connection error to MySQL" = "Erreur lors de la connexion à MySQL";
-"Please check that your MySQL server is running" = "Vérifiez que votre serveur MySQL est démarré.";
 
-"Authentication error" = "Erreur d'authentification";
-"You need to re-authenticate yourself to continue." = "Veuillez vous authentifier a nouveau pour continuer.";
-"Authenticate" = "S'authentifier";
-"Quit" = "Quitter";
+/* month of May */
+"May" = "Mai";
 
-"permissions set to" = ": Les droits ont été modifiés - ";
-"Permissions did not need to be modified" = "Aucune modification nécessaire.";
+/* New */
+"New" = "Nouveau";
 
-"You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time."=
-"Vous êtes sur le point de modifier le dossier %@ et de définir ses permissions afin qu'il soit disponible en mode %@ à votre utilisateur virtuel. Souhaitez-vous également modifier les permissions des fichiers et sous-dossiers présents dans ce dossier ?\n Cette action peut prendre du temps.";
-"read only"="lecture seule";
-"write only (Dropbox)"="Ecriture Seule (Boite de Dépot)";
-"read/write"="Lecture/Ecriture";
-"no access"="-inaccessible-";
+/* localized string */
+"New Button" = "Nouveau Bouton";
+
+/* New User */
+"New User" = "Nouvel utilisateur";
+
+/* New VHost */
+"New VHost" = "Nouvel h√¥te";
+
+
+/* No */
+"No" = "Non";
+
+/* no access */
+"no access" = "Aucun acc√®s";
+
+/* No logging facility activated */
+"No logging facility activated" = "Les journaux ne sont pas activ√©s";
+
+/* month of November */
+"November" = "Novembre";
+
+/* month of November */
+"October" = "Octobre";
+
+/* OK */
+"OK" = "OK";
+
+/* localized string */
+"Open Preferences" = "Ouvrir les Pr√©f√©rences";
+
+/* Permissions did not need to be modified */
+"Permissions did not need to be modified" = "Aucune modification n√©cessaire.";
+
+/* permissions set to */
+"permissions set to" = "Permissions modifi√©es vers";
+
+/* Please check that your MySQL server is running */
+"Please check that your MySQL server is running" = "V√©rifiez que votre serveur MySQL est d√©marr√©.";
+
+/* localized string */
+"Preferences" = "Pr√©f√©rences";
+
+/* pure-ftpd is not running ! */
+"pure-ftpd is not running !" = "pure-ftpd est arr√™t√© !";
+
+/* pure-ftpd is running ... */
+"pure-ftpd is running ..." = "pure-ftpd est d√©marr√© ...";
+
+/* localized string */
+"PureFTPd Manager - Server Logs" = "PureFTPd Manager - Journaux";
+
+/* localized string */
+"PureFTPd Manager - Server Status" = "PureFTPd Manager - Statut du serveur";
+
+/* localized string */
+"PureFTPd Manager - User Manager" = "PureFTPd Manager - Gestionnaire d'utilisateurs";
+
+/* localized string */
+"PureFTPd Manager - Virtual Hosts" = "PureFTPd Manager - H√¥tes virtuels";
+
+/* Title of alert when a the user's software is up to date. */
+"PureFTPd Manager is up-to-date" = "PureFTPd Manager est √† jour";
+
+/* localized string */
+"PureFTPd\nGeneral Informations" = "Informations g√©n√©rales sur PureFTPd";
+
+/* read only */
+"read only" = "Lecture Seule";
+
+/* read/write */
+"read/write" = "Lecture/Ecriture";
+
+/* localized string */
+"Refresh" = "Actualiser";
+
+/* Refresh Logs */
+"Refresh Logs" = "Actualiser les journaux";
+
+/* Refresh Status */
+"Refresh Status" = "Actualiser le status";
+
+/* Remove PureFTPd Manager */
+"Remove PureFTPd Manager" = "D√©sinstaller PureFTPd Manager";
+
+/* Revert */
+"Revert" = "Retourner";
+
+/* Save */
+"Save" = "Enregistrer";
+
+/* Save Virtual Host */
+"Save Virtual Host" = "Enregistrer l'h√¥te virtuel";
+
+/* Save Virtual User */
+"Save Virtual User" = "Enregistrer l'utilisateur virtuel";
+
+/* month of September */
+"September" = "Septembre";
+
+/* Server IP address */
+"Server IP address" = "Adresse IP du serveur";
+
+/* localized string */
+"Server Logs" = "Journaux";
+
+/* localized string */
+"Server Status" = "Statut";
+
+/* Start */
+"Start" = "D√©marrer";
+
+/* localized string */
+"Start Server" = "D√©marrer le serveur";
+
+/* Stop */
+"Stop" = "Arr√™ter";
+
+/* localized string */
+"Stop Server" = "Arr√™ter le serveur";
+
+/* This will uninstall PureFTPd Manager and its components from your system.\nAre you sure you want to do this ? */
+"This will uninstall PureFTPd Manager and its components from your system.\nAre you sure you want to do this ?" = "This will uninstall PureFTPd Manager and its components from your system.\nAre you sure you want to do this ?";
+
+/* Alert text when an error occur during upgrade. */
+"Unable to connect to the upgrade server.\nPlease check your internet link status and try again." = "Unable to connect to the upgrade server.\nPlease check your internet link status and try again.";
+
+/* PureFTPd Manager has been removed from your system. */
+"Uninstall process completed" = "Uninstall process completed";
+
+/* Uninstalling PureFTPd Manager... */
+"Uninstalling PureFTPd Manager..." = "Suppression de PureFTPd Manager en cours...";
+
+/* Updating users statistics */
+"Updating Users Statistics..." = "Mise √† jour des statistiques...";
+
+/* localized string */
+"User Manager" = "Utilisateurs";
+
+/* localized string */
+"View Server Logs" = "Aller aux Journaux";
+
+/* localized string */
+"View Server Status" = "Aller au Statut du serveur";
+
+/* localized string */
+"Virtual Hosts" = "Utilisateurs";
+
+/* localized string */
+"Virtual Hosts have been modified" = "La base d'h√¥tes virtuels √† √©t√© modifi√©e";
+
+/* Virtual Users have been modified */
+"Virtual Users have been modified" = "La base d'utilisateurs virtuels √† √©t√© modifi√©e";
+
+/* localized string */
+"Would you like to apply these changes to PureFTPd ?" = "Souhaitez-vous appliquer ces changements √† PureFTPd ?";
+
+/* write only (Dropbox) */
+"write only (Dropbox)" = "Ecriture Seule (Boite de D√©pot)";
+
+/* Yes */
+"Yes" = "Oui";
+
+/* You are about to delete a Virtual Host. */
+"You are about to delete a Virtual Host." = "Vous √™tes sur le point de supprimer un h√¥te virtuel";
+
+/* You are about to delete log history for %@. */
+"You are about to delete log history for %@." = "Vous √™tes sur le point de supprimer l'historique des transferts de %@.";
+
+/* You are about to delete user: %@. */
+"You are about to delete user: %@." = "Vous √™tes sur le point de supprimer l'utilisateur virtuel : %@.";
+
+/* You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time. */
+"You are about to modify %@ permissions to %@. Do you want to modify its contents (files and folders) permissions recursively ?\nThis may take a long time." = "Vous √™tes sur le point de modifier le dossier %@ et de d√©finir ses permissions afin qu'il soit disponible en mode %@ √† votre utilisateur virtuel. Souhaitez-vous √©galement modifier les permissions des fichiers et sous-dossiers pr√©sents dans ce dossier ?\n Cette action peut prendre du temps.";
+
+/* You can't to create a new user ! */
+"You can't to create a new user !" = "Vous ne pouvez pas cr√©er de nouvel utilisateur !";
+
+/* Alert text when the user's software is up to date. */
+"You have the latest version of PureFTPd Manager." = "Vous utilisez la derni√®re version de PureFTPd Manager.";
+
+/* You must quit PureFTPd Manager to continue. Are you sure you wan to do this ? */
+"You must quit PureFTPd Manager to continue. Are you sure you want to do this ?" = "Cette action requiert l'arr√™t de PureFTPd Manager. Etes-vous s√ªr de vouloir continuer ?";
+
+/* localized string */
+"You need to enable logging on this server.\nDo you want to configure it now?" = "L'enregistrement de journaux doit √™tre activ√©.\nSouhaitez-vous l'activer maintenant ?";
+
+"Your virtual user home directory (%@) and its parent directory (%@) belong to the same system user.\n To fix the parent folder ownership to root:wheel, click Fix & Continue."="Le r√©pertoire de base de l'utilisateur virtuel (%@) et son dossier parent (%@) appartiennent au m√™me utilisateur syst√®me.\n Pour attribuer le dossier parent √† root:wheel, cliquez sur R√©parer & Continuer." ;
+
+/* Fix & Continue*/
+"Fix & Continue"="R√©parer & Continuer";
+
+/* Cancel */
+"Cancel"="Annuler";
+
+"PureFTPd Preferences have been modified"="Les pr√©f√©rences de votre serveur ont √©t√© modifi√©es.";
+
+"Would you like to restart PureFTPd daemon now?" = "Souhaiez-vous relancer votre serveur FTP maintenant ?";
 

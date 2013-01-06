@@ -16,6 +16,7 @@
     IBOutlet NSButton *closeOneSessionBtn;
     IBOutlet NSButton *controlServerBtn;
     IBOutlet NSTextField *fileField;
+	IBOutlet NSTextField *ipField;
     IBOutlet NSTextField *localHostField;
     IBOutlet NSTextField *localPortField;
     IBOutlet NSTextField *pidField;
@@ -26,7 +27,8 @@
     IBOutlet WebView *statusWV;
     IBOutlet NSTextField *sizeField;
     IBOutlet NSTableColumn *tc_bandwidth;
-    IBOutlet NSTextField *totalBWUsageField;
+	IBOutlet NSTextField *totalDLBWUsageField;
+	IBOutlet NSTextField *totalUPBWUsageField;
     IBOutlet NSTableView *userDetailTable;
     IBOutlet NSTabView *userTab;
     IBOutlet NSTableView *userTable;    

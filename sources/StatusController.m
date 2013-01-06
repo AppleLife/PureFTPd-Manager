@@ -22,6 +22,7 @@
 #import "MVPreferencesController.h" 
 #import "RemoveController.h"
 
+
 @implementation StatusController
 
 #pragma mark Initialization
@@ -45,10 +46,7 @@ StatusController *theStatusController = nil;
     if (self)
     {
         theStatusController = self;
-        // Listening to refresh notifications
-        [[NSDistributedNotificationCenter defaultCenter] addObserver:self
-                                                            selector:@selector(refreshStatus:)
-                                                                name:@"refreshStatus" object:nil];
+        
         
     }
     return self;
@@ -60,6 +58,11 @@ StatusController *theStatusController = nil;
     
     theStatusController = self;
     
+	// Listening to refresh notifications
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+                                                            selector:@selector(refreshStatus:)
+                                                                name:@"refreshStatus" object:@"org.pureftpd.osx"];
+	
     pureFTPD = [[PureFTPD alloc] init];
     myUsage = [[FTPUsage alloc] init];
     statusDictionary = [[NSMutableDictionary alloc] init];
@@ -98,6 +101,8 @@ StatusController *theStatusController = nil;
     NSString *formattedPage = [NSString stringWithFormat:[NSString stringWithContentsOfFile:mainHTML], managerImagePath, assistantPath, trashPath, statusPath, loggingPath, usersPath, vhostsPath, systemPath, settingsPath, anonymousPath, authPath, sslPath, diraliasesPath, optionsPath];
     
     [[statusWV mainFrame] loadHTMLString:formattedPage baseURL:nil];
+	[NSThread detachNewThreadSelector:@selector(getIP:) toTarget:self withObject:nil ];
+	
 }
 
 
@@ -107,7 +112,7 @@ StatusController *theStatusController = nil;
     // Stop listening for notifications
     [[NSDistributedNotificationCenter defaultCenter] removeObserver:self 
                                                                name:@"refreshStatus" 
-                                                             object:nil];
+                                                             object:@"org.pureftpd.osx"];
     
     [pureFTPD release];
     [myUsage release];
@@ -129,14 +134,15 @@ StatusController *theStatusController = nil;
     NSEnumerator *enumerator = [[myUsage usersDB] objectEnumerator];
     
     NSMutableArray *userInfoArray = nil;
-    while(userInfo = [enumerator nextObject])
+    while((userInfo = [enumerator nextObject]) != nil)
     {
         NSString *key = [userInfo objectForKey:@"account"];
         if ((userInfoArray=[statusDictionary objectForKey:key]) == nil){
             // User was not found
             userInfoArray = [NSMutableArray arrayWithObject:userInfo];
-			if (userInfoArray != nil)
+			if (userInfoArray != nil){
 				[statusDictionary setObject:userInfoArray forKey:key];
+			}
         } else {
             // User was found
             [userInfoArray addObject:userInfo];
@@ -176,7 +182,8 @@ StatusController *theStatusController = nil;
 
 - (void)updateServerStatus
 {
-    int bwUsage = 0;
+	int upUsage = 0;
+	int downUsage = 0;
     int session = 0;
     id userArray;
     NSEnumerator *bwenum = [statusDictionary objectEnumerator];
@@ -186,13 +193,23 @@ StatusController *theStatusController = nil;
         id sessionInfo;
         NSEnumerator *userEnum = [userArray objectEnumerator];
         while (sessionInfo = [userEnum nextObject]){
-            bwUsage+=[[sessionInfo objectForKey:@"bandwidth"] intValue];
+			NSString *state=[sessionInfo objectForKey:@"state"];
+			if ([state isEqualToString:@" Downloading "]){
+				downUsage+=[[sessionInfo objectForKey:@"bandwidth"] intValue];
+			} else if ([state isEqualToString:@" Uploading "]){
+				upUsage+=[[sessionInfo objectForKey:@"bandwidth"] intValue];
+			}
+			
         }
     }
     
-    NSNumber *size = [self formatSize:[NSNumber numberWithInt:bwUsage] forCell:[totalBWUsageField cell]];
+    
+	NSNumber *downTotal = [self formatSize:[NSNumber numberWithInt:downUsage] forCell:[totalDLBWUsageField cell]];
+	NSNumber *upTotal = [self formatSize:[NSNumber numberWithInt:upUsage] forCell:[totalUPBWUsageField cell]];
     NSString *sessions = [NSString stringWithFormat:@"%d", session];
-    [totalBWUsageField setStringValue:[size stringValue]];
+	[totalDLBWUsageField setStringValue:[downTotal stringValue]];
+	[totalUPBWUsageField setStringValue:[upTotal stringValue]];
+	
     [sessionInfoField setStringValue:sessions];
 
     
@@ -206,6 +223,7 @@ StatusController *theStatusController = nil;
         [controlServerBtn setTitle:NSLocalizedString(@"Start",@"Start")];
         [serverStatusField setStringValue:NSLocalizedString(@"pure-ftpd is not running !",@"pure-ftpd is not running !")];
     }
+	
     [fileField setStringValue:@""];
     [localHostField setStringValue:@""];
     [localPortField setStringValue:@""];
@@ -216,8 +234,7 @@ StatusController *theStatusController = nil;
 
 
 - (void)refreshStatus:(NSNotification *)notification
-{
-    
+{	
     [self updateUserStatus];
     [self updateServerStatus];
 	int selectedUserDetailRow = [userDetailTable selectedRow];
@@ -242,6 +259,29 @@ StatusController *theStatusController = nil;
 	}
     
     [progress stopAnimation:nil];
+}
+
+-(void) getIP:(id)sender
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        
+    NSString *ip = nil;
+    ip = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://jeanmatthieu.free.fr/pureftpd/getip.php"]];
+    
+    if (ip == nil)
+    {
+        [ipField setStringValue:@""];
+        [pool release];
+        //[NSThread exit];
+        return;
+    } else {
+		NSString *info = NSLocalizedString(@"Server IP address", @"Server IP address");
+		[ipField setStringValue:[NSString stringWithFormat:@"%@: %@", info, ip]];
+	}
+    
+    [pool release];
+    //[NSThread exit];
+    
 }
 
 #pragma mark Close sessions Actions
@@ -302,6 +342,7 @@ StatusController *theStatusController = nil;
     [progress startAnimation:self];    
     [pureFTPD startServer];
     [self performSelector:@selector(refreshStatus:) withObject:nil afterDelay:3.0];
+	[NSThread detachNewThreadSelector:@selector(getIP:) toTarget:self withObject:nil];
 }
 
 -(void) stopServer:(id)sender
