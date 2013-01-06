@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C01A9B6F0D17C113004AB8CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C044BD440633133C00DA6C38 /* WebKit.framework */; };
 		C04347980A0EFCCC00ECB3A9 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */; };
 		C04347B30A0EFCD400ECB3A9 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */; };
 		C04348000A0EFDF500ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -277,6 +278,7 @@
 		C07800C20A0F216400F22004 /* SMySQL_bundled.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */; };
 		C07800C30A0F216400F22004 /* SM2DGraphView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C078004F0A0F209F00F22004 /* SM2DGraphView.framework */; };
 		C07800E90A0F222600F22004 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */; };
+		C0A5B6FA0A9C0C2800467E1D /* LeoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FD7A330A9BE37F00737171 /* LeoBrowser.m */; };
 		C0AA6FF309C5510600EEAA67 /* purestats.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FF009C5510600EEAA67 /* purestats.m */; };
 		C0AA6FF909C5511300EEAA67 /* NSXLogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C024260605C97E1F00427579 /* NSXLogParser.m */; };
 		C0AA6FFF09C5522F00EEAA67 /* HTMLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FFE09C5522F00EEAA67 /* HTMLConverter.m */; };
@@ -347,7 +349,6 @@
 		C0ADD57109AAFAFD00EF7E68 /* users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDD04DA6DE700100102 /* users.tiff */; };
 		C0ADD57209AAFAFE00EF7E68 /* vhosts.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDE04DA6DE700100102 /* vhosts.tiff */; };
 		C0ADD57309AAFAFF00EF7E68 /* status.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FE604DA707900100102 /* status.tiff */; };
-		C0ADD57509AAFB0400EF7E68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C044BD440633133C00DA6C38 /* WebKit.framework */; };
 		C0ADD57909AAFB0800EF7E68 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
 		C0ADD57A09AAFB0900EF7E68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C0ADD57B09AAFB0900EF7E68 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
@@ -492,6 +493,8 @@
 		C0C0CED2072D58E0004B1042 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C204E2903D004418BD /* CoreFoundation.framework */; };
 		C0C2951609EDE1FB006CA0CC /* MWWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2951409EDE1FB006CA0CC /* MWWindow.m */; };
 		C0DD050809C6A33000D8BED1 /* CSVConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DD050709C6A33000D8BED1 /* CSVConverter.m */; };
+		C0E236390A9AB8DA005901B9 /* MWHacking.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E236370A9AB8DA005901B9 /* MWHacking.m */; };
+		C0E2363B0A9AB8DA005901B9 /* MWHacking.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E236370A9AB8DA005901B9 /* MWHacking.m */; };
 		C0EBE72D085E6BFF002C3698 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C0F4C93B0708224E000BF4D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		C0F51DC7070BBBB40021B332 /* mLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4C93207082101000BF4D0 /* mLauncher.m */; };
@@ -568,31 +571,6 @@
 			);
 		};
 /* End PBXBuildRule section */
-
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
 		C0434A0E0A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
@@ -904,7 +882,7 @@
 		C024272505C987E800427579 /* UserStatsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserStatsController.m; path = sources/UserStatsController.m; sourceTree = "<group>"; };
 		C02CC07A070074F3002B0A58 /* NSFileManager+ASExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+ASExtensions.h"; path = "sources/NSFileManager+ASExtensions.h"; sourceTree = "<group>"; };
 		C02CC07B070074F3002B0A58 /* NSFileManager+ASExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+ASExtensions.m"; path = "sources/NSFileManager+ASExtensions.m"; sourceTree = "<group>"; };
-		C02CC3630700A2A6002B0A58 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; name = English; path = sources/English.lproj/main.html; sourceTree = "<group>"; };
+		C02CC3630700A2A6002B0A58 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = sources/English.lproj/main.html; sourceTree = "<group>"; };
 		C02CC3730700A38C002B0A58 /* English */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = English; path = sources/English.lproj/Manager.png; sourceTree = "<group>"; };
 		C02CC3FB0700AC86002B0A58 /* anonymous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anonymous.png; path = sources/English.lproj/feat/anonymous.png; sourceTree = "<group>"; };
 		C02CC3FC0700AC86002B0A58 /* assistant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assistant.png; path = sources/English.lproj/feat/assistant.png; sourceTree = "<group>"; };
@@ -1112,7 +1090,7 @@
 		C0D8990507223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = sources/SetupAssistant/French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0D8990607223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/SetupAssistant/French.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		C0D8990B07223D2B00898826 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C0D8990C07223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0D8990C07223D2B00898826 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0D8990E07223D2B00898826 /* French */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/MVPreferencePaneGroups.strings; sourceTree = "<group>"; };
 		C0D8990F07223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/French.lproj/MVPreferences.nib; sourceTree = "<group>"; };
 		C0D8991007223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/French.lproj/PureFTP.nib; sourceTree = "<group>"; };
@@ -1145,6 +1123,8 @@
 		C0DCC13105D2F6E800BB41E9 /* allOptions.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = allOptions.plist; path = sources/SetupAssistant/allOptions.plist; sourceTree = "<group>"; };
 		C0DD050609C6A33000D8BED1 /* CSVConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSVConverter.h; path = sources/purestats/CSVConverter.h; sourceTree = "<group>"; };
 		C0DD050709C6A33000D8BED1 /* CSVConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSVConverter.m; path = sources/purestats/CSVConverter.m; sourceTree = "<group>"; };
+		C0E236360A9AB8DA005901B9 /* MWHacking.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MWHacking.h; sourceTree = "<group>"; };
+		C0E236370A9AB8DA005901B9 /* MWHacking.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MWHacking.m; sourceTree = "<group>"; };
 		C0EBE564085D7DB8002C3698 /* WBTimeControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = WBTimeControl.m; path = sources/WBTimeControl.m; sourceTree = "<group>"; };
 		C0EBE565085D7DB8002C3698 /* WBTimeControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = WBTimeControl.h; path = sources/WBTimeControl.h; sourceTree = "<group>"; };
 		C0EBE6F1085E67E0002C3698 /* ftptiger */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = ftptiger; path = sources/ftptiger; sourceTree = "<group>"; };
@@ -1164,6 +1144,8 @@
 		C0FC7CC4074CF87800D88CB1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = sources/Uninstaller/English.lproj/Uninstaller.nib; sourceTree = "<group>"; };
 		C0FC7CF6074CFA4D00D88CB1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0FC7D91074CFFBB00D88CB1 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/Uninstaller/French.lproj/Uninstaller.nib; sourceTree = "<group>"; };
+		C0FD7A320A9BE37F00737171 /* LeoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeoBrowser.h; path = sources/LeoBrowser.h; sourceTree = "<group>"; };
+		C0FD7A330A9BE37F00737171 /* LeoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeoBrowser.m; path = sources/LeoBrowser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1334,13 +1316,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0ADD57509AAFB0400EF7E68 /* WebKit.framework in Frameworks */,
 				C0ADD57909AAFB0800EF7E68 /* Security.framework in Frameworks */,
 				C0ADD57A09AAFB0900EF7E68 /* Cocoa.framework in Frameworks */,
 				C0ADD57B09AAFB0900EF7E68 /* PreferencePanes.framework in Frameworks */,
 				C0BE374E09CD609E00B0D01D /* Carbon.framework in Frameworks */,
 				C04347980A0EFCCC00ECB3A9 /* SMySQL_bundled.framework in Frameworks */,
 				C07800B50A0F213800F22004 /* SM2DGraphView.framework in Frameworks */,
+				C01A9B6F0D17C113004AB8CA /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1444,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C0E236350A9AB8DA005901B9 /* Deconstruction */,
 				C03CC06B05753A5900A80013 /* AppKit */,
 				61B6797F0526512F004CEC9C /* Preferences */,
 				C044BC2D0633035B00DA6C38 /* Server Logging */,
@@ -2115,6 +2098,8 @@
 				C0B4C3D8065105FC00FEF52D /* FSBrowserCell.m */,
 				C0B4C3D9065105FC00FEF52D /* FSNodeInfo.h */,
 				C0B4C3DA065105FC00FEF52D /* FSNodeInfo.m */,
+				C0FD7A320A9BE37F00737171 /* LeoBrowser.h */,
+				C0FD7A330A9BE37F00737171 /* LeoBrowser.m */,
 			);
 			name = Browser;
 			sourceTree = "<group>";
@@ -2142,6 +2127,16 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		C0E236350A9AB8DA005901B9 /* Deconstruction */ = {
+			isa = PBXGroup;
+			children = (
+				C0E236360A9AB8DA005901B9 /* MWHacking.h */,
+				C0E236370A9AB8DA005901B9 /* MWHacking.m */,
+			);
+			name = Deconstruction;
+			path = sources/Deconstruction;
+			sourceTree = "<group>";
+		};
 		C0FC7CB3074CF77F00D88CB1 /* Uninstaller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2166,24 +2161,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Manager-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "PureFTPd Manager";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 				C0434A0F0A0F030C00ECB3A9 /* PBXTargetDependency */,
 				C0434A110A0F030C00ECB3A9 /* PBXTargetDependency */,
@@ -2201,31 +2178,6 @@
 			name = "PureFTPd Manager (UB)";
 			productName = "PureFTPd Manager";
 			productReference = C04348DD0A0F015D00ECB3A9 /* PureFTPd Manager.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd Manager</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 		C04348E10A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant (UB) */ = {
@@ -2238,54 +2190,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Assistant-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "PureFTPd Assistant";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "PureFTPd Manager Setup Assistant (UB)";
 			productName = "PureFTPd Assistant";
 			productReference = C04349110A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd Assistant</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 		C04349140A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller (UB) */ = {
@@ -2300,57 +2209,11 @@
 				C043491D0A0F01A900ECB3A9 /* PBXBuildRule */,
 				C043491E0A0F01A900ECB3A9 /* PBXBuildRule */,
 			);
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Manager Uninstaller-Info.plist";
-				INSTALL_PATH = "$(USER_APPS_DIR)";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 			);
 			name = "PureFTPd Manager Uninstaller (UB)";
 			productName = "PureFTPd Manager Uninstaller";
 			productReference = C04349230A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>PureFTPd Manager Uninstaller</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd_Manager_Uninstaller</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 		C04349260A0F01B200ECB3A9 /* FTPLogPane (UB) */ = {
@@ -2363,50 +2226,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				INFOPLIST_FILE = "FTPLogPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Carbon,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = FTPLogPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "FTPLogPane (UB)";
 			productName = FTPLogPane;
 			productReference = C04349360A0F01B200ECB3A9 /* FTPLogPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>FTPLogPane</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.FTPLogPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CSResourcesFileMapped</key>
-	<string>yes</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349380A0F01BD00ECB3A9 /* SystemPane (UB) */ = {
@@ -2419,50 +2243,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "SystemPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = SystemPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "SystemPane (UB)";
 			productName = SystemPane;
 			productReference = C04349480A0F01BD00ECB3A9 /* SystemPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.SystemPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C043494A0A0F01C600ECB3A9 /* AuthPane (UB) */ = {
@@ -2475,50 +2260,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "AuthPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = AuthPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "AuthPane (UB)";
 			productName = AuthPane;
 			productReference = C043495B0A0F01C600ECB3A9 /* AuthentificationPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.AuthPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C043495D0A0F01D000ECB3A9 /* AnonymousPane (UB) */ = {
@@ -2531,50 +2277,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "AnonymousPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = AnonymousPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "AnonymousPane (UB)";
 			productName = AnonymousPane;
 			productReference = C043496F0A0F01D000ECB3A9 /* AnonymousPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.AnonymousPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349710A0F01DB00ECB3A9 /* ServerSettingsPane (UB) */ = {
@@ -2587,50 +2294,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "ServerSettingsPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = ServerSettingsPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "ServerSettingsPane (UB)";
 			productName = ServerSettingsPane;
 			productReference = C04349800A0F01DB00ECB3A9 /* ServerPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.ServerSettingsPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349820A0F01E800ECB3A9 /* ServerOptionsPane (UB) */ = {
@@ -2643,50 +2311,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "ServerOptionsPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = ServerOptionsPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "ServerOptionsPane (UB)";
 			productName = ServerOptionsPane;
 			productReference = C04349910A0F01E800ECB3A9 /* ServerOptionsPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.ServerOptionsPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349930A0F01F100ECB3A9 /* DirAliasesPane (UB) */ = {
@@ -2699,50 +2328,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "DirAliasesPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = DirAliasesPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "DirAliasesPane (UB)";
 			productName = DirAliasesPane;
 			productReference = C04349A20A0F01F100ECB3A9 /* DirAliasesPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.DirAliasesPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349A40A0F01FC00ECB3A9 /* SSLPane (UB) */ = {
@@ -2755,50 +2345,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "SSLPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = SSLPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "SSLPane (UB)";
 			productName = SSLPane;
 			productReference = C04349B40A0F01FC00ECB3A9 /* SSLPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.SSLPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349B60A0F020500ECB3A9 /* PermissionPane (UB) */ = {
@@ -2811,50 +2362,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PermissionPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = PermissionPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "PermissionPane (UB)";
 			productName = PermissionPane;
 			productReference = C04349C50A0F020500ECB3A9 /* PermissionPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PermissionPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C04349C70A0F020F00ECB3A9 /* Launcher (UB) */ = {
@@ -2868,20 +2380,6 @@
 				C04349D20A0F020F00ECB3A9 /* PBXBuildRule */,
 				C04349D30A0F020F00ECB3A9 /* PBXBuildRule */,
 			);
-			buildSettings = {
-				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Launcher;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 			);
 			name = "Launcher (UB)";
@@ -2898,14 +2396,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
-				PRODUCT_NAME = PureFTPOSX;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "PureFTPOSX (UB)";
@@ -2922,14 +2412,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
-				PRODUCT_NAME = purestats;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "purestats (UB)";
@@ -2946,14 +2428,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
-				PRODUCT_NAME = PureFTPOSX;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = PureFTPOSX;
@@ -2970,14 +2444,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
-				PRODUCT_NAME = purestats;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = purestats;
@@ -2997,24 +2463,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Manager-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "PureFTPd Manager";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 				C0ADD71C09AB068100EF7E68 /* PBXTargetDependency */,
 				C0ADD71E09AB068100EF7E68 /* PBXTargetDependency */,
@@ -3032,31 +2480,6 @@
 			name = "PureFTPd Manager";
 			productName = "PureFTPd Manager";
 			productReference = C0ADD51A09AAF8D100EF7E68 /* PureFTPd Manager.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd Manager</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 		C0ADD5F209AAFF0100EF7E68 /* PureFTPd Manager Setup Assistant */ = {
@@ -3069,54 +2492,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Assistant-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "PureFTPd Assistant";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = "PureFTPd Manager Setup Assistant";
 			productName = "PureFTPd Assistant";
 			productReference = C0ADD5F309AAFF0100EF7E68 /* PureFTPd Manager Setup Assistant.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd Assistant</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 		C0ADD62709AB006F00EF7E68 /* FTPLogPane */ = {
@@ -3129,50 +2509,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				INFOPLIST_FILE = "FTPLogPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Carbon,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = FTPLogPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = FTPLogPane;
 			productName = FTPLogPane;
 			productReference = C0ADD62809AB006F00EF7E68 /* FTPLogPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>FTPLogPane</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.FTPLogPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CSResourcesFileMapped</key>
-	<string>yes</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD63109AB008200EF7E68 /* SystemPane */ = {
@@ -3185,50 +2526,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "SystemPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = SystemPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = SystemPane;
 			productName = SystemPane;
 			productReference = C0ADD63209AB008200EF7E68 /* SystemPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.SystemPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD63B09AB009A00EF7E68 /* AuthPane */ = {
@@ -3241,50 +2543,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "AuthPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = AuthPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = AuthPane;
 			productName = AuthPane;
 			productReference = C0ADD63C09AB009A00EF7E68 /* AuthentificationPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.AuthPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD64509AB00B100EF7E68 /* AnonymousPane */ = {
@@ -3297,50 +2560,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "AnonymousPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = AnonymousPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = AnonymousPane;
 			productName = AnonymousPane;
 			productReference = C0ADD64609AB00B100EF7E68 /* AnonymousPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.AnonymousPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD64F09AB00BF00EF7E68 /* ServerSettingsPane */ = {
@@ -3353,50 +2577,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "ServerSettingsPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = ServerSettingsPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = ServerSettingsPane;
 			productName = ServerSettingsPane;
 			productReference = C0ADD65009AB00BF00EF7E68 /* ServerPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.ServerSettingsPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD65909AB00CC00EF7E68 /* ServerOptionsPane */ = {
@@ -3409,50 +2594,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "ServerOptionsPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = ServerOptionsPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = ServerOptionsPane;
 			productName = ServerOptionsPane;
 			productReference = C0ADD65A09AB00CC00EF7E68 /* ServerOptionsPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.ServerOptionsPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD66309AB00D900EF7E68 /* DirAliasesPane */ = {
@@ -3465,50 +2611,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "DirAliasesPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = DirAliasesPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = DirAliasesPane;
 			productName = DirAliasesPane;
 			productReference = C0ADD66409AB00D900EF7E68 /* DirAliasesPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.DirAliasesPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD66D09AB00E600EF7E68 /* SSLPane */ = {
@@ -3521,50 +2628,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "SSLPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = SSLPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = SSLPane;
 			productName = SSLPane;
 			productReference = C0ADD66E09AB00E600EF7E68 /* SSLPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.SSLPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0ADD67709AB00FA00EF7E68 /* PermissionPane */ = {
@@ -3577,50 +2645,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PermissionPane-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = PermissionPane;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = YES;
-			};
 			dependencies = (
 			);
 			name = PermissionPane;
 			productName = PermissionPane;
 			productReference = C0ADD67809AB00FA00EF7E68 /* PermissionPane.prefPane */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PermissionPane</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 		C0F4C92307082083000BF4D0 /* Launcher */ = {
@@ -3634,20 +2663,6 @@
 				C0776570086A4FB5009B4A04 /* PBXBuildRule */,
 				C077656F086A4F83009B4A04 /* PBXBuildRule */,
 			);
-			buildSettings = {
-				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Launcher;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 			);
 			name = Launcher;
@@ -3667,57 +2682,11 @@
 				C0776572086A4FFC009B4A04 /* PBXBuildRule */,
 				C0776571086A4FED009B4A04 /* PBXBuildRule */,
 			);
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				INFOPLIST_FILE = "PureFTPd Manager Uninstaller-Info.plist";
-				INSTALL_PATH = "$(USER_APPS_DIR)";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 			);
 			name = "PureFTPd Manager Uninstaller";
 			productName = "PureFTPd Manager Uninstaller";
 			productReference = C0FC7CAE074CF72700D88CB1 /* PureFTPd Manager Uninstaller.app */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>PureFTPd Manager Uninstaller</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PureFTPd_Manager_Uninstaller</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -3726,12 +2695,6 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C0ED5531088DD28700B3D10E /* Build configuration list for PBXProject "PureFTP" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -3742,6 +2705,7 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PureFTP */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				C0ADD51909AAF8D100EF7E68 /* PureFTPd Manager */,
 				C0ADD5F209AAFF0100EF7E68 /* PureFTPd Manager Setup Assistant */,
@@ -4219,6 +3183,7 @@
 				C0434B430A0F16D500ECB3A9 /* pcre.m in Sources */,
 				C0434B450A0F16D500ECB3A9 /* study.m in Sources */,
 				C0434B690A0F19C500ECB3A9 /* puredb_write.m in Sources */,
+				C0E2363B0A9AB8DA005901B9 /* MWHacking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4431,6 +3396,8 @@
 				C0434B4D0A0F16D500ECB3A9 /* study.m in Sources */,
 				C0434B6C0A0F19C500ECB3A9 /* puredb_write.m in Sources */,
 				C067D2AF0A18147A003138A3 /* MWGradientView103.m in Sources */,
+				C0E236390A9AB8DA005901B9 /* MWHacking.m in Sources */,
+				C0A5B6FA0A9C0C2800467E1D /* LeoBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4987,7 +3954,7 @@
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -5027,7 +3994,8 @@
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -5065,7 +4033,7 @@
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -6517,6 +5485,7 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -6607,6 +5576,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Assistant-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -6678,6 +5648,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				INFOPLIST_FILE = "./Property Lists/FTPLogPane-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
@@ -7410,6 +6381,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",

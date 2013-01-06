@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>JMSX</string>
 	<key>CFBundleVersion</key>
-	<string>1.6.3</string>
+	<string>1.7</string>
 	<key>NSMainNibFile</key>
 	<string>PureFTP</string>
 	<key>NSPrincipalClass</key>

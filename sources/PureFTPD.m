@@ -197,6 +197,8 @@
     if (![[serverPreferences objectForKey:PureFTPUserSpeedLimit] isEqualToString:@""])
     {
         [arguments addObject:@"-T"];
+		//NSLog([serverPreferences objectForKey:PureFTPUserSpeedLimit]);
+		//NSLog(@"-T%@", [serverPreferences objectForKey:PureFTPUserSpeedLimit]);
         [arguments addObject:[serverPreferences objectForKey:PureFTPUserSpeedLimit]];
     }
     
@@ -341,6 +343,7 @@
 	}
     
     [serverPreferences release];
+	//NSLog([arguments description]);
     return arguments;
     
     
@@ -463,6 +466,7 @@
         // StandAlone Mode
         pureFTPd = [[NSTask alloc] init];
         [pureFTPd setLaunchPath:PureFTPDCMD];
+		
         [pureFTPd setArguments:args];
         [pureFTPd launch];
         [pureFTPd release];
@@ -470,8 +474,8 @@
 		
 		if (MacVersion >= 0x1040){
 			NSMutableDictionary *launchDaemon = [NSMutableDictionary dictionaryWithContentsOfFile:@"/System/Library/LaunchDaemons/ftp.plist"];
-			[launchDaemon removeObjectForKey:@"Disabled"];
-			[launchDaemon setObject:@"org.pureftpd.macosx" forKey:@"Label"];
+			//[launchDaemon removeObjectForKey:@"Disabled"];
+			//[launchDaemon setObject:@"org.pureftpd.macosx" forKey:@"Label"];
 			[args insertObject:PureFTPDCMD atIndex:0];
 			[launchDaemon setObject:PureFTPDCMD forKey:@"Program"];
 			[launchDaemon setObject:args forKey:@"ProgramArguments"];
@@ -479,8 +483,13 @@
 			pureFTPd = [[NSTask alloc] init];
 			[pureFTPd setLaunchPath:@"/bin/launchctl"];
 			[pureFTPd setArguments:[NSArray arrayWithObjects:@"load", @"-w", @"/System/Library/LaunchDaemons/ftp.plist",nil]];
+			[pureFTPd waitUntilExit];
 			[pureFTPd launch];
 			[pureFTPd release];
+			/*[pureFTPd setLaunchPath:@"/usr/bin/sudo"];
+			[pureFTPd setArguments:[NSArray arrayWithObjects:@"/sbin/service", @"ftp", @"start",nil]];
+			[pureFTPd launch];
+			[pureFTPd release];*/
 		} else {
 			NSString *ftpFile = [NSString stringWithFormat:@"service ftp\n\
 {\n\
@@ -616,8 +625,15 @@
 	pureFTPd = [[NSTask alloc] init];
 	[pureFTPd setLaunchPath:@"/bin/launchctl"];
 	[pureFTPd setArguments:[NSArray arrayWithObjects:@"unload", @"-w", @"/System/Library/LaunchDaemons/ftp.plist", nil]];
+	[pureFTPd waitUntilExit];
 	[pureFTPd launch];
 	[pureFTPd release];
+	/*
+	[pureFTPd setLaunchPath:@"/usr/bin/sudo"];
+	[pureFTPd setArguments:[NSArray arrayWithObjects:@"/sbin/service", @"ftp", @"stop",nil]];
+	[pureFTPd launch];
+	[pureFTPd release];
+	*/
 }
 
 -(void) stopServer{

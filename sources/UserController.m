@@ -29,6 +29,10 @@
 #import "FSNodeInfo.h"
 #import "FSBrowserCell.h"
 
+
+#import "LeoBrowser.h"
+
+
 #import "NSFileManager+ASExtensions.h"
 
 #define MAX_VISIBLE_COLUMNS 3
@@ -110,7 +114,32 @@ UserController* theUserController = nil;
     NSRect navViewBounds = [navView bounds];
     Gestalt(gestaltSystemVersion, &MacVersion);
     
-    if (MacVersion >= 0x1030)
+	if (MacVersion >= 0x1050) {
+		/*fileBrowserView = [[NSBrowserView alloc] initWithFrame:navViewBounds];
+        [fileBrowserView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+        fileBrowser = [fileBrowserView fileBrowser];
+        [navView addSubview:fileBrowserView];*/
+		/*NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+		[oPanel setCanChooseFiles:NO];
+		
+		[oPanel setCanChooseDirectories:YES];
+		
+		NSView *_navView = [oPanel _navView];*/
+		/*LeoBrowser *lb = [[LeoBrowser alloc] initWithFrame:navViewBounds];
+		[navView addSubview:lb];
+		[lb release];
+		
+		[vfolderTable registerForDraggedTypes: 
+                        [NSArray arrayWithObjects:NSFilenamesPboardType, nil] ];
+		[vfolderInfoField setStringValue:
+					  NSLocalizedString(@"Virtual Folders provide shortcuts to a user outside its home directory.\nDrag 'n drop a folder to the Virtual Folders' table to add a shortcut.", 
+										@"Virtual Folders provide shortcuts to a user outside its home directory.\nDrag 'n drop a folder to the Virtual Folders' table to add a shortcut.")];
+		*/
+		fileBrowserView = [[NSBrowserView alloc] initWithFrame:navViewBounds];
+        [fileBrowserView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+        fileBrowser = [fileBrowserView fileBrowser];
+        [navView addSubview:fileBrowserView];
+	} else if (MacVersion >= 0x1030)
     {
         splitview = [[JMNavSplitView alloc] initWithFrame:navViewBounds];
         fileBrowser = [splitview fileBrowser];
@@ -208,11 +237,12 @@ UserController* theUserController = nil;
      
 }
 
-- (IBAction)browserDoubleClick:(id)browser {
-    if(currentUser == nil)
+
+- (void)createVFolder:(NSString*)origin
+{
+	if(currentUser == nil)
         return;
-    // Open the file and display it information by calling the single click routine.
-    NSString *nodePath = [browser path];
+	NSString *nodePath = origin;
     //[self browserSingleClick: browser];
     //[[NSWorkspace sharedWorkspace] openFile: nodePath];
     
@@ -263,6 +293,14 @@ UserController* theUserController = nil;
     }
 
     [self refreshVFolderList];
+}
+
+- (IBAction)browserDoubleClick:(id)browser {
+    if(currentUser == nil)
+        return;
+    // Open the file and display it information by calling the single click routine.
+    NSString *nodePath = [browser path];
+	[self createVFolder:nodePath];
 }
 
 - (IBAction)adjustAccessToFolder:(id)sender
@@ -580,6 +618,8 @@ UserController* theUserController = nil;
     while((userInfo=getpwent()) != NULL)
     {
         username = [NSString stringWithFormat:@"%s", userInfo->pw_name];
+		if ([username characterAtIndex:0] == '_')
+			continue;
         [userPopUp addItemWithTitle:username];
         [[userPopUp lastItem] setTag: (int)userInfo->pw_uid];
     }
@@ -587,6 +627,8 @@ UserController* theUserController = nil;
     while((groupInfo=getgrent()) != NULL)
     {
         groupname = [NSString stringWithFormat:@"%s", groupInfo->gr_name];
+		if ([groupname characterAtIndex:0] == '_')
+			continue;
         [groupPopUp addItemWithTitle:groupname];
         [[groupPopUp lastItem] setTag: groupInfo->gr_gid];
     }
@@ -674,8 +716,12 @@ UserController* theUserController = nil;
     [oPanel setCanChooseDirectories:YES];
     [oPanel setCanChooseFiles:NO];
     [oPanel setResolvesAliases:NO];
-    
-    [oPanel beginSheetForDirectory:NSHomeDirectoryForUser([pureController activeUser]) file:nil types:nil 
+	
+    NSString *chome = [homeDirField stringValue];
+	if (([chome length] < 1) || ![[NSFileManager defaultManager] fileExistsAtPath:chome])
+		chome=NSHomeDirectoryForUser([pureController activeUser]);
+	
+    [oPanel beginSheetForDirectory:chome file:nil types:nil 
                     modalForWindow:[NSApp mainWindow]
                      modalDelegate: self
                     didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
@@ -897,7 +943,8 @@ UserController* theUserController = nil;
     [fileBrowser setEnabled:NO];
     if (sidebar !=nil)
     {
-        [sidebar setEnabled:NO];
+		if ([sidebar respondsToSelector:@selector(setEnabled:)])
+			[sidebar setEnabled:NO];
     }
 }
 
@@ -948,10 +995,12 @@ UserController* theUserController = nil;
     [bannerTextView setEditable:YES];
     [removeBannerBtn setEnabled:YES];
     [fileBrowser setEnabled:YES];
-    if (sidebar !=nil)
+	if (sidebar !=nil)
     {
-        [sidebar setEnabled:YES];
+		if ([sidebar respondsToSelector:@selector(setEnabled:)])
+			[sidebar setEnabled:YES];
     }
+
 }
 
 -(void) clearFields
@@ -1669,7 +1718,7 @@ selectNow:
             
 	}else{
             [fileBrowser setPath:@"/"];
-	    [vfolderRemoveButton setEnabled:NO];
+			[vfolderRemoveButton setEnabled:NO];
             [vfolderAccessButton setEnabled:NO];
             [accessPopUp setEnabled:NO];
 	}
@@ -1677,7 +1726,51 @@ selectNow:
     
 }
 
+- (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info 
+				 proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)operation
+{
+	
+	if ([aTableView isEqualTo:vfolderTable])
+	{
+		return NSDragOperationCopy;
+	}
+	
+	return NSDragOperationNone;
+}
 
+- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info 
+		row:(int)row dropOperation:(NSTableViewDropOperation)operation
+{
+	if (([aTableView isEqualTo:vfolderTable]) && (currentUser != nil))
+	{
+		// Get the drag-n-drop pasteboard
+		NSPasteboard *myPasteboard=[info draggingPasteboard];
+		NSArray *typeArray=[NSArray arrayWithObjects:NSFilenamesPboardType,nil];
+		NSString *availableType;
+		NSArray *folderList;
+		
+
+		// find the best match of the types we'll accept and what's actually on the pasteboard
+		availableType=[myPasteboard availableTypeFromArray:typeArray];
+		// In the file format type that we're working with, get all data on the pasteboard
+		folderList=[myPasteboard propertyListForType:availableType];
+		//NSLog([filesList description]);
+		if ((folderList != nil) && ([folderList count] > 0))
+		{
+			NSEnumerator *folders = [folderList objectEnumerator];
+			NSString *folderPath = nil;
+		
+			while (folderPath=[folders nextObject])
+			{
+				[self createVFolder:folderPath];
+			}
+		}
+		
+		return YES;
+	}
+	
+	return NO;
+}
 
 
 @end

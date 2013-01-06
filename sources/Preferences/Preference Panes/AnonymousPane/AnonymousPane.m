@@ -163,21 +163,33 @@
     if ([[aNotification object] isEqualTo:homeDirField] && !homeDirSet)
 	{
 		NSString *newHome=[homeDirField stringValue];
+		SInt32 MacVersion;
+		Gestalt(gestaltSystemVersion, &MacVersion);
+	
+		if (MacVersion < 0x1050){
+			NSTask *del = [[NSTask alloc] init];
+			[del setLaunchPath:@"/usr/bin/niutil"];
+			[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
+			[del launch];
+			[del waitUntilExit];
+			[del release];
 		
-		NSTask *del = [[NSTask alloc] init];
-		[del setLaunchPath:@"/usr/bin/niutil"];
-		[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
-		[del launch];
-		[del waitUntilExit];
-		[del release];
+			NSTask *add = [[NSTask alloc] init];
+			[add setLaunchPath:@"/usr/bin/niutil"];
+			[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
+			[add waitUntilExit];
+			[add launch];
 		
-		NSTask *add = [[NSTask alloc] init];
-		[add setLaunchPath:@"/usr/bin/niutil"];
-		[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
-		[add launch];
+			[add release];
+		} else {
+			NSTask *ch = [[NSTask alloc] init];
+			[ch setLaunchPath:@"/usr/bin/dscl"];
+			[ch setArguments:[NSArray arrayWithObjects:@".", @"-create", @"/Users/ftp", @"NFSHomeDirectory", newHome, nil]];
+			[ch waitUntilExit];
+			[ch launch];
 		
-		[add release];
-		
+			[ch release];
+		}
 		// change dir to root:wheel
 		NSDictionary *p_dict=[NSDictionary dictionaryWithObjectsAndKeys:
 							@"root", NSFileOwnerAccountName, @"wheel",NSFileGroupOwnerAccountName, nil];
@@ -187,9 +199,19 @@
 		
 		// create incoming directory
 		NSString *inc=[newHome stringByAppendingPathComponent:@"incoming"];
-		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+		NSDictionary *dict= nil;
+		if (MacVersion < 0x1050){
+			dict=[NSDictionary dictionaryWithObjectsAndKeys:
 							@"ftp", NSFileOwnerAccountName, @"unknown", NSFileGroupOwnerAccountName, 
 							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+
+		} else {
+			dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"ftp", NSFileOwnerAccountName, @"nobody", NSFileGroupOwnerAccountName, 
+							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+
+		}
+		
 		BOOL isDir = YES;
 		if ([_fm fileExistsAtPath:inc isDirectory:&isDir] && isDir)
 			[_fm changeFileAttributes:dict atPath:inc];
@@ -511,24 +533,41 @@
     [NSApp stopModal];
     if (returnCode == NSOKButton)
     {        
-        NSString *newHome=[[sheet filenames] objectAtIndex:0];
+		
+		NSString *newHome=[[sheet filenames] objectAtIndex:0];
 		homeDirSet = YES;
+		//NSLog(@"newHome:%@", newHome);
 		[homeDirField setStringValue:newHome];
 		
-		NSTask *del = [[NSTask alloc] init];
-		[del setLaunchPath:@"/usr/bin/niutil"];
-		[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
-		[del launch];
-		[del waitUntilExit];
-		[del release];
+		SInt32 MacVersion;
+		Gestalt(gestaltSystemVersion, &MacVersion);
+	
+		if (MacVersion < 0x1050){
+			NSTask *del = [[NSTask alloc] init];
+			[del setLaunchPath:@"/usr/bin/niutil"];
+			[del setArguments:[NSArray arrayWithObjects:@"-destroyprop", @"/", @"/users/ftp", @"home", nil]];
+			[del launch];
+			[del waitUntilExit];
+			[del release];
 		
-		NSTask *add = [[NSTask alloc] init];
-		[add setLaunchPath:@"/usr/bin/niutil"];
-		[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
-		[add launch];
+			NSTask *add = [[NSTask alloc] init];
+			[add setLaunchPath:@"/usr/bin/niutil"];
+			[add setArguments:[NSArray arrayWithObjects:@"-createprop", @"/", @"/users/ftp", @"home", newHome, nil]];
+			[add waitUntilExit];
+			[add launch];
 		
-		[add release];
+			[add release];
+		} else {
+			
+			NSTask *ch = [[NSTask alloc] init];
+			[ch setLaunchPath:@"/usr/bin/dscl"];
+			[ch setArguments:[NSArray arrayWithObjects:@".", @"-create", @"/Users/ftp", @"NFSHomeDirectory", newHome, nil]];
+			[ch waitUntilExit];
+			[ch launch];
 		
+			[ch release];
+		}
+				
 		// change dir to root:wheel
 		NSDictionary *p_dict=[NSDictionary dictionaryWithObjectsAndKeys:
 							@"root", NSFileOwnerAccountName, @"wheel",NSFileGroupOwnerAccountName, nil];
@@ -538,9 +577,19 @@
 		
 		// create incoming directory
 		NSString *inc=[newHome stringByAppendingPathComponent:@"incoming"];
-		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+		NSDictionary *dict= nil;
+		if (MacVersion < 0x1050){
+			dict=[NSDictionary dictionaryWithObjectsAndKeys:
 							@"ftp", NSFileOwnerAccountName, @"unknown", NSFileGroupOwnerAccountName, 
 							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+
+		} else {
+			dict=[NSDictionary dictionaryWithObjectsAndKeys:
+							@"ftp", NSFileOwnerAccountName, @"nobody", NSFileGroupOwnerAccountName, 
+							[NSNumber numberWithInt:0755], NSFilePosixPermissions, nil];
+
+		}
+		
 		BOOL isDir = YES;
 		if ([_fm fileExistsAtPath:inc isDirectory:&isDir] && isDir)
 			[_fm changeFileAttributes:dict atPath:inc];

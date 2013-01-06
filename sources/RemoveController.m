@@ -162,19 +162,31 @@ RemoveController * theRC = nil;
 	NSMutableString *shellScript = [[NSMutableString alloc] initWithString:@"#!/bin/sh\n"];
 	if (ftpuser !=nil && ([ftpuser length] >=1) && (![ftpuser isEqualToString:@" "]))
 	{
-		[shellScript appendFormat:@"niutil -destroy / /users/%@\n", ftpuser];
+		if (MacVersion >= 0x1050){
+			[shellScript appendFormat:@"/usr/bin/dscl . -delete /Users/%@\n", ftpuser];
+		} else {
+			[shellScript appendFormat:@"/usr/bin/niutil -destroy / /users/%@\n", ftpuser];
+		}
 	}
 	
 	if (ftpgroup != nil&& ([ftpgroup length] >=1) && (![ftpgroup isEqualToString:@" "]))
 	{
-		[shellScript appendFormat:@"niutil -destroy / /groups/%@\n", ftpgroup];
+		if (MacVersion >= 0x1050){
+			[shellScript appendFormat:@"/usr/bin/dscl . -delete /Groups/%@\n", ftpgroup];
+		} else {
+			[shellScript appendFormat:@"/usr/bin/niutil -destroy / /groups/%@\n", ftpgroup];
+		}
 	}
 	
 	if (![keepAnon state])
 	{
-		[shellScript appendString:@"niutil -destroy / /users/ftp\n"];
+		if (MacVersion >= 0x1050){
+			[shellScript appendFormat:@"/usr/bin/dscl . -delete /Users/ftp\n"];
+		} else {
+			[shellScript appendString:@"/usr/bin/niutil -destroy / /users/ftp\n"];
+		}
 	}
-	if (MacVersion >= 0x1040)
+	if (MacVersion >= 0x1040 && MacVersion < 0x1050)
 	{
 		[shellScript appendString:@"/usr/sbin/lookupd -flushcache\n"];
 	}

@@ -30,11 +30,19 @@
     while((gInfo=getgrent()) != NULL)
     {
         groupname = [NSString stringWithFormat:@"%s", gInfo->gr_name];
+		if ([groupname characterAtIndex:0] == '_')
+			continue;
         [anonGroupPopUp addItemWithTitle:groupname];
         [[anonGroupPopUp lastItem] setTag: gInfo->gr_gid];
     }
-    
-    [anonGroupPopUp selectItemWithTitle:@"unknown"];
+    SInt32 MacVersion;
+    Gestalt(gestaltSystemVersion, &MacVersion);
+	
+	if (MacVersion < 0x1050){
+		[anonGroupPopUp selectItemWithTitle:@"unknown"];
+	} else {
+		[anonGroupPopUp selectItemWithTitle:@"nobody"];
+	}
 }
 
 

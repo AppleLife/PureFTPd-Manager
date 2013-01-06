@@ -25,6 +25,7 @@
 
 #import "PureController.h"
 
+
 @interface NSOpenPanel (ApplePrivate)
 - (NSNavView *)_navView;
 @end
@@ -76,12 +77,14 @@
 		
 		
 		
+		
         seteuid(0);
 		setuid(0);
         
 		[oPanel release];
 		[sidebarScroll setFocusRingType:NSFocusRingTypeNone];
 		[sidebar setFocusRingType:NSFocusRingTypeNone];
+		
         [self addSubview:sidebarScroll];
 		[self setPostsFrameChangedNotifications:YES];
 		
@@ -122,7 +125,7 @@
 
 - (void)mouseUp:(NSEvent *)theEvent
 {
-    //id selectedItem = [sidebar selectedItem];
+	//id selectedItem = [sidebar selectedItem];
 	SInt32 MacVersion;
 	Gestalt(gestaltSystemVersion, &MacVersion);
 	NSString *m_path = nil;

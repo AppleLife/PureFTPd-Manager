@@ -41,8 +41,8 @@
     if (!([[pureFTPPreferences objectForKey:PureFTPUserSpeedLimit] isEqualToString:@""]))
     {
         NSArray *speed = [NSArray arrayWithArray:[[pureFTPPreferences objectForKey:PureFTPUserSpeedLimit] componentsSeparatedByString:@":"]];
-        int upbw = [[speed objectAtIndex:0] intValue] / 1024;
-	int downbw = [[speed objectAtIndex:1] intValue] / 1024;
+        int upbw = [[speed objectAtIndex:0] intValue];
+	int downbw = [[speed objectAtIndex:1] intValue];
 	
 	if(upbw != 0)
 	    [upBWField setStringValue:[NSString stringWithFormat:@"%d", upbw]];
@@ -80,7 +80,7 @@
         [[downBWField stringValue] isEqualTo:@""] )
         speedLimit=@"";
     else
-        speedLimit=[NSString stringWithFormat:@"%d:%d", [upBWField intValue]*1024, [downBWField intValue]*1024]; 
+        speedLimit=[NSString stringWithFormat:@"%d:%d", [upBWField intValue], [downBWField intValue]]; 
     
 	// get recursion limit
 	NSString *maxFiles = @"2000";

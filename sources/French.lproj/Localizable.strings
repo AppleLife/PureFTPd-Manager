@@ -335,4 +335,7 @@
 /* Support for SSL/TLS is disabled */
 "Support for SSL/TLS is disabled." = "Le support des sessions SSL/TLS est inactif.";
 
-"Database setup aborted! Please check that your MySQL server is running" = "La configuration de la base de donnée a été interrompue. Vérifiez que votre serveur MySQL est disponible.";"Error connecting to MySQL" = "Erreur lors de la connexion à MySQL";
+"Database setup aborted! Please check that your MySQL server is running" = "La configuration de la base de donnée a été interrompue. Vérifiez que votre serveur MySQL est disponible.";
+"Error connecting to MySQL" = "Erreur lors de la connexion à MySQL";
+
+"Virtual Folders provide shortcuts to a user outside its home directory.\nDrag 'n drop a folder to the Virtual Folders' table to add a shortcut." = "Les Répertoires Virtuels fournissent un accès sécurisé à un répertoire externe au répertoire de base d'un utilisateur.\n Faites glisser un dossier pour créer un raccourci.";

@@ -184,6 +184,7 @@
                 userTabView = NSTabView; 
                 userTable = NSTableView; 
                 vfolderAccessButton = NSButton; 
+                vfolderInfoField = NSTextField; 
                 vfolderRemoveButton = NSButton; 
                 vfolderResultPanel = NSPanel; 
                 vfolderResultTextView = NSTextView; 

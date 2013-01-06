@@ -717,10 +717,20 @@
     }
     else
     {
-		//if (MacVersion < 0x1040){
-			anonScript = [anonScript stringByAppendingFormat:@"niutil -create / /users/ftp \n niutil -createprop / /users/ftp expire 0 \n niutil -createprop / /users/ftp realname \"Anonymous FTP user\" \n niutil -createprop / /users/ftp name ftp \n niutil -createprop / /users/ftp passwd '*' \n niutil -createprop / /users/ftp change 0 \n niutil -createprop / /users/ftp home \"%@\" \n niutil -createprop / /users/ftp uid %@ \n niutil -createprop / /users/ftp gid %@ \n niutil -createprop / /users/ftp shell /dev/null \n\n" , 
+		if (MacVersion < 0x1050){
+			anonScript = [anonScript stringByAppendingFormat:@"/usr/bin/niutil -create / /users/ftp \n /usr/bin/niutil -createprop / /users/ftp expire 0 \n /usr/bin/niutil -createprop / /users/ftp realname \"Anonymous FTP user\" \n /usr/bin/niutil -createprop / /users/ftp name ftp \n /usr/bin/niutil -createprop / /users/ftp passwd '*' \n /usr/bin/niutil -createprop / /users/ftp change 0 \n /usr/bin/niutil -createprop / /users/ftp home \"%@\" \n /usr/bin/niutil -createprop / /users/ftp uid %@ \n /usr/bin/niutil -createprop / /users/ftp gid %@ \n /usr/bin/niutil -createprop / /users/ftp shell /dev/null \n\n" , 
 				[wizardOptions objectForKey:ANONHOME], [wizardOptions objectForKey:ANONUID], [wizardOptions objectForKey:ANONGROUP]];
-        /*} else {
+        } else {
+			anonScript = [anonScript stringByAppendingString:@"/usr/bin/dscl . -create /Users/ftp \n/usr/bin/dscl . -create /Users/ftp RealName \"Anonymous FTP User\"\n"];
+			anonScript = [anonScript stringByAppendingString:@"/usr/bin/dscl . -create /Users/ftp RecordType dsRecTypeStandard:Users\n"];
+			anonScript = [anonScript stringByAppendingString:@"/usr/bin/dscl . -create /Users/ftp RecordName ftp\n /usr/bin/dscl . -create /Users/ftp Password '*'\n"];
+			anonScript = [anonScript stringByAppendingFormat:@"/usr/bin/dscl . -create /Users/ftp NFSHomeDirectory %@\n", [wizardOptions objectForKey:ANONHOME]];
+			anonScript = [anonScript stringByAppendingFormat:@"/usr/bin/dscl . -create /Users/ftp UniqueID %@\n", [wizardOptions objectForKey:ANONUID]];
+			anonScript = [anonScript stringByAppendingFormat:@"/usr/bin/dscl . -create /Users/ftp PrimaryGroupID %@\n", [wizardOptions objectForKey:ANONGROUP]];
+			anonScript = [anonScript stringByAppendingString:@"/usr/bin/dscl . -create /Users/ftp UserShell /usr/bin/false\n"];
+			
+		}
+		/*} else {
 			//[self createAnonymousUser];
 		}*/
         anonScript = [anonScript stringByAppendingFormat:@"mkdir -p \"%@\"\n chmod 755 \"%@\" \n chown root:wheel \"%@\"\n chmod 555 \"%@\"\n chown ftp:%@ \"%@\"\n mkdir \"%@\"\n chmod 755 \"%@\"\n chown ftp:%@ \"%@\"", 
@@ -745,16 +755,38 @@
     else
     {
 		//if (MacVersion < 0x1040){
+		if (MacVersion < 0x1050){
 			NSString *userRef = [NSString stringWithFormat:@"/users/%@", [wizardOptions objectForKey:VULOGIN]];
-			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@\n niutil -createprop / %@ expire 0 \n niutil -createprop / %@ realname \"Virtual users account\" \n niutil -createprop / %@ name %@ \n niutil -createprop / %@ passwd '*' \n niutil -createprop / %@ change 0 \n niutil -createprop / \"%@\" home /dev/null \n niutil -createprop / %@ uid %d \n niutil -createprop / %@ gid %d \n niutil -createprop / %@ shell /etc/pure-ftpd\n", 
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/niutil -create / %@\n /usr/bin/niutil -createprop / %@ expire 0 \n /usr/bin/niutil -createprop / %@ realname \"Virtual users account\" \n /usr/bin/niutil -createprop / %@ name %@ \n /usr/bin/niutil -createprop / %@ passwd '*' \n /usr/bin/niutil -createprop / %@ change 0 \n /usr/bin/niutil -createprop / \"%@\" home /dev/null \n /usr/bin/niutil -createprop / %@ uid %d \n /usr/bin/niutil -createprop / %@ gid %d \n /usr/bin/niutil -createprop / %@ shell /etc/pure-ftpd\n", 
 					userRef, userRef, userRef, userRef, [wizardOptions objectForKey:VULOGIN], userRef, userRef, userRef, userRef, [[wizardOptions objectForKey:VUUID] intValue], userRef, [[wizardOptions objectForKey:VUGID] intValue], userRef];
     
 			NSString *groupRef = [NSString stringWithFormat:@"/groups/%@", [wizardOptions objectForKey:VUGROUP]];
-			vusersScript = [vusersScript stringByAppendingFormat:@"niutil -create / %@ \n niutil -createprop / %@ passwd '*'\n niutil -createprop / %@ gid %d\n niutil -createprop / %@ users %@", 
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/niutil -create / %@ \n /usr/bin/niutil -createprop / %@ passwd '*'\n /usr/bin/niutil -createprop / %@ gid %d\n /usr/bin/niutil -createprop / %@ users %@", 
 					groupRef, groupRef, groupRef, 
 					[[wizardOptions objectForKey:VUGID] intValue], groupRef, [wizardOptions objectForKey:VULOGIN]];
     
 			shellScript = [shellScript stringByAppendingString:vusersScript];
+		} else {
+			NSString *groupRef = [NSString stringWithFormat:@"/Groups/%@", [wizardOptions objectForKey:VUGROUP]];
+			NSString *userRef = [NSString stringWithFormat:@"/Users/%@", [wizardOptions objectForKey:VULOGIN]];
+			
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@\n", groupRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ PrimaryGroupID %d\n", groupRef, [[wizardOptions objectForKey:VUGID] intValue]];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ Password '*'\n", groupRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ RecordName %@\n", groupRef, [wizardOptions objectForKey:VUGROUP]];
+			
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@\n", userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ RealName \"FTP Virtual User\" \n", userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ RecordType dsRecTypeStandard:Users\n", userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ RecordName %@\n", userRef, [wizardOptions objectForKey:VULOGIN]];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ Password '*'\n", userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ NFSHomeDirectory /dev/null\n", userRef];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ UniqueID %d \n", userRef, [[wizardOptions objectForKey:VUUID] intValue]];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ PrimaryGroupID %d\n", userRef, [[wizardOptions objectForKey:VUGID] intValue]];
+			vusersScript = [vusersScript stringByAppendingFormat:@"/usr/bin/dscl . -create %@ UserShell /etc/pure-ftpd\n", userRef];
+			
+			shellScript = [shellScript stringByAppendingString:vusersScript];
+		}
 		/*} else {
 			[self createFTPVirtualUser];
 			[self createFTPVirtualGroup];
@@ -774,11 +806,10 @@
         shellScript = [shellScript stringByAppendingString:mkdirScript];
    
     //NSLog(@"%@", shellScript);
-    if (MacVersion >= 0x1040)
+    if ((MacVersion >= 0x1040) && (MacVersion < 0x1050))
 	{
 		shellScript = [shellScript stringByAppendingString:@"\nrm -f /etc/xinetd.d/ftp\n"];
 		shellScript = [shellScript stringByAppendingString:@"\n/usr/sbin/lookupd -flushcache"];
-		//shellScript = [shellScript stringByAppendingString:@"\n/bin/launchctl unload -w /System/Library/LaunchDaemons/ftp.plist"];
 	}
 	
     [shellScript writeToFile:@"/tmp/Pure-FTPd.sh" atomically:YES];

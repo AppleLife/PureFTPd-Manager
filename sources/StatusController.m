@@ -204,8 +204,8 @@ StatusController *theStatusController = nil;
     }
     
     
-	NSNumber *downTotal = [self formatSize:[NSNumber numberWithInt:downUsage] forCell:[totalDLBWUsageField cell]];
-	NSNumber *upTotal = [self formatSize:[NSNumber numberWithInt:upUsage] forCell:[totalUPBWUsageField cell]];
+	NSNumber *downTotal = [self formatSize:[NSNumber numberWithInt:upUsage] forCell:[totalDLBWUsageField cell]];
+	NSNumber *upTotal = [self formatSize:[NSNumber numberWithInt:downUsage] forCell:[totalUPBWUsageField cell]];
     NSString *sessions = [NSString stringWithFormat:@"%d", session];
 	[totalDLBWUsageField setStringValue:[downTotal stringValue]];
 	[totalUPBWUsageField setStringValue:[upTotal stringValue]];
@@ -389,25 +389,37 @@ StatusController *theStatusController = nil;
     
     NSNumberFormatter *numberFormat = [[[NSNumberFormatter alloc] init] autorelease];
     if ([number intValue] < 1024){
-        [numberFormat setFormat:@"#,##0 B"];
+		if ([cell isEqualTo:[totalUPBWUsageField cell]] || [cell isEqualTo:[totalDLBWUsageField cell]])
+			[numberFormat setFormat:@"#,##0 B/sec"];
+		else
+			[numberFormat setFormat:@"#,##0 B"];
         [cell setFormatter:numberFormat];
         return number;
     }    
     else if (([number intValue] >= 1024) && ([number intValue] < moctet))
     {
-        [numberFormat setFormat:@"#,##0 KB"];
+		if ([cell isEqualTo:[totalUPBWUsageField cell]] || [cell isEqualTo:[totalDLBWUsageField cell]])
+			[numberFormat setFormat:@"#,##0 KB/sec"];
+		else
+			[numberFormat setFormat:@"#,##0 KB"];
         [cell setFormatter:numberFormat];
         return [NSNumber numberWithInt:[number intValue]/koctet];
     }
     else if (([number intValue] >= moctet) && ([number intValue] < goctet))
     {
-        [numberFormat setFormat:@"#,##0 MB"];
+		if ([cell isEqualTo:[totalUPBWUsageField cell]] || [cell isEqualTo:[totalDLBWUsageField cell]])
+			[numberFormat setFormat:@"#,##0 MB/sec"];
+		else
+			[numberFormat setFormat:@"#,##0 MB"];
         [cell setFormatter:numberFormat];
         return [NSNumber numberWithInt:[number intValue]/moctet];
     }
     else if ([number intValue] >= goctet)
     {
-        [numberFormat setFormat:@"#,##0 GB"];
+		if ([cell isEqualTo:[totalUPBWUsageField cell]] || [cell isEqualTo:[totalDLBWUsageField cell]])
+			[numberFormat setFormat:@"#,##0 GB/sec"];
+		else
+			[numberFormat setFormat:@"#,##0 GB"];
         [cell setFormatter:numberFormat];
         return [NSNumber numberWithInt:[number intValue]/goctet];
     }

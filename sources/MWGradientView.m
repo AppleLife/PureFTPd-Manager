@@ -61,13 +61,17 @@
 	if ((value == nil) || ([value intValue] == 1))
 		useGradient=YES;
 	
-	if (MacVersion >= 0x1040 && useGradient){
-		//[NSColor colorWithCalibratedRed:0.8235 green:0.8235 blue:0.8235 alpha:1.0]
-		//[NSColor colorWithCalibratedRed:0.7235 green:0.7235 blue:0.7235 alpha:1.0]
+	if (useGradient){
+		if (MacVersion >= 0x1050){
+			[self setGradientStartColor:[NSColor colorWithCalibratedRed:0.5921 green:0.5921 blue:0.5921 alpha:1.0]];
+			[self setGradientEndColor:[NSColor colorWithCalibratedRed:0.8430 green:0.8430 blue:0.8430 alpha:1.0]];
+			[self setDrawsGradientBackground:YES];
 		
-		[self setGradientStartColor:[NSColor colorWithCalibratedRed:0.8430 green:0.8430 blue:0.8430 alpha:1.0]];
-		[self setGradientEndColor:[NSColor clearColor]];
-		[self setDrawsGradientBackground:YES];
+		} else if (MacVersion >= 0x1040) {
+			[self setGradientEndColor:[NSColor colorWithCalibratedRed:0.8430 green:0.8430 blue:0.8430 alpha:1.0]];
+			[self setGradientStartColor:[NSColor clearColor]];
+			[self setDrawsGradientBackground:YES];
+		}
 	}
 }
 

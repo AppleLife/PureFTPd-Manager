@@ -263,4 +263,5 @@
 /* Your certificate will be remove from your system. Do you want to continue ? */
 "Your certificate will be remove from your system. Do you want to continue ?" = "Your certificate will be remove from your system. Do you want to continue ?";
 
+"Virtual Folders provide shortcuts to a user outside its home directory.\nDrag 'n drop a folder to the Virtual Folders' table to add a shortcut." = "Virtual Folders provide shortcuts to a user outside its home directory.\nDrag 'n drop a folder to the Virtual Folders' table to add a shortcut.";
 

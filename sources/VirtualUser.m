@@ -234,20 +234,72 @@ nax:
     return (unsigned int) ret;                                                                                                              
 }
 
--(NSString *) generatePwd:(BOOL)crypted
+-(NSString *) generatePwd:(BOOL)crted
 {
-	if (!crypted)
+	if (!crted)
 		return [NSString stringWithString:pwd];
 	
     static const char crcars[64] =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
-    
-    
+    register const char *crypted;
+	register char *result;
+	const char * passwd = [pwd cString];
+	 if ((crypted = (const char *)      /* Blowfish */
+         crypt("test", "$2a$07$1234567890123456789012")) != NULL &&        
+        strcmp(crypted, "$2a$07$123456789012345678901uKO4"
+               "/IReKqBzRzT6YaajGvw20UBdHW7m") == 0) {
+        char salt[] = "$2a$07$0000000000000000000000";        
+        int c = 28;
+        
+        do {            
+            c--;
+            salt[c] = crcars[pw_zrand() & 63];
+        } while (c > 7);
+        //NSLog(@"Using Blowfish");
+        result = (char *) crypt(passwd, salt);        
+    } else if ((crypted = (const char *)    /* MD5 */
+                crypt("test", "$1$12345678$")) != NULL &&
+               strcmp(crypted, "$1$12345678$oEitTZYQtRHfNGmsFvTBA/") == 0) {
+        char salt[] = "$1$00000000";
+        int c = 10;
+        
+        do {            
+            c--;
+            salt[c] = crcars[pw_zrand() & 63];
+        } while (c > 3);
+		//NSLog(@"Using MD5");
+        result = (char *) crypt(passwd, salt);
+    } else if ((crypted = (const char *)    /* Extended DES */
+                crypt("test", "_.../1234")) != NULL &&
+               strcmp(crypted, "_.../1234PAPUVmqGzpU") == 0) {
+        char salt[] = "_.../0000";
+        int c = 8;
+        
+        do {
+            c--;
+            salt[c] = crcars[pw_zrand() & 63];
+        } while (c > 5);
+		//NSLog(@"Using Extended DES");
+        result = (char *) crypt(passwd, salt);
+    }
+    /* Simple DES */
+    else {
+        char salt[] = "00";
+        
+        salt[0] = crcars[pw_zrand() & 63];
+        salt[1] = crcars[pw_zrand() & 63];
+		//NSLog(@"Using DES");
+        result = (char *) crypt(passwd, salt);        
+    }
+	
+	 return [NSString stringWithFormat:@"%s", (char *) result]; 
+	
+    /*
     NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:@"/etc/pure-ftpd/pure-ftpd.plist"];
     if ([[prefs objectForKey:OSVersion] intValue] >= 0x1030)
     {
         // User is using Mac OS X 10.3.0
-        /* Blowfish */
+        // Blowfish 
         
         char salt[] = "$2a$07$0000000000000000000000";        
         int c = 28;
@@ -267,6 +319,7 @@ nax:
         
         return [NSString stringWithFormat:@"%s", (char *) crypt([pwd cString], salt)];  
     }
+	*/
 }
 
 

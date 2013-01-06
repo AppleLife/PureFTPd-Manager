@@ -45,21 +45,27 @@ void CheckPermissions(void)
 	AuthorizationRef auth;
 	OSStatus err;
 	
+	NSString *username = NSUserName();
 	NSString *userHome = NSHomeDirectory();
 	NSString *userProperties = [NSString stringWithFormat:@"%@/Library/Preferences/org.pureftpd.macosx.plist", userHome];
+	//NSLog(@"prop:%@",userProperties);
+	
 	NSFileManager *fm = [NSFileManager defaultManager];
 	
 	// try to switch to root user.
 	seteuid(0);
-	
+	setuid(0);
 	if (geteuid() != 0)
 		{
 		// Must be relaunched as root, then this instance must be quit
 		// launch as root
-		[fm removeFileAtPath:userProperties handler:nil];
+		//[[NSUserDefaults standardUserDefaults] synchronize];
+	
+		//[fm removeFileAtPath:userProperties handler:nil];
 		
 		if (path)
 		{
+			
 			err = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagInteractionAllowed, &auth);
 			if (err == errAuthorizationSuccess)
 				err = AuthorizationExecuteWithPrivileges(auth, path, kAuthorizationFlagDefaults, NULL, NULL);
@@ -68,7 +74,7 @@ void CheckPermissions(void)
 		exit(0);
 	}
 	
-	NSString *username = NSUserName();
+	
 	[username writeToFile:@"/tmp/PureFTPdManagerUser" atomically:YES];
 	
 	// switch to root
@@ -79,13 +85,16 @@ void CheckPermissions(void)
 	
 	if ([fm fileExistsAtPath:rootProperties])
 	{
-		
+		[fm removeFileAtPath:userProperties handler:nil];
+			
 		[fm copyPath:rootProperties toPath:userProperties handler:nil];
 		NSDictionary *attr=[NSDictionary dictionaryWithObjectsAndKeys:
 							username, NSFileOwnerAccountName, nil];
 		[fm changeFileAttributes:attr atPath:userProperties];
 	}
+		
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	
 	// Switch to front
 	[pool release];
 	//

@@ -111,8 +111,14 @@ PureController* thePureController = nil;
         
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-
+- (void)applicationWillTerminate:(id)sender
+{
+	NSMutableDictionary *d = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/private/var/root/Library/Preferences/org.pureftpd.macosx.plist"];
+	//NSLog([window stringWithSavedFrame] );
+	[d setObject:[window stringWithSavedFrame] forKey:@"NSWindow Frame pureftpdmainWindow"];
+		
+	[d  writeToFile:@"/private/var/root/Library/Preferences/org.pureftpd.macosx.plist" atomically:YES];
+	[d release];
 }
 
 -(void) awakeFromNib
@@ -323,6 +329,7 @@ PureController* thePureController = nil;
     return NO;
 }
 
+
 - (MVPreferencesController *)preferencesController 
 { 
     if (!preferencesController) {
@@ -461,7 +468,7 @@ PureController* thePureController = nil;
 		showSep=NO;
 	
 	if ([toolbar respondsToSelector:@selector(setShowsBaselineSeparator:)])
-		[toolbar setShowsBaselineSeparator:showSep];
+		[toolbar setShowsBaselineSeparator:YES];
 	[window setToolbar:toolbar];
 }
 

@@ -27,9 +27,12 @@
 {
 	SInt32 MacVersion;
 	Gestalt(gestaltSystemVersion, &MacVersion);
-	if (MacVersion >= 0x1040){
+	if ((MacVersion >= 0x1040) && (MacVersion < 0x1050)){
 		[vuserUIDField setStringValue:@"1982"];
 		[vuserGIDField setStringValue:@"1982"];
+	} else if (MacVersion >= 0x1050){
+		[vuserUIDField setStringValue:@"482"];
+		[vuserGIDField setStringValue:@"482"];
 	}
         
 }

@@ -73,6 +73,7 @@ enum DBType {PureDB = 1, MySQL = 2};
     IBOutlet NSPopUpButton *accessPopUp;
     
 	IBOutlet NSButton *activationSwitch;
+	IBOutlet NSTextField *vfolderInfoField;
 	
     SInt32 MacVersion;
     
@@ -113,6 +114,7 @@ enum DBType {PureDB = 1, MySQL = 2};
 - (IBAction)userIPFilter:(id)sender;
 
 - (IBAction)reloadBrowserData:(id)sender;
+- (void)createVFolder:(NSString*)origin;
 - (IBAction)adjustAccessToFolder:(id)sender;
 - (IBAction)setAccessToFolder:(id)sender;
 - (void)getAccessToFolder:(NSString *)path;
