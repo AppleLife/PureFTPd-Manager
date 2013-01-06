@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,7 +62,6 @@
 		C043489C0A0F015D00ECB3A9 /* MVPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B679B905265834004CEC9C /* MVPreferences.nib */; };
 		C043489D0A0F015D00ECB3A9 /* PureFTP.nib in Resources */ = {isa = PBXBuildFile; fileRef = C044BD75063314F100DA6C38 /* PureFTP.nib */; };
 		C043489E0A0F015D00ECB3A9 /* permission.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0378C2E078579F000F969C8 /* permission.tiff */; };
-		C043489F0A0F015D00ECB3A9 /* PureFTPd Manager-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD51C09AAF8D100EF7E68 /* PureFTPd Manager-Info.plist */; };
 		C04348A00A0F015D00ECB3A9 /* PureFTPd Manager Help in Resources */ = {isa = PBXBuildFile; fileRef = C0BE3C2809CD720500B0D01D /* PureFTPd Manager Help */; };
 		C04348A20A0F015D00ECB3A9 /* NSFileManager+ASExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C02CC07B070074F3002B0A58 /* NSFileManager+ASExtensions.m */; };
 		C04348A30A0F015D00ECB3A9 /* WBTimeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EBE564085D7DB8002C3698 /* WBTimeControl.m */; };
@@ -132,7 +131,6 @@
 		C04348F70A0F019C00ECB3A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C035BCDF05D1BCFF00A10874 /* Localizable.strings */; };
 		C04348F80A0F019C00ECB3A9 /* InfoAssistant.plist in Resources */ = {isa = PBXBuildFile; fileRef = C035BC8C05D1BC9C00A10874 /* InfoAssistant.plist */; };
 		C04348F90A0F019C00ECB3A9 /* PaneList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C035BC8E05D1BC9C00A10874 /* PaneList.plist */; };
-		C04348FA0A0F019C00ECB3A9 /* PureFTPd Assistant-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD5F509AAFF0100EF7E68 /* PureFTPd Assistant-Info.plist */; };
 		C04348FC0A0F019C00ECB3A9 /* AKBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC7F05D1BC9C00A10874 /* AKBox.m */; };
 		C04348FD0A0F019C00ECB3A9 /* AKListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8105D1BC9C00A10874 /* AKListView.m */; };
 		C04348FE0A0F019C00ECB3A9 /* AKMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8305D1BC9C00A10874 /* AKMainController.m */; };
@@ -157,7 +155,6 @@
 		C04349280A0F01B200ECB3A9 /* FTPLogPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C08C720F05B448FB0062BCC1 /* FTPLogPane.nib */; };
 		C04349290A0F01B200ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C08C721105B448FB0062BCC1 /* InfoPlist.strings */; };
 		C043492A0A0F01B200ECB3A9 /* logging.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0F0918E05C744F7006E1E19 /* logging.tiff */; };
-		C043492B0A0F01B200ECB3A9 /* FTPLogPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD62909AB006F00EF7E68 /* FTPLogPane-Info.plist */; };
 		C043492D0A0F01B200ECB3A9 /* FTPLogPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C08C720A05B448E60062BCC1 /* FTPLogPane.m */; };
 		C043492E0A0F01B200ECB3A9 /* WBTimeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EBE564085D7DB8002C3698 /* WBTimeControl.m */; };
 		C04349300A0F01B200ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -166,14 +163,12 @@
 		C043493B0A0F01BD00ECB3A9 /* ftposx in Resources */ = {isa = PBXBuildFile; fileRef = C03DFE910652B46B0041FAD9 /* ftposx */; };
 		C043493C0A0F01BD00ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A3805266933004CEC9C /* InfoPlist.strings */; };
 		C043493D0A0F01BD00ECB3A9 /* SystemPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A3A05266933004CEC9C /* SystemPane.nib */; };
-		C043493E0A0F01BD00ECB3A9 /* SystemPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63309AB008200EF7E68 /* SystemPane-Info.plist */; };
 		C04349400A0F01BD00ECB3A9 /* SystemPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A3505266922004CEC9C /* SystemPane.m */; };
 		C04349420A0F01BD00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C04349430A0F01BD00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
 		C043494C0A0F01C600ECB3A9 /* AuthentificationPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A48052669C9004CEC9C /* AuthentificationPane.nib */; };
 		C043494D0A0F01C600ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A4A052669C9004CEC9C /* InfoPlist.strings */; };
 		C043494E0A0F01C600ECB3A9 /* auth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FB0531DE5F00A80013 /* auth.tiff */; };
-		C043494F0A0F01C600ECB3A9 /* AuthPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63D09AB009A00EF7E68 /* AuthPane-Info.plist */; };
 		C04349510A0F01C600ECB3A9 /* AuthentificationPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A3F05266994004CEC9C /* AuthentificationPane.m */; };
 		C04349520A0F01C600ECB3A9 /* MySQLCC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EDD500064F68950086B4BE /* MySQLCC.m */; };
 		C04349550A0F01C600ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -181,7 +176,6 @@
 		C043495F0A0F01D000ECB3A9 /* AnonymousPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A5405266A42004CEC9C /* AnonymousPane.nib */; };
 		C04349600A0F01D000ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A5605266A42004CEC9C /* InfoPlist.strings */; };
 		C04349610A0F01D000ECB3A9 /* anonymous.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FA0531DE5F00A80013 /* anonymous.tiff */; };
-		C04349620A0F01D000ECB3A9 /* AnonymousPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD64709AB00B200EF7E68 /* AnonymousPane-Info.plist */; };
 		C04349640A0F01D000ECB3A9 /* AFSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5C072D4D78004B1042 /* AFSBrowserCell.m */; };
 		C04349650A0F01D000ECB3A9 /* AFSNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5E072D4D78004B1042 /* AFSNodeInfo.m */; };
 		C04349660A0F01D000ECB3A9 /* AnonymousPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A4F05266A09004CEC9C /* AnonymousPane.m */; };
@@ -191,28 +185,24 @@
 		C04349730A0F01DB00ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A6005266A95004CEC9C /* InfoPlist.strings */; };
 		C04349740A0F01DB00ECB3A9 /* ServerPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A6205266A95004CEC9C /* ServerPane.nib */; };
 		C04349750A0F01DB00ECB3A9 /* settings.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FD0531DE5F00A80013 /* settings.tiff */; };
-		C04349760A0F01DB00ECB3A9 /* ServerSettingsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65109AB00BF00EF7E68 /* ServerSettingsPane-Info.plist */; };
 		C04349780A0F01DB00ECB3A9 /* ServerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A5D05266A6E004CEC9C /* ServerPane.m */; };
 		C043497A0A0F01DB00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C043497B0A0F01DB00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
 		C04349840A0F01E800ECB3A9 /* options.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FC0531DE5F00A80013 /* options.tiff */; };
 		C04349850A0F01E800ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6108BC7205267AD00012E572 /* InfoPlist.strings */; };
 		C04349860A0F01E800ECB3A9 /* ServerOptionsPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 6108BC7405267AD00012E572 /* ServerOptionsPane.nib */; };
-		C04349870A0F01E800ECB3A9 /* ServerOptionsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65B09AB00CC00EF7E68 /* ServerOptionsPane-Info.plist */; };
 		C04349890A0F01E800ECB3A9 /* ServerOptionsPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 6108BC6F05267ABF0012E572 /* ServerOptionsPane.m */; };
 		C043498B0A0F01E800ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C043498C0A0F01E800ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
 		C04349950A0F01F100ECB3A9 /* diraliases.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0A7DFBE0626DD49003AFF9C /* diraliases.tiff */; };
 		C04349960A0F01F100ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF93D072A90740013F213 /* English.lproj */; };
 		C04349970A0F01F100ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF942072A90740013F213 /* French.lproj */; };
-		C04349980A0F01F100ECB3A9 /* DirAliasesPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */; };
 		C043499A0A0F01F100ECB3A9 /* DirAliasesPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C05369E606259AE60027B2A6 /* DirAliasesPane.m */; };
 		C043499C0A0F01F100ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
 		C043499D0A0F01F100ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C04349A60A0F01FC00ECB3A9 /* ssl.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C07AFA33072A94000013F213 /* ssl.tiff */; };
 		C04349A70A0F01FC00ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF92F072A90540013F213 /* English.lproj */; };
 		C04349A80A0F01FC00ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF935072A90540013F213 /* French.lproj */; };
-		C04349A90A0F01FC00ECB3A9 /* SSLPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */; };
 		C04349AB0A0F01FC00ECB3A9 /* SSLPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C092CFA8060F3079001939CF /* SSLPane.m */; };
 		C04349AC0A0F01FC00ECB3A9 /* SSLWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C092CFE1060F82CD001939CF /* SSLWrapper.m */; };
 		C04349AE0A0F01FC00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -220,7 +210,6 @@
 		C04349B80A0F020500ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C0378C24078579F000F969C8 /* English.lproj */; };
 		C04349B90A0F020500ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C0378C29078579F000F969C8 /* French.lproj */; };
 		C04349BA0A0F020500ECB3A9 /* permission.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0378C2E078579F000F969C8 /* permission.tiff */; };
-		C04349BB0A0F020500ECB3A9 /* PermissionPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */; };
 		C04349BD0A0F020500ECB3A9 /* PermissionPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C0378C30078579F000F969C8 /* PermissionPane.m */; };
 		C04349BF0A0F020500ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C04349C00A0F020500ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
@@ -471,17 +460,6 @@
 		C0ADD84D09AB0A8E00EF7E68 /* MVPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B679B905265834004CEC9C /* MVPreferences.nib */; };
 		C0ADD84E09AB0A9800EF7E68 /* PureFTP.nib in Resources */ = {isa = PBXBuildFile; fileRef = C044BD75063314F100DA6C38 /* PureFTP.nib */; };
 		C0ADD86609AB0B1400EF7E68 /* permission.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0378C2E078579F000F969C8 /* permission.tiff */; };
-		C0ADD92109AB10F700EF7E68 /* PureFTPd Manager-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD51C09AAF8D100EF7E68 /* PureFTPd Manager-Info.plist */; };
-		C0ADD92B09AB111A00EF7E68 /* PermissionPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */; };
-		C0ADD92C09AB111D00EF7E68 /* SSLPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */; };
-		C0ADD92D09AB112200EF7E68 /* DirAliasesPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */; };
-		C0ADD92E09AB112300EF7E68 /* ServerOptionsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65B09AB00CC00EF7E68 /* ServerOptionsPane-Info.plist */; };
-		C0ADD92F09AB112800EF7E68 /* ServerSettingsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65109AB00BF00EF7E68 /* ServerSettingsPane-Info.plist */; };
-		C0ADD93009AB112B00EF7E68 /* AnonymousPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD64709AB00B200EF7E68 /* AnonymousPane-Info.plist */; };
-		C0ADD93109AB112E00EF7E68 /* AuthPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63D09AB009A00EF7E68 /* AuthPane-Info.plist */; };
-		C0ADD93209AB113000EF7E68 /* SystemPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63309AB008200EF7E68 /* SystemPane-Info.plist */; };
-		C0ADD93309AB113300EF7E68 /* FTPLogPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD62909AB006F00EF7E68 /* FTPLogPane-Info.plist */; };
-		C0ADD93409AB114000EF7E68 /* PureFTPd Assistant-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD5F509AAFF0100EF7E68 /* PureFTPd Assistant-Info.plist */; };
 		C0B2F0680709678300483574 /* AuthForAllImplCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = C07586450707E18900D0A299 /* AuthForAllImplCompat.m */; };
 		C0B2F0690709678400483574 /* AuthForAllImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C422F070417DC00DEEEA3 /* AuthForAllImpl.m */; };
 		C0B2F0830709680500483574 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
@@ -901,7 +879,7 @@
 		C02DB14D04CC4C6D00A56B81 /* PureController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PureController.h; path = sources/PureController.h; sourceTree = "<group>"; };
 		C02DB14E04CC4C6D00A56B81 /* PureController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = PureController.m; path = sources/PureController.m; sourceTree = "<group>"; };
 		C02DB14F04CC4C6D00A56B81 /* PureFTP_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PureFTP_Prefix.h; path = sources/PureFTP_Prefix.h; sourceTree = "<group>"; };
-		C0331C670656185B000A757F /* basePreferences.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = basePreferences.plist; path = sources/basePreferences.plist; sourceTree = "<group>"; };
+		C0331C670656185B000A757F /* basePreferences.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = basePreferences.plist; path = sources/basePreferences.plist; sourceTree = "<group>"; };
 		C034AAFC0583129D00174C03 /* FTPUsage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTPUsage.h; path = sources/FTPUsage.h; sourceTree = "<group>"; };
 		C034AAFD0583129D00174C03 /* FTPUsage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTPUsage.m; path = sources/FTPUsage.m; sourceTree = "<group>"; };
 		C035BC7E05D1BC9B00A10874 /* AKBox.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AKBox.h; path = sources/SetupAssistant/AKBox.h; sourceTree = "<group>"; };
@@ -918,8 +896,8 @@
 		C035BC8905D1BC9C00A10874 /* AKStartPaneController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AKStartPaneController.m; path = sources/SetupAssistant/AKStartPaneController.m; sourceTree = "<group>"; };
 		C035BC8A05D1BC9C00A10874 /* AKStopPaneController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AKStopPaneController.h; path = sources/SetupAssistant/AKStopPaneController.h; sourceTree = "<group>"; };
 		C035BC8B05D1BC9C00A10874 /* AKStopPaneController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AKStopPaneController.m; path = sources/SetupAssistant/AKStopPaneController.m; sourceTree = "<group>"; };
-		C035BC8C05D1BC9C00A10874 /* InfoAssistant.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = InfoAssistant.plist; path = sources/SetupAssistant/InfoAssistant.plist; sourceTree = "<group>"; };
-		C035BC8E05D1BC9C00A10874 /* PaneList.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = PaneList.plist; path = sources/SetupAssistant/PaneList.plist; sourceTree = "<group>"; };
+		C035BC8C05D1BC9C00A10874 /* InfoAssistant.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = InfoAssistant.plist; path = sources/SetupAssistant/InfoAssistant.plist; sourceTree = "<group>"; };
+		C035BC8E05D1BC9C00A10874 /* PaneList.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = PaneList.plist; path = sources/SetupAssistant/PaneList.plist; sourceTree = "<group>"; };
 		C035BC8F05D1BC9C00A10874 /* selected.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = selected.tif; path = sources/SetupAssistant/selected.tif; sourceTree = "<group>"; };
 		C035BC9005D1BC9C00A10874 /* unprocessed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = unprocessed.tif; path = sources/SetupAssistant/unprocessed.tif; sourceTree = "<group>"; };
 		C035BC9105D1BC9C00A10874 /* unselected.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = unselected.tif; path = sources/SetupAssistant/unselected.tif; sourceTree = "<group>"; };
@@ -944,29 +922,29 @@
 		C03DFE910652B46B0041FAD9 /* ftposx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = ftposx; path = "sources/Preferences/Preference Panes/SystemPane/ftposx"; sourceTree = "<group>"; };
 		C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMySQL_bundled.framework; path = sources/lib/PPC/SMySQL_bundled.framework; sourceTree = "<group>"; };
 		C04348DD0A0F015D00ECB3A9 /* PureFTPd Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04348DF0A0F015D00ECB3A9 /* PureFTPd Manager-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager-Info copy.plist"; path = "./Property Lists/PureFTPd Manager-Info copy.plist"; sourceTree = "<group>"; };
+		C04348DF0A0F015D00ECB3A9 /* PureFTPd Manager-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Manager-Info copy.plist"; path = "./Property Lists/PureFTPd Manager-Info copy.plist"; sourceTree = "<group>"; };
 		C04349110A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager Setup Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349130A0F019C00ECB3A9 /* PureFTPd Assistant-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Assistant-Info copy.plist"; path = "./Property Lists/PureFTPd Assistant-Info copy.plist"; sourceTree = "<group>"; };
+		C04349130A0F019C00ECB3A9 /* PureFTPd Assistant-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Assistant-Info copy.plist"; path = "./Property Lists/PureFTPd Assistant-Info copy.plist"; sourceTree = "<group>"; };
 		C04349230A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager Uninstaller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349250A0F01AA00ECB3A9 /* PureFTPd Manager Uninstaller-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager Uninstaller-Info copy.plist"; path = "./Property Lists/PureFTPd Manager Uninstaller-Info copy.plist"; sourceTree = "<group>"; };
+		C04349250A0F01AA00ECB3A9 /* PureFTPd Manager Uninstaller-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Manager Uninstaller-Info copy.plist"; path = "./Property Lists/PureFTPd Manager Uninstaller-Info copy.plist"; sourceTree = "<group>"; };
 		C04349360A0F01B200ECB3A9 /* FTPLogPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTPLogPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349370A0F01B300ECB3A9 /* FTPLogPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "FTPLogPane-Info copy.plist"; path = "./Property Lists/FTPLogPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349370A0F01B300ECB3A9 /* FTPLogPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FTPLogPane-Info copy.plist"; path = "./Property Lists/FTPLogPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349480A0F01BD00ECB3A9 /* SystemPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SystemPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349490A0F01BE00ECB3A9 /* SystemPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SystemPane-Info copy.plist"; path = "./Property Lists/SystemPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349490A0F01BE00ECB3A9 /* SystemPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SystemPane-Info copy.plist"; path = "./Property Lists/SystemPane-Info copy.plist"; sourceTree = "<group>"; };
 		C043495B0A0F01C600ECB3A9 /* AuthentificationPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthentificationPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C043495C0A0F01C600ECB3A9 /* AuthPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AuthPane-Info copy.plist"; path = "./Property Lists/AuthPane-Info copy.plist"; sourceTree = "<group>"; };
+		C043495C0A0F01C600ECB3A9 /* AuthPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AuthPane-Info copy.plist"; path = "./Property Lists/AuthPane-Info copy.plist"; sourceTree = "<group>"; };
 		C043496F0A0F01D000ECB3A9 /* AnonymousPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnonymousPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349700A0F01D100ECB3A9 /* AnonymousPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AnonymousPane-Info copy.plist"; path = "./Property Lists/AnonymousPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349700A0F01D100ECB3A9 /* AnonymousPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AnonymousPane-Info copy.plist"; path = "./Property Lists/AnonymousPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349800A0F01DB00ECB3A9 /* ServerPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349810A0F01DB00ECB3A9 /* ServerSettingsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerSettingsPane-Info copy.plist"; path = "./Property Lists/ServerSettingsPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349810A0F01DB00ECB3A9 /* ServerSettingsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ServerSettingsPane-Info copy.plist"; path = "./Property Lists/ServerSettingsPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349910A0F01E800ECB3A9 /* ServerOptionsPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerOptionsPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349920A0F01E800ECB3A9 /* ServerOptionsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerOptionsPane-Info copy.plist"; path = "./Property Lists/ServerOptionsPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349920A0F01E800ECB3A9 /* ServerOptionsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ServerOptionsPane-Info copy.plist"; path = "./Property Lists/ServerOptionsPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349A20A0F01F100ECB3A9 /* DirAliasesPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirAliasesPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349A30A0F01F100ECB3A9 /* DirAliasesPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "DirAliasesPane-Info copy.plist"; path = "./Property Lists/DirAliasesPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349A30A0F01F100ECB3A9 /* DirAliasesPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DirAliasesPane-Info copy.plist"; path = "./Property Lists/DirAliasesPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349B40A0F01FC00ECB3A9 /* SSLPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349B50A0F01FD00ECB3A9 /* SSLPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SSLPane-Info copy.plist"; path = "./Property Lists/SSLPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349B50A0F01FD00ECB3A9 /* SSLPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SSLPane-Info copy.plist"; path = "./Property Lists/SSLPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349C50A0F020500ECB3A9 /* PermissionPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PermissionPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C04349C60A0F020500ECB3A9 /* PermissionPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PermissionPane-Info copy.plist"; path = "./Property Lists/PermissionPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349C60A0F020500ECB3A9 /* PermissionPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PermissionPane-Info copy.plist"; path = "./Property Lists/PermissionPane-Info copy.plist"; sourceTree = "<group>"; };
 		C04349D80A0F020F00ECB3A9 /* Launcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Launcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04349E50A0F021800ECB3A9 /* PureFTPOSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PureFTPOSX; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04349F60A0F022000ECB3A9 /* purestats */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = purestats; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -981,7 +959,7 @@
 		C0434B660A0F19C500ECB3A9 /* puredb_write.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = puredb_write.m; path = "sources/lib/puredb-2.1/puredb_write.m"; sourceTree = "<group>"; };
 		C0434B670A0F19C500ECB3A9 /* puredb_write.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = puredb_write.h; path = "sources/lib/puredb-2.1/puredb_write.h"; sourceTree = "<group>"; };
 		C0434B680A0F19C500ECB3A9 /* puredb_p.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = puredb_p.h; path = "sources/lib/puredb-2.1/puredb_p.h"; sourceTree = "<group>"; };
-		C0434C740A0F1C8400ECB3A9 /* PureFTPd Manager-Info copy 2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager-Info copy 2.plist"; path = "./Property Lists/PureFTPd Manager-Info copy 2.plist"; sourceTree = "<group>"; };
+		C0434C740A0F1C8400ECB3A9 /* PureFTPd Manager-Info copy 2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Manager-Info copy 2.plist"; path = "./Property Lists/PureFTPd Manager-Info copy 2.plist"; sourceTree = "<group>"; };
 		C044BC230633034400DA6C38 /* StatusController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = StatusController.m; path = sources/StatusController.m; sourceTree = "<group>"; };
 		C044BC240633034400DA6C38 /* StatusController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = StatusController.h; path = sources/StatusController.h; sourceTree = "<group>"; };
 		C044BD440633133C00DA6C38 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -1029,27 +1007,27 @@
 		C0AA6FF009C5510600EEAA67 /* purestats.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = purestats.m; path = sources/purestats/purestats.m; sourceTree = "<group>"; };
 		C0AA6FFE09C5522F00EEAA67 /* HTMLConverter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = HTMLConverter.m; path = sources/purestats/HTMLConverter.m; sourceTree = "<group>"; };
 		C0ADD51A09AAF8D100EF7E68 /* PureFTPd Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD51C09AAF8D100EF7E68 /* PureFTPd Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager-Info.plist"; path = "Property Lists/PureFTPd Manager-Info.plist"; sourceTree = "<group>"; };
+		C0ADD51C09AAF8D100EF7E68 /* PureFTPd Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Manager-Info.plist"; path = "Property Lists/PureFTPd Manager-Info.plist"; sourceTree = "<group>"; };
 		C0ADD5F309AAFF0100EF7E68 /* PureFTPd Manager Setup Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager Setup Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD5F509AAFF0100EF7E68 /* PureFTPd Assistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Assistant-Info.plist"; path = "Property Lists/PureFTPd Assistant-Info.plist"; sourceTree = "<group>"; };
+		C0ADD5F509AAFF0100EF7E68 /* PureFTPd Assistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PureFTPd Assistant-Info.plist"; path = "Property Lists/PureFTPd Assistant-Info.plist"; sourceTree = "<group>"; };
 		C0ADD62809AB006F00EF7E68 /* FTPLogPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTPLogPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD62909AB006F00EF7E68 /* FTPLogPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "FTPLogPane-Info.plist"; path = "Property Lists/FTPLogPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD62909AB006F00EF7E68 /* FTPLogPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FTPLogPane-Info.plist"; path = "Property Lists/FTPLogPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD63209AB008200EF7E68 /* SystemPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SystemPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD63309AB008200EF7E68 /* SystemPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SystemPane-Info.plist"; path = "Property Lists/SystemPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD63309AB008200EF7E68 /* SystemPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SystemPane-Info.plist"; path = "Property Lists/SystemPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD63C09AB009A00EF7E68 /* AuthentificationPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthentificationPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD63D09AB009A00EF7E68 /* AuthPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AuthPane-Info.plist"; path = "Property Lists/AuthPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD63D09AB009A00EF7E68 /* AuthPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AuthPane-Info.plist"; path = "Property Lists/AuthPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD64609AB00B100EF7E68 /* AnonymousPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnonymousPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD64709AB00B200EF7E68 /* AnonymousPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AnonymousPane-Info.plist"; path = "Property Lists/AnonymousPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD64709AB00B200EF7E68 /* AnonymousPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AnonymousPane-Info.plist"; path = "Property Lists/AnonymousPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD65009AB00BF00EF7E68 /* ServerPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD65109AB00BF00EF7E68 /* ServerSettingsPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerSettingsPane-Info.plist"; path = "Property Lists/ServerSettingsPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD65109AB00BF00EF7E68 /* ServerSettingsPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ServerSettingsPane-Info.plist"; path = "Property Lists/ServerSettingsPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD65A09AB00CC00EF7E68 /* ServerOptionsPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerOptionsPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD65B09AB00CC00EF7E68 /* ServerOptionsPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerOptionsPane-Info.plist"; path = "Property Lists/ServerOptionsPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD65B09AB00CC00EF7E68 /* ServerOptionsPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ServerOptionsPane-Info.plist"; path = "Property Lists/ServerOptionsPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD66409AB00D900EF7E68 /* DirAliasesPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirAliasesPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "DirAliasesPane-Info.plist"; path = "Property Lists/DirAliasesPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DirAliasesPane-Info.plist"; path = "Property Lists/DirAliasesPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD66E09AB00E600EF7E68 /* SSLPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SSLPane-Info.plist"; path = "Property Lists/SSLPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SSLPane-Info.plist"; path = "Property Lists/SSLPane-Info.plist"; sourceTree = "<group>"; };
 		C0ADD67809AB00FA00EF7E68 /* PermissionPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PermissionPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PermissionPane-Info.plist"; path = "Property Lists/PermissionPane-Info.plist"; sourceTree = "<group>"; };
+		C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PermissionPane-Info.plist"; path = "Property Lists/PermissionPane-Info.plist"; sourceTree = "<group>"; };
 		C0B2F0B80709689100483574 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		C0B4BFD306509F3D00FEF52D /* MySQLUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySQLUserManager.h; path = sources/MySQLUserManager.h; sourceTree = "<group>"; };
 		C0B4BFD406509F3D00FEF52D /* MySQLUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySQLUserManager.m; path = sources/MySQLUserManager.m; sourceTree = "<group>"; };
@@ -1120,7 +1098,7 @@
 		C0DCBFC405D2D8B100BB41E9 /* AKSystemPaneController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AKSystemPaneController.m; path = sources/SetupAssistant/AKSystemPaneController.m; sourceTree = "<group>"; };
 		C0DCC0D305D2EFDB00BB41E9 /* ManagerProcessEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagerProcessEngine.h; path = sources/SetupAssistant/ManagerProcessEngine.h; sourceTree = "<group>"; };
 		C0DCC0D405D2EFDB00BB41E9 /* ManagerProcessEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagerProcessEngine.m; path = sources/SetupAssistant/ManagerProcessEngine.m; sourceTree = "<group>"; };
-		C0DCC13105D2F6E800BB41E9 /* allOptions.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = allOptions.plist; path = sources/SetupAssistant/allOptions.plist; sourceTree = "<group>"; };
+		C0DCC13105D2F6E800BB41E9 /* allOptions.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = allOptions.plist; path = sources/SetupAssistant/allOptions.plist; sourceTree = "<group>"; };
 		C0DD050609C6A33000D8BED1 /* CSVConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSVConverter.h; path = sources/purestats/CSVConverter.h; sourceTree = "<group>"; };
 		C0DD050709C6A33000D8BED1 /* CSVConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSVConverter.m; path = sources/purestats/CSVConverter.m; sourceTree = "<group>"; };
 		C0E236360A9AB8DA005901B9 /* MWHacking.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MWHacking.h; sourceTree = "<group>"; };
@@ -2694,7 +2672,12 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = C0ED5531088DD28700B3D10E /* Build configuration list for PBXProject "PureFTP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -2796,7 +2779,6 @@
 				C043489C0A0F015D00ECB3A9 /* MVPreferences.nib in Resources */,
 				C043489D0A0F015D00ECB3A9 /* PureFTP.nib in Resources */,
 				C043489E0A0F015D00ECB3A9 /* permission.tiff in Resources */,
-				C043489F0A0F015D00ECB3A9 /* PureFTPd Manager-Info.plist in Resources */,
 				C04348A00A0F015D00ECB3A9 /* PureFTPd Manager Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2828,7 +2810,6 @@
 				C04348F70A0F019C00ECB3A9 /* Localizable.strings in Resources */,
 				C04348F80A0F019C00ECB3A9 /* InfoAssistant.plist in Resources */,
 				C04348F90A0F019C00ECB3A9 /* PaneList.plist in Resources */,
-				C04348FA0A0F019C00ECB3A9 /* PureFTPd Assistant-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2848,7 +2829,6 @@
 				C04349280A0F01B200ECB3A9 /* FTPLogPane.nib in Resources */,
 				C04349290A0F01B200ECB3A9 /* InfoPlist.strings in Resources */,
 				C043492A0A0F01B200ECB3A9 /* logging.tiff in Resources */,
-				C043492B0A0F01B200ECB3A9 /* FTPLogPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2860,7 +2840,6 @@
 				C043493B0A0F01BD00ECB3A9 /* ftposx in Resources */,
 				C043493C0A0F01BD00ECB3A9 /* InfoPlist.strings in Resources */,
 				C043493D0A0F01BD00ECB3A9 /* SystemPane.nib in Resources */,
-				C043493E0A0F01BD00ECB3A9 /* SystemPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2871,7 +2850,6 @@
 				C043494C0A0F01C600ECB3A9 /* AuthentificationPane.nib in Resources */,
 				C043494D0A0F01C600ECB3A9 /* InfoPlist.strings in Resources */,
 				C043494E0A0F01C600ECB3A9 /* auth.tiff in Resources */,
-				C043494F0A0F01C600ECB3A9 /* AuthPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2882,7 +2860,6 @@
 				C043495F0A0F01D000ECB3A9 /* AnonymousPane.nib in Resources */,
 				C04349600A0F01D000ECB3A9 /* InfoPlist.strings in Resources */,
 				C04349610A0F01D000ECB3A9 /* anonymous.tiff in Resources */,
-				C04349620A0F01D000ECB3A9 /* AnonymousPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2893,7 +2870,6 @@
 				C04349730A0F01DB00ECB3A9 /* InfoPlist.strings in Resources */,
 				C04349740A0F01DB00ECB3A9 /* ServerPane.nib in Resources */,
 				C04349750A0F01DB00ECB3A9 /* settings.tiff in Resources */,
-				C04349760A0F01DB00ECB3A9 /* ServerSettingsPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2904,7 +2880,6 @@
 				C04349840A0F01E800ECB3A9 /* options.tiff in Resources */,
 				C04349850A0F01E800ECB3A9 /* InfoPlist.strings in Resources */,
 				C04349860A0F01E800ECB3A9 /* ServerOptionsPane.nib in Resources */,
-				C04349870A0F01E800ECB3A9 /* ServerOptionsPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2915,7 +2890,6 @@
 				C04349950A0F01F100ECB3A9 /* diraliases.tiff in Resources */,
 				C04349960A0F01F100ECB3A9 /* English.lproj in Resources */,
 				C04349970A0F01F100ECB3A9 /* French.lproj in Resources */,
-				C04349980A0F01F100ECB3A9 /* DirAliasesPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2926,7 +2900,6 @@
 				C04349A60A0F01FC00ECB3A9 /* ssl.tiff in Resources */,
 				C04349A70A0F01FC00ECB3A9 /* English.lproj in Resources */,
 				C04349A80A0F01FC00ECB3A9 /* French.lproj in Resources */,
-				C04349A90A0F01FC00ECB3A9 /* SSLPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2937,7 +2910,6 @@
 				C04349B80A0F020500ECB3A9 /* English.lproj in Resources */,
 				C04349B90A0F020500ECB3A9 /* French.lproj in Resources */,
 				C04349BA0A0F020500ECB3A9 /* permission.tiff in Resources */,
-				C04349BB0A0F020500ECB3A9 /* PermissionPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2995,7 +2967,6 @@
 				C0ADD84D09AB0A8E00EF7E68 /* MVPreferences.nib in Resources */,
 				C0ADD84E09AB0A9800EF7E68 /* PureFTP.nib in Resources */,
 				C0ADD86609AB0B1400EF7E68 /* permission.tiff in Resources */,
-				C0ADD92109AB10F700EF7E68 /* PureFTPd Manager-Info.plist in Resources */,
 				C0BE3CA509CD720500B0D01D /* PureFTPd Manager Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3027,7 +2998,6 @@
 				C0ADD70609AB062900EF7E68 /* Localizable.strings in Resources */,
 				C0ADD70709AB062900EF7E68 /* InfoAssistant.plist in Resources */,
 				C0ADD70809AB062A00EF7E68 /* PaneList.plist in Resources */,
-				C0ADD93409AB114000EF7E68 /* PureFTPd Assistant-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3038,7 +3008,6 @@
 				C0ADD68D09AB01E000EF7E68 /* FTPLogPane.nib in Resources */,
 				C0ADD68E09AB01E000EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD69009AB01EB00EF7E68 /* logging.tiff in Resources */,
-				C0ADD93309AB113300EF7E68 /* FTPLogPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3050,7 +3019,6 @@
 				C0ADD69909AB025C00EF7E68 /* ftposx in Resources */,
 				C0ADD69B09AB025D00EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD69C09AB025D00EF7E68 /* SystemPane.nib in Resources */,
-				C0ADD93209AB113000EF7E68 /* SystemPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3061,7 +3029,6 @@
 				C0ADD6A909AB02E000EF7E68 /* AuthentificationPane.nib in Resources */,
 				C0ADD6AA09AB02E100EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD6B009AB02F500EF7E68 /* auth.tiff in Resources */,
-				C0ADD93109AB112E00EF7E68 /* AuthPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3072,7 +3039,6 @@
 				C0ADD6B509AB031700EF7E68 /* AnonymousPane.nib in Resources */,
 				C0ADD6B609AB031700EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD6B909AB033700EF7E68 /* anonymous.tiff in Resources */,
-				C0ADD93009AB112B00EF7E68 /* AnonymousPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3083,7 +3049,6 @@
 				C0ADD6C409AB037600EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD6C509AB037700EF7E68 /* ServerPane.nib in Resources */,
 				C0ADD6C609AB038500EF7E68 /* settings.tiff in Resources */,
-				C0ADD92F09AB112800EF7E68 /* ServerSettingsPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3094,7 +3059,6 @@
 				C0ADD6CB09AB03B100EF7E68 /* options.tiff in Resources */,
 				C0ADD6CD09AB03BA00EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD6CE09AB03BB00EF7E68 /* ServerOptionsPane.nib in Resources */,
-				C0ADD92E09AB112300EF7E68 /* ServerOptionsPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3105,7 +3069,6 @@
 				C0ADD6D409AB03EF00EF7E68 /* diraliases.tiff in Resources */,
 				C0ADD6D509AB03F800EF7E68 /* English.lproj in Resources */,
 				C0ADD6D609AB03F800EF7E68 /* French.lproj in Resources */,
-				C0ADD92D09AB112200EF7E68 /* DirAliasesPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3116,7 +3079,6 @@
 				C0ADD6E109AB045D00EF7E68 /* ssl.tiff in Resources */,
 				C0ADD6E209AB045D00EF7E68 /* English.lproj in Resources */,
 				C0ADD6E309AB045E00EF7E68 /* French.lproj in Resources */,
-				C0ADD92C09AB111D00EF7E68 /* SSLPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3127,7 +3089,6 @@
 				C0ADD6E909AB049000EF7E68 /* English.lproj in Resources */,
 				C0ADD6EA09AB049000EF7E68 /* French.lproj in Resources */,
 				C0ADD6EB09AB049100EF7E68 /* permission.tiff in Resources */,
-				C0ADD92B09AB111A00EF7E68 /* PermissionPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3935,13 +3896,13 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -3961,9 +3922,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -3977,12 +3937,12 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4002,9 +3962,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -4018,11 +3977,11 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4040,9 +3999,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -4056,9 +4014,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4072,9 +4030,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -4088,8 +4045,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4102,9 +4059,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -4118,7 +4074,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4130,9 +4086,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -4146,9 +4101,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4165,7 +4120,7 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -4184,8 +4139,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
@@ -4199,7 +4154,7 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -4218,6 +4173,7 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
@@ -4231,7 +4187,7 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -4249,9 +4205,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4263,9 +4219,8 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4279,8 +4234,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4291,9 +4246,8 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4307,7 +4261,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
@@ -4317,9 +4271,8 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4333,9 +4286,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4349,9 +4302,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4365,8 +4317,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4379,9 +4331,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4395,7 +4346,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4407,9 +4358,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4423,13 +4373,13 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4447,9 +4397,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4463,12 +4412,12 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4485,9 +4434,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4501,11 +4449,11 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/UB",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4521,9 +4469,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4537,9 +4484,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4553,9 +4500,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4569,8 +4515,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4583,9 +4529,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4599,7 +4544,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4611,9 +4556,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4627,9 +4571,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4643,9 +4587,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4659,8 +4602,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4673,9 +4616,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4689,7 +4631,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4701,9 +4643,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4717,9 +4658,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4733,9 +4674,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4749,8 +4689,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4763,9 +4703,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4779,7 +4718,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4791,9 +4730,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4807,9 +4745,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4823,9 +4761,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4839,8 +4776,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4853,9 +4790,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4869,7 +4805,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4881,9 +4817,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4897,9 +4832,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -4913,9 +4848,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4929,8 +4863,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4943,9 +4877,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -4959,7 +4892,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -4971,9 +4904,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -4987,9 +4919,9 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5003,9 +4935,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5019,8 +4950,8 @@
 					ppc,
 					i386,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5033,9 +4964,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -5049,7 +4979,7 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5061,9 +4991,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5079,7 +5008,6 @@
 				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5089,7 +5017,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = Launcher;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -5109,14 +5037,13 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = Launcher;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -5141,7 +5068,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = Launcher;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SECTORDER_FLAGS = "";
 				SYMROOT = build_ub;
 				WARNING_CFLAGS = (
@@ -5161,15 +5088,13 @@
 				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				ZERO_LINK = YES;
 			};
@@ -5183,14 +5108,12 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				ZERO_LINK = NO;
 			};
@@ -5203,13 +5126,11 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				ZERO_LINK = YES;
 			};
@@ -5224,7 +5145,6 @@
 				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5237,9 +5157,8 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
@@ -5254,7 +5173,6 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
@@ -5266,9 +5184,8 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
@@ -5282,7 +5199,6 @@
 					ppc,
 					i386,
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
 					"./*",
@@ -5293,9 +5209,8 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
 				SYMROOT = build_ub;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
@@ -5307,13 +5222,11 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
 				ZERO_LINK = YES;
 			};
@@ -5323,12 +5236,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
 				ZERO_LINK = NO;
 			};
@@ -5337,11 +5248,9 @@
 		C0739D2D09BFB96300F545F9 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = "./*";
 				INSTALL_PATH = "$(HOME)/bin";
-				PREBINDING = NO;
 				PRODUCT_NAME = PureFTPOSX;
 				ZERO_LINK = YES;
 			};
@@ -5353,7 +5262,6 @@
 				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5366,7 +5274,6 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
@@ -5378,7 +5285,6 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
@@ -5390,7 +5296,6 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
@@ -5401,7 +5306,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
 					"./*",
@@ -5412,7 +5316,6 @@
 					"$(LIBRARY_SEARCH_PATHS)",
 					./sources/lib,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = purestats;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
@@ -5423,13 +5326,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5452,7 +5355,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -5464,12 +5366,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5492,7 +5394,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -5504,11 +5405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5529,7 +5430,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -5541,9 +5441,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5557,7 +5457,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -5568,8 +5467,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5583,7 +5482,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -5594,7 +5492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5606,7 +5504,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -5616,9 +5513,9 @@
 		C0ADD62B09AB007000EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5630,7 +5527,6 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5640,8 +5536,8 @@
 		C0ADD62C09AB007000EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5653,7 +5549,6 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -5663,7 +5558,7 @@
 		C0ADD62D09AB007000EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
@@ -5673,7 +5568,6 @@
 					"-framework",
 					Carbon,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = FTPLogPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5683,9 +5577,9 @@
 		C0ADD63509AB008200EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5699,7 +5593,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5709,8 +5602,8 @@
 		C0ADD63609AB008200EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5723,7 +5616,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -5733,7 +5625,7 @@
 		C0ADD63709AB008200EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5745,7 +5637,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SystemPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5756,13 +5647,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5776,7 +5667,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
 				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
@@ -5788,12 +5678,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5806,7 +5696,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
 				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
@@ -5818,11 +5707,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/sources/lib/PPC",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5834,7 +5723,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
 				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
@@ -5845,9 +5733,9 @@
 		C0ADD64909AB00B200EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5861,7 +5749,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5871,8 +5758,8 @@
 		C0ADD64A09AB00B200EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5885,7 +5772,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -5895,7 +5781,7 @@
 		C0ADD64B09AB00B200EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5907,7 +5793,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = AnonymousPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5917,9 +5802,9 @@
 		C0ADD65309AB00C000EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -5933,7 +5818,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5943,8 +5827,8 @@
 		C0ADD65409AB00C000EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5957,7 +5841,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -5967,7 +5850,7 @@
 		C0ADD65509AB00C000EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -5979,7 +5862,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -5989,9 +5871,9 @@
 		C0ADD65D09AB00CD00EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -6005,7 +5887,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6015,8 +5896,8 @@
 		C0ADD65E09AB00CD00EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6029,7 +5910,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -6039,7 +5919,7 @@
 		C0ADD65F09AB00CD00EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -6051,7 +5931,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ServerOptionsPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6061,9 +5940,9 @@
 		C0ADD66709AB00DA00EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -6077,7 +5956,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6087,8 +5965,8 @@
 		C0ADD66809AB00DA00EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6101,7 +5979,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -6111,7 +5988,7 @@
 		C0ADD66909AB00DA00EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -6123,7 +6000,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = DirAliasesPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6133,9 +6009,9 @@
 		C0ADD67109AB00E700EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -6149,7 +6025,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6159,8 +6034,8 @@
 		C0ADD67209AB00E700EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6173,7 +6048,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -6183,7 +6057,7 @@
 		C0ADD67309AB00E700EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -6195,7 +6069,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SSLPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6205,9 +6078,9 @@
 		C0ADD67B09AB00FB00EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -6221,7 +6094,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6231,8 +6103,8 @@
 		C0ADD67C09AB00FB00EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6245,7 +6117,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
@@ -6255,7 +6126,7 @@
 		C0ADD67D09AB00FB00EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -6267,7 +6138,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = PermissionPane;
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
@@ -6279,7 +6149,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -6303,7 +6172,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "";
@@ -6342,9 +6210,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6375,8 +6243,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
@@ -6405,6 +6273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
