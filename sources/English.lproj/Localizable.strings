@@ -230,3 +230,37 @@
 "PureFTPd Preferences have been modified"="PureFTPd Preferences have been modified";
 
 "Would you like to restart PureFTPd daemon now?" = "Would you like to restart PureFTPd daemon now?";
+
+"Show All"="Show All";
+
+/* Database setup aborted!Please check that your MySQL server is running */
+"Database setup aborted! Please check that your MySQL server is running" = "Database setup aborted! Please check that your MySQL server is running";
+
+/* Error connecting to MySQL */
+"Error connecting to MySQL" = "Error connecting to MySQL";
+
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* SSL/TLS clients only */
+"Cleartext sessions are refused and only SSL/TLS compatible clients are accepted." = "Cleartext sessions are refused and only SSL/TLS compatible clients are accepted.";
+
+/* SSL Mixed mode comment */
+"Clients can connect either the traditional way or through an SSL/TLS layer." = "Clients can connect either the traditional way or through an SSL/TLS layer.";
+
+/* Support for SSL/TLS is disabled */
+"Support for SSL/TLS is disabled." = "Support for SSL/TLS is disabled.";
+
+/* Incomplete form */
+"Incomplete form" = "Incomplete form";
+
+/* You are about to delete your SSL certificate */
+"You are about to delete your SSL Certificate" = "You are about to delete your SSL Certificate";
+
+/* You must provide more information to generate a certificate\n Please make sure you complete the whole form properly. */
+"You must provide more information to generate a certificate.\n Please make sure you complete the whole form properly." = "You must provide more information to generate a certificate.\n Please make sure you complete the whole form properly.";
+
+/* Your certificate will be remove from your system. Do you want to continue ? */
+"Your certificate will be remove from your system. Do you want to continue ?" = "Your certificate will be remove from your system. Do you want to continue ?";
+
+

@@ -130,7 +130,6 @@
 		C0ADD6AD09AB02E500EF7E68 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
 		C0ADD6AE09AB02E700EF7E68 /* SMySQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EDD55B064F6B920086B4BE /* SMySQL.framework */; };
 		C0ADD6B009AB02F500EF7E68 /* auth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FB0531DE5F00A80013 /* auth.tiff */; };
-		C0ADD6B109AB030700EF7E68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C006EFBF065762AB00BA63BA /* Localizable.strings */; };
 		C0ADD6B209AB031500EF7E68 /* AFSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5C072D4D78004B1042 /* AFSBrowserCell.m */; };
 		C0ADD6B309AB031500EF7E68 /* AFSNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5E072D4D78004B1042 /* AFSNodeInfo.m */; };
 		C0ADD6B409AB031600EF7E68 /* AnonymousPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A4F05266A09004CEC9C /* AnonymousPane.m */; };
@@ -489,7 +488,6 @@
 		61DF7FDD04DA6DE700100102 /* users.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = users.tiff; path = images/toolbar/users.tiff; sourceTree = "<group>"; };
 		61DF7FDE04DA6DE700100102 /* vhosts.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = vhosts.tiff; path = images/toolbar/vhosts.tiff; sourceTree = "<group>"; };
 		61DF7FE604DA707900100102 /* status.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = status.tiff; path = images/toolbar/status.tiff; sourceTree = "<group>"; };
-		C006EFC0065762AB00BA63BA /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = "sources/Preferences/Preference Panes/AuthentificationPane/English.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C006EFCB065762CD00BA63BA /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = sources/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C006F0510657666500BA63BA /* paypal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = paypal.tiff; path = images/paypal.tiff; sourceTree = "<group>"; };
 		C009A4DB078DC4180018057D /* permission_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = permission_small.tiff; path = images/permission_small.tiff; sourceTree = "<group>"; };
@@ -662,7 +660,7 @@
 		C0D8990407223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/SetupAssistant/French.lproj/AKVUPane.nib; sourceTree = "<group>"; };
 		C0D8990507223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = sources/SetupAssistant/French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0D8990607223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/SetupAssistant/French.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		C0D8990B07223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0D8990B07223D2B00898826 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0D8990C07223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0D8990E07223D2B00898826 /* French */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = French; path = sources/French.lproj/MVPreferencePaneGroups.strings; sourceTree = "<group>"; };
 		C0D8990F07223D2B00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/French.lproj/MVPreferences.nib; sourceTree = "<group>"; };
@@ -675,7 +673,6 @@
 		C0D8995B07223F9400898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = "sources/Preferences/Preference Panes/ServerOptionsPane/French.lproj/ServerOptionsPane.nib"; sourceTree = "<group>"; };
 		C0D8995C07223FB400898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = "sources/Preferences/Preference Panes/AuthentificationPane/French.lproj/AuthentificationPane.nib"; sourceTree = "<group>"; };
 		C0D8995D07223FB400898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = "sources/Preferences/Preference Panes/AuthentificationPane/French.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		C0D8995E07223FB400898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = "sources/Preferences/Preference Panes/AuthentificationPane/French.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C0D8995F07223FD000898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = "sources/Preferences/Preference Panes/AnonymousPane/French.lproj/AnonymousPane.nib"; sourceTree = "<group>"; };
 		C0D8996007223FD000898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = "sources/Preferences/Preference Panes/AnonymousPane/French.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		C0D8996107223FEB00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = "sources/Preferences/Preference Panes/SystemPane/French.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1137,7 +1134,6 @@
 		61B67A1105266691004CEC9C /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
-				C006EFBF065762AB00BA63BA /* Localizable.strings */,
 				61B67A3E05266994004CEC9C /* AuthentificationPane.h */,
 				61B67A3F05266994004CEC9C /* AuthentificationPane.m */,
 				61B67A48052669C9004CEC9C /* AuthentificationPane.nib */,
@@ -2433,7 +2429,6 @@
 				C0ADD6A909AB02E000EF7E68 /* AuthentificationPane.nib in Resources */,
 				C0ADD6AA09AB02E100EF7E68 /* InfoPlist.strings in Resources */,
 				C0ADD6B009AB02F500EF7E68 /* auth.tiff in Resources */,
-				C0ADD6B109AB030700EF7E68 /* Localizable.strings in Resources */,
 				C0ADD93109AB112E00EF7E68 /* AuthPane-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2877,15 +2872,6 @@
 				C0D8995907223F7B00898826 /* French */,
 			);
 			name = ServerPane.nib;
-			sourceTree = "<group>";
-		};
-		C006EFBF065762AB00BA63BA /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C006EFC0065762AB00BA63BA /* English */,
-				C0D8995E07223FB400898826 /* French */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		C006EFCA065762CD00BA63BA /* Localizable.strings */ = {

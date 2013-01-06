@@ -6,14 +6,14 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>PureFTPd Manager</string>
-	<key>CFBundleIconFile</key>
-	<string>Manager</string>
-	<key>CFBundleIdentifier</key>
-	<string>org.pureftpd.macosx</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>PureFTPd Manager Help</string>
 	<key>CFBundleHelpBookName</key>
 	<string>PureFTPd Manager Help</string>
+	<key>CFBundleIconFile</key>
+	<string>Manager</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.pureftpd.macosx</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>JMSX</string>
 	<key>CFBundleVersion</key>
-	<string>1.6</string>
+	<string>1.6.2</string>
 	<key>NSMainNibFile</key>
 	<string>PureFTP</string>
 	<key>NSPrincipalClass</key>

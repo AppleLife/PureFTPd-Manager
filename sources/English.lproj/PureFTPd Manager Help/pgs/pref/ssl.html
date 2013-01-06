@@ -21,7 +21,13 @@
     <h3>PureFTPd Manager - SSL/TLS Sessions</h3>
     <font size="2" face="Lucida Grande,Arial,sans-serif">
     <br>
-    Easily create (or import) an SSL/TLS certificate, which is required for a form of encrypted and secured FTP called FTP-SSL/TLS.
+	Pure-FTPd has support for encryption of the control channel using SSL/TLS security mechanisms.<br>
+	When this extra security layer is enabled, login and passwords are no more sent cleartext. Neither are other commands sent by your client nor replies made by the server.<br>
+	<br>
+  However, the data channel is not affected by SSL/TLS. This combination brings no significant decrease of performance and the FXP protocol keeps
+working even when mixing SSL/TLS-enabled and non SSL/TLS-enabled servers.<br>
+	<br>
+	Easily create (or import) an SSL/TLS certificate, which is required for a form of encrypted and secured FTP called FTP-SSL/TLS.
     <br><br>
     <div align=center>
     <MAP NAME="preferences">

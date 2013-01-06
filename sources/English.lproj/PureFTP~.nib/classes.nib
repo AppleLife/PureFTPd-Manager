@@ -53,6 +53,7 @@
             CLASS = PureController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                amountField = NSTextField; 
                 changeLog = NSTextView; 
                 chooseVHostDirButton = NSButton; 
                 creditsTextView = NSTextView; 

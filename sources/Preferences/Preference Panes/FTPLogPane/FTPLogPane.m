@@ -436,14 +436,22 @@
     
     
 		kd = kvm_openfiles(0, 0, 0, O_RDONLY, errbuf);
-		for (i = 0; i < nentries; i++) {
-			cmd = kp[i].kp_proc.p_comm;
-			pid = kp[i].kp_proc.p_pid;
-			if (!strcmp("cron", cmd)) {
-				result = pid;
-			}	
+		if (kd != 0)
+		{
+			if ((kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nentries)) != 0)
+			{
+				for (i = 0; i < nentries; i++) {
+					cmd = kp[i].kp_proc.p_comm;
+					pid = kp[i].kp_proc.p_pid;
+					if (!strcmp("cron", cmd)) {
+						result = pid;
+					}	
+				}
+				kvm_close(kd);
+			}
 		}
-		kvm_close(kd);
+    
+		
 		
 		if (result != -1)
 		{

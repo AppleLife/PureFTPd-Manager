@@ -317,3 +317,22 @@
 
 "Would you like to restart PureFTPd daemon now?" = "Souhaiez-vous relancer votre serveur FTP maintenant ?";
 
+
+"Show All"="Retour";
+
+"You are about to delete your SSL Certificate" = "Vous êtes sur le point de supprimer votre certificat SSL";
+"Cancel" = "Annuler";
+"You must provide more information to generate a certificate.\nPlease make sure you complete the whole form properly." = "Vous devez fournir plus d'informations pour générer un certificat";
+"Your certificate will be remove from your system. Do you want to continue ?" = "Votre certificat sera détruit. Voulez-vous continuer ?";
+"Incomplete form" = "Formulaire incomplet";
+
+/* SSL/TLS clients only */
+"Cleartext sessions are refused and only SSL/TLS compatible clients are accepted." = "Les sessions non chiffrées sont interdites.";
+
+/* SSL Mixed mode comment */
+"Clients can connect either the traditional way or through an SSL/TLS layer." = "Les sessions FTP peuvent s'effectuer de manière traditionelle ou à travers SSL/TLS";
+
+/* Support for SSL/TLS is disabled */
+"Support for SSL/TLS is disabled." = "Le support des sessions SSL/TLS est inactif.";
+
+"Database setup aborted! Please check that your MySQL server is running" = "La configuration de la base de donnée a été interrompue. Vérifiez que votre serveur MySQL est disponible.";"Error connecting to MySQL" = "Erreur lors de la connexion à MySQL";

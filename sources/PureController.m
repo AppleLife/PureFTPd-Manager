@@ -663,35 +663,42 @@ PureController* thePureController = nil;
 -(IBAction) gotoPayPalWithAmount:(id)sender
 {
 	NSString *amount=nil;
+	NSString *cur = nil;
 	int selectedAmount = [donationPopUp indexOfSelectedItem];
 	switch (selectedAmount){
+		// EUR, USD, AUD , CAD, GBP, JPY
+		// Euros, US Dollars, Australian Dollars, Canadian Dollars, Pounds Sterling, Yen
 		case 0:
-			amount=@"5";
+			cur=@"EUR";
 			break;
 		case 1:
-			amount=@"10";
+			cur=@"USD";
 			break;
 		case 2:
-			amount=@"15";
+			cur = @"JPY";
 			break;
 		case 3:
-			amount=@"20";
+			cur = @"GBP";
 			break;
 		case 4:
-			amount=@"42";
+			cur = @"AUD";
 			break;
 		case 5:
-			amount=nil;
+			cur = @"CAD";
 			break;
 		default:
-			amount = nil;
+			cur = nil;
 			break;
 	}
 	NSString *url=nil;
-	if (amount == nil){
-		url = @"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&currency_code=EUR&lc=US";
+	if (cur == nil){
+		url = @"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&lc=US";
 	}else {
-		url = [NSString stringWithFormat:@"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&currency_code=EUR&lc=US&amount=%@", amount];
+		amount = [amountField stringValue];
+		if (([amount intValue] ==0) || ([amount intValue] < 0))
+			url = [NSString stringWithFormat:@"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&currency_code=%@&lc=US",cur];
+		else 
+			url = [NSString stringWithFormat:@"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&currency_code=%@&lc=US&amount=%@",cur, amount];
 	}
 	
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
@@ -700,8 +707,12 @@ PureController* thePureController = nil;
 
 -(IBAction) gotoPayPal:(id)sender 
 {
-    [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&currency_code=EUR&lc=US"]];
+    /*[[NSWorkspace sharedWorkspace] openURL:
+        [NSURL URLWithString:@"https://www.paypal.com/xclick/business=jms@supinfo.com&item_name=PureFTPd+Manager&no_note=1&tax=0&lc=US"]];*/
+	NSRect windowFrame = [window frame];
+    NSRect donationRect = [donationPanel frame];
+	[donationPanel setFrameOrigin:NSMakePoint(windowFrame.origin.x+(windowFrame.size.width-donationRect.size.width)/2,windowFrame.origin.y+(windowFrame.size.height-donationRect.size.height)/2)];
+	[donationPanel makeKeyAndOrderFront:nil];
 }
 
 -(IBAction) checkForNewVersion:(id)sender 

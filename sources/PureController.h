@@ -45,6 +45,7 @@
     IBOutlet NSButton *deleteButton;
 
     IBOutlet NSWindow *window;
+	IBOutlet NSTextField *amountField;
     IBOutlet NSPanel *donationPanel;
     BOOL showSplash;
     IBOutlet NSTabView *mainTabView;

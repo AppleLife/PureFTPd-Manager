@@ -120,16 +120,17 @@
 
 - (IBAction)showTLS:(id)sender
 {
+	
     switch ([sender indexOfSelectedItem]){
 	case 0:
-	    [sslField setStringValue:TLS1];
+	    [sslField setStringValue:NSLocalizedString(@"Support for SSL/TLS is disabled.", @"Support for SSL/TLS is disabled.")];
 	    break;
 	case 1:
-	    [sslField setStringValue:TLS2];
+	    [sslField setStringValue:NSLocalizedString(@"Clients can connect either the traditional way or through an SSL/TLS layer.", @"Clients can connect either the traditional way or through an SSL/TLS layer.")];
 	    break;
 	case 2:
-	    [sslField setStringValue:TLS3];
-	    break;
+	    [sslField setStringValue:NSLocalizedString(@"Cleartext sessions are refused and only SSL/TLS compatible clients are accepted.", @"Cleartext sessions are refused and only SSL/TLS compatible clients are accepted.")];
+		break;
     }
     modified = YES;
 }
