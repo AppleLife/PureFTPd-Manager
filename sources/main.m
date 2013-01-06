@@ -37,15 +37,18 @@
 
 void CheckPermissions(void)
 {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	NSFileManager *manager = [NSFileManager defaultManager];
 	NSString *executable = [[NSBundle mainBundle] executablePath];
 	const char *path = [manager fileSystemRepresentationWithPath:executable];
-	NSDictionary *attr;
-	NSMutableDictionary *newattr;
+
 	AuthorizationRef auth;
 	OSStatus err;
 	
-
+	NSString *userHome = NSHomeDirectory();
+	NSString *userProperties = [NSString stringWithFormat:@"%@/Library/Preferences/org.pureftpd.macosx.plist", userHome];
+	NSFileManager *fm = [NSFileManager defaultManager];
+	
 	// try to switch to root user.
 	seteuid(0);
 	
@@ -53,95 +56,44 @@ void CheckPermissions(void)
 		{
 		// Must be relaunched as root, then this instance must be quit
 		// launch as root
+		[fm removeFileAtPath:userProperties handler:nil];
+		
 		if (path)
 		{
 			err = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagInteractionAllowed, &auth);
 			if (err == errAuthorizationSuccess)
 				err = AuthorizationExecuteWithPrivileges(auth, path, kAuthorizationFlagDefaults, NULL, NULL);
 		}
-		
+		[pool release];
 		exit(0);
 	}
 	
 	NSString *username = NSUserName();
 	[username writeToFile:@"/tmp/PureFTPdManagerUser" atomically:YES];
 	
+	// switch to root
+	seteuid(0);
 	setuid(0);
+	
+	NSString *rootProperties = @"/private/var/root/Library/Preferences/org.pureftpd.macosx.plist";
+	
+	if ([fm fileExistsAtPath:rootProperties])
+	{
+		
+		[fm copyPath:rootProperties toPath:userProperties handler:nil];
+		NSDictionary *attr=[NSDictionary dictionaryWithObjectsAndKeys:
+							username, NSFileOwnerAccountName, nil];
+		[fm changeFileAttributes:attr atPath:userProperties];
+	}
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	// Switch to front
-	[NSApp activateIgnoringOtherApps:YES];
+	[pool release];
+	//
 }
 
-/*
-static bool pathForTool(CFStringRef toolName, char path[MAXPATHLEN])
-{
-    CFBundleRef bundle;
-    CFURLRef resources;
-    CFURLRef toolURL;
-    Boolean success = true;
-    
-    bundle = CFBundleGetMainBundle();
-    if (!bundle)
-        return FALSE;
-    
-    resources = CFBundleCopyResourcesDirectoryURL(bundle);
-    if (!resources)
-        return FALSE;
-    
-    toolURL = CFURLCreateCopyAppendingPathComponent(NULL, resources, toolName, FALSE);
-    CFRelease(resources);
-    if (!toolURL)
-        return FALSE;
-    
-    success = CFURLGetFileSystemRepresentation(toolURL, TRUE, (UInt8 *)path, MAXPATHLEN);
-    
-    CFRelease(toolURL);
-    return !access(path, X_OK);
-}
-*/
 
 int main(int argc, const char *argv[])
 {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	
 	CheckPermissions();
 	return NSApplicationMain(argc , (const char **)argv);
-	/*
-    char path[MAXPATHLEN], launcher[MAXPATHLEN];
-    
-    if (!pathForTool(CFSTR("../MacOS/Launcher"), launcher))
-    {
-        fprintf(stderr, "PureFTPd Manager Authentificator could not be found.\n");
-        return -1;
-    }
-    
-    
-    if (!pathForTool(CFSTR("../MacOS/PureFTPd Manager"), path))
-    {
-        fprintf(stderr, "PureFTPd Manager could not be found.\n");
-        return -1;
-    }
-    
-	
-    
-	uid_t aUID = geteuid();
-    if (aUID !=0) {
-        NSTask *task = [[NSTask alloc] init];
-        NSArray *languages = [NSArray arrayWithObjects:@"en", @"fr", nil];
-        NSArray *userPrefLanguage = [NSBundle preferredLocalizationsFromArray:languages forPreferences:nil];
-        NSString *appleLanguage = [NSString stringWithFormat:@"(\"%@\")", [userPrefLanguage objectAtIndex:0]]; 
-        [task setLaunchPath:[NSString stringWithFormat:@"%s", launcher]];
-        [task setArguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%s", path], appleLanguage, nil]];
-        [task launch];
-        [task release];
-        [pool release];
-        return 0;
-    } else {
-        setuid(0);
-        return NSApplicationMain(argc , (const char **)argv);
-    }*/
-	
-	
-    
-    [pool release];
-    return 0;
 }

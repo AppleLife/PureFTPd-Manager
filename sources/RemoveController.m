@@ -245,6 +245,7 @@ RemoveController * theRC = nil;
    
     [filesToRemove addObject:@"/Library/Receipts/PureFTPd Manager.pkg"];
     [filesToRemove addObject:@"/Library/Receipts/pureftpd-jaguar.pkg"];
+	 [filesToRemove addObject:@"/Library/Receipts/pureftpd-ub.pkg"];
     [filesToRemove addObject:@"/Library/Receipts/pureftpd-panther.pkg"];
     
     [filesToRemove addObject:@"/Applications/PureFTPd Manager.app"];

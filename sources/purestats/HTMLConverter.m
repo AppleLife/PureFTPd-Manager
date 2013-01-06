@@ -149,7 +149,7 @@ static HTMLConverter *converter = nil;
 	if (up == nil)
 		upload = [NSNumber numberWithInt:0];
 	else 
-		upload = [NSNumber numberWithInt:[up intValue]];
+		upload = [NSNumber numberWithDouble:[up doubleValue]];
 		
 	NSString *down = [[yearDictionary objectForKey:@"yearTotal"] objectForKey:@"GET"];
 	NSNumber *download=nil;
@@ -157,7 +157,7 @@ static HTMLConverter *converter = nil;
 	if (down == nil)
 		download = [NSNumber numberWithInt:0];
 	else 
-		download = [NSNumber numberWithInt:[down intValue]];
+		download = [NSNumber numberWithDouble:[down doubleValue]];
 	
     NSString *tableHeader = @"<DIV ALIGN=CENTER><TABLE BODER=0 CELLSPACING=1 CELLPADDING=1 WIDTH=90%%  BGCOLOR=#000000><TR><TD><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100%%  ALIGN=CENTER BGCOLOR=#FFFFFF>";
     NSString *tableFooter = @"</TABLE>\n";
@@ -187,7 +187,7 @@ static HTMLConverter *converter = nil;
 			if (m_up == nil)
 				m_upload = [NSNumber numberWithInt:0];
 			else 
-				m_upload = [NSNumber numberWithInt:[m_up intValue]];
+				m_upload = [NSNumber numberWithDouble:[m_up doubleValue]];
 		
 			NSString *m_down = [[[yearDictionary objectForKey:mKey]  objectForKey:@"monthTotal"] objectForKey:@"GET"];
 			NSNumber *m_download=nil;
@@ -195,7 +195,7 @@ static HTMLConverter *converter = nil;
 			if (m_down == nil)
 				m_download = [NSNumber numberWithInt:0];
 			else 
-				m_download = [NSNumber numberWithInt:[m_down intValue]];
+				m_download = [NSNumber numberWithDouble:[m_down doubleValue]];
 
 			
             [tableContent appendFormat:@"<TR BGCOLOR=%@>\n\

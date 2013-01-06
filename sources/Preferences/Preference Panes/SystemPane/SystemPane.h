@@ -13,7 +13,7 @@
     IBOutlet NSPopUpButton *serverModePopUp;
     IBOutlet NSTextField *userBaseDirField;
     IBOutlet NSTextField *vhostBaseDirField;
-   
+    IBOutlet NSButton *gradientSwitch;
     
     NSMutableDictionary *pureFTPPreferences;
     BOOL modified;

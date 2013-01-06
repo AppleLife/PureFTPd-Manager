@@ -197,6 +197,7 @@
 			[_fm createDirectoryAtPath:inc attributes:dict];
 		
 		homeDirSet = YES;
+		[self refreshVFolderList];
 	} else {
 		modified = YES;
 	}
@@ -433,7 +434,12 @@
   
     NSString *linkName = [userVFolderList objectAtIndex:[vfolderTable selectedRow]];
     NSString *linkPath = [homeDirectory stringByAppendingPathComponent:linkName];
-    [[NSFileManager defaultManager] removeFileAtPath:linkPath handler:nil];
+    NSFileWrapper *fw = [[NSFileWrapper alloc] initWithPath:linkPath];
+	
+	if ([fw isSymbolicLink])
+		[[NSFileManager defaultManager] removeFileAtPath:linkPath handler:nil];
+    
+	[fw release];
     
     //[NSThread detachNewThreadSelector:@selector(refreshVFolderList) toTarget:self withObject:nil];
     [self refreshVFolderList];

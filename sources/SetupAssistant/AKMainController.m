@@ -142,7 +142,7 @@
     }
     else
     {
-        NSLog(@"Gro§ Problem !");
+        NSLog(@"Gross Problem !");
     }
 }
 

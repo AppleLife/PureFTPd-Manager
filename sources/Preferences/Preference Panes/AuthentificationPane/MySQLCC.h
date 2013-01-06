@@ -1,7 +1,7 @@
 /* MySQLCC */
 
 #import <Cocoa/Cocoa.h>
-#import <SMySQL/SMySQL.h>
+#import <SMySQL_bundled/SMySQL_bundled.h>
 
 @interface MySQLCC : NSObject
 {

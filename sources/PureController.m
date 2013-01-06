@@ -19,11 +19,7 @@
 
 
 #import "PureController.h"
-
-
-#import <Security/Security.h>
-#import "AuthForAllImpl.h"
-#import "AuthForAllImplCompat.h"
+#import "MWGradientView.h"
 
 PureController* thePureController = nil;
 
@@ -116,14 +112,7 @@ PureController* thePureController = nil;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-	[window saveFrameUsingName:@"pureftpdmainWindow"];
-	NSRect frame = [window frame];
-	NSString *frameinfo = [NSString stringWithFormat:@"%f:%f:%f:%f", 
-					frame.origin.x, frame.origin.y, frame.size.width, frame.size.height];
-	//NSLog(info);
-	NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile];
-    [prefs setObject:frameinfo forKey:@"windowsize"];
-    [prefs writeToFile:PureFTPPreferenceFile atomically:YES]; 
+
 }
 
 -(void) awakeFromNib
@@ -140,7 +129,7 @@ PureController* thePureController = nil;
     {
 		activeUser = [[NSString alloc] initWithContentsOfFile:@"/tmp/PureFTPdManagerUser"];
         [fm removeFileAtPath:@"/tmp/PureFTPdManagerUser" handler:nil];
-    } 
+    }
 	
 	
 	// refresh the auth before it times out -- standard timeout is 300, we refresh the auth every 4 minutes.
@@ -152,6 +141,7 @@ PureController* thePureController = nil;
 	if ((MacVersion >= 0x1040) && ([fm fileExistsAtPath:@"/etc/xinetd.d/ftp"])){
 		[fm removeFileAtPath:@"/etc/xinetd.d/ftp" handler:nil];
 	}
+	
 	
     [self loadPreferences]; 
     
@@ -189,41 +179,6 @@ PureController* thePureController = nil;
     if([vhostTable numberOfRows] >=1)
         [self getHostInfoFor:[[vhostManager vhosts] objectAtIndex:0]];
     
-	NSString *windowsize = nil;
-	
-	 if ((windowsize = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:@"windowsize"]) !=nil)
-	 {
-		NSArray *frameinfo=[windowsize componentsSeparatedByString:@":"];
-		if ([frameinfo count] == 4)
-		{
-			float x= [[frameinfo objectAtIndex:0] floatValue];
-			float y= [[frameinfo objectAtIndex:1] floatValue];
-			float w = [[frameinfo objectAtIndex:2] floatValue];
-			float h = [[frameinfo objectAtIndex:3] floatValue];
-			
-			
-			NSScreen *screen =  [NSScreen mainScreen];
-			NSRect visible = [screen visibleFrame];
-			float sx = visible.origin.x;
-			float sy = visible.origin.y;
-			float sw= visible.size.width;
-			float sh= visible.size.height;
-			
-			if ((x > sw) || (x <sx))
-			{
-				x = (sw-w)/2;
-			}
-			
-			if ((y > sh) || (y <sy))
-			{
-				y = (sh-h)/2;
-			}
-						
-			NSRect frame = NSMakeRect(x,y,w,h);
-			[window setFrame:frame display:NO];
-		}
-	 } 
-	
 	
 	[self registerHelp];
 	
@@ -274,12 +229,22 @@ PureController* thePureController = nil;
 			[pref setObject:currentVersionNumber forKey:PureFTPPreferencesVersion];
 			[pref writeToFile:PureFTPPreferenceFile atomically:YES];
         }
-    }
+		
+    } else if ([[aNotification object] isEqualTo:window]) {
+		[(MWGradientView*)[window contentView] setDrawsGradientBackground:YES];
+	}
 	
     showSplash = NO;
 	
 }
 
+- (void)windowDidResignKey:(NSNotification *)aNotification
+{
+	if ([[aNotification object] isEqualTo:window])
+    {
+		[(MWGradientView*)[window contentView] setDrawsGradientBackground:NO];
+	}
+}
 
 - (IBAction)splashAction:(id)sender
 {
@@ -322,6 +287,7 @@ PureController* thePureController = nil;
     [toolbar release];
 	if(activeUser)
 		[activeUser release];
+
     if (preferencesController != nil)
         [[self preferencesController] release];
     [super dealloc];
@@ -395,7 +361,7 @@ PureController* thePureController = nil;
 	[item setPaletteLabel:NSLocalizedString(@"Server Status",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Server Status",@"localized string")];
 	[item setToolTip:NSLocalizedString(@"View Server Status",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"status"]];
+    [item setImage: [NSImage imageNamed: @"status"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.status"];
@@ -405,7 +371,7 @@ PureController* thePureController = nil;
 	[item setPaletteLabel:NSLocalizedString(@"Server Logs",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Server Logs",@"localized string")];
 	[item setToolTip:NSLocalizedString(@"View Server Logs",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"logging"]];
+    [item setImage: [NSImage imageNamed: @"logging"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.logging"];
@@ -415,7 +381,7 @@ PureController* thePureController = nil;
 	[item setPaletteLabel:NSLocalizedString(@"User Manager",@"localized string")];
 	[item setLabel:NSLocalizedString(@"User Manager",@"localized string")];
 	[item setToolTip:NSLocalizedString(@"Go to User Manager",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"users"]];
+    [item setImage: [NSImage imageNamed: @"users"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.users"];
@@ -431,63 +397,71 @@ PureController* thePureController = nil;
 	[toolbarItems setObject:item forKey:@"pureftpd.hosts"];
 	[item release];
         
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.preferences"];
+    item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.preferences"];
 	[item setPaletteLabel:NSLocalizedString(@"Preferences",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Preferences",@"localized string")];
 	[item setToolTip:NSLocalizedString(@"Open Preferences",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"preferences"]];
+    [item setImage: [NSImage imageNamed: @"preferences"]];
 	[item setTarget:self];
 	[item setAction:@selector(showTab:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.preferences"];
 	[item release];
         
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.new"];
+    item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.new"];
 	[item setPaletteLabel:NSLocalizedString(@"New Button",@"localized string")];
 	[item setLabel:NSLocalizedString(@"New",@"New")];
 	[item setToolTip:NSLocalizedString(@"New",@"New")];
-        [item setImage: [NSImage imageNamed: @"new"]];
-        [item setTag:100];
+    [item setImage: [NSImage imageNamed: @"new"]];
+    [item setTag:100];
 	[item setTarget:self];
 	[item setAction:@selector(selectAddAction:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.new"];
 	[item release];
         
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.delete"];
+    item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.delete"];
 	[item setPaletteLabel:NSLocalizedString(@"Delete Button",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Delete",@"Delete")];
 	[item setToolTip:NSLocalizedString(@"Delete",@"Delete")];
-        [item setImage: [NSImage imageNamed: @"delete"]];
-        [item setTag:102];
+    [item setImage: [NSImage imageNamed: @"delete"]];
+    [item setTag:102];
 	[item setTarget:self];
 	[item setAction:@selector(selectDeleteAction:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.delete"];
 	[item release];
         
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.save"];
+    item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.save"];
 	[item setPaletteLabel:NSLocalizedString(@"Save",@"Save")];
 	[item setLabel:NSLocalizedString(@"Save",@"Save")];
 	[item setToolTip:NSLocalizedString(@"Save",@"Save")];
-        [item setImage: [NSImage imageNamed: @"save"]];
-        [item setTag:101];
+    [item setImage: [NSImage imageNamed: @"save"]];
+    [item setTag:101];
 	[item setTarget:self];
 	[item setAction:@selector(selectSaveAction:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.save"];
 	[item release];
         
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.refresh"];
+    item = [[NSToolbarItem alloc] initWithItemIdentifier:@"pureftpd.refresh"];
 	[item setPaletteLabel:NSLocalizedString(@"Refresh",@"localized string")];
 	[item setLabel:NSLocalizedString(@"Refresh",@"localized string")];
 	[item setToolTip:NSLocalizedString(@"Refresh",@"localized string")];
-        [item setImage: [NSImage imageNamed: @"refresh"]];
+    [item setImage: [NSImage imageNamed: @"refresh"]];
 	[item setTarget:self];
 	[item setAction:@selector(refreshContents:)];
 	[toolbarItems setObject:item forKey:@"pureftpd.refresh"];
 	[item release];
         
-        toolbar = [[NSToolbar alloc] initWithIdentifier:@"toolbar"];
+	toolbar = [[NSToolbar alloc] initWithIdentifier:@"toolbar"];
 	[toolbar setDelegate:self];
 	[toolbar setAllowsUserCustomization:YES];
 	[toolbar setAutosavesConfiguration:YES];
+	
+	BOOL showSep=YES;
+	id value = [[NSDictionary dictionaryWithContentsOfFile:PureFTPPreferenceFile] objectForKey:PureFTPGradient];
+	if ((value) == nil || ([value intValue] == 1))
+		showSep=NO;
+	
+	if ([toolbar respondsToSelector:@selector(setShowsBaselineSeparator:)])
+		[toolbar setShowsBaselineSeparator:showSep];
 	[window setToolbar:toolbar];
 }
 

@@ -33,6 +33,8 @@
             }; 
             SUPERCLASS = NSObject; 
         }, 
+        {CLASS = MWGradientView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = MWWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
         {CLASS = NSXOutlineView; LANGUAGE = ObjC; SUPERCLASS = NSOutlineView; }, 
         {
             CLASS = NSXTimeControl; 

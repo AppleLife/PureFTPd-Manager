@@ -531,6 +531,14 @@
         [arguments addObject:[serverPreferences objectForKey:PureFTPUserSpeedLimit]];
     }
     
+	//Recursion Limit
+	NSString *rl = [serverPreferences objectForKey:PureFTPRecursionLimit];
+    if ((rl != nil) && ([rl length] > 0))
+    {
+        [arguments addObject:@"-L"];
+        [arguments addObject:[serverPreferences objectForKey:PureFTPRecursionLimit]];
+    }
+	
     // Extra Args
     if (![[serverPreferences objectForKey:PureFTPExtraArguments] isEqualToString:@""])
     {

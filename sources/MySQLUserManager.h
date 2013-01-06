@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SMySQL/SMySQL.h>
+#import <SMySQL_bundled/SMySQL_bundled.h>
 #import "VirtualUser.h"
 
 @interface MySQLUserManager : NSObject {

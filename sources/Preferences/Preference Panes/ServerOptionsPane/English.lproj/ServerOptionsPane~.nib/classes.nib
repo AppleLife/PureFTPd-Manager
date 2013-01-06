@@ -21,6 +21,8 @@
                 downBWField = NSTextField; 
                 extraArgField = NSTextField; 
                 ipForcedField = NSTextField; 
+                maxDepthField = NSTextField; 
+                maxFilesField = NSTextField; 
                 noResolveSwitch = NSButton; 
                 partitionField = NSTextField; 
                 upBWField = NSTextField; 

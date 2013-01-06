@@ -25,7 +25,6 @@
 #import "MVPreferencesMultipleIconView.h"
 #import "MVPreferencesGroupedIconView.h"
 #import "NSToolbarAdditions.h"
-
 #import "defines.h"
 
 
@@ -94,7 +93,7 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector( _doUnselect: ) name:NSPreferencePaneDoUnselectNotification object:nil];
                 
-		// Default User Dictionaries. We create them here the first time.
+		
 		theDefaults = [NSUserDefaults standardUserDefaults];
         mainsrv=[[PureFTPD alloc] init];
 
@@ -104,7 +103,8 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 }
 
 - (void) dealloc {
-
+	
+	
     [mainsrv release];
     [loadedPanes autorelease];
     [panes autorelease];
@@ -380,8 +380,19 @@ NSString *MVPreferencesWindowNotification = @"MVPreferencesWindowNotification";
 	[currentPaneIdentifier autorelease];
 	currentPaneIdentifier = nil;
 	//[loadedPanes removeAllObjects];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [theDefaults synchronize];
 }
+
+
+/*- (void)windowDidBecomeKey:(NSNotification *)aNotification
+{
+	
+}
+
+- (void)windowDidResignKey:(NSNotification *)aNotification
+{
+	
+}*/
 
 
 - (NSToolbarItem *) toolbar:(NSToolbar *) toolbar itemForItemIdentifier:(NSString *) itemIdentifier willBeInsertedIntoToolbar:(BOOL) flag {

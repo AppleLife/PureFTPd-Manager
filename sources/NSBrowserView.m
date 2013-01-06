@@ -29,7 +29,6 @@
         [fileBrowser setTitled:NO];
         [fileBrowser setHasHorizontalScroller:YES];
 		
-        [fileBrowser setFocusRingType:NSFocusRingTypeNone];
         [fileBrowser setEnabled:NO];
         
         // Make the browser user our custom browser cell.
@@ -55,6 +54,7 @@
             [fileBrowser setWidth:150 ofColumn:-1];
             [fileBrowser setColumnsAutosaveName:@"fileBrowserColumns"];
             [fileBrowser setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+			[fileBrowser setFocusRingType:NSFocusRingTypeNone];
         }
         
         [self addSubview:fileBrowser];

@@ -17,6 +17,7 @@
             CLASS = SystemPane; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                gradientSwitch = NSButton; 
                 managerUpdateSwitch = NSButton; 
                 rdvField = NSTextField; 
                 rdvSwitch = NSButton; 

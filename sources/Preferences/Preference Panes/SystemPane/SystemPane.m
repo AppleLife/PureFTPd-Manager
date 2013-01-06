@@ -61,6 +61,13 @@
         [rdvSwitch setState:0];
         [rdvField setStringValue: rdvName];
     }
+	
+	id value = [pureFTPPreferences objectForKey:PureFTPGradient];
+	int state = 0;
+	if ((value) == nil || ([value intValue] == 1))
+		state=1;
+		
+	[gradientSwitch setState:state];
 
     [userBaseDirField setStringValue:[pureFTPPreferences objectForKey:PureFTPUserBaseDir]];
     [vhostBaseDirField setStringValue:[pureFTPPreferences objectForKey:PureFTPVHostBaseDir]];
@@ -73,6 +80,9 @@
     NSNumber *atStartup = [NSNumber numberWithInt:[startupSwitch state]];
     [preferences setObject:atStartup forKey:PureFTPAtStartup];
     
+	NSNumber *gradient = [NSNumber numberWithInt:[gradientSwitch state]];
+	[preferences setObject:gradient forKey:PureFTPGradient];
+	
     NSNumber *autoUpdate = [NSNumber numberWithInt:[managerUpdateSwitch state]];
     [preferences setObject:autoUpdate forKey:PureFTPAutoUpdate];
 	
@@ -433,6 +443,14 @@
     {
         [arguments addObject:@"-T"];
         [arguments addObject:[serverPreferences objectForKey:PureFTPUserSpeedLimit]];
+    }
+	
+	//Recursion Limit
+    NSString *rl = [serverPreferences objectForKey:PureFTPRecursionLimit];
+    if ((rl != nil) && ([rl length] > 0))
+    {
+        [arguments addObject:@"-L"];
+        [arguments addObject:[serverPreferences objectForKey:PureFTPRecursionLimit]];
     }
     
     // Extra Args

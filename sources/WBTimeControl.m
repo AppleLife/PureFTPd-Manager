@@ -49,6 +49,7 @@
 
 #import "WBTimeControl.h"
 
+
 #define WBTC_LEFT_OFFSET		3.5f
 #define WBTC_RIGHT_OFFSET		3.0f
 #define WBTC_TOP_OFFSET			3.0f
@@ -1332,8 +1333,9 @@ Need to support NSEditor
 
 - (void)determineTimeFormatInfo
 {
+	
 	NSUserDefaults *	sud = [NSUserDefaults standardUserDefaults];
-
+	
 	// Assume 2 digits for the hour, unless we find %1I, %1i, or %1H in the time format string
 	NSString *			tfs = [sud stringForKey:NSTimeFormatString];
 	NSRange				range1 = [tfs rangeOfString:@"%1I" options:NSCaseInsensitiveSearch];

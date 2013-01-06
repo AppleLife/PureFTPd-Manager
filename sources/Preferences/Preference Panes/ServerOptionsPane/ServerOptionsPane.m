@@ -54,6 +54,15 @@
 	else
 	    [downBWField setStringValue:@""];
 	}
+	
+	// recursion limits PureFTPRecursionLimit
+	NSString *rlimit = [pureFTPPreferences objectForKey:PureFTPRecursionLimit]; 
+	if ((rlimit !=nil) && ([rlimit length] > 0))
+	{
+		NSArray *fd = [NSArray arrayWithArray:[rlimit componentsSeparatedByString:@":"]];
+		[maxFilesField setStringValue:[fd objectAtIndex:0]];
+		[maxDepthField setStringValue:[fd objectAtIndex:1]];
+	}
     
     [extraArgField setStringValue:[pureFTPPreferences objectForKey:PureFTPExtraArguments]];
 }
@@ -73,11 +82,21 @@
     else
         speedLimit=[NSString stringWithFormat:@"%d:%d", [upBWField intValue]*1024, [downBWField intValue]*1024]; 
     
+	// get recursion limit
+	NSString *maxFiles = @"2000";
+	NSString *maxDepth = @"5";
+	if (![[maxFilesField stringValue] isEqualToString:@""])
+		maxFiles = [maxFilesField stringValue];
+	if (![[maxDepthField stringValue] isEqualToString:@""])
+		maxDepth = [maxDepthField stringValue];
+	NSString *rl = [NSString stringWithFormat:@"%@:%@", maxFiles, maxDepth];
+	
     [preferences setObject:resolvOption forKey:PureFTPResolvName];
     [preferences setObject:activeMode forKey:PureFTPForceActive];
     [preferences setObject:[ipForcedField stringValue] forKey:PureFTPForceIP];
     [preferences setObject:[partitionField stringValue] forKey:PureFTPMaxPartition];
     [preferences setObject:speedLimit forKey:PureFTPUserSpeedLimit];
+	[preferences setObject:rl forKey:PureFTPRecursionLimit];
     [preferences setObject:[extraArgField stringValue] forKey:PureFTPExtraArguments];
                 
     NSNumber *update = [[NSNumber alloc] initWithInt:1];

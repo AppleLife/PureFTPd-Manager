@@ -259,7 +259,8 @@
         NSString *month = [NSString stringWithFormat:@"%d", [transferDate monthOfYear]];
         NSString *day = [NSString stringWithFormat:@"%d", [transferDate dayOfMonth]];
         
-        if ((oldUserArray=[userStatsDict objectForKey:[subArray objectAtIndex:2]]) == nil)
+		oldUserArray=[userStatsDict objectForKey:[subArray objectAtIndex:2]];
+        if (oldUserArray == nil)
         {
             // User not found, add it to userStatsDict
             // His first totals ...
@@ -298,31 +299,50 @@
             NSString *transferType = [subArray objectAtIndex:10]; // PUT | GET
             double totalToAdd = [[subArray objectAtIndex:12] doubleValue];
             totalsDict = [[NSMutableDictionary alloc] init];
-          
-            yearDict = [NSMutableDictionary dictionaryWithDictionary:[[oldUserArray objectAtIndex:0] objectForKey:year]];
-			if (yearDict == nil)
+			
+			NSDictionary *d = [[oldUserArray objectAtIndex:0] objectForKey:year];
+			
+			if (d!=nil){
+				yearDict = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				yearDict= [NSMutableDictionary dictionary];
+			}
 				
-            monthDict = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:month]];
-			if (monthDict == nil){
+			d = [yearDict objectForKey:month];
+			if (d!=nil)
+			{
+				monthDict = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				monthDict= [NSMutableDictionary dictionary];
 				[yearDict setObject:monthDict forKey:month];
 			}
 			
-			
-			NSMutableDictionary *yearDetail = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
-			if (yearDetail == nil) {
+			d = [yearDict objectForKey:@"yearTotal"];
+			NSMutableDictionary *yearDetail = nil;
+			if (d!=nil)
+			{
+				yearDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				yearDetail= [NSMutableDictionary dictionary];
 				[yearDict setObject:yearDetail forKey:@"yearTotal"];
 			}
-			NSMutableDictionary *monthDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:@"monthTotal"]];
-			if (monthDetail == nil){
+			
+			d = [monthDict objectForKey:@"monthTotal"];
+			NSMutableDictionary *monthDetail = nil;
+			if (d!=nil)
+			{
+				monthDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				monthDetail= [NSMutableDictionary dictionary];
 				[monthDict setObject:monthDetail forKey:@"monthTotal"];
 			}
 			
-			NSMutableDictionary *dayDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:day]];
-			if (dayDetail == nil){
+			d = [monthDict objectForKey:day];
+			NSMutableDictionary *dayDetail = nil;
+			if (d!=nil)
+			{
+				dayDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				dayDetail= [NSMutableDictionary dictionary];
 				[monthDict setObject:dayDetail forKey:day];
 			}
@@ -558,30 +578,52 @@
             
             double totalToAdd = [sizeinBytes doubleValue];
             totalsDict = [[NSMutableDictionary alloc] init];
-            yearDict = [NSMutableDictionary dictionaryWithDictionary:[[oldUserArray objectAtIndex:0] objectForKey:year]];
-			if (yearDict == nil)
+			
+			NSDictionary *d = [[oldUserArray objectAtIndex:0] objectForKey:year];
+			if (d!=nil)
+			{
+				yearDict = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				yearDict= [NSMutableDictionary dictionary];
-				
-            monthDict = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:month]];
-			if (monthDict == nil){
+			}
+            				
+			d = [yearDict objectForKey:month];
+			if (d!=nil)
+			{
+				monthDict = [NSMutableDictionary dictionaryWithDictionary:d];
+			}else {
 				monthDict= [NSMutableDictionary dictionary];
 				[yearDict setObject:monthDict forKey:month];
 			}
+					
+            
 			
-			
-			NSMutableDictionary *yearDetail = [NSMutableDictionary dictionaryWithDictionary:[yearDict objectForKey:@"yearTotal"]];
-			if (yearDetail == nil) {
+			d = [yearDict objectForKey:@"yearTotal"];
+			NSMutableDictionary *yearDetail = nil;
+			if (d!=nil)
+			{
+				yearDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				yearDetail= [NSMutableDictionary dictionary];
 				[yearDict setObject:yearDetail forKey:@"yearTotal"];
 			}
-			NSMutableDictionary *monthDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:@"monthTotal"]];
-			if (monthDetail == nil){
+			
+			d = [monthDict objectForKey:@"monthTotal"];
+			NSMutableDictionary *monthDetail = nil;
+			if (d!=nil)
+			{
+				monthDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				monthDetail= [NSMutableDictionary dictionary];
 				[monthDict setObject:monthDetail forKey:@"monthTotal"];
 			}
 			
-			NSMutableDictionary *dayDetail = [NSMutableDictionary dictionaryWithDictionary:[monthDict objectForKey:day]];
-			if (dayDetail == nil){
+			d = [monthDict objectForKey:day];
+			NSMutableDictionary *dayDetail = nil;
+			if (d!=nil)
+			{
+				dayDetail = [NSMutableDictionary dictionaryWithDictionary:d];
+			} else {
 				dayDetail= [NSMutableDictionary dictionary];
 				[monthDict setObject:dayDetail forKey:day];
 			}

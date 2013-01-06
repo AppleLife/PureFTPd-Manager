@@ -9,6 +9,8 @@
     IBOutlet NSTextField *downBWField;
     IBOutlet NSTextField *extraArgField;
     IBOutlet NSTextField *ipForcedField;
+	IBOutlet NSTextField *maxDepthField;
+	IBOutlet NSTextField *maxFilesField;
     IBOutlet NSButton *noResolveSwitch;
     IBOutlet NSTextField *partitionField;
     IBOutlet NSTextField *upBWField;

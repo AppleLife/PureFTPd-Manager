@@ -20,7 +20,7 @@ extern NSString *MVPreferencesWindowNotification;
         
 	PureFTPD *mainsrv;
         
-	id theDefaults;
+	NSUserDefaults *theDefaults;
 	NSMutableDictionary *generalPrefsDict, *argumentsDict, *pureFTPPreferences; 
 	id parent;
 }

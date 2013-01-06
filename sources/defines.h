@@ -49,6 +49,7 @@
 #define PureFTPMaxPartition @"PureFTPMaxPartition"
 #define PureFTPMaxLoad @"PureFTPMaxLoad"
 #define PureFTPUserSpeedLimit @"PureFTPUserSpeedLimit"
+#define PureFTPRecursionLimit @"PureFTPRecursionLimit"
 #define PureFTPTLSBehaviour @"PureFTPTLSBehaviour"
 #define PureFTPAutoUpdateStatus @"PureFTPAutoUpdateStatus"
 
@@ -109,6 +110,7 @@
 #define PureFTPRendezVous @"PureFTPRendezVous"
 #define PureFTPUserBaseDir @"PureFTPUserBaseDir"
 #define PureFTPVHostBaseDir @"PureFTPVHostBaseDir"
+#define PureFTPGradient @"PureFTPGradient"
 #define OSVersion @"OSVersion"
 
 /*Permission Pane*/

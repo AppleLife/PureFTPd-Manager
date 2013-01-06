@@ -551,8 +551,12 @@ UserController* theUserController = nil;
     
     NSString *linkName = [userVFolderList objectAtIndex:[vfolderTable selectedRow]];
     NSString *linkPath = [home stringByAppendingPathComponent:linkName];
-    [[NSFileManager defaultManager] removeFileAtPath:linkPath handler:nil];
+	NSFileWrapper *fw = [[NSFileWrapper alloc] initWithPath:linkPath];
+	
+	if ([fw isSymbolicLink])
+		[[NSFileManager defaultManager] removeFileAtPath:linkPath handler:nil];
     
+	[fw release];
     //[NSThread detachNewThreadSelector:@selector(refreshVFolderList) toTarget:self withObject:nil];
     [self refreshVFolderList];
 }
@@ -1475,7 +1479,9 @@ selectNow:
         }
         else 
             [currentUser setTimeEnd:@""];
-    }
+    } else if ([[aNotification object] isEqualTo:homeDirField]){
+		[self refreshVFolderList];
+	}
     [currentUser setHasBeenEdited:YES];
 }
 

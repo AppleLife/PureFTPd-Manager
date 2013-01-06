@@ -7,14 +7,279 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C04347980A0EFCCC00ECB3A9 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */; };
+		C04347B30A0EFCD400ECB3A9 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */; };
+		C04348000A0EFDF500ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04348010A0EFDF600ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C043486D0A0F015D00ECB3A9 /* PureFTPd Manager Setup Assistant.app in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD5F309AAFF0100EF7E68 /* PureFTPd Manager Setup Assistant.app */; };
+		C043486E0A0F015D00ECB3A9 /* MVPreferencePaneDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61B6798C0526519A004CEC9C /* MVPreferencePaneDefaults.plist */; };
+		C043486F0A0F015D00ECB3A9 /* MVPreferencePaneGroups.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B6798E052651BC004CEC9C /* MVPreferencePaneGroups.strings */; };
+		C04348700A0F015D00ECB3A9 /* MVPreferencePaneGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61B67991052651D1004CEC9C /* MVPreferencePaneGroups.plist */; };
+		C04348710A0F015D00ECB3A9 /* MVPreferencePaneGroups.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0D8990D07223D2B00898826 /* MVPreferencePaneGroups.strings */; };
+		C04348720A0F015D00ECB3A9 /* anonymous.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3FB0700AC86002B0A58 /* anonymous.png */; };
+		C04348730A0F015D00ECB3A9 /* assistant.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3FC0700AC86002B0A58 /* assistant.png */; };
+		C04348740A0F015D00ECB3A9 /* auth.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3FD0700AC86002B0A58 /* auth.png */; };
+		C04348750A0F015D00ECB3A9 /* diraliases.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3FE0700AC86002B0A58 /* diraliases.png */; };
+		C04348760A0F015D00ECB3A9 /* logging.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3FF0700AC86002B0A58 /* logging.png */; };
+		C04348770A0F015D00ECB3A9 /* options.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4000700AC86002B0A58 /* options.png */; };
+		C04348780A0F015D00ECB3A9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4010700AC86002B0A58 /* settings.png */; };
+		C04348790A0F015D00ECB3A9 /* ssl.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4020700AC86002B0A58 /* ssl.png */; };
+		C043487A0A0F015D00ECB3A9 /* status.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4030700AC86002B0A58 /* status.png */; };
+		C043487B0A0F015D00ECB3A9 /* system.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4040700AC86002B0A58 /* system.png */; };
+		C043487C0A0F015D00ECB3A9 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4050700AC86002B0A58 /* trash.png */; };
+		C043487D0A0F015D00ECB3A9 /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4060700AC86002B0A58 /* users.png */; };
+		C043487E0A0F015D00ECB3A9 /* vhosts.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC4070700AC86002B0A58 /* vhosts.png */; };
+		C043487F0A0F015D00ECB3A9 /* Manager.png in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3720700A38C002B0A58 /* Manager.png */; };
+		C04348800A0F015D00ECB3A9 /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = C02CC3620700A2A6002B0A58 /* main.html */; };
+		C04348810A0F015D00ECB3A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C006EFCA065762CD00BA63BA /* Localizable.strings */; };
+		C04348820A0F015D00ECB3A9 /* basePreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0331C670656185B000A757F /* basePreferences.plist */; };
+		C04348830A0F015D00ECB3A9 /* ftptiger in Resources */ = {isa = PBXBuildFile; fileRef = C0EBE6F1085E67E0002C3698 /* ftptiger */; };
+		C04348840A0F015D00ECB3A9 /* ftposx in Resources */ = {isa = PBXBuildFile; fileRef = C03DFD6E065292710041FAD9 /* ftposx */; };
+		C04348850A0F015D00ECB3A9 /* permission_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C009A4DB078DC4180018057D /* permission_small.tiff */; };
+		C04348860A0F015D00ECB3A9 /* credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C093CD7A05D821940009AD02 /* credits.rtf */; };
+		C04348870A0F015D00ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		C04348880A0F015D00ECB3A9 /* download.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C082826E05C9EEB40014EA20 /* download.tiff */; };
+		C04348890A0F015D00ECB3A9 /* upload.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C082826F05C9EEB40014EA20 /* upload.tiff */; };
+		C043488A0A0F015D00ECB3A9 /* Manager.icns in Resources */ = {isa = PBXBuildFile; fileRef = C0F092C605C82843006E1E19 /* Manager.icns */; };
+		C043488B0A0F015D00ECB3A9 /* PureFTP.icns in Resources */ = {isa = PBXBuildFile; fileRef = 610BA86604D5690B004418BD /* PureFTP.icns */; };
+		C043488C0A0F015D00ECB3A9 /* addButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61B1925704D95A94004418BD /* addButton.tiff */; };
+		C043488D0A0F015D00ECB3A9 /* deleButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61B1925B04D95E46004418BD /* deleButton.tiff */; };
+		C043488E0A0F015D00ECB3A9 /* tablemenu.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C079CEBB0577CF0800A80013 /* tablemenu.tiff */; };
+		C043488F0A0F015D00ECB3A9 /* paypal.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C006F0510657666500BA63BA /* paypal.tiff */; };
+		C04348900A0F015D00ECB3A9 /* trash.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C016D9C30653A62F0038E8C5 /* trash.tiff */; };
+		C04348910A0F015D00ECB3A9 /* FSIconImage-Default.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C03DFBBA0652475C0041FAD9 /* FSIconImage-Default.tiff */; };
+		C04348920A0F015D00ECB3A9 /* FSIconImage-LinkArrow.icns in Resources */ = {isa = PBXBuildFile; fileRef = C03DFBBB0652475C0041FAD9 /* FSIconImage-LinkArrow.icns */; };
+		C04348930A0F015D00ECB3A9 /* logging.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0F0918E05C744F7006E1E19 /* logging.tiff */; };
+		C04348940A0F015D00ECB3A9 /* delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FD804DA6DE700100102 /* delete.tiff */; };
+		C04348950A0F015D00ECB3A9 /* new.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FD904DA6DE700100102 /* new.tiff */; };
+		C04348960A0F015D00ECB3A9 /* preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDA04DA6DE700100102 /* preferences.tiff */; };
+		C04348970A0F015D00ECB3A9 /* refresh.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDB04DA6DE700100102 /* refresh.tiff */; };
+		C04348980A0F015D00ECB3A9 /* save.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDC04DA6DE700100102 /* save.tiff */; };
+		C04348990A0F015D00ECB3A9 /* users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDD04DA6DE700100102 /* users.tiff */; };
+		C043489A0A0F015D00ECB3A9 /* vhosts.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDE04DA6DE700100102 /* vhosts.tiff */; };
+		C043489B0A0F015D00ECB3A9 /* status.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FE604DA707900100102 /* status.tiff */; };
+		C043489C0A0F015D00ECB3A9 /* MVPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B679B905265834004CEC9C /* MVPreferences.nib */; };
+		C043489D0A0F015D00ECB3A9 /* PureFTP.nib in Resources */ = {isa = PBXBuildFile; fileRef = C044BD75063314F100DA6C38 /* PureFTP.nib */; };
+		C043489E0A0F015D00ECB3A9 /* permission.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0378C2E078579F000F969C8 /* permission.tiff */; };
+		C043489F0A0F015D00ECB3A9 /* PureFTPd Manager-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD51C09AAF8D100EF7E68 /* PureFTPd Manager-Info.plist */; };
+		C04348A00A0F015D00ECB3A9 /* PureFTPd Manager Help in Resources */ = {isa = PBXBuildFile; fileRef = C0BE3C2809CD720500B0D01D /* PureFTPd Manager Help */; };
+		C04348A20A0F015D00ECB3A9 /* NSFileManager+ASExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C02CC07B070074F3002B0A58 /* NSFileManager+ASExtensions.m */; };
+		C04348A30A0F015D00ECB3A9 /* WBTimeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EBE564085D7DB8002C3698 /* WBTimeControl.m */; };
+		C04348A40A0F015D00ECB3A9 /* NSXLogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C024260605C97E1F00427579 /* NSXLogParser.m */; };
+		C04348A50A0F015D00ECB3A9 /* NSImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A0305265D00004CEC9C /* NSImageAdditions.m */; };
+		C04348A60A0F015D00ECB3A9 /* NSToolbarAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A0505265D00004CEC9C /* NSToolbarAdditions.m */; };
+		C04348A70A0F015D00ECB3A9 /* MVPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B6798105265152004CEC9C /* MVPreferencesController.m */; };
+		C04348A80A0F015D00ECB3A9 /* MVPreferencesGroupedIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B6798305265152004CEC9C /* MVPreferencesGroupedIconView.m */; };
+		C04348A90A0F015D00ECB3A9 /* MVPreferencesMultipleIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B6798505265152004CEC9C /* MVPreferencesMultipleIconView.m */; };
+		C04348AA0A0F015D00ECB3A9 /* LogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4CCBF05B596BE007DF2CA /* LogManager.m */; };
+		C04348AB0A0F015D00ECB3A9 /* UserStatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C024272505C987E800427579 /* UserStatsController.m */; };
+		C04348AC0A0F015D00ECB3A9 /* GraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D5ADFE05CAEAEF005825BC /* GraphController.m */; };
+		C04348AD0A0F015D00ECB3A9 /* PureController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02DB14E04CC4C6D00A56B81 /* PureController.m */; };
+		C04348AE0A0F015D00ECB3A9 /* VHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC55DE04DE8D93004418BD /* VHostManager.m */; };
+		C04348AF0A0F015D00ECB3A9 /* RemoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = C016D9CE0653AA660038E8C5 /* RemoveController.m */; };
+		C04348B00A0F015D00ECB3A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C02DB14C04CC4C6D00A56B81 /* main.m */; };
+		C04348B10A0F015D00ECB3A9 /* FTPUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = C034AAFD0583129D00174C03 /* FTPUsage.m */; };
+		C04348B20A0F015D00ECB3A9 /* PureFTPD.m in Sources */ = {isa = PBXBuildFile; fileRef = 612F890604D7C5C100000070 /* PureFTPD.m */; };
+		C04348B30A0F015D00ECB3A9 /* MKLogfileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4CCEB05B5A81F007DF2CA /* MKLogfileReader.m */; };
+		C04348B40A0F015D00ECB3A9 /* StatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = C044BC230633034400DA6C38 /* StatusController.m */; };
+		C04348B50A0F015D00ECB3A9 /* UserController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB9D010642AD460075CCAC /* UserController.m */; };
+		C04348B60A0F015D00ECB3A9 /* MySQLUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4BFD406509F3D00FEF52D /* MySQLUserManager.m */; };
+		C04348B70A0F015D00ECB3A9 /* PureDBUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB9D200642AE550075CCAC /* PureDBUserManager.m */; };
+		C04348B80A0F015D00ECB3A9 /* VirtualUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB9DF40642B6F50075CCAC /* VirtualUser.m */; };
+		C04348B90A0F015D00ECB3A9 /* JMNavSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0D3E0072DA091004B1042 /* JMNavSplitView.m */; };
+		C04348BA0A0F015D00ECB3A9 /* NSBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0D162072D8177004B1042 /* NSBrowserView.m */; };
+		C04348BB0A0F015D00ECB3A9 /* JMSidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CF40072D605C004B1042 /* JMSidebarView.m */; };
+		C04348BC0A0F015D00ECB3A9 /* FSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4C3D8065105FC00FEF52D /* FSBrowserCell.m */; };
+		C04348BD0A0F015D00ECB3A9 /* FSNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4C3DA065105FC00FEF52D /* FSNodeInfo.m */; };
+		C04348BE0A0F015D00ECB3A9 /* MWWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2951409EDE1FB006CA0CC /* MWWindow.m */; };
+		C04348BF0A0F015D00ECB3A9 /* MWGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2994A09EE4896006CA0CC /* MWGradientView.m */; };
+		C04348C10A0F015D00ECB3A9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C044BD440633133C00DA6C38 /* WebKit.framework */; };
+		C04348C50A0F015D00ECB3A9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
+		C04348C60A0F015D00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04348C70A0F015D00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04348C80A0F015D00ECB3A9 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE374D09CD609E00B0D01D /* Carbon.framework */; };
+		C04348C90A0F015D00ECB3A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C29A9D09EE5B79006CA0CC /* QuartzCore.framework */; };
+		C04348D00A0F015D00ECB3A9 /* FTPLogPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD62809AB006F00EF7E68 /* FTPLogPane.prefPane */; };
+		C04348D10A0F015D00ECB3A9 /* SystemPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD63209AB008200EF7E68 /* SystemPane.prefPane */; };
+		C04348D20A0F015D00ECB3A9 /* AuthentificationPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD63C09AB009A00EF7E68 /* AuthentificationPane.prefPane */; };
+		C04348D30A0F015D00ECB3A9 /* AnonymousPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD64609AB00B100EF7E68 /* AnonymousPane.prefPane */; };
+		C04348D40A0F015D00ECB3A9 /* ServerPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD65009AB00BF00EF7E68 /* ServerPane.prefPane */; };
+		C04348D50A0F015D00ECB3A9 /* ServerOptionsPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD65A09AB00CC00EF7E68 /* ServerOptionsPane.prefPane */; };
+		C04348D60A0F015D00ECB3A9 /* DirAliasesPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD66409AB00D900EF7E68 /* DirAliasesPane.prefPane */; };
+		C04348D70A0F015D00ECB3A9 /* SSLPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD66E09AB00E600EF7E68 /* SSLPane.prefPane */; };
+		C04348D80A0F015D00ECB3A9 /* PermissionPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD67809AB00FA00EF7E68 /* PermissionPane.prefPane */; };
+		C04348E30A0F019C00ECB3A9 /* logging.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0F0918E05C744F7006E1E19 /* logging.tiff */; };
+		C04348E40A0F019C00ECB3A9 /* users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDD04DA6DE700100102 /* users.tiff */; };
+		C04348E50A0F019C00ECB3A9 /* vhosts.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDE04DA6DE700100102 /* vhosts.tiff */; };
+		C04348E60A0F019C00ECB3A9 /* anonymous.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FA0531DE5F00A80013 /* anonymous.tiff */; };
+		C04348E70A0F019C00ECB3A9 /* auth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FB0531DE5F00A80013 /* auth.tiff */; };
+		C04348E80A0F019C00ECB3A9 /* system.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FE0531DE5F00A80013 /* system.tiff */; };
+		C04348E90A0F019C00ECB3A9 /* empty-pureftpd.pdb in Resources */ = {isa = PBXBuildFile; fileRef = C03CD95407068BC300516A90 /* empty-pureftpd.pdb */; };
+		C04348EA0A0F019C00ECB3A9 /* allOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0DCC13105D2F6E800BB41E9 /* allOptions.plist */; };
+		C04348EB0A0F019C00ECB3A9 /* selected.tif in Resources */ = {isa = PBXBuildFile; fileRef = C035BC8F05D1BC9C00A10874 /* selected.tif */; };
+		C04348EC0A0F019C00ECB3A9 /* unprocessed.tif in Resources */ = {isa = PBXBuildFile; fileRef = C035BC9005D1BC9C00A10874 /* unprocessed.tif */; };
+		C04348ED0A0F019C00ECB3A9 /* unselected.tif in Resources */ = {isa = PBXBuildFile; fileRef = C035BC9105D1BC9C00A10874 /* unselected.tif */; };
+		C04348EE0A0F019C00ECB3A9 /* AppIcons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 61D8500104E948E000100102 /* AppIcons.icns */; };
+		C04348EF0A0F019C00ECB3A9 /* background.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C035BE9805D1C17D00A10874 /* background.tiff */; };
+		C04348F00A0F019C00ECB3A9 /* AKStartPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C035BCDB05D1BCFF00A10874 /* AKStartPane.nib */; };
+		C04348F10A0F019C00ECB3A9 /* AKAnonymousPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C0DCBE8C05D2BF2E00BB41E9 /* AKAnonymousPane.nib */; };
+		C04348F20A0F019C00ECB3A9 /* AKVUPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C0DCBF3005D2C6FF00BB41E9 /* AKVUPane.nib */; };
+		C04348F30A0F019C00ECB3A9 /* AKLogPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C0331CC406561ABE000A757F /* AKLogPane.nib */; };
+		C04348F40A0F019C00ECB3A9 /* AKSystemPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C0331CC906561AC8000A757F /* AKSystemPane.nib */; };
+		C04348F50A0F019C00ECB3A9 /* AKStopPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C035BCDD05D1BCFF00A10874 /* AKStopPane.nib */; };
+		C04348F60A0F019C00ECB3A9 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = C035BCE105D1BCFF00A10874 /* MainMenu.nib */; };
+		C04348F70A0F019C00ECB3A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C035BCDF05D1BCFF00A10874 /* Localizable.strings */; };
+		C04348F80A0F019C00ECB3A9 /* InfoAssistant.plist in Resources */ = {isa = PBXBuildFile; fileRef = C035BC8C05D1BC9C00A10874 /* InfoAssistant.plist */; };
+		C04348F90A0F019C00ECB3A9 /* PaneList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C035BC8E05D1BC9C00A10874 /* PaneList.plist */; };
+		C04348FA0A0F019C00ECB3A9 /* PureFTPd Assistant-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD5F509AAFF0100EF7E68 /* PureFTPd Assistant-Info.plist */; };
+		C04348FC0A0F019C00ECB3A9 /* AKBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC7F05D1BC9C00A10874 /* AKBox.m */; };
+		C04348FD0A0F019C00ECB3A9 /* AKListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8105D1BC9C00A10874 /* AKListView.m */; };
+		C04348FE0A0F019C00ECB3A9 /* AKMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8305D1BC9C00A10874 /* AKMainController.m */; };
+		C04348FF0A0F019C00ECB3A9 /* AKPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8505D1BC9C00A10874 /* AKPaneController.m */; };
+		C04349000A0F019C00ECB3A9 /* AKProcessEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8705D1BC9C00A10874 /* AKProcessEngine.m */; };
+		C04349010A0F019C00ECB3A9 /* AKStartPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8905D1BC9C00A10874 /* AKStartPaneController.m */; };
+		C04349020A0F019C00ECB3A9 /* AKAnonymousPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCBEBC05D2C3E900BB41E9 /* AKAnonymousPaneController.m */; };
+		C04349030A0F019C00ECB3A9 /* AKVUPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCBF6905D2D14700BB41E9 /* AKVUPaneController.m */; };
+		C04349040A0F019C00ECB3A9 /* AKLogPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCBF9F05D2D4D200BB41E9 /* AKLogPaneController.m */; };
+		C04349050A0F019C00ECB3A9 /* AKSystemPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCBFC405D2D8B100BB41E9 /* AKSystemPaneController.m */; };
+		C04349060A0F019C00ECB3A9 /* AKStopPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8B05D1BC9C00A10874 /* AKStopPaneController.m */; };
+		C04349070A0F019C00ECB3A9 /* ManagerProcessEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCC0D405D2EFDB00BB41E9 /* ManagerProcessEngine.m */; };
+		C04349080A0F019C00ECB3A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BD5905D1BD6300A10874 /* main.m */; };
+		C043490A0A0F019C00ECB3A9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C204E2903D004418BD /* CoreFoundation.framework */; };
+		C043490B0A0F019C00ECB3A9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
+		C043490C0A0F019C00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349160A0F01A900ECB3A9 /* RemoveController.h in Resources */ = {isa = PBXBuildFile; fileRef = C016D9CD0653AA660038E8C5 /* RemoveController.h */; };
+		C04349170A0F01A900ECB3A9 /* Uninstaller.nib in Resources */ = {isa = PBXBuildFile; fileRef = C0FC7CC3074CF87800D88CB1 /* Uninstaller.nib */; };
+		C04349190A0F01A900ECB3A9 /* RemoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = C016D9CE0653AA660038E8C5 /* RemoveController.m */; };
+		C043491A0A0F01A900ECB3A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FC7CF6074CFA4D00D88CB1 /* main.m */; };
+		C043491C0A0F01A900ECB3A9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
+		C04349280A0F01B200ECB3A9 /* FTPLogPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = C08C720F05B448FB0062BCC1 /* FTPLogPane.nib */; };
+		C04349290A0F01B200ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C08C721105B448FB0062BCC1 /* InfoPlist.strings */; };
+		C043492A0A0F01B200ECB3A9 /* logging.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0F0918E05C744F7006E1E19 /* logging.tiff */; };
+		C043492B0A0F01B200ECB3A9 /* FTPLogPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD62909AB006F00EF7E68 /* FTPLogPane-Info.plist */; };
+		C043492D0A0F01B200ECB3A9 /* FTPLogPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C08C720A05B448E60062BCC1 /* FTPLogPane.m */; };
+		C043492E0A0F01B200ECB3A9 /* WBTimeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EBE564085D7DB8002C3698 /* WBTimeControl.m */; };
+		C04349300A0F01B200ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349310A0F01B200ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C043493A0A0F01BD00ECB3A9 /* system.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FE0531DE5F00A80013 /* system.tiff */; };
+		C043493B0A0F01BD00ECB3A9 /* ftposx in Resources */ = {isa = PBXBuildFile; fileRef = C03DFE910652B46B0041FAD9 /* ftposx */; };
+		C043493C0A0F01BD00ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A3805266933004CEC9C /* InfoPlist.strings */; };
+		C043493D0A0F01BD00ECB3A9 /* SystemPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A3A05266933004CEC9C /* SystemPane.nib */; };
+		C043493E0A0F01BD00ECB3A9 /* SystemPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63309AB008200EF7E68 /* SystemPane-Info.plist */; };
+		C04349400A0F01BD00ECB3A9 /* SystemPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A3505266922004CEC9C /* SystemPane.m */; };
+		C04349420A0F01BD00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349430A0F01BD00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C043494C0A0F01C600ECB3A9 /* AuthentificationPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A48052669C9004CEC9C /* AuthentificationPane.nib */; };
+		C043494D0A0F01C600ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A4A052669C9004CEC9C /* InfoPlist.strings */; };
+		C043494E0A0F01C600ECB3A9 /* auth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FB0531DE5F00A80013 /* auth.tiff */; };
+		C043494F0A0F01C600ECB3A9 /* AuthPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD63D09AB009A00EF7E68 /* AuthPane-Info.plist */; };
+		C04349510A0F01C600ECB3A9 /* AuthentificationPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A3F05266994004CEC9C /* AuthentificationPane.m */; };
+		C04349520A0F01C600ECB3A9 /* MySQLCC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EDD500064F68950086B4BE /* MySQLCC.m */; };
+		C04349550A0F01C600ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349560A0F01C600ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C043495F0A0F01D000ECB3A9 /* AnonymousPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A5405266A42004CEC9C /* AnonymousPane.nib */; };
+		C04349600A0F01D000ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A5605266A42004CEC9C /* InfoPlist.strings */; };
+		C04349610A0F01D000ECB3A9 /* anonymous.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FA0531DE5F00A80013 /* anonymous.tiff */; };
+		C04349620A0F01D000ECB3A9 /* AnonymousPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD64709AB00B200EF7E68 /* AnonymousPane-Info.plist */; };
+		C04349640A0F01D000ECB3A9 /* AFSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5C072D4D78004B1042 /* AFSBrowserCell.m */; };
+		C04349650A0F01D000ECB3A9 /* AFSNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5E072D4D78004B1042 /* AFSNodeInfo.m */; };
+		C04349660A0F01D000ECB3A9 /* AnonymousPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A4F05266A09004CEC9C /* AnonymousPane.m */; };
+		C04349670A0F01D000ECB3A9 /* NSFileManager+ASExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C02CC07B070074F3002B0A58 /* NSFileManager+ASExtensions.m */; };
+		C04349690A0F01D000ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C043496A0A0F01D000ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04349730A0F01DB00ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A6005266A95004CEC9C /* InfoPlist.strings */; };
+		C04349740A0F01DB00ECB3A9 /* ServerPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A6205266A95004CEC9C /* ServerPane.nib */; };
+		C04349750A0F01DB00ECB3A9 /* settings.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FD0531DE5F00A80013 /* settings.tiff */; };
+		C04349760A0F01DB00ECB3A9 /* ServerSettingsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65109AB00BF00EF7E68 /* ServerSettingsPane-Info.plist */; };
+		C04349780A0F01DB00ECB3A9 /* ServerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B67A5D05266A6E004CEC9C /* ServerPane.m */; };
+		C043497A0A0F01DB00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C043497B0A0F01DB00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04349840A0F01E800ECB3A9 /* options.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FC0531DE5F00A80013 /* options.tiff */; };
+		C04349850A0F01E800ECB3A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6108BC7205267AD00012E572 /* InfoPlist.strings */; };
+		C04349860A0F01E800ECB3A9 /* ServerOptionsPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 6108BC7405267AD00012E572 /* ServerOptionsPane.nib */; };
+		C04349870A0F01E800ECB3A9 /* ServerOptionsPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD65B09AB00CC00EF7E68 /* ServerOptionsPane-Info.plist */; };
+		C04349890A0F01E800ECB3A9 /* ServerOptionsPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 6108BC6F05267ABF0012E572 /* ServerOptionsPane.m */; };
+		C043498B0A0F01E800ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C043498C0A0F01E800ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04349950A0F01F100ECB3A9 /* diraliases.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0A7DFBE0626DD49003AFF9C /* diraliases.tiff */; };
+		C04349960A0F01F100ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF93D072A90740013F213 /* English.lproj */; };
+		C04349970A0F01F100ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF942072A90740013F213 /* French.lproj */; };
+		C04349980A0F01F100ECB3A9 /* DirAliasesPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */; };
+		C043499A0A0F01F100ECB3A9 /* DirAliasesPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C05369E606259AE60027B2A6 /* DirAliasesPane.m */; };
+		C043499C0A0F01F100ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C043499D0A0F01F100ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349A60A0F01FC00ECB3A9 /* ssl.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C07AFA33072A94000013F213 /* ssl.tiff */; };
+		C04349A70A0F01FC00ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF92F072A90540013F213 /* English.lproj */; };
+		C04349A80A0F01FC00ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C07AF935072A90540013F213 /* French.lproj */; };
+		C04349A90A0F01FC00ECB3A9 /* SSLPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */; };
+		C04349AB0A0F01FC00ECB3A9 /* SSLPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C092CFA8060F3079001939CF /* SSLPane.m */; };
+		C04349AC0A0F01FC00ECB3A9 /* SSLWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C092CFE1060F82CD001939CF /* SSLWrapper.m */; };
+		C04349AE0A0F01FC00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349AF0A0F01FC00ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04349B80A0F020500ECB3A9 /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C0378C24078579F000F969C8 /* English.lproj */; };
+		C04349B90A0F020500ECB3A9 /* French.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C0378C29078579F000F969C8 /* French.lproj */; };
+		C04349BA0A0F020500ECB3A9 /* permission.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C0378C2E078579F000F969C8 /* permission.tiff */; };
+		C04349BB0A0F020500ECB3A9 /* PermissionPane-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */; };
+		C04349BD0A0F020500ECB3A9 /* PermissionPane.m in Sources */ = {isa = PBXBuildFile; fileRef = C0378C30078579F000F969C8 /* PermissionPane.m */; };
+		C04349BF0A0F020500ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349C00A0F020500ECB3A9 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
+		C04349C90A0F020F00ECB3A9 /* AuthForAllImplCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = C07586450707E18900D0A299 /* AuthForAllImplCompat.m */; };
+		C04349CA0A0F020F00ECB3A9 /* AuthForAllImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C422F070417DC00DEEEA3 /* AuthForAllImpl.m */; };
+		C04349CB0A0F020F00ECB3A9 /* mLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4C93207082101000BF4D0 /* mLauncher.m */; };
+		C04349CD0A0F020F00ECB3A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		C04349CE0A0F020F00ECB3A9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
+		C04349CF0A0F020F00ECB3A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B2F0B80709689100483574 /* ApplicationServices.framework */; };
+		C04349D00A0F020F00ECB3A9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C204E2903D004418BD /* CoreFoundation.framework */; };
+		C04349D10A0F020F00ECB3A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C04349DC0A0F021800ECB3A9 /* PureFTPOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739D2E09BFB99B00F545F9 /* PureFTPOSX.m */; };
+		C04349DD0A0F021800ECB3A9 /* PureFTPD.m in Sources */ = {isa = PBXBuildFile; fileRef = 612F890604D7C5C100000070 /* PureFTPD.m */; };
+		C04349DF0A0F021800ECB3A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		C04349E00A0F021800ECB3A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B2F0B80709689100483574 /* ApplicationServices.framework */; };
+		C04349E90A0F022000ECB3A9 /* purestats.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FF009C5510600EEAA67 /* purestats.m */; };
+		C04349EA0A0F022000ECB3A9 /* NSXLogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C024260605C97E1F00427579 /* NSXLogParser.m */; };
+		C04349EB0A0F022000ECB3A9 /* HTMLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FFE09C5522F00EEAA67 /* HTMLConverter.m */; };
+		C04349EC0A0F022000ECB3A9 /* CSVConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DD050709C6A33000D8BED1 /* CSVConverter.m */; };
+		C04349ED0A0F022000ECB3A9 /* UserStatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C024272505C987E800427579 /* UserStatsController.m */; };
+		C04349F00A0F022000ECB3A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		C04349F10A0F022000ECB3A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B2F0B80709689100483574 /* ApplicationServices.framework */; };
+		C0434B3E0A0F16D500ECB3A9 /* chartables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B360A0F16D500ECB3A9 /* chartables.m */; };
+		C0434B400A0F16D500ECB3A9 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B380A0F16D500ECB3A9 /* get.m */; };
+		C0434B420A0F16D500ECB3A9 /* maketables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3A0A0F16D500ECB3A9 /* maketables.m */; };
+		C0434B430A0F16D500ECB3A9 /* pcre.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3B0A0F16D500ECB3A9 /* pcre.m */; };
+		C0434B450A0F16D500ECB3A9 /* study.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3D0A0F16D500ECB3A9 /* study.m */; };
+		C0434B460A0F16D500ECB3A9 /* chartables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B360A0F16D500ECB3A9 /* chartables.m */; };
+		C0434B480A0F16D500ECB3A9 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B380A0F16D500ECB3A9 /* get.m */; };
+		C0434B4A0A0F16D500ECB3A9 /* maketables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3A0A0F16D500ECB3A9 /* maketables.m */; };
+		C0434B4B0A0F16D500ECB3A9 /* pcre.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3B0A0F16D500ECB3A9 /* pcre.m */; };
+		C0434B4D0A0F16D500ECB3A9 /* study.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3D0A0F16D500ECB3A9 /* study.m */; };
+		C0434B690A0F19C500ECB3A9 /* puredb_write.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B660A0F19C500ECB3A9 /* puredb_write.m */; };
+		C0434B6C0A0F19C500ECB3A9 /* puredb_write.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B660A0F19C500ECB3A9 /* puredb_write.m */; };
+		C0434B750A0F1A2700ECB3A9 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B380A0F16D500ECB3A9 /* get.m */; };
+		C0434B760A0F1A2800ECB3A9 /* chartables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B360A0F16D500ECB3A9 /* chartables.m */; };
+		C0434B770A0F1A2A00ECB3A9 /* pcre.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3B0A0F16D500ECB3A9 /* pcre.m */; };
+		C0434B780A0F1A2B00ECB3A9 /* maketables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3A0A0F16D500ECB3A9 /* maketables.m */; };
+		C0434B790A0F1A2C00ECB3A9 /* study.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3D0A0F16D500ECB3A9 /* study.m */; };
+		C0434B7B0A0F1A3300ECB3A9 /* get.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B380A0F16D500ECB3A9 /* get.m */; };
+		C0434B7C0A0F1A3400ECB3A9 /* maketables.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3A0A0F16D500ECB3A9 /* maketables.m */; };
+		C0434B7D0A0F1A3500ECB3A9 /* pcre.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3B0A0F16D500ECB3A9 /* pcre.m */; };
+		C0434B7E0A0F1A3600ECB3A9 /* study.m in Sources */ = {isa = PBXBuildFile; fileRef = C0434B3D0A0F16D500ECB3A9 /* study.m */; };
+		C0434C8C0A0F1D8300ECB3A9 /* SMySQL_bundled.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */; };
+		C067D2AF0A18147A003138A3 /* MWGradientView103.m in Sources */ = {isa = PBXBuildFile; fileRef = C067D2AD0A18147A003138A3 /* MWGradientView103.m */; };
+		C067D2B00A18147A003138A3 /* MWGradientView103.m in Sources */ = {isa = PBXBuildFile; fileRef = C067D2AD0A18147A003138A3 /* MWGradientView103.m */; };
 		C0739D2F09BFB99B00F545F9 /* PureFTPOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739D2E09BFB99B00F545F9 /* PureFTPOSX.m */; };
 		C0739D3209BFB9DB00F545F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		C0739E1409BFBC3700F545F9 /* PureFTPD.m in Sources */ = {isa = PBXBuildFile; fileRef = 612F890604D7C5C100000070 /* PureFTPD.m */; };
 		C0739EB809BFBFCF00F545F9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B2F0B80709689100483574 /* ApplicationServices.framework */; };
+		C07800510A0F209F00F22004 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C078004F0A0F209F00F22004 /* SM2DGraphView.framework */; };
+		C078009B0A0F212C00F22004 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */; };
+		C07800B50A0F213800F22004 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */; };
+		C07800BD0A0F214B00F22004 /* SM2DGraphView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */; };
+		C07800C20A0F216400F22004 /* SMySQL_bundled.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */; };
+		C07800C30A0F216400F22004 /* SM2DGraphView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C078004F0A0F209F00F22004 /* SM2DGraphView.framework */; };
+		C07800E90A0F222600F22004 /* SMySQL_bundled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */; };
 		C0AA6FF309C5510600EEAA67 /* purestats.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FF009C5510600EEAA67 /* purestats.m */; };
 		C0AA6FF909C5511300EEAA67 /* NSXLogParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C024260605C97E1F00427579 /* NSXLogParser.m */; };
 		C0AA6FFF09C5522F00EEAA67 /* HTMLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA6FFE09C5522F00EEAA67 /* HTMLConverter.m */; };
-		C0AA701209C552E400EEAA67 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05367A10623E68B0027B2A6 /* libpcre.a */; };
 		C0AA702109C555E400EEAA67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		C0AA70F009C555EE00EEAA67 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B2F0B80709689100483574 /* ApplicationServices.framework */; };
 		C0AA710D09C651C100EEAA67 /* WBTimeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EBE564085D7DB8002C3698 /* WBTimeControl.m */; };
@@ -82,11 +347,7 @@
 		C0ADD57109AAFAFD00EF7E68 /* users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDD04DA6DE700100102 /* users.tiff */; };
 		C0ADD57209AAFAFE00EF7E68 /* vhosts.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FDE04DA6DE700100102 /* vhosts.tiff */; };
 		C0ADD57309AAFAFF00EF7E68 /* status.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 61DF7FE604DA707900100102 /* status.tiff */; };
-		C0ADD57409AAFB0400EF7E68 /* SMySQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EDD55B064F6B920086B4BE /* SMySQL.framework */; };
 		C0ADD57509AAFB0400EF7E68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C044BD440633133C00DA6C38 /* WebKit.framework */; };
-		C0ADD57609AAFB0500EF7E68 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05367A10623E68B0027B2A6 /* libpcre.a */; };
-		C0ADD57709AAFB0600EF7E68 /* libpuredb_write.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05367A20623E68B0027B2A6 /* libpuredb_write.a */; };
-		C0ADD57809AAFB0600EF7E68 /* SM2DGraphView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */; };
 		C0ADD57909AAFB0800EF7E68 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C304E2903D004418BD /* Security.framework */; };
 		C0ADD57A09AAFB0900EF7E68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C0ADD57B09AAFB0900EF7E68 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
@@ -126,9 +387,6 @@
 		C0ADD6A909AB02E000EF7E68 /* AuthentificationPane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A48052669C9004CEC9C /* AuthentificationPane.nib */; };
 		C0ADD6AA09AB02E100EF7E68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61B67A4A052669C9004CEC9C /* InfoPlist.strings */; };
 		C0ADD6AB09AB02E200EF7E68 /* MySQLCC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EDD500064F68950086B4BE /* MySQLCC.m */; };
-		C0ADD6AC09AB02E500EF7E68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		C0ADD6AD09AB02E500EF7E68 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B679A505265620004CEC9C /* PreferencePanes.framework */; };
-		C0ADD6AE09AB02E700EF7E68 /* SMySQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EDD55B064F6B920086B4BE /* SMySQL.framework */; };
 		C0ADD6B009AB02F500EF7E68 /* auth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 619204FB0531DE5F00A80013 /* auth.tiff */; };
 		C0ADD6B209AB031500EF7E68 /* AFSBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5C072D4D78004B1042 /* AFSBrowserCell.m */; };
 		C0ADD6B309AB031500EF7E68 /* AFSNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C0CE5E072D4D78004B1042 /* AFSNodeInfo.m */; };
@@ -200,8 +458,6 @@
 		C0ADD71309AB063100EF7E68 /* AKStopPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BC8B05D1BC9C00A10874 /* AKStopPaneController.m */; };
 		C0ADD71409AB063200EF7E68 /* ManagerProcessEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCC0D405D2EFDB00BB41E9 /* ManagerProcessEngine.m */; };
 		C0ADD71509AB063700EF7E68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C035BD5905D1BD6300A10874 /* main.m */; };
-		C0ADD74209AB06DF00EF7E68 /* SMySQL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C0EDD55B064F6B920086B4BE /* SMySQL.framework */; };
-		C0ADD74309AB06DF00EF7E68 /* SM2DGraphView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */; };
 		C0ADD7FF09AB076600EF7E68 /* FTPLogPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD62809AB006F00EF7E68 /* FTPLogPane.prefPane */; };
 		C0ADD80009AB076600EF7E68 /* SystemPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD63209AB008200EF7E68 /* SystemPane.prefPane */; };
 		C0ADD80109AB076600EF7E68 /* AuthentificationPane.prefPane in Copy PreferencePanes */ = {isa = PBXBuildFile; fileRef = C0ADD63C09AB009A00EF7E68 /* AuthentificationPane.prefPane */; };
@@ -234,6 +490,7 @@
 		C0BE3CA509CD720500B0D01D /* PureFTPd Manager Help in Resources */ = {isa = PBXBuildFile; fileRef = C0BE3C2809CD720500B0D01D /* PureFTPd Manager Help */; };
 		C0BE421809CFE9EC00B0D01D /* UserStatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C024272505C987E800427579 /* UserStatsController.m */; };
 		C0C0CED2072D58E0004B1042 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03815C204E2903D004418BD /* CoreFoundation.framework */; };
+		C0C2951609EDE1FB006CA0CC /* MWWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2951409EDE1FB006CA0CC /* MWWindow.m */; };
 		C0DD050809C6A33000D8BED1 /* CSVConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DD050709C6A33000D8BED1 /* CSVConverter.m */; };
 		C0EBE72D085E6BFF002C3698 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C0F4C93B0708224E000BF4D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
@@ -246,6 +503,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		C043491D0A0F01A900ECB3A9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.3_3;
+			fileType = sourcecode.asm;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		C043491E0A0F01A900ECB3A9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.3_3;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		C04349D20A0F020F00ECB3A9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.4_0;
+			fileType = sourcecode.asm;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		C04349D30A0F020F00ECB3A9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.4_0;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
 		C077656F086A4F83009B4A04 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc.4_0;
@@ -306,6 +595,90 @@
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
+		C0434A0E0A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04348E10A0F019C00ECB3A9;
+			remoteInfo = "PureFTPd Manager Setup Assistant (UB)";
+		};
+		C0434A100A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349260A0F01B200ECB3A9;
+			remoteInfo = "FTPLogPane (UB)";
+		};
+		C0434A120A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349380A0F01BD00ECB3A9;
+			remoteInfo = "SystemPane (UB)";
+		};
+		C0434A140A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C043494A0A0F01C600ECB3A9;
+			remoteInfo = "AuthPane (UB)";
+		};
+		C0434A160A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C043495D0A0F01D000ECB3A9;
+			remoteInfo = "AnonymousPane (UB)";
+		};
+		C0434A180A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349710A0F01DB00ECB3A9;
+			remoteInfo = "ServerSettingsPane (UB)";
+		};
+		C0434A1A0A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349820A0F01E800ECB3A9;
+			remoteInfo = "ServerOptionsPane (UB)";
+		};
+		C0434A1C0A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349930A0F01F100ECB3A9;
+			remoteInfo = "DirAliasesPane (UB)";
+		};
+		C0434A1E0A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349A40A0F01FC00ECB3A9;
+			remoteInfo = "SSLPane (UB)";
+		};
+		C0434A200A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349B60A0F020500ECB3A9;
+			remoteInfo = "PermissionPane (UB)";
+		};
+		C0434A220A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349DA0A0F021800ECB3A9;
+			remoteInfo = "PureFTPOSX (UB)";
+		};
+		C0434A240A0F030C00ECB3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04349E70A0F022000ECB3A9;
+			remoteInfo = "purestats (UB)";
+		};
 		C0739EC209BFC07A00F545F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -393,14 +766,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C04348CB0A0F015D00ECB3A9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C07800C20A0F216400F22004 /* SMySQL_bundled.framework in Copy Frameworks */,
+				C07800C30A0F216400F22004 /* SM2DGraphView.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04348CF0A0F015D00ECB3A9 /* Copy PreferencePanes */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../PreferencePanes;
+			dstSubfolderSpec = 7;
+			files = (
+				C04348D00A0F015D00ECB3A9 /* FTPLogPane.prefPane in Copy PreferencePanes */,
+				C04348D10A0F015D00ECB3A9 /* SystemPane.prefPane in Copy PreferencePanes */,
+				C04348D20A0F015D00ECB3A9 /* AuthentificationPane.prefPane in Copy PreferencePanes */,
+				C04348D30A0F015D00ECB3A9 /* AnonymousPane.prefPane in Copy PreferencePanes */,
+				C04348D40A0F015D00ECB3A9 /* ServerPane.prefPane in Copy PreferencePanes */,
+				C04348D50A0F015D00ECB3A9 /* ServerOptionsPane.prefPane in Copy PreferencePanes */,
+				C04348D60A0F015D00ECB3A9 /* DirAliasesPane.prefPane in Copy PreferencePanes */,
+				C04348D70A0F015D00ECB3A9 /* SSLPane.prefPane in Copy PreferencePanes */,
+				C04348D80A0F015D00ECB3A9 /* PermissionPane.prefPane in Copy PreferencePanes */,
+			);
+			name = "Copy PreferencePanes";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0ADD73109AB06A800EF7E68 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C0ADD74209AB06DF00EF7E68 /* SMySQL.framework in Copy Frameworks */,
-				C0ADD74309AB06DF00EF7E68 /* SM2DGraphView.framework in Copy Frameworks */,
+				C07800BD0A0F214B00F22004 /* SM2DGraphView.framework in Copy Frameworks */,
+				C0434C8C0A0F1D8300ECB3A9 /* SMySQL_bundled.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,14 +964,52 @@
 		C03DFBBB0652475C0041FAD9 /* FSIconImage-LinkArrow.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "FSIconImage-LinkArrow.icns"; path = "images/browser/FSIconImage-LinkArrow.icns"; sourceTree = "<group>"; };
 		C03DFD6E065292710041FAD9 /* ftposx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = ftposx; path = sources/ftposx; sourceTree = "<group>"; };
 		C03DFE910652B46B0041FAD9 /* ftposx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = ftposx; path = "sources/Preferences/Preference Panes/SystemPane/ftposx"; sourceTree = "<group>"; };
+		C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMySQL_bundled.framework; path = sources/lib/PPC/SMySQL_bundled.framework; sourceTree = "<group>"; };
+		C04348DD0A0F015D00ECB3A9 /* PureFTPd Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04348DF0A0F015D00ECB3A9 /* PureFTPd Manager-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager-Info copy.plist"; path = "./Property Lists/PureFTPd Manager-Info copy.plist"; sourceTree = "<group>"; };
+		C04349110A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager Setup Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349130A0F019C00ECB3A9 /* PureFTPd Assistant-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Assistant-Info copy.plist"; path = "./Property Lists/PureFTPd Assistant-Info copy.plist"; sourceTree = "<group>"; };
+		C04349230A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureFTPd Manager Uninstaller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349250A0F01AA00ECB3A9 /* PureFTPd Manager Uninstaller-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager Uninstaller-Info copy.plist"; path = "./Property Lists/PureFTPd Manager Uninstaller-Info copy.plist"; sourceTree = "<group>"; };
+		C04349360A0F01B200ECB3A9 /* FTPLogPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTPLogPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349370A0F01B300ECB3A9 /* FTPLogPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "FTPLogPane-Info copy.plist"; path = "./Property Lists/FTPLogPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349480A0F01BD00ECB3A9 /* SystemPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SystemPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349490A0F01BE00ECB3A9 /* SystemPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SystemPane-Info copy.plist"; path = "./Property Lists/SystemPane-Info copy.plist"; sourceTree = "<group>"; };
+		C043495B0A0F01C600ECB3A9 /* AuthentificationPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthentificationPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C043495C0A0F01C600ECB3A9 /* AuthPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AuthPane-Info copy.plist"; path = "./Property Lists/AuthPane-Info copy.plist"; sourceTree = "<group>"; };
+		C043496F0A0F01D000ECB3A9 /* AnonymousPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnonymousPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349700A0F01D100ECB3A9 /* AnonymousPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "AnonymousPane-Info copy.plist"; path = "./Property Lists/AnonymousPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349800A0F01DB00ECB3A9 /* ServerPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349810A0F01DB00ECB3A9 /* ServerSettingsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerSettingsPane-Info copy.plist"; path = "./Property Lists/ServerSettingsPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349910A0F01E800ECB3A9 /* ServerOptionsPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServerOptionsPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349920A0F01E800ECB3A9 /* ServerOptionsPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "ServerOptionsPane-Info copy.plist"; path = "./Property Lists/ServerOptionsPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349A20A0F01F100ECB3A9 /* DirAliasesPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirAliasesPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349A30A0F01F100ECB3A9 /* DirAliasesPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "DirAliasesPane-Info copy.plist"; path = "./Property Lists/DirAliasesPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349B40A0F01FC00ECB3A9 /* SSLPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349B50A0F01FD00ECB3A9 /* SSLPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "SSLPane-Info copy.plist"; path = "./Property Lists/SSLPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349C50A0F020500ECB3A9 /* PermissionPane.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PermissionPane.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349C60A0F020500ECB3A9 /* PermissionPane-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PermissionPane-Info copy.plist"; path = "./Property Lists/PermissionPane-Info copy.plist"; sourceTree = "<group>"; };
+		C04349D80A0F020F00ECB3A9 /* Launcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Launcher; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349E50A0F021800ECB3A9 /* PureFTPOSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PureFTPOSX; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04349F60A0F022000ECB3A9 /* purestats */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = purestats; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0434B360A0F16D500ECB3A9 /* chartables.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = chartables.m; sourceTree = "<group>"; };
+		C0434B370A0F16D500ECB3A9 /* config.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		C0434B380A0F16D500ECB3A9 /* get.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = get.m; sourceTree = "<group>"; };
+		C0434B390A0F16D500ECB3A9 /* internal.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		C0434B3A0A0F16D500ECB3A9 /* maketables.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = maketables.m; sourceTree = "<group>"; };
+		C0434B3B0A0F16D500ECB3A9 /* pcre.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = pcre.m; sourceTree = "<group>"; };
+		C0434B3C0A0F16D500ECB3A9 /* pcre.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = pcre.h; sourceTree = "<group>"; };
+		C0434B3D0A0F16D500ECB3A9 /* study.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = study.m; sourceTree = "<group>"; };
+		C0434B660A0F19C500ECB3A9 /* puredb_write.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = puredb_write.m; path = "sources/lib/puredb-2.1/puredb_write.m"; sourceTree = "<group>"; };
+		C0434B670A0F19C500ECB3A9 /* puredb_write.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = puredb_write.h; path = "sources/lib/puredb-2.1/puredb_write.h"; sourceTree = "<group>"; };
+		C0434B680A0F19C500ECB3A9 /* puredb_p.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = puredb_p.h; path = "sources/lib/puredb-2.1/puredb_p.h"; sourceTree = "<group>"; };
+		C0434C740A0F1C8400ECB3A9 /* PureFTPd Manager-Info copy 2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PureFTPd Manager-Info copy 2.plist"; path = "./Property Lists/PureFTPd Manager-Info copy 2.plist"; sourceTree = "<group>"; };
 		C044BC230633034400DA6C38 /* StatusController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = StatusController.m; path = sources/StatusController.m; sourceTree = "<group>"; };
 		C044BC240633034400DA6C38 /* StatusController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = StatusController.h; path = sources/StatusController.h; sourceTree = "<group>"; };
 		C044BD440633133C00DA6C38 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		C044BD76063314F100DA6C38 /* PureFTP.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PureFTP.nib; path = sources/English.lproj/PureFTP.nib; sourceTree = "<group>"; };
 		C04C422F070417DC00DEEEA3 /* AuthForAllImpl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AuthForAllImpl.m; path = sources/AuthForAllImpl.m; sourceTree = "<group>"; };
 		C04C4230070417DC00DEEEA3 /* AuthForAllImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AuthForAllImpl.h; path = sources/AuthForAllImpl.h; sourceTree = "<group>"; };
-		C05367A10623E68B0027B2A6 /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = sources/lib/libpcre.a; sourceTree = "<group>"; };
-		C05367A20623E68B0027B2A6 /* libpuredb_write.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpuredb_write.a; path = sources/lib/libpuredb_write.a; sourceTree = "<group>"; };
 		C05369E506259AE60027B2A6 /* DirAliasesPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirAliasesPane.h; path = "sources/Preferences/Preference Panes/DirAliasesPane/DirAliasesPane.h"; sourceTree = "<group>"; };
 		C05369E606259AE60027B2A6 /* DirAliasesPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirAliasesPane.m; path = "sources/Preferences/Preference Panes/DirAliasesPane/DirAliasesPane.m"; sourceTree = "<group>"; };
 		C05F8F5909AB15C600E68EC1 /* NSNavSidebarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSNavSidebarScrollView.h; path = sources/include/NSNavSidebarScrollView.h; sourceTree = "<group>"; };
@@ -576,10 +1018,14 @@
 		C05F8F5C09AB15C600E68EC1 /* NSNavNode.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSNavNode.h; path = sources/include/NSNavNode.h; sourceTree = "<group>"; };
 		C05F8F5D09AB15C600E68EC1 /* NSNavFBENode.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSNavFBENode.h; path = sources/include/NSNavFBENode.h; sourceTree = "<group>"; };
 		C05F8F5E09AB15C600E68EC1 /* NSNavBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSNavBrowserCell.h; path = sources/include/NSNavBrowserCell.h; sourceTree = "<group>"; };
+		C067D2AC0A18147A003138A3 /* MWGradientView103.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWGradientView103.h; path = sources/MWGradientView103.h; sourceTree = "<group>"; };
+		C067D2AD0A18147A003138A3 /* MWGradientView103.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWGradientView103.m; path = sources/MWGradientView103.m; sourceTree = "<group>"; };
 		C0739D2709BFB94D00F545F9 /* PureFTPOSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PureFTPOSX; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0739D2E09BFB99B00F545F9 /* PureFTPOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PureFTPOSX.m; path = PureFTPOSX/PureFTPOSX.m; sourceTree = "<group>"; };
 		C07586450707E18900D0A299 /* AuthForAllImplCompat.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AuthForAllImplCompat.m; path = sources/AuthForAllImplCompat.m; sourceTree = "<group>"; };
 		C07586650707E49800D0A299 /* AuthForAllImplCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthForAllImplCompat.h; path = sources/AuthForAllImplCompat.h; sourceTree = "<group>"; };
+		C078004F0A0F209F00F22004 /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = sources/lib/UB/SM2DGraphView.framework; sourceTree = "<group>"; };
+		C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMySQL_bundled.framework; path = sources/lib/UB/SMySQL_bundled.framework; sourceTree = "<group>"; };
 		C079CEBB0577CF0800A80013 /* tablemenu.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = tablemenu.tiff; path = images/tablemenu.tiff; sourceTree = "<group>"; };
 		C07AF92F072A90540013F213 /* English.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English.lproj; path = "sources/Preferences/Preference Panes/SSLPane/English.lproj"; sourceTree = "<group>"; };
 		C07AF935072A90540013F213 /* French.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = French.lproj; path = "sources/Preferences/Preference Panes/SSLPane/French.lproj"; sourceTree = "<group>"; };
@@ -649,7 +1095,12 @@
 		C0C0D162072D8177004B1042 /* NSBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSBrowserView.m; path = sources/NSBrowserView.m; sourceTree = "<group>"; };
 		C0C0D3DF072DA091004B1042 /* JMNavSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMNavSplitView.h; path = sources/JMNavSplitView.h; sourceTree = "<group>"; };
 		C0C0D3E0072DA091004B1042 /* JMNavSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMNavSplitView.m; path = sources/JMNavSplitView.m; sourceTree = "<group>"; };
-		C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = sources/lib/SM2DGraphView.framework; sourceTree = "<group>"; };
+		C0C2951309EDE1FB006CA0CC /* MWWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWWindow.h; path = sources/MWWindow.h; sourceTree = "<group>"; };
+		C0C2951409EDE1FB006CA0CC /* MWWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWWindow.m; path = sources/MWWindow.m; sourceTree = "<group>"; };
+		C0C2994909EE4896006CA0CC /* MWGradientView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MWGradientView.h; path = sources/MWGradientView.h; sourceTree = "<group>"; };
+		C0C2994A09EE4896006CA0CC /* MWGradientView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MWGradientView.m; path = sources/MWGradientView.m; sourceTree = "<group>"; };
+		C0C29A9D09EE5B79006CA0CC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SM2DGraphView.framework; path = sources/lib/PPC/SM2DGraphView.framework; sourceTree = "<group>"; };
 		C0D5ADFD05CAEAEF005825BC /* GraphController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = GraphController.h; path = sources/GraphController.h; sourceTree = "<group>"; };
 		C0D5ADFE05CAEAEF005825BC /* GraphController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = GraphController.m; path = sources/GraphController.m; sourceTree = "<group>"; };
 		C0D898FF07223CAF00898826 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = sources/SetupAssistant/French.lproj/AKAnonymousPane.nib; sourceTree = "<group>"; };
@@ -699,7 +1150,6 @@
 		C0EBE6F1085E67E0002C3698 /* ftptiger */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = ftptiger; path = sources/ftptiger; sourceTree = "<group>"; };
 		C0EDD4FF064F68950086B4BE /* MySQLCC.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MySQLCC.h; path = "sources/Preferences/Preference Panes/AuthentificationPane/MySQLCC.h"; sourceTree = "<group>"; };
 		C0EDD500064F68950086B4BE /* MySQLCC.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MySQLCC.m; path = "sources/Preferences/Preference Panes/AuthentificationPane/MySQLCC.m"; sourceTree = "<group>"; };
-		C0EDD55B064F6B920086B4BE /* SMySQL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMySQL.framework; path = sources/lib/SMySQL.framework; sourceTree = "<group>"; };
 		C0F0918E05C744F7006E1E19 /* logging.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = logging.tiff; path = images/toolbar/logging.tiff; sourceTree = "<group>"; };
 		C0F092C605C82843006E1E19 /* Manager.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Manager.icns; path = images/Manager.icns; sourceTree = "<group>"; };
 		C0F4C92407082083000BF4D0 /* Launcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Launcher; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -717,6 +1167,151 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C04348C00A0F015D00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04348C10A0F015D00ECB3A9 /* WebKit.framework in Frameworks */,
+				C04348C50A0F015D00ECB3A9 /* Security.framework in Frameworks */,
+				C04348C60A0F015D00ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04348C70A0F015D00ECB3A9 /* PreferencePanes.framework in Frameworks */,
+				C04348C80A0F015D00ECB3A9 /* Carbon.framework in Frameworks */,
+				C04348C90A0F015D00ECB3A9 /* QuartzCore.framework in Frameworks */,
+				C07800510A0F209F00F22004 /* SM2DGraphView.framework in Frameworks */,
+				C078009B0A0F212C00F22004 /* SMySQL_bundled.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349090A0F019C00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043490A0A0F019C00ECB3A9 /* CoreFoundation.framework in Frameworks */,
+				C043490B0A0F019C00ECB3A9 /* Security.framework in Frameworks */,
+				C043490C0A0F019C00ECB3A9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043491B0A0F01A900ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043491C0A0F01A900ECB3A9 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043492F0A0F01B200ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349300A0F01B200ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04349310A0F01B200ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349410A0F01BD00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349420A0F01BD00ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04349430A0F01BD00ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349530A0F01C600ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349550A0F01C600ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04349560A0F01C600ECB3A9 /* PreferencePanes.framework in Frameworks */,
+				C07800E90A0F222600F22004 /* SMySQL_bundled.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349680A0F01D000ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349690A0F01D000ECB3A9 /* Cocoa.framework in Frameworks */,
+				C043496A0A0F01D000ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349790A0F01DB00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043497A0A0F01DB00ECB3A9 /* Cocoa.framework in Frameworks */,
+				C043497B0A0F01DB00ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043498A0A0F01E800ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043498B0A0F01E800ECB3A9 /* Cocoa.framework in Frameworks */,
+				C043498C0A0F01E800ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043499B0A0F01F100ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043499C0A0F01F100ECB3A9 /* PreferencePanes.framework in Frameworks */,
+				C043499D0A0F01F100ECB3A9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349AD0A0F01FC00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349AE0A0F01FC00ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04349AF0A0F01FC00ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349BE0A0F020500ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349BF0A0F020500ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04349C00A0F020500ECB3A9 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349CC0A0F020F00ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349CD0A0F020F00ECB3A9 /* Foundation.framework in Frameworks */,
+				C04349CE0A0F020F00ECB3A9 /* Security.framework in Frameworks */,
+				C04349CF0A0F020F00ECB3A9 /* ApplicationServices.framework in Frameworks */,
+				C04349D00A0F020F00ECB3A9 /* CoreFoundation.framework in Frameworks */,
+				C04349D10A0F020F00ECB3A9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349DE0A0F021800ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349DF0A0F021800ECB3A9 /* Foundation.framework in Frameworks */,
+				C04349E00A0F021800ECB3A9 /* ApplicationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349EE0A0F022000ECB3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349F00A0F022000ECB3A9 /* Foundation.framework in Frameworks */,
+				C04349F10A0F022000ECB3A9 /* ApplicationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0739D2509BFB94D00F545F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -730,7 +1325,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0AA701209C552E400EEAA67 /* libpcre.a in Frameworks */,
 				C0AA702109C555E400EEAA67 /* Foundation.framework in Frameworks */,
 				C0AA70F009C555EE00EEAA67 /* ApplicationServices.framework in Frameworks */,
 			);
@@ -740,15 +1334,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0ADD57409AAFB0400EF7E68 /* SMySQL.framework in Frameworks */,
 				C0ADD57509AAFB0400EF7E68 /* WebKit.framework in Frameworks */,
-				C0ADD57609AAFB0500EF7E68 /* libpcre.a in Frameworks */,
-				C0ADD57709AAFB0600EF7E68 /* libpuredb_write.a in Frameworks */,
-				C0ADD57809AAFB0600EF7E68 /* SM2DGraphView.framework in Frameworks */,
 				C0ADD57909AAFB0800EF7E68 /* Security.framework in Frameworks */,
 				C0ADD57A09AAFB0900EF7E68 /* Cocoa.framework in Frameworks */,
 				C0ADD57B09AAFB0900EF7E68 /* PreferencePanes.framework in Frameworks */,
 				C0BE374E09CD609E00B0D01D /* Carbon.framework in Frameworks */,
+				C04347980A0EFCCC00ECB3A9 /* SMySQL_bundled.framework in Frameworks */,
+				C07800B50A0F213800F22004 /* SM2DGraphView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,9 +1376,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0ADD6AC09AB02E500EF7E68 /* Cocoa.framework in Frameworks */,
-				C0ADD6AD09AB02E500EF7E68 /* PreferencePanes.framework in Frameworks */,
-				C0ADD6AE09AB02E700EF7E68 /* SMySQL.framework in Frameworks */,
+				C04347B30A0EFCD400ECB3A9 /* SMySQL_bundled.framework in Frameworks */,
+				C04348000A0EFDF500ECB3A9 /* Cocoa.framework in Frameworks */,
+				C04348010A0EFDF600ECB3A9 /* PreferencePanes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +1480,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0C29A9D09EE5B79006CA0CC /* QuartzCore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				61B679A505265620004CEC9C /* PreferencePanes.framework */,
 			);
@@ -923,6 +1516,21 @@
 				C0F4C92407082083000BF4D0 /* Launcher */,
 				C0739D2709BFB94D00F545F9 /* PureFTPOSX */,
 				C0AA6FEC09C550C600EEAA67 /* purestats */,
+				C04348DD0A0F015D00ECB3A9 /* PureFTPd Manager.app */,
+				C04349110A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant.app */,
+				C04349230A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller.app */,
+				C04349360A0F01B200ECB3A9 /* FTPLogPane.prefPane */,
+				C04349480A0F01BD00ECB3A9 /* SystemPane.prefPane */,
+				C043495B0A0F01C600ECB3A9 /* AuthentificationPane.prefPane */,
+				C043496F0A0F01D000ECB3A9 /* AnonymousPane.prefPane */,
+				C04349800A0F01DB00ECB3A9 /* ServerPane.prefPane */,
+				C04349910A0F01E800ECB3A9 /* ServerOptionsPane.prefPane */,
+				C04349A20A0F01F100ECB3A9 /* DirAliasesPane.prefPane */,
+				C04349B40A0F01FC00ECB3A9 /* SSLPane.prefPane */,
+				C04349C50A0F020500ECB3A9 /* PermissionPane.prefPane */,
+				C04349D80A0F020F00ECB3A9 /* Launcher */,
+				C04349E50A0F021800ECB3A9 /* PureFTPOSX */,
+				C04349F60A0F022000ECB3A9 /* purestats */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -938,6 +1546,7 @@
 				C05F8ED709AB128400E68EC1 /* Property List */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				C04349250A0F01AA00ECB3A9 /* PureFTPd Manager Uninstaller-Info copy.plist */,
 			);
 			name = PureFTP;
 			sourceTree = "<group>";
@@ -945,6 +1554,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C0434B350A0F16D500ECB3A9 /* pcre-4.3 */,
+				C0434B640A0F19B200ECB3A9 /* puredb_write */,
 				C0739D2909BFB96300F545F9 /* PureFTPOSX */,
 				C0FC7CB3074CF77F00D88CB1 /* Uninstaller */,
 				C0180917070AFCBD00D98833 /* Launcher */,
@@ -978,11 +1589,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0EDD55B064F6B920086B4BE /* SMySQL.framework */,
+				C0434A260A0F031C00ECB3A9 /* PPC */,
+				C043483A0A0F005400ECB3A9 /* UB */,
 				C044BD440633133C00DA6C38 /* WebKit.framework */,
-				C05367A10623E68B0027B2A6 /* libpcre.a */,
-				C05367A20623E68B0027B2A6 /* libpuredb_write.a */,
-				C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */,
 				C03815C104E2900A004418BD /* Authentificator */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
@@ -1291,6 +1900,12 @@
 				C03CC0740575449C00A80013 /* NSXAppKit.h */,
 				C024260505C97E1F00427579 /* NSXLogParser.h */,
 				C024260605C97E1F00427579 /* NSXLogParser.m */,
+				C0C2951309EDE1FB006CA0CC /* MWWindow.h */,
+				C0C2951409EDE1FB006CA0CC /* MWWindow.m */,
+				C0C2994909EE4896006CA0CC /* MWGradientView.h */,
+				C0C2994A09EE4896006CA0CC /* MWGradientView.m */,
+				C067D2AC0A18147A003138A3 /* MWGradientView103.h */,
+				C067D2AD0A18147A003138A3 /* MWGradientView103.m */,
 			);
 			name = AppKit;
 			sourceTree = "<group>";
@@ -1302,6 +1917,50 @@
 				C03DFBBB0652475C0041FAD9 /* FSIconImage-LinkArrow.icns */,
 			);
 			name = Browser;
+			sourceTree = "<group>";
+		};
+		C043483A0A0F005400ECB3A9 /* UB */ = {
+			isa = PBXGroup;
+			children = (
+				C078004F0A0F209F00F22004 /* SM2DGraphView.framework */,
+				C078009A0A0F212C00F22004 /* SMySQL_bundled.framework */,
+			);
+			name = UB;
+			sourceTree = "<group>";
+		};
+		C0434A260A0F031C00ECB3A9 /* PPC */ = {
+			isa = PBXGroup;
+			children = (
+				C0D5ADC605CAD8E5005825BC /* SM2DGraphView.framework */,
+				C04347970A0EFCCB00ECB3A9 /* SMySQL_bundled.framework */,
+			);
+			name = PPC;
+			sourceTree = "<group>";
+		};
+		C0434B350A0F16D500ECB3A9 /* pcre-4.3 */ = {
+			isa = PBXGroup;
+			children = (
+				C0434B360A0F16D500ECB3A9 /* chartables.m */,
+				C0434B370A0F16D500ECB3A9 /* config.h */,
+				C0434B380A0F16D500ECB3A9 /* get.m */,
+				C0434B390A0F16D500ECB3A9 /* internal.h */,
+				C0434B3A0A0F16D500ECB3A9 /* maketables.m */,
+				C0434B3B0A0F16D500ECB3A9 /* pcre.m */,
+				C0434B3C0A0F16D500ECB3A9 /* pcre.h */,
+				C0434B3D0A0F16D500ECB3A9 /* study.m */,
+			);
+			name = "pcre-4.3";
+			path = "sources/lib/pcre-4.3";
+			sourceTree = "<group>";
+		};
+		C0434B640A0F19B200ECB3A9 /* puredb_write */ = {
+			isa = PBXGroup;
+			children = (
+				C0434B660A0F19C500ECB3A9 /* puredb_write.m */,
+				C0434B670A0F19C500ECB3A9 /* puredb_write.h */,
+				C0434B680A0F19C500ECB3A9 /* puredb_p.h */,
+			);
+			name = puredb_write;
 			sourceTree = "<group>";
 		};
 		C044BC2D0633035B00DA6C38 /* Server Logging */ = {
@@ -1351,6 +2010,18 @@
 				C0ADD66509AB00D900EF7E68 /* DirAliasesPane-Info.plist */,
 				C0ADD66F09AB00E600EF7E68 /* SSLPane-Info.plist */,
 				C0ADD67909AB00FA00EF7E68 /* PermissionPane-Info.plist */,
+				C04348DF0A0F015D00ECB3A9 /* PureFTPd Manager-Info copy.plist */,
+				C04349130A0F019C00ECB3A9 /* PureFTPd Assistant-Info copy.plist */,
+				C04349370A0F01B300ECB3A9 /* FTPLogPane-Info copy.plist */,
+				C04349490A0F01BE00ECB3A9 /* SystemPane-Info copy.plist */,
+				C043495C0A0F01C600ECB3A9 /* AuthPane-Info copy.plist */,
+				C04349700A0F01D100ECB3A9 /* AnonymousPane-Info copy.plist */,
+				C04349810A0F01DB00ECB3A9 /* ServerSettingsPane-Info copy.plist */,
+				C04349920A0F01E800ECB3A9 /* ServerOptionsPane-Info copy.plist */,
+				C04349A30A0F01F100ECB3A9 /* DirAliasesPane-Info copy.plist */,
+				C04349B50A0F01FD00ECB3A9 /* SSLPane-Info copy.plist */,
+				C04349C60A0F020500ECB3A9 /* PermissionPane-Info copy.plist */,
+				C0434C740A0F1C8400ECB3A9 /* PureFTPd Manager-Info copy 2.plist */,
 			);
 			name = "Property List";
 			sourceTree = "<group>";
@@ -1483,6 +2154,789 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C04348530A0F015D00ECB3A9 /* PureFTPd Manager (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04348D90A0F015D00ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager (UB)" */;
+			buildPhases = (
+				C043486C0A0F015D00ECB3A9 /* Resources */,
+				C04348A10A0F015D00ECB3A9 /* Sources */,
+				C04348C00A0F015D00ECB3A9 /* Frameworks */,
+				C04348CB0A0F015D00ECB3A9 /* Copy Frameworks */,
+				C04348CF0A0F015D00ECB3A9 /* Copy PreferencePanes */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "PureFTPd Manager-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+				C0434A0F0A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A110A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A130A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A150A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A170A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A190A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A1B0A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A1D0A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A1F0A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A210A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A230A0F030C00ECB3A9 /* PBXTargetDependency */,
+				C0434A250A0F030C00ECB3A9 /* PBXTargetDependency */,
+			);
+			name = "PureFTPd Manager (UB)";
+			productName = "PureFTPd Manager";
+			productReference = C04348DD0A0F015D00ECB3A9 /* PureFTPd Manager.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.PureFTPd Manager</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.application";
+		};
+		C04348E10A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043490D0A0F019C00ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager Setup Assistant (UB)" */;
+			buildPhases = (
+				C04348E20A0F019C00ECB3A9 /* Resources */,
+				C04348FB0A0F019C00ECB3A9 /* Sources */,
+				C04349090A0F019C00ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "PureFTPd Assistant-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Assistant";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "PureFTPd Manager Setup Assistant (UB)";
+			productName = "PureFTPd Assistant";
+			productReference = C04349110A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.PureFTPd Assistant</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.application";
+		};
+		C04349140A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043491F0A0F01A900ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager Uninstaller (UB)" */;
+			buildPhases = (
+				C04349150A0F01A900ECB3A9 /* Resources */,
+				C04349180A0F01A900ECB3A9 /* Sources */,
+				C043491B0A0F01A900ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+				C043491D0A0F01A900ECB3A9 /* PBXBuildRule */,
+				C043491E0A0F01A900ECB3A9 /* PBXBuildRule */,
+			);
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "PureFTPd Manager Uninstaller-Info.plist";
+				INSTALL_PATH = "$(USER_APPS_DIR)";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			dependencies = (
+			);
+			name = "PureFTPd Manager Uninstaller (UB)";
+			productName = "PureFTPd Manager Uninstaller";
+			productReference = C04349230A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>PureFTPd Manager Uninstaller</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.PureFTPd_Manager_Uninstaller</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.application";
+		};
+		C04349260A0F01B200ECB3A9 /* FTPLogPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349320A0F01B200ECB3A9 /* Build configuration list for PBXNativeTarget "FTPLogPane (UB)" */;
+			buildPhases = (
+				C04349270A0F01B200ECB3A9 /* Resources */,
+				C043492C0A0F01B200ECB3A9 /* Sources */,
+				C043492F0A0F01B200ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "FTPLogPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTPLogPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "FTPLogPane (UB)";
+			productName = FTPLogPane;
+			productReference = C04349360A0F01B200ECB3A9 /* FTPLogPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>FTPLogPane</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.FTPLogPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CSResourcesFileMapped</key>
+	<string>yes</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349380A0F01BD00ECB3A9 /* SystemPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349440A0F01BD00ECB3A9 /* Build configuration list for PBXNativeTarget "SystemPane (UB)" */;
+			buildPhases = (
+				C04349390A0F01BD00ECB3A9 /* Resources */,
+				C043493F0A0F01BD00ECB3A9 /* Sources */,
+				C04349410A0F01BD00ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SystemPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SystemPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "SystemPane (UB)";
+			productName = SystemPane;
+			productReference = C04349480A0F01BD00ECB3A9 /* SystemPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.SystemPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C043494A0A0F01C600ECB3A9 /* AuthPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349570A0F01C600ECB3A9 /* Build configuration list for PBXNativeTarget "AuthPane (UB)" */;
+			buildPhases = (
+				C043494B0A0F01C600ECB3A9 /* Resources */,
+				C04349500A0F01C600ECB3A9 /* Sources */,
+				C04349530A0F01C600ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "AuthPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AuthPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "AuthPane (UB)";
+			productName = AuthPane;
+			productReference = C043495B0A0F01C600ECB3A9 /* AuthentificationPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.AuthPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C043495D0A0F01D000ECB3A9 /* AnonymousPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043496B0A0F01D000ECB3A9 /* Build configuration list for PBXNativeTarget "AnonymousPane (UB)" */;
+			buildPhases = (
+				C043495E0A0F01D000ECB3A9 /* Resources */,
+				C04349630A0F01D000ECB3A9 /* Sources */,
+				C04349680A0F01D000ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "AnonymousPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AnonymousPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "AnonymousPane (UB)";
+			productName = AnonymousPane;
+			productReference = C043496F0A0F01D000ECB3A9 /* AnonymousPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.AnonymousPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349710A0F01DB00ECB3A9 /* ServerSettingsPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043497C0A0F01DB00ECB3A9 /* Build configuration list for PBXNativeTarget "ServerSettingsPane (UB)" */;
+			buildPhases = (
+				C04349720A0F01DB00ECB3A9 /* Resources */,
+				C04349770A0F01DB00ECB3A9 /* Sources */,
+				C04349790A0F01DB00ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "ServerSettingsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerSettingsPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "ServerSettingsPane (UB)";
+			productName = ServerSettingsPane;
+			productReference = C04349800A0F01DB00ECB3A9 /* ServerPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.ServerSettingsPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349820A0F01E800ECB3A9 /* ServerOptionsPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043498D0A0F01E800ECB3A9 /* Build configuration list for PBXNativeTarget "ServerOptionsPane (UB)" */;
+			buildPhases = (
+				C04349830A0F01E800ECB3A9 /* Resources */,
+				C04349880A0F01E800ECB3A9 /* Sources */,
+				C043498A0A0F01E800ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "ServerOptionsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerOptionsPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "ServerOptionsPane (UB)";
+			productName = ServerOptionsPane;
+			productReference = C04349910A0F01E800ECB3A9 /* ServerOptionsPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.ServerOptionsPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349930A0F01F100ECB3A9 /* DirAliasesPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043499E0A0F01F100ECB3A9 /* Build configuration list for PBXNativeTarget "DirAliasesPane (UB)" */;
+			buildPhases = (
+				C04349940A0F01F100ECB3A9 /* Resources */,
+				C04349990A0F01F100ECB3A9 /* Sources */,
+				C043499B0A0F01F100ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "DirAliasesPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DirAliasesPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "DirAliasesPane (UB)";
+			productName = DirAliasesPane;
+			productReference = C04349A20A0F01F100ECB3A9 /* DirAliasesPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.DirAliasesPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349A40A0F01FC00ECB3A9 /* SSLPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349B00A0F01FC00ECB3A9 /* Build configuration list for PBXNativeTarget "SSLPane (UB)" */;
+			buildPhases = (
+				C04349A50A0F01FC00ECB3A9 /* Resources */,
+				C04349AA0A0F01FC00ECB3A9 /* Sources */,
+				C04349AD0A0F01FC00ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SSLPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SSLPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "SSLPane (UB)";
+			productName = SSLPane;
+			productReference = C04349B40A0F01FC00ECB3A9 /* SSLPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.SSLPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349B60A0F020500ECB3A9 /* PermissionPane (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349C10A0F020500ECB3A9 /* Build configuration list for PBXNativeTarget "PermissionPane (UB)" */;
+			buildPhases = (
+				C04349B70A0F020500ECB3A9 /* Resources */,
+				C04349BC0A0F020500ECB3A9 /* Sources */,
+				C04349BE0A0F020500ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "PermissionPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PermissionPane;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "PermissionPane (UB)";
+			productName = PermissionPane;
+			productReference = C04349C50A0F020500ECB3A9 /* PermissionPane.prefPane */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.PermissionPane</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.bundle";
+		};
+		C04349C70A0F020F00ECB3A9 /* Launcher (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349D40A0F020F00ECB3A9 /* Build configuration list for PBXNativeTarget "Launcher (UB)" */;
+			buildPhases = (
+				C04349C80A0F020F00ECB3A9 /* Sources */,
+				C04349CC0A0F020F00ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+				C04349D20A0F020F00ECB3A9 /* PBXBuildRule */,
+				C04349D30A0F020F00ECB3A9 /* PBXBuildRule */,
+			);
+			buildSettings = {
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Launcher;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			dependencies = (
+			);
+			name = "Launcher (UB)";
+			productName = mLauncher;
+			productReference = C04349D80A0F020F00ECB3A9 /* Launcher */;
+			productType = "com.apple.product-type.tool";
+		};
+		C04349DA0A0F021800ECB3A9 /* PureFTPOSX (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349E10A0F021800ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPOSX (UB)" */;
+			buildPhases = (
+				C04349DB0A0F021800ECB3A9 /* Sources */,
+				C04349DE0A0F021800ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = PureFTPOSX;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "PureFTPOSX (UB)";
+			productName = PureFTPOSX;
+			productReference = C04349E50A0F021800ECB3A9 /* PureFTPOSX */;
+			productType = "com.apple.product-type.tool";
+		};
+		C04349E70A0F022000ECB3A9 /* purestats (UB) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C04349F20A0F022000ECB3A9 /* Build configuration list for PBXNativeTarget "purestats (UB)" */;
+			buildPhases = (
+				C04349E80A0F022000ECB3A9 /* Sources */,
+				C04349EE0A0F022000ECB3A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = purestats;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = "purestats (UB)";
+			productName = purestats;
+			productReference = C04349F60A0F022000ECB3A9 /* purestats */;
+			productType = "com.apple.product-type.tool";
+		};
 		C0739D2609BFB94D00F545F9 /* PureFTPOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0739D2A09BFB96300F545F9 /* Build configuration list for PBXNativeTarget "PureFTPOSX" */;
@@ -2304,11 +3758,225 @@
 				C0F4C92307082083000BF4D0 /* Launcher */,
 				C0739D2609BFB94D00F545F9 /* PureFTPOSX */,
 				C0AA6FEB09C550C600EEAA67 /* purestats */,
+				C04348530A0F015D00ECB3A9 /* PureFTPd Manager (UB) */,
+				C04348E10A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant (UB) */,
+				C04349140A0F01A900ECB3A9 /* PureFTPd Manager Uninstaller (UB) */,
+				C04349260A0F01B200ECB3A9 /* FTPLogPane (UB) */,
+				C04349380A0F01BD00ECB3A9 /* SystemPane (UB) */,
+				C043494A0A0F01C600ECB3A9 /* AuthPane (UB) */,
+				C043495D0A0F01D000ECB3A9 /* AnonymousPane (UB) */,
+				C04349710A0F01DB00ECB3A9 /* ServerSettingsPane (UB) */,
+				C04349820A0F01E800ECB3A9 /* ServerOptionsPane (UB) */,
+				C04349930A0F01F100ECB3A9 /* DirAliasesPane (UB) */,
+				C04349A40A0F01FC00ECB3A9 /* SSLPane (UB) */,
+				C04349B60A0F020500ECB3A9 /* PermissionPane (UB) */,
+				C04349C70A0F020F00ECB3A9 /* Launcher (UB) */,
+				C04349DA0A0F021800ECB3A9 /* PureFTPOSX (UB) */,
+				C04349E70A0F022000ECB3A9 /* purestats (UB) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C043486C0A0F015D00ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043486D0A0F015D00ECB3A9 /* PureFTPd Manager Setup Assistant.app in Resources */,
+				C043486E0A0F015D00ECB3A9 /* MVPreferencePaneDefaults.plist in Resources */,
+				C043486F0A0F015D00ECB3A9 /* MVPreferencePaneGroups.strings in Resources */,
+				C04348700A0F015D00ECB3A9 /* MVPreferencePaneGroups.plist in Resources */,
+				C04348710A0F015D00ECB3A9 /* MVPreferencePaneGroups.strings in Resources */,
+				C04348720A0F015D00ECB3A9 /* anonymous.png in Resources */,
+				C04348730A0F015D00ECB3A9 /* assistant.png in Resources */,
+				C04348740A0F015D00ECB3A9 /* auth.png in Resources */,
+				C04348750A0F015D00ECB3A9 /* diraliases.png in Resources */,
+				C04348760A0F015D00ECB3A9 /* logging.png in Resources */,
+				C04348770A0F015D00ECB3A9 /* options.png in Resources */,
+				C04348780A0F015D00ECB3A9 /* settings.png in Resources */,
+				C04348790A0F015D00ECB3A9 /* ssl.png in Resources */,
+				C043487A0A0F015D00ECB3A9 /* status.png in Resources */,
+				C043487B0A0F015D00ECB3A9 /* system.png in Resources */,
+				C043487C0A0F015D00ECB3A9 /* trash.png in Resources */,
+				C043487D0A0F015D00ECB3A9 /* users.png in Resources */,
+				C043487E0A0F015D00ECB3A9 /* vhosts.png in Resources */,
+				C043487F0A0F015D00ECB3A9 /* Manager.png in Resources */,
+				C04348800A0F015D00ECB3A9 /* main.html in Resources */,
+				C04348810A0F015D00ECB3A9 /* Localizable.strings in Resources */,
+				C04348820A0F015D00ECB3A9 /* basePreferences.plist in Resources */,
+				C04348830A0F015D00ECB3A9 /* ftptiger in Resources */,
+				C04348840A0F015D00ECB3A9 /* ftposx in Resources */,
+				C04348850A0F015D00ECB3A9 /* permission_small.tiff in Resources */,
+				C04348860A0F015D00ECB3A9 /* credits.rtf in Resources */,
+				C04348870A0F015D00ECB3A9 /* InfoPlist.strings in Resources */,
+				C04348880A0F015D00ECB3A9 /* download.tiff in Resources */,
+				C04348890A0F015D00ECB3A9 /* upload.tiff in Resources */,
+				C043488A0A0F015D00ECB3A9 /* Manager.icns in Resources */,
+				C043488B0A0F015D00ECB3A9 /* PureFTP.icns in Resources */,
+				C043488C0A0F015D00ECB3A9 /* addButton.tiff in Resources */,
+				C043488D0A0F015D00ECB3A9 /* deleButton.tiff in Resources */,
+				C043488E0A0F015D00ECB3A9 /* tablemenu.tiff in Resources */,
+				C043488F0A0F015D00ECB3A9 /* paypal.tiff in Resources */,
+				C04348900A0F015D00ECB3A9 /* trash.tiff in Resources */,
+				C04348910A0F015D00ECB3A9 /* FSIconImage-Default.tiff in Resources */,
+				C04348920A0F015D00ECB3A9 /* FSIconImage-LinkArrow.icns in Resources */,
+				C04348930A0F015D00ECB3A9 /* logging.tiff in Resources */,
+				C04348940A0F015D00ECB3A9 /* delete.tiff in Resources */,
+				C04348950A0F015D00ECB3A9 /* new.tiff in Resources */,
+				C04348960A0F015D00ECB3A9 /* preferences.tiff in Resources */,
+				C04348970A0F015D00ECB3A9 /* refresh.tiff in Resources */,
+				C04348980A0F015D00ECB3A9 /* save.tiff in Resources */,
+				C04348990A0F015D00ECB3A9 /* users.tiff in Resources */,
+				C043489A0A0F015D00ECB3A9 /* vhosts.tiff in Resources */,
+				C043489B0A0F015D00ECB3A9 /* status.tiff in Resources */,
+				C043489C0A0F015D00ECB3A9 /* MVPreferences.nib in Resources */,
+				C043489D0A0F015D00ECB3A9 /* PureFTP.nib in Resources */,
+				C043489E0A0F015D00ECB3A9 /* permission.tiff in Resources */,
+				C043489F0A0F015D00ECB3A9 /* PureFTPd Manager-Info.plist in Resources */,
+				C04348A00A0F015D00ECB3A9 /* PureFTPd Manager Help in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04348E20A0F019C00ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04348E30A0F019C00ECB3A9 /* logging.tiff in Resources */,
+				C04348E40A0F019C00ECB3A9 /* users.tiff in Resources */,
+				C04348E50A0F019C00ECB3A9 /* vhosts.tiff in Resources */,
+				C04348E60A0F019C00ECB3A9 /* anonymous.tiff in Resources */,
+				C04348E70A0F019C00ECB3A9 /* auth.tiff in Resources */,
+				C04348E80A0F019C00ECB3A9 /* system.tiff in Resources */,
+				C04348E90A0F019C00ECB3A9 /* empty-pureftpd.pdb in Resources */,
+				C04348EA0A0F019C00ECB3A9 /* allOptions.plist in Resources */,
+				C04348EB0A0F019C00ECB3A9 /* selected.tif in Resources */,
+				C04348EC0A0F019C00ECB3A9 /* unprocessed.tif in Resources */,
+				C04348ED0A0F019C00ECB3A9 /* unselected.tif in Resources */,
+				C04348EE0A0F019C00ECB3A9 /* AppIcons.icns in Resources */,
+				C04348EF0A0F019C00ECB3A9 /* background.tiff in Resources */,
+				C04348F00A0F019C00ECB3A9 /* AKStartPane.nib in Resources */,
+				C04348F10A0F019C00ECB3A9 /* AKAnonymousPane.nib in Resources */,
+				C04348F20A0F019C00ECB3A9 /* AKVUPane.nib in Resources */,
+				C04348F30A0F019C00ECB3A9 /* AKLogPane.nib in Resources */,
+				C04348F40A0F019C00ECB3A9 /* AKSystemPane.nib in Resources */,
+				C04348F50A0F019C00ECB3A9 /* AKStopPane.nib in Resources */,
+				C04348F60A0F019C00ECB3A9 /* MainMenu.nib in Resources */,
+				C04348F70A0F019C00ECB3A9 /* Localizable.strings in Resources */,
+				C04348F80A0F019C00ECB3A9 /* InfoAssistant.plist in Resources */,
+				C04348F90A0F019C00ECB3A9 /* PaneList.plist in Resources */,
+				C04348FA0A0F019C00ECB3A9 /* PureFTPd Assistant-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349150A0F01A900ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349160A0F01A900ECB3A9 /* RemoveController.h in Resources */,
+				C04349170A0F01A900ECB3A9 /* Uninstaller.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349270A0F01B200ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349280A0F01B200ECB3A9 /* FTPLogPane.nib in Resources */,
+				C04349290A0F01B200ECB3A9 /* InfoPlist.strings in Resources */,
+				C043492A0A0F01B200ECB3A9 /* logging.tiff in Resources */,
+				C043492B0A0F01B200ECB3A9 /* FTPLogPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349390A0F01BD00ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043493A0A0F01BD00ECB3A9 /* system.tiff in Resources */,
+				C043493B0A0F01BD00ECB3A9 /* ftposx in Resources */,
+				C043493C0A0F01BD00ECB3A9 /* InfoPlist.strings in Resources */,
+				C043493D0A0F01BD00ECB3A9 /* SystemPane.nib in Resources */,
+				C043493E0A0F01BD00ECB3A9 /* SystemPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043494B0A0F01C600ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043494C0A0F01C600ECB3A9 /* AuthentificationPane.nib in Resources */,
+				C043494D0A0F01C600ECB3A9 /* InfoPlist.strings in Resources */,
+				C043494E0A0F01C600ECB3A9 /* auth.tiff in Resources */,
+				C043494F0A0F01C600ECB3A9 /* AuthPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043495E0A0F01D000ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043495F0A0F01D000ECB3A9 /* AnonymousPane.nib in Resources */,
+				C04349600A0F01D000ECB3A9 /* InfoPlist.strings in Resources */,
+				C04349610A0F01D000ECB3A9 /* anonymous.tiff in Resources */,
+				C04349620A0F01D000ECB3A9 /* AnonymousPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349720A0F01DB00ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349730A0F01DB00ECB3A9 /* InfoPlist.strings in Resources */,
+				C04349740A0F01DB00ECB3A9 /* ServerPane.nib in Resources */,
+				C04349750A0F01DB00ECB3A9 /* settings.tiff in Resources */,
+				C04349760A0F01DB00ECB3A9 /* ServerSettingsPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349830A0F01E800ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349840A0F01E800ECB3A9 /* options.tiff in Resources */,
+				C04349850A0F01E800ECB3A9 /* InfoPlist.strings in Resources */,
+				C04349860A0F01E800ECB3A9 /* ServerOptionsPane.nib in Resources */,
+				C04349870A0F01E800ECB3A9 /* ServerOptionsPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349940A0F01F100ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349950A0F01F100ECB3A9 /* diraliases.tiff in Resources */,
+				C04349960A0F01F100ECB3A9 /* English.lproj in Resources */,
+				C04349970A0F01F100ECB3A9 /* French.lproj in Resources */,
+				C04349980A0F01F100ECB3A9 /* DirAliasesPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349A50A0F01FC00ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349A60A0F01FC00ECB3A9 /* ssl.tiff in Resources */,
+				C04349A70A0F01FC00ECB3A9 /* English.lproj in Resources */,
+				C04349A80A0F01FC00ECB3A9 /* French.lproj in Resources */,
+				C04349A90A0F01FC00ECB3A9 /* SSLPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349B70A0F020500ECB3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349B80A0F020500ECB3A9 /* English.lproj in Resources */,
+				C04349B90A0F020500ECB3A9 /* French.lproj in Resources */,
+				C04349BA0A0F020500ECB3A9 /* permission.tiff in Resources */,
+				C04349BB0A0F020500ECB3A9 /* PermissionPane-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0ADD51609AAF8D100EF7E68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2511,6 +4179,192 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C04348A10A0F015D00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04348A20A0F015D00ECB3A9 /* NSFileManager+ASExtensions.m in Sources */,
+				C04348A30A0F015D00ECB3A9 /* WBTimeControl.m in Sources */,
+				C04348A40A0F015D00ECB3A9 /* NSXLogParser.m in Sources */,
+				C04348A50A0F015D00ECB3A9 /* NSImageAdditions.m in Sources */,
+				C04348A60A0F015D00ECB3A9 /* NSToolbarAdditions.m in Sources */,
+				C04348A70A0F015D00ECB3A9 /* MVPreferencesController.m in Sources */,
+				C04348A80A0F015D00ECB3A9 /* MVPreferencesGroupedIconView.m in Sources */,
+				C04348A90A0F015D00ECB3A9 /* MVPreferencesMultipleIconView.m in Sources */,
+				C04348AA0A0F015D00ECB3A9 /* LogManager.m in Sources */,
+				C04348AB0A0F015D00ECB3A9 /* UserStatsController.m in Sources */,
+				C04348AC0A0F015D00ECB3A9 /* GraphController.m in Sources */,
+				C04348AD0A0F015D00ECB3A9 /* PureController.m in Sources */,
+				C04348AE0A0F015D00ECB3A9 /* VHostManager.m in Sources */,
+				C04348AF0A0F015D00ECB3A9 /* RemoveController.m in Sources */,
+				C04348B00A0F015D00ECB3A9 /* main.m in Sources */,
+				C04348B10A0F015D00ECB3A9 /* FTPUsage.m in Sources */,
+				C04348B20A0F015D00ECB3A9 /* PureFTPD.m in Sources */,
+				C04348B30A0F015D00ECB3A9 /* MKLogfileReader.m in Sources */,
+				C04348B40A0F015D00ECB3A9 /* StatusController.m in Sources */,
+				C04348B50A0F015D00ECB3A9 /* UserController.m in Sources */,
+				C04348B60A0F015D00ECB3A9 /* MySQLUserManager.m in Sources */,
+				C04348B70A0F015D00ECB3A9 /* PureDBUserManager.m in Sources */,
+				C04348B80A0F015D00ECB3A9 /* VirtualUser.m in Sources */,
+				C04348B90A0F015D00ECB3A9 /* JMNavSplitView.m in Sources */,
+				C04348BA0A0F015D00ECB3A9 /* NSBrowserView.m in Sources */,
+				C04348BB0A0F015D00ECB3A9 /* JMSidebarView.m in Sources */,
+				C04348BC0A0F015D00ECB3A9 /* FSBrowserCell.m in Sources */,
+				C04348BD0A0F015D00ECB3A9 /* FSNodeInfo.m in Sources */,
+				C04348BE0A0F015D00ECB3A9 /* MWWindow.m in Sources */,
+				C04348BF0A0F015D00ECB3A9 /* MWGradientView.m in Sources */,
+				C0434B3E0A0F16D500ECB3A9 /* chartables.m in Sources */,
+				C0434B400A0F16D500ECB3A9 /* get.m in Sources */,
+				C0434B420A0F16D500ECB3A9 /* maketables.m in Sources */,
+				C0434B430A0F16D500ECB3A9 /* pcre.m in Sources */,
+				C0434B450A0F16D500ECB3A9 /* study.m in Sources */,
+				C0434B690A0F19C500ECB3A9 /* puredb_write.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04348FB0A0F019C00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04348FC0A0F019C00ECB3A9 /* AKBox.m in Sources */,
+				C04348FD0A0F019C00ECB3A9 /* AKListView.m in Sources */,
+				C04348FE0A0F019C00ECB3A9 /* AKMainController.m in Sources */,
+				C04348FF0A0F019C00ECB3A9 /* AKPaneController.m in Sources */,
+				C04349000A0F019C00ECB3A9 /* AKProcessEngine.m in Sources */,
+				C04349010A0F019C00ECB3A9 /* AKStartPaneController.m in Sources */,
+				C04349020A0F019C00ECB3A9 /* AKAnonymousPaneController.m in Sources */,
+				C04349030A0F019C00ECB3A9 /* AKVUPaneController.m in Sources */,
+				C04349040A0F019C00ECB3A9 /* AKLogPaneController.m in Sources */,
+				C04349050A0F019C00ECB3A9 /* AKSystemPaneController.m in Sources */,
+				C04349060A0F019C00ECB3A9 /* AKStopPaneController.m in Sources */,
+				C04349070A0F019C00ECB3A9 /* ManagerProcessEngine.m in Sources */,
+				C04349080A0F019C00ECB3A9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349180A0F01A900ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349190A0F01A900ECB3A9 /* RemoveController.m in Sources */,
+				C043491A0A0F01A900ECB3A9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043492C0A0F01B200ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043492D0A0F01B200ECB3A9 /* FTPLogPane.m in Sources */,
+				C043492E0A0F01B200ECB3A9 /* WBTimeControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043493F0A0F01BD00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349400A0F01BD00ECB3A9 /* SystemPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349500A0F01C600ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349510A0F01C600ECB3A9 /* AuthentificationPane.m in Sources */,
+				C04349520A0F01C600ECB3A9 /* MySQLCC.m in Sources */,
+				C067D2B00A18147A003138A3 /* MWGradientView103.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349630A0F01D000ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349640A0F01D000ECB3A9 /* AFSBrowserCell.m in Sources */,
+				C04349650A0F01D000ECB3A9 /* AFSNodeInfo.m in Sources */,
+				C04349660A0F01D000ECB3A9 /* AnonymousPane.m in Sources */,
+				C04349670A0F01D000ECB3A9 /* NSFileManager+ASExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349770A0F01DB00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349780A0F01DB00ECB3A9 /* ServerPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349880A0F01E800ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349890A0F01E800ECB3A9 /* ServerOptionsPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349990A0F01F100ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043499A0A0F01F100ECB3A9 /* DirAliasesPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349AA0A0F01FC00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349AB0A0F01FC00ECB3A9 /* SSLPane.m in Sources */,
+				C04349AC0A0F01FC00ECB3A9 /* SSLWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349BC0A0F020500ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349BD0A0F020500ECB3A9 /* PermissionPane.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349C80A0F020F00ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349C90A0F020F00ECB3A9 /* AuthForAllImplCompat.m in Sources */,
+				C04349CA0A0F020F00ECB3A9 /* AuthForAllImpl.m in Sources */,
+				C04349CB0A0F020F00ECB3A9 /* mLauncher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349DB0A0F021800ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349DC0A0F021800ECB3A9 /* PureFTPOSX.m in Sources */,
+				C04349DD0A0F021800ECB3A9 /* PureFTPD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04349E80A0F022000ECB3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04349E90A0F022000ECB3A9 /* purestats.m in Sources */,
+				C04349EA0A0F022000ECB3A9 /* NSXLogParser.m in Sources */,
+				C04349EB0A0F022000ECB3A9 /* HTMLConverter.m in Sources */,
+				C04349EC0A0F022000ECB3A9 /* CSVConverter.m in Sources */,
+				C04349ED0A0F022000ECB3A9 /* UserStatsController.m in Sources */,
+				C0434B7B0A0F1A3300ECB3A9 /* get.m in Sources */,
+				C0434B7C0A0F1A3400ECB3A9 /* maketables.m in Sources */,
+				C0434B7D0A0F1A3500ECB3A9 /* pcre.m in Sources */,
+				C0434B7E0A0F1A3600ECB3A9 /* study.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0739D2409BFB94D00F545F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2529,6 +4383,11 @@
 				C0AA6FFF09C5522F00EEAA67 /* HTMLConverter.m in Sources */,
 				C0DD050809C6A33000D8BED1 /* CSVConverter.m in Sources */,
 				C0BE421809CFE9EC00B0D01D /* UserStatsController.m in Sources */,
+				C0434B750A0F1A2700ECB3A9 /* get.m in Sources */,
+				C0434B760A0F1A2800ECB3A9 /* chartables.m in Sources */,
+				C0434B770A0F1A2A00ECB3A9 /* pcre.m in Sources */,
+				C0434B780A0F1A2B00ECB3A9 /* maketables.m in Sources */,
+				C0434B790A0F1A2C00ECB3A9 /* study.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2564,6 +4423,14 @@
 				C0ADD5E209AAFD4C00EF7E68 /* JMSidebarView.m in Sources */,
 				C0ADD5E309AAFD4D00EF7E68 /* FSBrowserCell.m in Sources */,
 				C0ADD5E409AAFD4D00EF7E68 /* FSNodeInfo.m in Sources */,
+				C0C2951609EDE1FB006CA0CC /* MWWindow.m in Sources */,
+				C0434B460A0F16D500ECB3A9 /* chartables.m in Sources */,
+				C0434B480A0F16D500ECB3A9 /* get.m in Sources */,
+				C0434B4A0A0F16D500ECB3A9 /* maketables.m in Sources */,
+				C0434B4B0A0F16D500ECB3A9 /* pcre.m in Sources */,
+				C0434B4D0A0F16D500ECB3A9 /* study.m in Sources */,
+				C0434B6C0A0F19C500ECB3A9 /* puredb_write.m in Sources */,
+				C067D2AF0A18147A003138A3 /* MWGradientView103.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2687,6 +4554,66 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C0434A0F0A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04348E10A0F019C00ECB3A9 /* PureFTPd Manager Setup Assistant (UB) */;
+			targetProxy = C0434A0E0A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A110A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349260A0F01B200ECB3A9 /* FTPLogPane (UB) */;
+			targetProxy = C0434A100A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A130A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349380A0F01BD00ECB3A9 /* SystemPane (UB) */;
+			targetProxy = C0434A120A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A150A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C043494A0A0F01C600ECB3A9 /* AuthPane (UB) */;
+			targetProxy = C0434A140A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A170A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C043495D0A0F01D000ECB3A9 /* AnonymousPane (UB) */;
+			targetProxy = C0434A160A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A190A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349710A0F01DB00ECB3A9 /* ServerSettingsPane (UB) */;
+			targetProxy = C0434A180A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A1B0A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349820A0F01E800ECB3A9 /* ServerOptionsPane (UB) */;
+			targetProxy = C0434A1A0A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A1D0A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349930A0F01F100ECB3A9 /* DirAliasesPane (UB) */;
+			targetProxy = C0434A1C0A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A1F0A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349A40A0F01FC00ECB3A9 /* SSLPane (UB) */;
+			targetProxy = C0434A1E0A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A210A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349B60A0F020500ECB3A9 /* PermissionPane (UB) */;
+			targetProxy = C0434A200A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A230A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349DA0A0F021800ECB3A9 /* PureFTPOSX (UB) */;
+			targetProxy = C0434A220A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
+		C0434A250A0F030C00ECB3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C04349E70A0F022000ECB3A9 /* purestats (UB) */;
+			targetProxy = C0434A240A0F030C00ECB3A9 /* PBXContainerItemProxy */;
+		};
 		C0739EC309BFC07A00F545F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C0739D2609BFB94D00F545F9 /* PureFTPOSX */;
@@ -3034,6 +4961,1379 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C04348DA0A0F015D00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					./sources/include,
+					"./sources/*",
+					"./*./****",
+				);
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04348DB0A0F015D00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					./sources/include,
+					"./sources/*",
+					"./*./****",
+				);
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04348DC0A0F015D00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					./sources/include,
+					"./sources/*",
+					"./*./****",
+				);
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS) ";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C043490E0A0F019C00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Assistant-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C043490F0A0F019C00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Assistant-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349100A0F019C00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Assistant-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PureFTPd Manager Setup Assistant";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349200A0F01A900ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
+				INSTALL_PATH = "$(USER_APPS_DIR)";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349210A0F01A900ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
+				INSTALL_PATH = "$(USER_APPS_DIR)";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349220A0F01A900ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager Uninstaller-Info.plist";
+				INSTALL_PATH = "$(USER_APPS_DIR)";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "PureFTPd Manager Uninstaller";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		C04349330A0F01B200ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "./Property Lists/FTPLogPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTPLogPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349340A0F01B200ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "./Property Lists/FTPLogPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTPLogPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349350A0F01B200ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "./Property Lists/FTPLogPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTPLogPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349450A0F01BD00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SystemPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SystemPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349460A0F01BD00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SystemPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SystemPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349470A0F01BD00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SystemPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SystemPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349580A0F01C600ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/sources/lib/UB/*",
+					"./*****",
+				);
+				INFOPLIST_FILE = "./Property Lists/AuthPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349590A0F01C600ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/sources/lib/UB/*",
+					"./*****",
+				);
+				INFOPLIST_FILE = "./Property Lists/AuthPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C043495A0A0F01C600ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(SRCROOT)/sources/lib/UB",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/sources/lib/UB/*",
+					"./*****",
+				);
+				INFOPLIST_FILE = "./Property Lists/AuthPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C043496C0A0F01D000ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/AnonymousPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AnonymousPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C043496D0A0F01D000ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/AnonymousPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AnonymousPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C043496E0A0F01D000ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/AnonymousPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AnonymousPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C043497D0A0F01DB00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerSettingsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C043497E0A0F01DB00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerSettingsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C043497F0A0F01DB00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerSettingsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C043498E0A0F01E800ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerOptionsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerOptionsPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C043498F0A0F01E800ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerOptionsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerOptionsPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349900A0F01E800ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/ServerOptionsPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ServerOptionsPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C043499F0A0F01F100ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/DirAliasesPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DirAliasesPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349A00A0F01F100ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/DirAliasesPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DirAliasesPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349A10A0F01F100ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/DirAliasesPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DirAliasesPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349B10A0F01FC00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SSLPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SSLPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349B20A0F01FC00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SSLPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SSLPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349B30A0F01FC00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/SSLPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SSLPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349C20A0F020500ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PermissionPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PermissionPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349C30A0F020500ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PermissionPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PermissionPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349C40A0F020500ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "./Property Lists/PermissionPane-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = PermissionPane;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349D50A0F020F00ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Launcher;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349D60A0F020F00ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Launcher;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349D70A0F020F00ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Launcher;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build_ub;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		C04349E20A0F021800ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = "./*";
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = PureFTPOSX;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349E30A0F021800ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "./*";
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = PureFTPOSX;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349E40A0F021800ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "./*";
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = PureFTPOSX;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		C04349F30A0F022000ECB3A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					"./*",
+					./sources/include,
+				);
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					./sources/lib,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = purestats;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		C04349F40A0F022000ECB3A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"./*",
+					./sources/include,
+				);
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					./sources/lib,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = purestats;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		C04349F50A0F022000ECB3A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"./*",
+					./sources/include,
+				);
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					./sources/lib,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = purestats;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SYMROOT = build_ub;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
 		C0739D2B09BFB96300F545F9 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3154,11 +6454,11 @@
 		C0ADD51E09AAF8D200EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -3169,7 +6469,8 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = (
 					./sources/include,
-					"./*",
+					"./sources/*",
+					"./*./****",
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -3194,11 +6495,11 @@
 		C0ADD51F09AAF8D200EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -3207,7 +6508,8 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = (
 					./sources/include,
-					"./*",
+					"./sources/*",
+					"./*./****",
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -3232,10 +6534,10 @@
 		C0ADD52009AAF8D200EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = "$(NATIVE_ARCH)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -3243,7 +6545,8 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = (
 					./sources/include,
-					"./*",
+					"./sources/*",
+					"./*./****",
 				);
 				INFOPLIST_FILE = "./Property Lists/PureFTPd Manager-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -3481,10 +6784,11 @@
 		C0ADD63F09AB009B00EF7E68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -3503,6 +6807,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
 			};
@@ -3511,10 +6816,11 @@
 		C0ADD64009AB009B00EF7E68 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -3531,6 +6837,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = NO;
 			};
@@ -3539,9 +6846,10 @@
 		C0ADD64109AB009B00EF7E68 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
-					./sources/lib,
+					"$(SRCROOT)/sources/lib/PPC",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -3557,6 +6865,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = AuthentificationPane;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = prefPane;
 				ZERO_LINK = YES;
 			};
@@ -4167,6 +7476,156 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C04348D90A0F015D00ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04348DA0A0F015D00ECB3A9 /* Development */,
+				C04348DB0A0F015D00ECB3A9 /* Deployment */,
+				C04348DC0A0F015D00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043490D0A0F019C00ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager Setup Assistant (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043490E0A0F019C00ECB3A9 /* Development */,
+				C043490F0A0F019C00ECB3A9 /* Deployment */,
+				C04349100A0F019C00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043491F0A0F01A900ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPd Manager Uninstaller (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349200A0F01A900ECB3A9 /* Development */,
+				C04349210A0F01A900ECB3A9 /* Deployment */,
+				C04349220A0F01A900ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349320A0F01B200ECB3A9 /* Build configuration list for PBXNativeTarget "FTPLogPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349330A0F01B200ECB3A9 /* Development */,
+				C04349340A0F01B200ECB3A9 /* Deployment */,
+				C04349350A0F01B200ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349440A0F01BD00ECB3A9 /* Build configuration list for PBXNativeTarget "SystemPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349450A0F01BD00ECB3A9 /* Development */,
+				C04349460A0F01BD00ECB3A9 /* Deployment */,
+				C04349470A0F01BD00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349570A0F01C600ECB3A9 /* Build configuration list for PBXNativeTarget "AuthPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349580A0F01C600ECB3A9 /* Development */,
+				C04349590A0F01C600ECB3A9 /* Deployment */,
+				C043495A0A0F01C600ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043496B0A0F01D000ECB3A9 /* Build configuration list for PBXNativeTarget "AnonymousPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043496C0A0F01D000ECB3A9 /* Development */,
+				C043496D0A0F01D000ECB3A9 /* Deployment */,
+				C043496E0A0F01D000ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043497C0A0F01DB00ECB3A9 /* Build configuration list for PBXNativeTarget "ServerSettingsPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043497D0A0F01DB00ECB3A9 /* Development */,
+				C043497E0A0F01DB00ECB3A9 /* Deployment */,
+				C043497F0A0F01DB00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043498D0A0F01E800ECB3A9 /* Build configuration list for PBXNativeTarget "ServerOptionsPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043498E0A0F01E800ECB3A9 /* Development */,
+				C043498F0A0F01E800ECB3A9 /* Deployment */,
+				C04349900A0F01E800ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C043499E0A0F01F100ECB3A9 /* Build configuration list for PBXNativeTarget "DirAliasesPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043499F0A0F01F100ECB3A9 /* Development */,
+				C04349A00A0F01F100ECB3A9 /* Deployment */,
+				C04349A10A0F01F100ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349B00A0F01FC00ECB3A9 /* Build configuration list for PBXNativeTarget "SSLPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349B10A0F01FC00ECB3A9 /* Development */,
+				C04349B20A0F01FC00ECB3A9 /* Deployment */,
+				C04349B30A0F01FC00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349C10A0F020500ECB3A9 /* Build configuration list for PBXNativeTarget "PermissionPane (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349C20A0F020500ECB3A9 /* Development */,
+				C04349C30A0F020500ECB3A9 /* Deployment */,
+				C04349C40A0F020500ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349D40A0F020F00ECB3A9 /* Build configuration list for PBXNativeTarget "Launcher (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349D50A0F020F00ECB3A9 /* Development */,
+				C04349D60A0F020F00ECB3A9 /* Deployment */,
+				C04349D70A0F020F00ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349E10A0F021800ECB3A9 /* Build configuration list for PBXNativeTarget "PureFTPOSX (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349E20A0F021800ECB3A9 /* Development */,
+				C04349E30A0F021800ECB3A9 /* Deployment */,
+				C04349E40A0F021800ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		C04349F20A0F022000ECB3A9 /* Build configuration list for PBXNativeTarget "purestats (UB)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C04349F30A0F022000ECB3A9 /* Development */,
+				C04349F40A0F022000ECB3A9 /* Deployment */,
+				C04349F50A0F022000ECB3A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
 		C0739D2A09BFB96300F545F9 /* Build configuration list for PBXNativeTarget "PureFTPOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

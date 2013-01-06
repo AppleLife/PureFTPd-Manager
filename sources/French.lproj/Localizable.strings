@@ -92,7 +92,7 @@
 "Go to User Manager" = "Aller au Gestionnaire d'Utilisateurs";
 
 /* localized string */
-"Go to Virtual Hosts" = "Aller au Hôtes Virtuels";
+"Go to Virtual Hosts" = "Aller aux Hôtes Virtuels";
 
 /* localized string */
 "Incomplete User Information" = "Données utilisateur incomplètes";
@@ -183,7 +183,7 @@
 "PureFTPd Manager is up-to-date" = "PureFTPd Manager est à jour";
 
 /* localized string */
-"PureFTPd\nGeneral Informations" = "Informations générales sur PureFTPd";
+"PureFTPd\nGeneral Informations" = "Informations générales\nsur PureFTPd";
 
 /* read only */
 "read only" = "Lecture Seule";
@@ -204,7 +204,7 @@
 "Remove PureFTPd Manager" = "Désinstaller PureFTPd Manager";
 
 /* Revert */
-"Revert" = "Retourner";
+"Revert" = "Ne pas enregistrer";
 
 /* Save */
 "Save" = "Enregistrer";
@@ -264,7 +264,7 @@
 "View Server Status" = "Aller au Statut du serveur";
 
 /* localized string */
-"Virtual Hosts" = "Utilisateurs";
+"Virtual Hosts" = "Hôtes virtuels";
 
 /* localized string */
 "Virtual Hosts have been modified" = "La base d'hôtes virtuels à été modifiée";
